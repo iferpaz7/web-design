@@ -1,6 +1,5 @@
 # build output
 dist/
-
 # generated types
 .astro/
 
@@ -20,5 +19,13 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-# jetbrains setting folder
+# Windows-specific files
+Thumbs.db
+
+# IDE
+.vscode/
 .idea/
+
+# Temporary files
+*.tmp
+*.temp

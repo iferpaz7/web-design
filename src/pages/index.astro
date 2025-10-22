@@ -1,11 +1,306 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import ThemeToggle from "../components/ThemeToggle.tsx";
+import { BookOpen, Palette, Monitor, Zap } from "lucide-react";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Diseño Web para Marketing - ITSAE">
+  <main
+    class="min-h-screen bg-gradient-to-br from-primary-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300"
+  >
+    <!-- Header -->
+    <header
+      class="bg-gradient-to-r from-primary-800 to-primary-600 dark:from-primary-900 dark:to-primary-700 text-white py-8 sm:py-12 relative"
+    >
+      <!-- Theme Toggle -->
+      <div class="absolute top-4 right-4 sm:top-6 sm:right-6">
+        <ThemeToggle client:load />
+      </div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          Diseño Web para Marketing
+        </h1>
+        <p class="text-lg sm:text-xl text-primary-100 mb-2">
+          Instituto Tecnológico Superior Adventista del Ecuador - ITSAE
+        </p>
+        <p class="text-base sm:text-lg text-primary-200">
+          Presentaciones organizadas por unidades temáticas
+        </p>
+      </div>
+    </header>
+
+    <!-- Unidades -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+        <!-- Unidad 1: Fundamentos -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+        >
+          <div
+            class="bg-gradient-to-r from-itsae-accent to-orange-500 dark:from-orange-600 dark:to-red-600 p-4 sm:p-6"
+          >
+            <BookOpen className="w-10 h-10 sm:w-12 sm:h-12 text-white mb-4" />
+            <h2 class="text-xl sm:text-2xl font-bold text-white">Unidad 1</h2>
+            <p class="text-orange-100 text-sm sm:text-base">
+              Fundamentos del Diseño Web
+            </p>
+          </div>
+          <div class="p-4 sm:p-6 space-y-3 sm:space-y-4">
+            <a
+              href="/unidad1/tema1"
+              class="block p-3 sm:p-4 bg-orange-50 dark:bg-orange-900/20 rounded-lg hover:bg-orange-100 dark:hover:bg-orange-900/30 transition-colors"
+            >
+              <h3
+                class="font-semibold text-orange-800 dark:text-orange-300 text-sm sm:text-base"
+              >
+                Tema 1: Introducción al Diseño Web
+              </h3>
+              <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                Conceptos básicos y metodologías
+              </p>
+            </a>
+            <a
+              href="/unidad1/tema2"
+              class="block p-3 sm:p-4 bg-orange-50 dark:bg-orange-900/20 rounded-lg hover:bg-orange-100 dark:hover:bg-orange-900/30 transition-colors"
+            >
+              <h3
+                class="font-semibold text-orange-800 dark:text-orange-300 text-sm sm:text-base"
+              >
+                Tema 2: Principios de Diseño Visual
+              </h3>
+              <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                Contraste, jerarquía, psicología del color
+              </p>
+            </a>
+            <a
+              href="/unidad1/tema3"
+              class="block p-3 sm:p-4 bg-orange-50 dark:bg-orange-900/20 rounded-lg hover:bg-orange-100 dark:hover:bg-orange-900/30 transition-colors"
+            >
+              <h3
+                class="font-semibold text-orange-800 dark:text-orange-300 text-sm sm:text-base"
+              >
+                Tema 3: Arquitectura de Información
+              </h3>
+              <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+                Accesibilidad WCAG y Usabilidad Web
+              </p>
+            </a>
+            <a
+              href="/unidad1/tema4"
+              class="block p-3 sm:p-4 bg-gray-100 dark:bg-gray-700 rounded-lg"
+            >
+              <h3
+                class="font-semibold text-gray-500 dark:text-gray-400 text-sm sm:text-base"
+              >
+                Tema 4: Próximamente
+              </h3>
+              <p class="text-xs sm:text-sm text-gray-400 dark:text-gray-500">
+                En desarrollo
+              </p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Unidad 2: UX/UI -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+        >
+          <div
+            class="bg-gradient-to-r from-primary-700 to-itsae-secondary dark:from-primary-800 dark:to-blue-700 p-4 sm:p-6"
+          >
+            <Monitor className="w-10 h-10 sm:w-12 sm:h-12 text-white mb-4" />
+            <h2 class="text-xl sm:text-2xl font-bold text-white">Unidad 2</h2>
+            <p class="text-primary-100 text-sm sm:text-base">
+              Experiencia de Usuario (UX/UI)
+            </p>
+          </div>
+          <div class="p-4 sm:p-6 space-y-3 sm:space-y-4">
+            <a
+              href="/unidad2/tema1"
+              class="block p-3 sm:p-4 bg-gray-100 dark:bg-gray-700 rounded-lg"
+            >
+              <h3
+                class="font-semibold text-gray-500 dark:text-gray-400 text-sm sm:text-base"
+              >
+                Tema 1: Próximamente
+              </h3>
+              <p class="text-xs sm:text-sm text-gray-400 dark:text-gray-500">
+                Principios de UX
+              </p>
+            </a>
+            <a
+              href="/unidad2/tema2"
+              class="block p-3 sm:p-4 bg-gray-100 dark:bg-gray-700 rounded-lg"
+            >
+              <h3
+                class="font-semibold text-gray-500 dark:text-gray-400 text-sm sm:text-base"
+              >
+                Tema 2: Próximamente
+              </h3>
+              <p class="text-xs sm:text-sm text-gray-400 dark:text-gray-500">
+                Wireframes y prototipos
+              </p>
+            </a>
+            <a
+              href="/unidad2/tema3"
+              class="block p-3 sm:p-4 bg-gray-100 dark:bg-gray-700 rounded-lg"
+            >
+              <h3
+                class="font-semibold text-gray-500 dark:text-gray-400 text-sm sm:text-base"
+              >
+                Tema 3: Próximamente
+              </h3>
+              <p class="text-xs sm:text-sm text-gray-400 dark:text-gray-500">
+                Testing y optimización
+              </p>
+            </a>
+            <a
+              href="/unidad2/tema4"
+              class="block p-3 sm:p-4 bg-gray-100 dark:bg-gray-700 rounded-lg"
+            >
+              <h3
+                class="font-semibold text-gray-500 dark:text-gray-400 text-sm sm:text-base"
+              >
+                Tema 4: Próximamente
+              </h3>
+              <p class="text-xs sm:text-sm text-gray-400 dark:text-gray-500">
+                Accesibilidad web
+              </p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Unidad 3: Desarrollo -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+        >
+          <div
+            class="bg-gradient-to-r from-itsae-success to-emerald-500 dark:from-green-700 dark:to-emerald-600 p-4 sm:p-6"
+          >
+            <Palette className="w-10 h-10 sm:w-12 sm:h-12 text-white mb-4" />
+            <h2 class="text-xl sm:text-2xl font-bold text-white">Unidad 3</h2>
+            <p class="text-green-100 text-sm sm:text-base">
+              Desarrollo y Tecnologías
+            </p>
+          </div>
+          <div class="p-4 sm:p-6 space-y-3 sm:space-y-4">
+            <a href="/unidad3/tema1" class="block p-4 bg-gray-100 rounded-lg">
+              <h3 class="font-semibold text-gray-500">Tema 1: Próximamente</h3>
+              <p class="text-sm text-gray-400">HTML5 y CSS3</p>
+            </a>
+            <a href="/unidad3/tema2" class="block p-4 bg-gray-100 rounded-lg">
+              <h3 class="font-semibold text-gray-500">Tema 2: Próximamente</h3>
+              <p class="text-sm text-gray-400">JavaScript y frameworks</p>
+            </a>
+            <a href="/unidad3/tema3" class="block p-4 bg-gray-100 rounded-lg">
+              <h3 class="font-semibold text-gray-500">Tema 3: Próximamente</h3>
+              <p class="text-sm text-gray-400">Responsive design</p>
+            </a>
+            <a href="/unidad3/tema4" class="block p-4 bg-gray-100 rounded-lg">
+              <h3 class="font-semibold text-gray-500">Tema 4: Próximamente</h3>
+              <p class="text-sm text-gray-400">Performance y SEO</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Unidad 4: Marketing -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+        >
+          <div
+            class="bg-gradient-to-r from-purple-600 to-pink-500 dark:from-purple-700 dark:to-pink-600 p-4 sm:p-6"
+          >
+            <Zap className="w-10 h-10 sm:w-12 sm:h-12 text-white mb-4" />
+            <h2 class="text-xl sm:text-2xl font-bold text-white">Unidad 4</h2>
+            <p class="text-purple-100 text-sm sm:text-base">
+              Marketing Digital y Conversión
+            </p>
+          </div>
+          <div class="p-4 sm:p-6 space-y-3 sm:space-y-4">
+            <a href="/unidad4/tema1" class="block p-4 bg-gray-100 rounded-lg">
+              <h3 class="font-semibold text-gray-500">Tema 1: Próximamente</h3>
+              <p class="text-sm text-gray-400">Landing pages efectivas</p>
+            </a>
+            <a href="/unidad4/tema2" class="block p-4 bg-gray-100 rounded-lg">
+              <h3 class="font-semibold text-gray-500">Tema 2: Próximamente</h3>
+              <p class="text-sm text-gray-400">E-commerce y conversión</p>
+            </a>
+            <a href="/unidad4/tema3" class="block p-4 bg-gray-100 rounded-lg">
+              <h3 class="font-semibold text-gray-500">Tema 3: Próximamente</h3>
+              <p class="text-sm text-gray-400">Analytics y métricas</p>
+            </a>
+            <a href="/unidad4/tema4" class="block p-4 bg-gray-100 rounded-lg">
+              <h3 class="font-semibold text-gray-500">Tema 4: Próximamente</h3>
+              <p class="text-sm text-gray-400">Proyecto final</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Información adicional -->
+      <div
+        class="mt-8 sm:mt-12 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8 transition-colors duration-300"
+      >
+        <h2
+          class="text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4 sm:mb-6"
+        >
+          Información del Curso
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+          <div class="text-center">
+            <div
+              class="bg-primary-100 dark:bg-primary-900/30 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
+            >
+              <BookOpen
+                className="w-6 h-6 sm:w-8 sm:h-8 text-primary-700 dark:text-primary-400"
+              />
+            </div>
+            <h3
+              class="font-semibold text-gray-800 dark:text-gray-200 text-sm sm:text-base"
+            >
+              16 Temas
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+              4 unidades con 4 temas cada una
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="bg-green-100 dark:bg-green-900/30 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
+            >
+              <Zap
+                className="w-6 h-6 sm:w-8 sm:h-8 text-green-600 dark:text-green-400"
+              />
+            </div>
+            <h3
+              class="font-semibold text-gray-800 dark:text-gray-200 text-sm sm:text-base"
+            >
+              Práctico
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+              Ejercicios y proyectos reales
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="bg-purple-100 dark:bg-purple-900/30 w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
+            >
+              <Monitor
+                className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600 dark:text-purple-400"
+              />
+            </div>
+            <h3
+              class="font-semibold text-gray-800 dark:text-gray-200 text-sm sm:text-base"
+            >
+              Actualizado
+            </h3>
+            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+              Tendencias y herramientas actuales
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </Layout>

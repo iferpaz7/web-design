@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PresentacionTema2 from '../../components/PresentacionTema2.tsx';
+---
+
+<Layout title="Tema 2: Principios de Diseño Visual - ITSAE">
+	<main>
+		<!-- Navegación -->
+		<div class="bg-gradient-to-r from-orange-500 to-red-500 text-white py-4">
+			<div class="max-w-6xl mx-auto px-6">
+				<nav class="flex items-center justify-between">
+					<a href="/" class="text-orange-100 hover:text-white transition-colors">← Volver al inicio</a>
+					<div class="text-center">
+						<h1 class="text-xl font-bold">Unidad 1 - Tema 2</h1>
+						<p class="text-sm text-orange-100">Principios de Diseño Visual y Psicología del Color</p>
+					</div>
+					<div class="text-right text-sm text-orange-100">
+						<p>Semana 2</p>
+						<p>ITSAE</p>
+					</div>
+				</nav>
+			</div>
+		</div>
+
+		<!-- Presentación -->
+		<PresentacionTema2 client:load />
+	</main>
+</Layout>
