@@ -21,9 +21,9 @@ const PresentacionTema2: React.FC = () => {
             <Type className="w-20 h-20 text-blue-500" />
             <Layout className="w-20 h-20 text-green-500" />
           </div>
-          <p className="text-xl text-gray-600">¿Por qué dos tiendas que venden lo mismo tienen resultados diferentes?</p>
-          <div className="bg-orange-100 p-6 rounded-lg">
-            <p className="text-2xl font-bold text-orange-800">El diseño es comunicación estratégica</p>
+          <p className="text-xl text-gray-600 dark:text-gray-300">¿Por qué dos tiendas que venden lo mismo tienen resultados diferentes?</p>
+          <div className="bg-orange-100 dark:bg-orange-900/30 p-6 rounded-lg">
+            <p className="text-2xl font-bold text-orange-800 dark:text-orange-200">El diseño es comunicación estratégica</p>
           </div>
         </div>
       )
@@ -33,32 +33,32 @@ const PresentacionTema2: React.FC = () => {
       subtitle: "",
       content: (
         <div className="space-y-4 text-lg">
-          <div className="flex items-center space-x-4 p-4 bg-blue-50 rounded-lg">
+          <div className="flex items-center space-x-4 p-4 bg-blue-50 dark:bg-blue-900/30 rounded-lg">
             <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">1</div>
             <div>
-              <p className="font-semibold">Principios Fundamentales de Diseño</p>
-              <p className="text-sm text-gray-600">Contraste, jerarquía, equilibrio, espaciado</p>
+              <p className="font-semibold text-gray-900 dark:text-gray-100">Principios Fundamentales de Diseño</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">Contraste, jerarquía, equilibrio, espaciado</p>
             </div>
           </div>
-          <div className="flex items-center space-x-4 p-4 bg-purple-50 rounded-lg">
+          <div className="flex items-center space-x-4 p-4 bg-purple-50 dark:bg-purple-900/30 rounded-lg">
             <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">2</div>
             <div>
-              <p className="font-semibold">Psicología del Color</p>
-              <p className="text-sm text-gray-600">Cómo los colores influyen en las decisiones de compra</p>
+              <p className="font-semibold text-gray-900 dark:text-gray-100">Psicología del Color</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">Cómo los colores influyen en las decisiones de compra</p>
             </div>
           </div>
-          <div className="flex items-center space-x-4 p-4 bg-green-50 rounded-lg">
+          <div className="flex items-center space-x-4 p-4 bg-green-50 dark:bg-green-900/30 rounded-lg">
             <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">3</div>
             <div>
-              <p className="font-semibold">Tipografía para Web</p>
-              <p className="text-sm text-gray-600">Serif vs Sans-serif, jerarquía, legibilidad</p>
+              <p className="font-semibold text-gray-900 dark:text-gray-100">Tipografía para Web</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">Serif vs Sans-serif, jerarquía, legibilidad</p>
             </div>
           </div>
-          <div className="flex items-center space-x-4 p-4 bg-orange-50 rounded-lg">
+          <div className="flex items-center space-x-4 p-4 bg-orange-50 dark:bg-orange-900/30 rounded-lg">
             <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold">4</div>
             <div>
-              <p className="font-semibold">Ejercicios Prácticos</p>
-              <p className="text-sm text-gray-600">Paletas, análisis, diseño de card</p>
+              <p className="font-semibold text-gray-900 dark:text-gray-100">Ejercicios Prácticos</p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">Paletas, análisis, diseño de card</p>
             </div>
           </div>
         </div>
@@ -69,27 +69,27 @@ const PresentacionTema2: React.FC = () => {
       subtitle: "",
       content: (
         <div className="space-y-6">
-          <p className="text-lg">La diferencia visual que hace que un elemento destaque sobre otro</p>
+          <p className="text-lg text-gray-900 dark:text-gray-100">La diferencia visual que hace que un elemento destaque sobre otro</p>
           <div className="grid grid-cols-2 gap-6">
-            <div className="border-4 border-red-500 p-6 rounded-lg">
-              <p className="text-center mb-4 font-bold text-red-600">❌ MAL EJEMPLO</p>
-              <div className="bg-white p-4">
+            <div className="border-4 border-red-500 p-6 rounded-lg bg-white dark:bg-gray-700">
+              <p className="text-center mb-4 font-bold text-red-600 dark:text-red-400">❌ MAL EJEMPLO</p>
+              <div className="bg-white dark:bg-gray-100 p-4">
                 <p className="text-gray-400 mb-4">Producto increíble aquí</p>
                 <button className="bg-gray-300 text-gray-400 px-6 py-2 rounded w-full">Comprar</button>
               </div>
-              <p className="text-sm mt-2 text-center">Botón invisible, bajo contraste</p>
+              <p className="text-sm mt-2 text-center text-gray-700 dark:text-gray-300">Botón invisible, bajo contraste</p>
             </div>
-            <div className="border-4 border-green-500 p-6 rounded-lg">
-              <p className="text-center mb-4 font-bold text-green-600">✅ BUEN EJEMPLO</p>
-              <div className="bg-white p-4">
+            <div className="border-4 border-green-500 p-6 rounded-lg bg-white dark:bg-gray-700">
+              <p className="text-center mb-4 font-bold text-green-600 dark:text-green-400">✅ BUEN EJEMPLO</p>
+              <div className="bg-white dark:bg-gray-100 p-4">
                 <p className="text-gray-800 mb-4 font-semibold">Producto increíble aquí</p>
                 <button className="bg-orange-500 text-white px-6 py-2 rounded w-full font-bold hover:bg-orange-600">COMPRAR AHORA</button>
               </div>
-              <p className="text-sm mt-2 text-center">Botón destacado, alto contraste</p>
+              <p className="text-sm mt-2 text-center text-gray-700 dark:text-gray-300">Botón destacado, alto contraste</p>
             </div>
           </div>
-          <div className="bg-yellow-100 p-4 rounded-lg">
-            <p className="font-bold">📊 Dato clave: Amazon aumentó conversiones 14% con su botón amarillo</p>
+          <div className="bg-yellow-100 dark:bg-yellow-900/30 p-4 rounded-lg">
+            <p className="font-bold text-yellow-800 dark:text-yellow-200">📊 Dato clave: Amazon aumentó conversiones 14% con su botón amarillo</p>
           </div>
         </div>
       )
@@ -99,10 +99,10 @@ const PresentacionTema2: React.FC = () => {
       subtitle: "",
       content: (
         <div className="space-y-6">
-          <p className="text-lg">El orden en que el ojo humano recorre la página</p>
-          <div className="bg-blue-50 p-6 rounded-lg">
-            <p className="font-bold mb-4">Patrón F de Lectura Web</p>
-            <div className="relative bg-white p-8 rounded">
+          <p className="text-lg text-gray-900 dark:text-gray-100">El orden en que el ojo humano recorre la página</p>
+          <div className="bg-blue-50 dark:bg-blue-900/30 p-6 rounded-lg">
+            <p className="font-bold mb-4 text-gray-900 dark:text-gray-100">Patrón F de Lectura Web</p>
+            <div className="relative bg-white dark:bg-gray-100 p-8 rounded">
               <div className="absolute top-8 left-8 right-32 h-3 bg-red-500 opacity-70"></div>
               <div className="absolute top-20 left-8 right-48 h-3 bg-red-400 opacity-70"></div>
               <div className="absolute top-8 left-8 bottom-8 w-3 bg-red-300 opacity-70"></div>
@@ -111,8 +111,8 @@ const PresentacionTema2: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4 text-sm">
-            <div className="bg-green-50 p-4 rounded">
+          <div className="grid grid-cols-2 gap-4 text-sm text-gray-900 dark:text-gray-100">
+            <div className="bg-green-50 dark:bg-green-900/30 p-4 rounded">
               <p className="font-bold mb-2">Zona Caliente (más vista):</p>
               <ul className="space-y-1">
                 <li>• Logo (superior izquierda)</li>
@@ -120,7 +120,7 @@ const PresentacionTema2: React.FC = () => {
                 <li>• Título principal</li>
               </ul>
             </div>
-            <div className="bg-orange-50 p-4 rounded">
+            <div className="bg-orange-50 dark:bg-orange-900/30 p-4 rounded">
               <p className="font-bold mb-2">Aplicación E-Commerce:</p>
               <ul className="space-y-1">
                 <li>• CTA en zona visible</li>
@@ -137,30 +137,30 @@ const PresentacionTema2: React.FC = () => {
       subtitle: "",
       content: (
         <div className="space-y-6">
-          <div className="bg-purple-100 p-4 rounded-lg">
-            <p className="font-bold text-lg">Aumenta comprensión en 20% - Wichita State University</p>
+          <div className="bg-purple-100 dark:bg-purple-900/30 p-4 rounded-lg">
+            <p className="font-bold text-lg text-purple-800 dark:text-purple-200">Aumenta comprensión en 20% - Wichita State University</p>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <div className="border-2 border-red-500 p-3">
-              <p className="text-center mb-2 text-red-600 font-bold">Recargado ❌</p>
-              <div className="bg-white p-2 space-y-1">
-                <p className="text-xs leading-tight">Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto</p>
+            <div className="border-2 border-red-500 p-3 bg-white dark:bg-gray-700">
+              <p className="text-center mb-2 text-red-600 dark:text-red-400 font-bold">Recargado ❌</p>
+              <div className="bg-white dark:bg-gray-100 p-2 space-y-1">
+                <p className="text-xs leading-tight text-gray-800">Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto</p>
                 <button className="bg-blue-500 text-white px-2 py-1 text-xs w-full">Comprar</button>
-                <p className="text-xs leading-tight">Más información aquí y más texto</p>
+                <p className="text-xs leading-tight text-gray-800">Más información aquí y más texto</p>
               </div>
             </div>
-            <div className="border-2 border-green-500 p-3">
-              <p className="text-center mb-2 text-green-600 font-bold">Con Espacio ✅</p>
-              <div className="bg-white p-4 space-y-4">
-                <p className="text-sm">Texto legible con espacio para respirar</p>
+            <div className="border-2 border-green-500 p-3 bg-white dark:bg-gray-700">
+              <p className="text-center mb-2 text-green-600 dark:text-green-400 font-bold">Con Espacio ✅</p>
+              <div className="bg-white dark:bg-gray-100 p-4 space-y-4">
+                <p className="text-sm text-gray-800">Texto legible con espacio para respirar</p>
                 <button className="bg-blue-500 text-white px-4 py-2 text-sm w-full rounded">Comprar</button>
               </div>
             </div>
           </div>
-          <div className="bg-blue-50 p-4 rounded-lg">
-            <p className="font-bold">Ejemplos de marcas:</p>
-            <p>🔸 Mercado Libre: Información densa</p>
-            <p>🔸 Apple: Minimalismo y espacio</p>
+          <div className="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg">
+            <p className="font-bold text-gray-900 dark:text-gray-100">Ejemplos de marcas:</p>
+            <p className="text-gray-800 dark:text-gray-200">🔸 Mercado Libre: Información densa</p>
+            <p className="text-gray-800 dark:text-gray-200">🔸 Apple: Minimalismo y espacio</p>
           </div>
         </div>
       )
@@ -170,33 +170,33 @@ const PresentacionTema2: React.FC = () => {
       subtitle: "",
       content: (
         <div className="space-y-6">
-          <p className="text-lg font-semibold">La regla de oro para paletas efectivas</p>
+          <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">La regla de oro para paletas efectivas</p>
           <div className="space-y-4">
             <div className="flex items-center space-x-4">
-              <div className="w-32 h-20 bg-gray-100 border-2 border-gray-300 flex items-center justify-center font-bold">60%</div>
+              <div className="w-32 h-20 bg-gray-100 dark:bg-gray-600 border-2 border-gray-300 dark:border-gray-500 flex items-center justify-center font-bold text-gray-900 dark:text-gray-100">60%</div>
               <div>
-                <p className="font-semibold">Color Dominante</p>
-                <p className="text-sm text-gray-600">Fondo, base del sitio</p>
+                <p className="font-semibold text-gray-900 dark:text-gray-100">Color Dominante</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Fondo, base del sitio</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
               <div className="w-32 h-20 bg-blue-500 flex items-center justify-center font-bold text-white">30%</div>
               <div>
-                <p className="font-semibold">Color Secundario</p>
-                <p className="text-sm text-gray-600">Secciones, bloques</p>
+                <p className="font-semibold text-gray-900 dark:text-gray-100">Color Secundario</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Secciones, bloques</p>
               </div>
             </div>
             <div className="flex items-center space-x-4">
               <div className="w-32 h-20 bg-orange-500 flex items-center justify-center font-bold text-white">10%</div>
               <div>
-                <p className="font-semibold">Color de Acento</p>
-                <p className="text-sm text-gray-600">CTAs, enlaces importantes</p>
+                <p className="font-semibold text-gray-900 dark:text-gray-100">Color de Acento</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300">CTAs, enlaces importantes</p>
               </div>
             </div>
           </div>
-          <div className="bg-amber-50 p-4 rounded-lg border-2 border-amber-300">
-            <p className="font-bold mb-2">Ejemplo: Tienda de Café</p>
-            <p>60% Blanco/Beige + 30% Café Oscuro + 10% Verde (CTA)</p>
+          <div className="bg-amber-50 dark:bg-amber-900/30 p-4 rounded-lg border-2 border-amber-300 dark:border-amber-600">
+            <p className="font-bold mb-2 text-amber-800 dark:text-amber-200">Ejemplo: Tienda de Café</p>
+            <p className="text-amber-700 dark:text-amber-300">60% Blanco/Beige + 30% Café Oscuro + 10% Verde (CTA)</p>
           </div>
         </div>
       )
@@ -206,41 +206,41 @@ const PresentacionTema2: React.FC = () => {
       subtitle: "90% de decisiones de compra están influenciadas por el color",
       content: (
         <div className="grid grid-cols-2 gap-4 text-sm">
-          <div className="bg-red-100 p-4 rounded-lg border-2 border-red-500">
-            <p className="font-bold text-red-700 mb-2">🔴 ROJO</p>
-            <p className="font-semibold">Urgencia, pasión, energía</p>
-            <p className="text-xs mt-2">Uso: Ofertas, descuentos, clearance</p>
-            <p className="text-xs">Ej: Coca-Cola, YouTube</p>
+          <div className="bg-red-100 dark:bg-red-900/30 p-4 rounded-lg border-2 border-red-500 dark:border-red-400">
+            <p className="font-bold text-red-700 dark:text-red-300 mb-2">🔴 ROJO</p>
+            <p className="font-semibold text-gray-900 dark:text-gray-100">Urgencia, pasión, energía</p>
+            <p className="text-xs mt-2 text-gray-700 dark:text-gray-300">Uso: Ofertas, descuentos, clearance</p>
+            <p className="text-xs text-gray-700 dark:text-gray-300">Ej: Coca-Cola, YouTube</p>
           </div>
-          <div className="bg-blue-100 p-4 rounded-lg border-2 border-blue-500">
-            <p className="font-bold text-blue-700 mb-2">🔵 AZUL</p>
-            <p className="font-semibold">Confianza, seguridad</p>
-            <p className="text-xs mt-2">Uso: Bancos, tech, salud</p>
-            <p className="text-xs">Ej: Facebook, PayPal</p>
+          <div className="bg-blue-100 dark:bg-blue-900/30 p-4 rounded-lg border-2 border-blue-500 dark:border-blue-400">
+            <p className="font-bold text-blue-700 dark:text-blue-300 mb-2">🔵 AZUL</p>
+            <p className="font-semibold text-gray-900 dark:text-gray-100">Confianza, seguridad</p>
+            <p className="text-xs mt-2 text-gray-700 dark:text-gray-300">Uso: Bancos, tech, salud</p>
+            <p className="text-xs text-gray-700 dark:text-gray-300">Ej: Facebook, PayPal</p>
           </div>
-          <div className="bg-green-100 p-4 rounded-lg border-2 border-green-500">
-            <p className="font-bold text-green-700 mb-2">🟢 VERDE</p>
-            <p className="font-semibold">Salud, naturaleza</p>
-            <p className="text-xs mt-2">Uso: Orgánicos, eco, finanzas</p>
-            <p className="text-xs">Ej: WhatsApp, Whole Foods</p>
+          <div className="bg-green-100 dark:bg-green-900/30 p-4 rounded-lg border-2 border-green-500 dark:border-green-400">
+            <p className="font-bold text-green-700 dark:text-green-300 mb-2">🟢 VERDE</p>
+            <p className="font-semibold text-gray-900 dark:text-gray-100">Salud, naturaleza</p>
+            <p className="text-xs mt-2 text-gray-700 dark:text-gray-300">Uso: Orgánicos, eco, finanzas</p>
+            <p className="text-xs text-gray-700 dark:text-gray-300">Ej: WhatsApp, Whole Foods</p>
           </div>
-          <div className="bg-orange-100 p-4 rounded-lg border-2 border-orange-500">
-            <p className="font-bold text-orange-700 mb-2">🟠 NARANJA</p>
-            <p className="font-semibold">Acción, entusiasmo</p>
-            <p className="text-xs mt-2">Uso: CTAs, suscripciones</p>
-            <p className="text-xs">Ej: Amazon (botón)</p>
+          <div className="bg-orange-100 dark:bg-orange-900/30 p-4 rounded-lg border-2 border-orange-500 dark:border-orange-400">
+            <p className="font-bold text-orange-700 dark:text-orange-300 mb-2">🟠 NARANJA</p>
+            <p className="font-semibold text-gray-900 dark:text-gray-100">Acción, entusiasmo</p>
+            <p className="text-xs mt-2 text-gray-700 dark:text-gray-300">Uso: CTAs, suscripciones</p>
+            <p className="text-xs text-gray-700 dark:text-gray-300">Ej: Amazon (botón)</p>
           </div>
-          <div className="bg-yellow-100 p-4 rounded-lg border-2 border-yellow-500">
-            <p className="font-bold text-yellow-700 mb-2">🟡 AMARILLO</p>
-            <p className="font-semibold">Optimismo, claridad</p>
-            <p className="text-xs mt-2">Uso: Atención, avisos</p>
-            <p className="text-xs">Ej: McDonald, IKEA</p>
+          <div className="bg-yellow-100 dark:bg-yellow-900/30 p-4 rounded-lg border-2 border-yellow-500 dark:border-yellow-400">
+            <p className="font-bold text-yellow-700 dark:text-yellow-300 mb-2">🟡 AMARILLO</p>
+            <p className="font-semibold text-gray-900 dark:text-gray-100">Optimismo, claridad</p>
+            <p className="text-xs mt-2 text-gray-700 dark:text-gray-300">Uso: Atención, avisos</p>
+            <p className="text-xs text-gray-700 dark:text-gray-300">Ej: McDonald, IKEA</p>
           </div>
-          <div className="bg-gray-900 p-4 rounded-lg border-2 border-gray-700 text-white">
+          <div className="bg-gray-900 dark:bg-gray-100 p-4 rounded-lg border-2 border-gray-700 dark:border-gray-300 text-white dark:text-gray-900">
             <p className="font-bold mb-2">⚫ NEGRO</p>
             <p className="font-semibold">Elegancia, lujo</p>
-            <p className="text-xs mt-2">Uso: Moda, premium</p>
-            <p className="text-xs">Ej: Chanel, Apple</p>
+            <p className="text-xs mt-2 text-gray-300 dark:text-gray-700">Uso: Moda, premium</p>
+            <p className="text-xs text-gray-300 dark:text-gray-700">Ej: Chanel, Apple</p>
           </div>
         </div>
       )
@@ -254,30 +254,30 @@ const PresentacionTema2: React.FC = () => {
       subtitle: "",
       content: (
         <div className="space-y-4">
-          <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
-            <p className="font-bold text-green-800">🥗 Comida Saludable</p>
-            <p className="text-sm">Verde + Blanco + Naranja</p>
-            <p className="text-xs text-gray-600">Razón: Naturaleza + Energía</p>
+          <div className="bg-green-50 dark:bg-green-900/30 p-4 rounded-lg border-l-4 border-green-500">
+            <p className="font-bold text-green-800 dark:text-green-300">🥗 Comida Saludable</p>
+            <p className="text-sm text-gray-900 dark:text-gray-100">Verde + Blanco + Naranja</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400">Razón: Naturaleza + Energía</p>
           </div>
-          <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
-            <p className="font-bold text-blue-800">💻 Tecnología</p>
-            <p className="text-sm">Azul + Gris + Cyan/Verde</p>
-            <p className="text-xs text-gray-600">Razón: Confianza + Innovación</p>
+          <div className="bg-blue-50 dark:bg-blue-900/30 p-4 rounded-lg border-l-4 border-blue-500">
+            <p className="font-bold text-blue-800 dark:text-blue-300">💻 Tecnología</p>
+            <p className="text-sm text-gray-900 dark:text-gray-100">Azul + Gris + Cyan/Verde</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400">Razón: Confianza + Innovación</p>
           </div>
-          <div className="bg-gray-900 text-white p-4 rounded-lg border-l-4 border-yellow-500">
+          <div className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 p-4 rounded-lg border-l-4 border-yellow-500">
             <p className="font-bold">👗 Moda/Lujo</p>
             <p className="text-sm">Negro + Blanco + Dorado</p>
-            <p className="text-xs text-gray-300">Razón: Elegancia + Exclusividad</p>
+            <p className="text-xs text-gray-300 dark:text-gray-700">Razón: Elegancia + Exclusividad</p>
           </div>
-          <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
-            <p className="font-bold text-yellow-800">🧸 Infantil</p>
-            <p className="text-sm">Amarillo + Azul Cielo + Rojo</p>
-            <p className="text-xs text-gray-600">Razón: Alegría + Seguridad</p>
+          <div className="bg-yellow-50 dark:bg-yellow-900/30 p-4 rounded-lg border-l-4 border-yellow-500">
+            <p className="font-bold text-yellow-800 dark:text-yellow-300">🧸 Infantil</p>
+            <p className="text-sm text-gray-900 dark:text-gray-100">Amarillo + Azul Cielo + Rojo</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400">Razón: Alegría + Seguridad</p>
           </div>
-          <div className="bg-green-50 p-4 rounded-lg border-l-4 border-blue-600">
-            <p className="font-bold text-blue-800">💰 Finanzas</p>
-            <p className="text-sm">Azul Oscuro + Verde + Blanco</p>
-            <p className="text-xs text-gray-600">Razón: Confianza + Crecimiento</p>
+          <div className="bg-green-50 dark:bg-green-900/30 p-4 rounded-lg border-l-4 border-blue-600">
+            <p className="font-bold text-blue-800 dark:text-blue-300">💰 Finanzas</p>
+            <p className="text-sm text-gray-900 dark:text-gray-100">Azul Oscuro + Verde + Blanco</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400">Razón: Confianza + Crecimiento</p>
           </div>
         </div>
       )
@@ -401,13 +401,13 @@ const PresentacionTema2: React.FC = () => {
         <div className="text-center space-y-8">
           <Star className="w-32 h-32 mx-auto text-yellow-500" />
           <div>
-            <p className="text-4xl font-bold text-gray-800 mb-4">¿Preguntas?</p>
-            <p className="text-xl text-gray-600">Recuerden completar la tarea asincrónica</p>
+            <p className="text-4xl font-bold text-gray-800 dark:text-gray-200 mb-4">¿Preguntas?</p>
+            <p className="text-xl text-gray-600 dark:text-gray-300">Recuerden completar la tarea asincrónica</p>
           </div>
-          <div className="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-lg">
-            <p className="text-2xl font-bold">¡El diseño que convierte comienza hoy!</p>
+          <div className="bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 p-6 rounded-lg">
+            <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">¡El diseño que convierte comienza hoy!</p>
           </div>
-          <div className="text-sm text-gray-600">
+          <div className="text-sm text-gray-600 dark:text-gray-400">
             <p>Profesor: ITSAE Ecuador</p>
             <p>Diseño Web para Marketing Digital</p>
           </div>

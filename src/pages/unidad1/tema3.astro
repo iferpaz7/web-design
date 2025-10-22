@@ -3,8 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout title="Tema 3: Arquitectura de Información, Accesibilidad y Usabilidad - ITSAE">
-	<main class="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
-		<header class="bg-gradient-to-r from-itsae-accent to-orange-500 text-white py-8">
+	<main class="min-h-screen bg-gradient-to-br from-orange-50 to-red-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+		<header class="bg-gradient-to-r from-itsae-accent to-orange-500 dark:from-orange-600 dark:to-red-600 text-white py-8">
 			<div class="max-w-6xl mx-auto px-6">
 				<nav class="mb-4">
 					<a href="/" class="text-orange-100 hover:text-white transition-colors">← Volver al inicio</a>
@@ -16,20 +16,20 @@ import Layout from '../../layouts/Layout.astro';
 		</header>
 
 		<div class="max-w-6xl mx-auto px-6 py-12">
-			<div class="bg-white rounded-2xl shadow-xl p-8">
+			<div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 transition-colors duration-300">
 				<div class="text-center mb-8">
-					<div class="w-24 h-24 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+					<div class="w-24 h-24 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
 						<span class="text-4xl">🏗️</span>
 					</div>
-					<h2 class="text-3xl font-bold text-gray-800 mb-4">Cómo Organizar Información, Accesibilidad WCAG y Usabilidad Web</h2>
-					<p class="text-lg text-gray-600">Construyendo sitios web que todos puedan usar y entender</p>
+					<h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-4">Cómo Organizar Información, Accesibilidad WCAG y Usabilidad Web</h2>
+					<p class="text-lg text-gray-600 dark:text-gray-300">Construyendo sitios web que todos puedan usar y entender</p>
 				</div>
 
 				<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
 					<!-- Arquitectura de Información -->
-					<div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
-						<h3 class="text-xl font-semibold text-blue-800 mb-4">🏛️ Arquitectura de Información</h3>
-						<ul class="space-y-2 text-gray-700">
+					<div class="bg-blue-50 dark:bg-blue-900/30 p-6 rounded-lg border-l-4 border-blue-500">
+						<h3 class="text-xl font-semibold text-blue-800 dark:text-blue-300 mb-4">🏛️ Arquitectura de Información</h3>
+						<ul class="space-y-2 text-gray-700 dark:text-gray-300">
 							<li>• <strong>Estructura lógica de contenidos:</strong> Organización jerárquica clara</li>
 							<li>• <strong>Navegación intuitiva:</strong> Menús que el usuario entiende</li>
 							<li>• <strong>Wireframing conceptual:</strong> Bocetos de estructura</li>
@@ -39,9 +39,9 @@ import Layout from '../../layouts/Layout.astro';
 					</div>
 
 					<!-- Accesibilidad Web -->
-					<div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
-						<h3 class="text-xl font-semibold text-green-800 mb-4">♿ Accesibilidad Web (WCAG 2.1 AA)</h3>
-						<ul class="space-y-2 text-gray-700">
+					<div class="bg-green-50 dark:bg-green-900/30 p-6 rounded-lg border-l-4 border-green-500">
+						<h3 class="text-xl font-semibold text-green-800 dark:text-green-300 mb-4">♿ Accesibilidad Web (WCAG 2.1 AA)</h3>
+						<ul class="space-y-2 text-gray-700 dark:text-gray-300">
 							<li>• <strong>Importancia legal y comercial:</strong> Más conversiones + mejor SEO</li>
 							<li>• <strong>Contraste de colores:</strong> Mínimo 4.5:1 para texto</li>
 							<li>• <strong>Navegación por teclado:</strong> Tab, Enter, flechas</li>
