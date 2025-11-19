@@ -1,20 +1,28 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProximamentePage from '../../components/ProximamentePage.astro';
+import PresentacionFigma from '../../components/PresentacionFigma';
 ---
 
-<Layout title="Unidad 2 - Tema 1: Principios de UX - ITSAE">
-	<ProximamentePage 
-		unidad={2}
-		titulo="Tema 1: Principios de UX"
-		descripcion="Experiencia de Usuario (UX/UI)"
-		color="blue"
-		emoji="🎯"
-		contenido={[
-			"Fundamentos de experiencia de usuario",
-			"Metodologías de investigación UX", 
-			"Personas y user journeys",
-			"Principios de usabilidad"
-		]}
-	/>
+<Layout title="Unidad 2 - Tema 1: Introducción a Figma - ITSAE">
+	<main>
+		<!-- Navegación -->
+		<div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-4">
+			<div class="max-w-6xl mx-auto px-6">
+				<nav class="flex items-center justify-between">
+					<a href="/" class="text-blue-100 hover:text-white transition-colors">← Volver al inicio</a>
+					<div class="text-center">
+						<h1 class="text-xl font-bold">Unidad 2 - Tema 1</h1>
+						<p class="text-sm text-blue-100">Introducción a Figma y Herramientas Básicas</p>
+					</div>
+					<div class="text-right text-sm text-blue-100">
+						<p>Semana 5</p>
+						<p>ITSAE</p>
+					</div>
+				</nav>
+			</div>
+		</div>
+
+		<!-- Presentación -->
+		<PresentacionFigma client:load />
+	</main>
 </Layout>
