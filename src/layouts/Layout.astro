@@ -1,9 +1,14 @@
 ---
+import '../styles/globals.css';
+import Navbar from '../components/Navbar.tsx';
+import Footer from '../components/Footer.tsx';
+
 export interface Props {
 	title?: string;
 }
 
 const { title = "Diseño Web para Marketing - ITSAE" } = Astro.props;
+const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -18,15 +23,13 @@ const { title = "Diseño Web para Marketing - ITSAE" } = Astro.props;
 		<script is:inline src="/theme-init.js"></script>
 	</head>
 	<body class="font-sans antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+		<!-- Navbar Component -->
+		<Navbar currentPath={currentPath} client:load />
+		
+		<!-- Main Content -->
 		<slot />
 		
-		<!-- Footer -->
-		<footer class="bg-gray-800 dark:bg-gray-950 text-white py-8 mt-12 transition-colors duration-300">
-			<div class="max-w-6xl mx-auto px-6 text-center">
-				<p class="text-lg font-semibold mb-2">Instituto Tecnológico Superior Adventista del Ecuador</p>
-				<p class="text-gray-300 dark:text-gray-400">Diseño Web para Marketing Digital</p>
-				<p class="text-sm text-gray-400 dark:text-gray-500 mt-4">© 2024 ITSAE Ecuador - Todos los derechos reservados</p>
-			</div>
-		</footer>
+		<!-- Footer Component -->
+		<Footer client:load />
 	</body>
 </html>

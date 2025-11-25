@@ -1,20 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProximamentePage from '../../components/ProximamentePage.astro';
+import PresentacionSemana6 from '../../components/PresentacionSemana6.tsx';
 ---
 
-<Layout title="Unidad 2 - Tema 2: Wireframes y Prototipos - ITSAE">
-	<ProximamentePage 
-		unidad={2}
-		titulo="Tema 2: Wireframes y Prototipos"
-		descripcion="Experiencia de Usuario (UX/UI)"
-		color="blue"
-		emoji="📐"
-		contenido={[
-			"Creación de wireframes efectivos",
-			"Herramientas de prototipado", 
-			"Flujos de usuario (user flows)",
-			"Testing de prototipos"
-		]}
-	/>
+<Layout title="Unidad 2 - Tema 2: Componentes y Design Systems - ITSAE">
+	<PresentacionSemana6 client:load />
 </Layout>

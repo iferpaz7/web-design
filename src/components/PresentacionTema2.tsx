@@ -408,7 +408,7 @@ const PresentacionTema2: React.FC = () => {
             <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">¡El diseño que convierte comienza hoy!</p>
           </div>
           <div className="text-sm text-gray-600 dark:text-gray-400">
-            <p>Profesor: ITSAE Ecuador</p>
+            <p>Profesor: Ing. Ivan Paz</p>
             <p>Diseño Web para Marketing Digital</p>
           </div>
         </div>

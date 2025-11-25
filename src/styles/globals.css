@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  /* Enable dark mode with class strategy */
+  --color-scheme: light dark;
+  
+  /* ITSAE - Educación Adventista Color Palette */
+  /* Colores principales inspirados en la identidad adventista */
+  --color-itsae-primary: #003366;        /* Azul institucional adventista */
+  --color-itsae-primary-light: #004d99;  /* Azul más claro */
+  --color-itsae-primary-dark: #002244;   /* Azul oscuro */
+  --color-itsae-secondary: #0066cc;      /* Azul secundario */
+  --color-itsae-accent: #FFB81C;         /* Dorado/Amarillo adventista */
+  --color-itsae-success: #10b981;        /* Verde esperanza */
+  --color-itsae-warning: #f59e0b;        /* Naranja advertencia */
+  --color-itsae-error: #ef4444;          /* Rojo error */
+  
+  /* Primary color palette - Azul Adventista */
+  --color-primary-50: #e6f0f7;
+  --color-primary-100: #cce0ef;
+  --color-primary-200: #99c2df;
+  --color-primary-300: #66a3cf;
+  --color-primary-400: #3385bf;
+  --color-primary-500: #0066cc;          /* Azul principal */
+  --color-primary-600: #0052a3;
+  --color-primary-700: #004080;          /* Azul medio */
+  --color-primary-800: #003366;          /* Azul institucional */
+  --color-primary-900: #002244;
+  --color-primary-950: #001122;
+  
+  /* Accent color palette - Dorado Adventista */
+  --color-accent-50: #fffbf0;
+  --color-accent-100: #fff6db;
+  --color-accent-200: #ffedba;
+  --color-accent-300: #ffe399;
+  --color-accent-400: #ffd45c;
+  --color-accent-500: #FFB81C;          /* Dorado adventista */
+  --color-accent-600: #e09a00;
+  --color-accent-700: #c28600;
+  --color-accent-800: #a37200;
+  --color-accent-900: #855e00;
+  
+  /* Success color palette - Verde */
+  --color-success-50: #ecfdf5;
+  --color-success-100: #d1fae5;
+  --color-success-200: #a7f3d0;
+  --color-success-300: #6ee7b7;
+  --color-success-400: #34d399;
+  --color-success-500: #10b981;
+  --color-success-600: #059669;
+  --color-success-700: #047857;
+  --color-success-800: #065f46;
+  --color-success-900: #064e3b;
+  
+  /* Font family */
+  --font-family-sans: 'Inter', 'Open Sans', system-ui, sans-serif;
+  --font-family-heading: 'Montserrat', 'Inter', sans-serif;
+}
+
+@variant dark (&:where(.dark, .dark *));
+

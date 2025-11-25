@@ -1500,7 +1500,7 @@ const PresentacionTema3: React.FC = () => {
             </p>
           </div>
           <div className="text-sm text-gray-600 dark:text-gray-400">
-            <p>Profesor: ITSAE Ecuador</p>
+            <p>Profesor: Ing. Ivan Paz</p>
             <p>Diseño Web para Marketing Digital</p>
           </div>
         </div>
