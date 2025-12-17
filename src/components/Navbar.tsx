@@ -39,8 +39,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
       items: [
         { label: 'Tema 1: Introducción a Figma', href: '/unidad2/tema1' },
         { label: 'Tema 2: Componentes y Design Systems', href: '/unidad2/tema2' },
-        { label: 'Tema 3: Wireframes', href: '/unidad2/tema3' },
-        { label: 'Tema 4: Testing UX', href: '/unidad2/tema4' }
+        { label: 'Tema 3: Prototipos Interactivos y User Flows', href: '/unidad2/tema3' },
+        { label: 'Tema 4: Mockups de Alta Fidelidad y Documentación', href: '/unidad2/tema4' }
       ]
     },
     {
