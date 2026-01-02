@@ -21,8 +21,8 @@ El curso está organizado en **4 unidades** con **4 temas** cada una:
 - **Tema 4**: Accesibilidad Web
 
 ### Unidad 3: Desarrollo y Tecnologías
-- **Tema 1**: HTML5 y CSS3
-- **Tema 2**: JavaScript y Frameworks
+- **Tema 1**: WordPress + Elementor (Setup Inicial)
+- **Tema 2**: Layouts Responsivos con Elementor
 - **Tema 3**: Responsive Design
 - **Tema 4**: Performance y SEO
 
