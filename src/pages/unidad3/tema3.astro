@@ -1,20 +1,28 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProximamentePage from '../../components/ProximamentePage.astro';
+import PresentacionSemana11 from '../../components/PresentacionSemana11.tsx';
 ---
 
-<Layout title="Unidad 3 - Tema 3: Responsive Design - ITSAE">
-	<ProximamentePage 
-		unidad={3}
-		titulo="Tema 3: Responsive Design"
-		descripcion="Desarrollo y Tecnologías"
-		color="green"
-		emoji="📱"
-		contenido={[
-			"Mobile-first design",
-			"Media queries avanzadas", 
-			"Imágenes responsivas",
-			"Testing en múltiples dispositivos"
-		]}
-	/>
+<Layout title="Unidad 3 - Tema 3: Estilización Avanzada y Efectos Visuales - ITSAE">
+	<main>
+		<!-- Navegación -->
+		<div class="bg-gradient-to-r from-emerald-600 to-blue-600 text-white py-4">
+			<div class="max-w-6xl mx-auto px-6">
+				<nav class="flex items-center justify-between">
+					<a href="/" class="text-emerald-100 hover:text-white transition-colors">← Volver al inicio</a>
+					<div class="text-center">
+						<h1 class="text-xl font-bold">Unidad 3 - Tema 3</h1>
+						<p class="text-sm text-emerald-100">Estilización Avanzada y Efectos Visuales</p>
+					</div>
+					<div class="text-right text-sm text-emerald-100">
+						<p>Semana 11</p>
+						<p>ITSAE</p>
+					</div>
+				</nav>
+			</div>
+		</div>
+
+		<!-- Presentación -->
+		<PresentacionSemana11 client:load />
+	</main>
 </Layout>
