@@ -1,20 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProximamentePage from '../../components/ProximamentePage.astro';
+import PresentacionSemana12 from '../../components/PresentacionSemana12';
 ---
 
-<Layout title="Unidad 3 - Tema 4: Performance y SEO - ITSAE">
-	<ProximamentePage 
-		unidad={3}
-		titulo="Tema 4: Performance y SEO"
-		descripcion="Desarrollo y Tecnologías"
-		color="green"
-		emoji="🚀"
-		contenido={[
-			"Optimización de velocidad de carga",
-			"SEO técnico", 
-			"Core Web Vitals",
-			"Herramientas de análisis"
-		]}
-	/>
+<Layout title="Unidad 3 - Tema 4: Formularios, Plugins y SEO - ITSAE">
+	<PresentacionSemana12 client:load />
 </Layout>

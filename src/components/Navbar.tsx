@@ -49,7 +49,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
         { label: 'Tema 1: WordPress + Elementor', href: '/unidad3/tema1' },
         { label: 'Tema 2: Layouts Responsivos', href: '/unidad3/tema2' },
         { label: 'Tema 3: Estilización Avanzada', href: '/unidad3/tema3' },
-        { label: 'Tema 4: Performance y SEO', href: '/unidad3/tema4' }
+        { label: 'Tema 4: Formularios, Plugins y SEO', href: '/unidad3/tema4' }
       ]
     },
     {
