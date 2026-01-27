@@ -1,20 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import ProximamentePage from '../../components/ProximamentePage.astro';
+import PresentacionCRO from '../../components/PresentacionCRO';
 ---
 
-<Layout title="Unidad 4 - Tema 2: E-commerce y Conversión - ITSAE">
-	<ProximamentePage 
-		unidad={4}
-		titulo="Tema 2: E-commerce y Conversión"
-		descripción="Marketing Digital y Conversión"
-		color="purple"
-		emoji="🛒"
-		contenido={[
-			"Diseño de tiendas online",
-			"Optimización del checkout", 
-			"Estrategias de cross-selling",
-			"Análisis de embudo de conversión"
-		]}
-	/>
+<Layout title="Unidad 4 - Tema 2: CRO - Optimización de Conversiones - ITSAE">
+	<PresentacionCRO client:load />
 </Layout>
