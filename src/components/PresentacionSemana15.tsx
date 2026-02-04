@@ -603,7 +603,7 @@ const PresentacionSemana15: React.FC = () => {
           <div className="w-full h-full bg-gradient-to-br from-primary-800 to-primary-600 dark:from-primary-900 dark:to-primary-700 text-white p-8 flex flex-col justify-center">
             <div className="absolute top-4 right-8 bg-accent-500 bg-opacity-20 dark:bg-accent-400 dark:bg-opacity-30 px-3 py-1 rounded-full text-accent-400 dark:text-accent-300 font-bold text-sm">15/15</div>
             <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-accent-400 dark:text-accent-300 border-b-4 border-accent-400 dark:border-accent-300 pb-3">🎓 Evaluación Final - 10 Febrero</h2>
-            <h3 className="text-2xl font-semibold mb-4 text-accent-200 dark:text-accent-200">Proyecto Final (100 puntos):</h3>
+            <h3 className="text-2xl font-semibold mb-4 text-accent-200 dark:text-accent-200">Proyecto Final (10 puntos):</h3>
             <div className="bg-primary-700 bg-opacity-50 dark:bg-primary-800 dark:bg-opacity-60 rounded-xl overflow-hidden mb-6">
               <table className="w-full text-sm">
                 <thead>
