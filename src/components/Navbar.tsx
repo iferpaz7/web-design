@@ -57,8 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
       items: [
         { label: 'Tema 1: WooCommerce - E-Commerce', href: '/unidad4/tema1' },
         { label: 'Tema 2: CRO - Optimización de Conversiones', href: '/unidad4/tema2' },
-        { label: 'Tema 3: Analytics', href: '/unidad4/tema3' },
-        { label: 'Tema 4: Proyecto Final', href: '/unidad4/tema4' }
+        { label: 'Tema 3: Email Marketing, Analytics y Publicación', href: '/unidad4/tema3' }
       ]
     }
   ];
