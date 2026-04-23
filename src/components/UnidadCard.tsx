@@ -14,7 +14,7 @@ interface Tema {
 interface UnidadCardProps {
   numero: number;
   titulo: string;
-  descripcion: string;
+  descripcion: string; // objetivo inspirador de la unidad
   color: UnidadColor;
   iconName: 'BookOpen' | 'Monitor' | 'Palette' | 'Zap';
   temas: Tema[];
@@ -84,10 +84,11 @@ const UnidadCard: React.FC<UnidadCardProps> = ({
   return (
     <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
       {/* Header con gradiente */}
-      <div className={`bg-gradient-to-r ${colors.gradient} p-4 sm:p-6`}>
+      <div className={`bg-linear-to-r ${colors.gradient} p-4 sm:p-6`}>
         <Icon className="w-10 h-10 sm:w-12 sm:h-12 text-white mb-4" />
-        <h2 className="text-xl sm:text-2xl font-bold text-white">Unidad {numero}</h2>
-        <p className={`${colors.text} text-sm sm:text-base`}>{titulo}</p>
+        <div className="text-xs font-semibold text-white/70 uppercase tracking-wider mb-1">Unidad {numero}</div>
+        <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">{titulo}</h2>
+        <p className={`${colors.text} text-sm sm:text-sm leading-relaxed opacity-90`}>{descripcion}</p>
       </div>
 
       {/* Lista de temas */}
@@ -111,7 +112,7 @@ const UnidadCard: React.FC<UnidadCardProps> = ({
                 : 'text-gray-500 dark:text-gray-400'
               }
             `}>
-              {tema.disponible ? tema.titulo : `Tema ${tema.numero}: Próximamente`}
+              {tema.disponible ? `Tema ${tema.numero}: ${tema.titulo}` : `Tema ${tema.numero}: Próximamente`}
             </h3>
             <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
               {tema.descripcion}

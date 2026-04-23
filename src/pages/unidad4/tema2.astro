@@ -1,8 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import PresentacionCRO from '../../components/PresentacionCRO';
+import TemaDetalle from '../../components/TemaDetalle.astro';
+import { syllabusUnits } from '../../data/syllabus';
+
+const unit = syllabusUnits[3];
+const tema = unit.temas[1];
 ---
 
-<Layout title="Unidad 4 - Tema 2: CRO - Optimización de Conversiones - ITSAE">
-	<PresentacionCRO client:load />
+<Layout title={`Unidad ${unit.numero} - Tema ${tema.numero}: ${tema.titulo} - ITSAE`}>
+  <TemaDetalle unit={unit} tema={tema} />
 </Layout>

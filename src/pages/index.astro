@@ -3,168 +3,241 @@ import Layout from "../layouts/Layout.astro";
 import UnidadCard from "../components/UnidadCard.tsx";
 import StatCard from "../components/StatCard.tsx";
 import Card from "../components/Card.tsx";
-import { BookOpen, Palette, Monitor, Zap } from "lucide-react";
+import { syllabusUnits } from "../data/syllabus";
 
-// Data structure para las unidades (siguiendo principios de componentes reutilizables)
-const unidades = [
-  {
-    numero: 1,
-    titulo: "Fundamentos del Diseño Web",
-    descripcion: "Fundamentos del Diseño Web",
-    color: "amber" as const,
-    iconName: "BookOpen" as const,
-    temas: [
-      { numero: 1, titulo: "Tema 1: Introducción al Diseño Web", descripcion: "Conceptos básicos y metodologías", href: "/unidad1/tema1", disponible: true },
-      { numero: 2, titulo: "Tema 2: Principios de Diseño Visual", descripcion: "Contraste, jerarquía, psicología del color", href: "/unidad1/tema2", disponible: true },
-      { numero: 3, titulo: "Tema 3: Arquitectura de Información", descripcion: "Accesibilidad WCAG y Usabilidad Web", href: "/unidad1/tema3", disponible: true },
-      { numero: 4, titulo: "Tema 4: UX, Psicología de Conversión y Metodología", descripcion: "UX/UI, Psicología de Conversión y Design Thinking", href: "/unidad1/tema4", disponible: true }
-    ]
-  },
-  {
-    numero: 2,
-    titulo: "Experiencia de Usuario (UX/UI)",
-    descripcion: "Experiencia de Usuario (UX/UI)",
-    color: "blue" as const,
-    iconName: "Monitor" as const,
-    temas: [
-      { numero: 1, titulo: "Tema 1: Introducción a Figma", descripcion: "Herramientas básicas, grid 8px, diseño responsivo", href: "/unidad2/tema1", disponible: true },
-      { numero: 2, titulo: "Tema 2: Componentes y Design Systems", descripcion: "Design tokens, componentes reutilizables, biblioteca Figma", href: "/unidad2/tema2", disponible: true },
-      { numero: 3, titulo: "Tema 3: Prototipos Interactivos y User Flows", descripcion: "Interacciones, animaciones, flujos de compra", href: "/unidad2/tema3", disponible: true },
-      { numero: 4, titulo: "Tema 4: Mockups de Alta Fidelidad y Documentación", descripcion: "Mockups listos para handoff, specs y exportables", href: "/unidad2/tema4", disponible: true }
-    ]
-  },
-  {
-    numero: 3,
-    titulo: "Desarrollo y Tecnologías",
-    descripcion: "Desarrollo y Tecnologías",
-    color: "emerald" as const,
-    iconName: "Palette" as const,
-    temas: [
-      { numero: 1, titulo: "Tema 1: WordPress + Elementor", descripcion: "Setup inicial con LocalWP + Elementor", href: "/unidad3/tema1", disponible: true },
-      { numero: 2, titulo: "Tema 2: Layouts Responsivos", descripcion: "Sections, Columns y Widgets en Elementor", href: "/unidad3/tema2", disponible: true },
-      { numero: 3, titulo: "Tema 3: Estilización Avanzada", descripcion: "Tipografía, Hover Effects y Animaciones", href: "/unidad3/tema3", disponible: true },
-      { numero: 4, titulo: "Tema 4: Formularios, Plugins y SEO", descripcion: "Formularios, Plugins Esenciales y SEO Técnico", href: "/unidad3/tema4", disponible: true }
-    ]
-  },
-  {
-    numero: 4,
-    titulo: "Marketing Digital y Conversión",
-    descripcion: "Marketing Digital y Conversión",
-    color: "purple" as const,
-    iconName: "Zap" as const,
-    temas: [
-      { numero: 1, titulo: "Tema 1: WooCommerce - E-Commerce en WordPress", descripcion: "Tiendas online con WooCommerce", href: "/unidad4/tema1", disponible: true },
-      { numero: 2, titulo: "Tema 2: CRO - Optimización de Conversiones", descripcion: "Conversion Rate Optimization para E-Commerce", href: "/unidad4/tema2", disponible: true },
-      { numero: 3, titulo: "Tema 3: Email Marketing, Analytics y Publicación", descripcion: "Email Marketing, Analytics y Publicación Web", href: "/unidad4/tema3", disponible: true }
-    ]
-  }
-];
+const unidades = syllabusUnits;
 ---
 
-<Layout title="Diseño Web para Marketing - ITSAE">
-  <main
-    class="min-h-screen bg-gradient-to-br from-primary-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300"
-  >
-    <!-- Hero Header -->
-    <header
-      class="bg-gradient-to-r from-primary-800 to-primary-600 dark:from-primary-900 dark:to-primary-700 text-white py-12 sm:py-16 relative overflow-hidden"
-    >
-      <!-- Decorative elements -->
+<Layout title="Diseño Web para Marketing Digital - ITSAE">
+  <main class="min-h-screen bg-linear-to-br from-primary-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+
+    <!-- ===== HERO ===== -->
+    <header class="bg-linear-to-r from-primary-800 to-primary-600 dark:from-primary-900 dark:to-primary-700 text-white py-16 sm:py-24 relative overflow-hidden">
       <div class="absolute inset-0 opacity-10">
         <div class="absolute top-0 right-0 w-96 h-96 bg-accent-400 rounded-full blur-3xl"></div>
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-400 rounded-full blur-3xl"></div>
       </div>
 
       <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
-        <div class="inline-block px-4 py-2 bg-accent-500 rounded-full text-sm font-semibold mb-4">
-          🎓 Curso Completo
+        <div class="inline-block px-4 py-2 bg-accent-500 rounded-full text-sm font-semibold mb-6">
+          🎓 Curso Completo · 100% Online · 100% Práctico
         </div>
-        <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-          Diseño Web para<br />
-          <span class="bg-gradient-to-r from-accent-400 to-accent-200 bg-clip-text text-transparent">
-            Marketing Digital
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          Diseña webs que<br />
+          <span class="bg-linear-to-r from-accent-400 to-accent-200 bg-clip-text text-transparent">
+            venden de verdad
           </span>
         </h1>
-        <p class="text-lg sm:text-xl lg:text-2xl text-primary-100 mb-3 max-w-3xl mx-auto">
-          Instituto Tecnológico Superior Adventista del Ecuador
+
+        <p class="text-lg sm:text-xl lg:text-2xl text-primary-100 mb-4 max-w-3xl mx-auto font-medium">
+          Aprende <strong class="text-white">Diseño Web para Marketing Digital</strong> con un enfoque aplicado: desde estrategia y UX/UI hasta prototipado, publicación viable y medición.
         </p>
-        <p class="text-base sm:text-lg text-primary-200 max-w-2xl mx-auto mb-8">
-          Aprende diseño web profesional con componentes reutilizables, design tokens y sistemas de diseño escalables
+        <p class="text-base sm:text-lg text-primary-200 max-w-2xl mx-auto mb-6">
+          Trabajarás con un proyecto integrador, herramientas accesibles y criterios reales de conversión para construir un activo web funcional y defendible.
         </p>
-        
-        <!-- Quick Stats -->
-        <div class="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8">
-          <div class="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 sm:px-6 sm:py-4">
-            <div class="text-2xl sm:text-3xl font-bold text-accent-400">15</div>
-            <div class="text-xs sm:text-sm text-primary-200">Temas</div>
+        <p class="text-sm sm:text-base text-primary-100/90 max-w-3xl mx-auto mb-10">
+          Cada tema incluye ahora <strong class="text-white">guía de clase y modo presentación web</strong>, para que puedas estudiar, exponer y dictar contenido desde el mismo sitio sin depender de PPTs.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a
+            href="#pensum"
+            class="inline-block bg-accent-500 hover:bg-accent-400 text-white font-bold px-8 py-4 rounded-xl text-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+          >
+            Ver el Temario Completo →
+          </a>
+          <a
+            href="#perfil"
+            class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl text-lg transition-all duration-200 border border-white/20"
+          >
+            ¿Es para mí?
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg px-5 py-4">
+            <div class="text-2xl sm:text-3xl font-bold text-accent-400">18</div>
+            <div class="text-xs sm:text-sm text-primary-200">Semanas planificadas</div>
           </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 sm:px-6 sm:py-4">
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg px-5 py-4">
             <div class="text-2xl sm:text-3xl font-bold text-accent-400">4</div>
-            <div class="text-xs sm:text-sm text-primary-200">Unidades</div>
+            <div class="text-xs sm:text-sm text-primary-200">Unidades formativas</div>
           </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 sm:px-6 sm:py-4">
-            <div class="text-2xl sm:text-3xl font-bold text-accent-400">100%</div>
-            <div class="text-xs sm:text-sm text-primary-200">Práctico</div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg px-5 py-4">
+            <div class="text-2xl sm:text-3xl font-bold text-accent-400">16</div>
+            <div class="text-xs sm:text-sm text-primary-200">Temas del curso</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg px-5 py-4">
+            <div class="text-2xl sm:text-3xl font-bold text-accent-400">2</div>
+            <div class="text-xs sm:text-sm text-primary-200">Exámenes bimestrales</div>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- Unidades -->
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-      <!-- Section Header -->
-      <div class="text-center mb-12">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          Contenido del Curso
-        </h2>
-        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          4 unidades completas con contenido práctico y proyectos reales
-        </p>
-      </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-16 sm:space-y-20">
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-        {unidades.map((unidad) => (
-          <UnidadCard
-            numero={unidad.numero}
-            titulo={unidad.titulo}
-            descripcion={unidad.descripcion}
-            color={unidad.color}
-            iconName={unidad.iconName}
-            temas={unidad.temas}
-            client:load
-          />
-        ))}
-      </div>
+      <!-- ===== PERFIL DEL ESTUDIANTE ===== -->
+      <section id="perfil">
+        <Card padding="lg" hover={false}>
+          <div class="text-center max-w-3xl mx-auto">
+            <span class="inline-block px-3 py-1 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-400 text-sm font-semibold rounded-full mb-4">
+              ¿Para quién es este curso?
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+              Hecho para quienes quieren resultados, no solo conocimiento
+            </h2>
+            <p class="text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              Este curso está diseñado para <strong class="text-gray-800 dark:text-gray-200">estudiantes de marketing digital</strong>, emprendedores y profesionales que necesitan diseñar activos web con criterio estratégico, buena experiencia de usuario y una ruta de publicación viable. No exige programación previa ni depende de licencias costosas: aquí aprendes a resolver objetivos reales con herramientas accesibles y decisiones bien sustentadas.
+            </p>
+          </div>
+        </Card>
+      </section>
 
-      <!-- Información adicional -->
-      <Card className="mt-12 sm:mt-16" padding="lg" hover={false}>
-        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-gray-200 mb-6 sm:mb-8 text-center">
-          ¿Por qué este curso?
-        </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-          <StatCard
-            iconName="BookOpen"
-            title="15 Temas"
-            description="4 unidades con contenido completo"
-            color="primary"
-            client:load
-          />
-          <StatCard
-            iconName="Zap"
-            title="Práctico"
-            description="Ejercicios y proyectos reales"
-            color="success"
-            client:load
-          />
-          <StatCard
-            iconName="Monitor"
-            title="Actualizado"
-            description="Tendencias y herramientas actuales"
-            color="accent"
-            client:load
-          />
+      <!-- ===== QUÉ VAS A LOGRAR ===== -->
+      <section id="logros">
+        <div class="text-center mb-10">
+          <span class="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 text-sm font-semibold rounded-full mb-4">
+            Resultados concretos
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+            Qué vas a lograr al terminar
+          </h2>
         </div>
-      </Card>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <Card padding="lg" hover={true}>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center shrink-0 text-amber-600 dark:text-amber-400 font-bold text-lg">1</div>
+              <div>
+                <h3 class="font-bold text-gray-800 dark:text-gray-200 mb-2">Planificar activos web orientados a conversión</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Aprenderás a definir objetivos, público, propuesta de valor y estructura para que cada página responda a una intención clara.</p>
+              </div>
+            </div>
+          </Card>
+
+          <Card padding="lg" hover={true}>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center shrink-0 text-blue-600 dark:text-blue-400 font-bold text-lg">2</div>
+              <div>
+                <h3 class="font-bold text-gray-800 dark:text-gray-200 mb-2">Prototipar experiencias claras y consistentes</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Trabajarás arquitectura de la información, copy persuasivo y prototipos visuales que puedan validarse antes de publicar.</p>
+              </div>
+            </div>
+          </Card>
+
+          <Card padding="lg" hover={true}>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center shrink-0 text-emerald-600 dark:text-emerald-400 font-bold text-lg">3</div>
+              <div>
+                <h3 class="font-bold text-gray-800 dark:text-gray-200 mb-2">Publicar páginas funcionales con herramientas viables</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Construirás un activo web compartible usando rutas de publicación accesibles y mecanismos simples de contacto o conversión.</p>
+              </div>
+            </div>
+          </Card>
+
+          <Card padding="lg" hover={true}>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center shrink-0 text-purple-600 dark:text-purple-400 font-bold text-lg">4</div>
+              <div>
+                <h3 class="font-bold text-gray-800 dark:text-gray-200 mb-2">Optimizar, medir y sustentar mejoras</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Cerrarás el curso con un activo optimizado, criterios básicos de SEO y medición, y un reporte ejecutivo de mejoras.</p>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      <!-- ===== PÉNSUM / TEMARIO ===== -->
+      <section id="pensum">
+        <div class="text-center mb-12">
+          <span class="inline-block px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-sm font-semibold rounded-full mb-4">
+            Pénsum del Curso
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Contenido del Curso
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            4 unidades formativas · 18 semanas planificadas · 2 evaluaciones bimestrales · Enfoque aplicado y orientado a resultados
+          </p>
+          <p class="text-sm sm:text-base text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mt-4">
+            Cada ruta temática puede usarse en dos formatos: lectura guiada para el estudiante y presentación interactiva para exposición docente.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+          {unidades.map((unidad) => (
+            <UnidadCard
+              numero={unidad.numero}
+              titulo={unidad.titulo}
+              descripcion={unidad.descripcion}
+              color={unidad.color}
+              iconName={unidad.iconName}
+              temas={unidad.temas}
+              client:load
+            />
+          ))}
+        </div>
+      </section>
+
+      <!-- ===== POR QUÉ ESTE CURSO ===== -->
+      <section id="por-que">
+        <Card padding="lg" hover={false}>
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-gray-200 mb-8 text-center">
+            ¿Por qué este curso?
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <StatCard
+              iconName="BookOpen"
+              title="Contenido actualizado"
+              description="Una estructura alineada al sílabo actualizado y al perfil real de estudiantes de marketing digital"
+              color="primary"
+              client:load
+            />
+            <StatCard
+              iconName="Zap"
+              title="100% Práctico"
+              description="Cada tema se conecta con un proyecto integrador y con evidencias concretas por unidad"
+              color="success"
+              client:load
+            />
+            <StatCard
+              iconName="Monitor"
+              title="Guía + presentación"
+              description="El mismo contenido funciona como material de estudio y como presentación web lista para clase"
+              color="accent"
+              client:load
+            />
+          </div>
+        </Card>
+      </section>
+
+      <!-- ===== CTA FINAL ===== -->
+      <section id="cta">
+        <div class="bg-linear-to-r from-primary-800 to-primary-600 dark:from-primary-900 dark:to-primary-700 rounded-2xl p-8 sm:p-12 text-center text-white relative overflow-hidden">
+          <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-accent-400 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary-400 rounded-full blur-3xl"></div>
+          </div>
+          <div class="relative z-10">
+            <h2 class="text-2xl sm:text-4xl font-bold mb-4">
+              Tu próximo proyecto empieza aquí
+            </h2>
+            <p class="text-primary-100 text-base sm:text-lg max-w-2xl mx-auto mb-8">
+              A lo largo del período académico construirás un activo web completo, desde el brief hasta la optimización final. <strong class="text-white">El recorrido empieza aquí.</strong>
+            </p>
+            <a
+              href="#pensum"
+              class="inline-block bg-accent-500 hover:bg-accent-400 text-white font-bold px-10 py-4 rounded-xl text-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            >
+              Explorar el Temario →
+            </a>
+          </div>
+        </div>
+      </section>
+
     </div>
   </main>
 </Layout>

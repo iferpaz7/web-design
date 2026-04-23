@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Menu, X, Home, BookOpen, Monitor, Palette, Zap, ChevronDown } from 'lucide-react';
+import { Menu, X, BookOpen, ChevronDown } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
+import { syllabusUnits } from '../data/syllabus';
 
 interface NavItem {
   label: string;
@@ -25,41 +26,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
       label: 'Inicio',
       href: '/'
     },
-    {
-      label: 'Unidad 1',
-      items: [
-        { label: 'Tema 1: Introducción', href: '/unidad1/tema1' },
-        { label: 'Tema 2: Principios de Diseño', href: '/unidad1/tema2' },
-        { label: 'Tema 3: Arquitectura', href: '/unidad1/tema3' },
-        { label: 'Tema 4: UX y Conversión', href: '/unidad1/tema4' }
-      ]
-    },
-    {
-      label: 'Unidad 2',
-      items: [
-        { label: 'Tema 1: Introducción a Figma', href: '/unidad2/tema1' },
-        { label: 'Tema 2: Componentes y Design Systems', href: '/unidad2/tema2' },
-        { label: 'Tema 3: Prototipos Interactivos y User Flows', href: '/unidad2/tema3' },
-        { label: 'Tema 4: Mockups de Alta Fidelidad y Documentación', href: '/unidad2/tema4' }
-      ]
-    },
-    {
-      label: 'Unidad 3',
-      items: [
-        { label: 'Tema 1: WordPress + Elementor', href: '/unidad3/tema1' },
-        { label: 'Tema 2: Layouts Responsivos', href: '/unidad3/tema2' },
-        { label: 'Tema 3: Estilización Avanzada', href: '/unidad3/tema3' },
-        { label: 'Tema 4: Formularios, Plugins y SEO', href: '/unidad3/tema4' }
-      ]
-    },
-    {
-      label: 'Unidad 4',
-      items: [
-        { label: 'Tema 1: WooCommerce - E-Commerce', href: '/unidad4/tema1' },
-        { label: 'Tema 2: CRO - Optimización de Conversiones', href: '/unidad4/tema2' },
-        { label: 'Tema 3: Email Marketing, Analytics y Publicación', href: '/unidad4/tema3' }
-      ]
-    }
+    ...syllabusUnits.map((unit) => ({
+      label: `Unidad ${unit.numero}`,
+      items: unit.temas.map((tema) => ({
+        label: `Tema ${tema.numero}: ${tema.titulo}`,
+        href: tema.href
+      }))
+    }))
   ];
 
   const toggleDropdown = (label: string) => {
@@ -80,9 +53,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo / Brand */}
-          <div className="flex-shrink-0 flex items-center">
+          <div className="shrink-0 flex items-center">
             <a href="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 bg-gradient-to-r from-primary-600 to-accent-500 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-linear-to-r from-primary-600 to-accent-500 rounded-lg flex items-center justify-center">
                 <BookOpen className="w-6 h-6 text-white" />
               </div>
               <div className="hidden sm:block">
