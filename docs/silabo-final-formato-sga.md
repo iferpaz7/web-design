@@ -51,7 +51,7 @@ Diseñar, prototipar, publicar y optimizar una página web orientada a campaña 
 | 4 | Unidad 1 | Aplicar criterios de calidad para lectura, navegación y adaptación móvil. | Usabilidad, accesibilidad y lectura móvil. | 1 | 1 | 1 |
 | 5 | Unidad 2 | Definir el enfoque del mensaje según audiencia e intención del usuario. | Segmentación, intención del usuario y enfoque del mensaje. | 1 | 1 | 1 |
 | 6 | Unidad 2 | Construir el recorrido del usuario por bloques y secciones. | Arquitectura de la información y recorrido del usuario. | 1 | 1 | 1 |
-| 7 | Unidad 2 | Redactar contenidos persuasivos para cada sección del activo. | Titulares, beneficios, prueba social y llamados a la acción. | 1 | 1 | 1 |
+| 7 | Unidad 2 | Redactar contenidos persuasivos para cada sección de la página web | Titulares, beneficios, prueba social y llamados a la acción. | 1 | 1 | 1 |
 | 8 | Unidad 2 | Traducir la estructura y el contenido en un prototipo visual validable. | Prototipado de baja y media fidelidad. | 1 | 1 | 1 |
 | 9 | Bimestre I | Integrar y evidenciar los aprendizajes alcanzados en las dos primeras unidades. | Examen Bimestre I. | 1 | 1 | 1 |
 | 10 | Unidad 3 | Seleccionar una herramienta viable para la publicación de la página web. | Publicación en nube, constructores visuales y CMS accesibles. | 1 | 1 | 1 |
