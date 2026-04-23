@@ -99,6 +99,8 @@ Instrucciones obligatorias para la generación:
 - En `salidaDocs`, sí incluye la secuencia completa de clase, decisiones pedagógicas, tiempos sugeridos, momentos de apertura y cierre, recomendaciones de conducción, preguntas detonantes y observaciones prácticas para la sesión específica.
 - Cuando generes `salidaDocs`, redacta el contenido en formato Markdown listo para guardarse en `docs/`, con título, metadatos básicos de la clase y secciones claramente identificables.
 - En `salidaCanvasDocs`, redacta un Markdown breve y ordenado, pensado para publicarse en Canvas LMS como recurso de clase, sin instrucciones internas de conducción docente.
+- En `salidaCanvasDocs`, usa texto plano estructurado con encabezados simples, listas y numeración. No uses etiquetas HTML, no uses tablas y no entregues bloques de código.
+- En `salidaCanvasDocs`, prioriza un formato fácil de copiar y pegar tanto en Canvas como en un editor HTML o visual, sin necesidad de limpiar etiquetas o rehacer la estructura.
 - En `salidaCanvasDocs`, incluye obligatoriamente:
    - objetivo de la clase;
    - lista de recursos con nombre, tipo, propósito breve y enlace;
@@ -111,6 +113,7 @@ Instrucciones obligatorias para la generación:
    - presentación: `/presentacion/unidad{n}/tema{m}`
    - imprimir o PDF: `/imprimir/unidad{n}/tema{m}`
 - En `salidaCanvasDocs`, no incluyas bibliografía extensa ni desarrollo completo del roadmap; prioriza usabilidad para el estudiante y facilidad de carga en la plataforma.
+- Cuando incluyas enlaces en `salidaCanvasDocs`, preséntalos en una línea visible y simple con esta forma: `Enlace: [URL](URL)`.
 - Usa esta ruta para el archivo Canvas: `docs/clases/unidad{n}/tema{m}/canvas-{fecha}.md`.
 - Toda bibliografía debe quedar en APA 7.ª edición.
 - No inventes referencias. Si falta información bibliográfica, márcala como pendiente de validación.
@@ -170,9 +173,12 @@ Formato de salida:
 11. `salidaCanvasDocs` en Markdown lista para `docs/`, con:
    - Nombre sugerido del archivo
    - Título de la clase o recurso
+   - Línea breve con asignatura, fecha y docente
    - Objetivo de la clase
    - Sección de recursos
    - Lista de enlaces de apoyo, incluyendo la presentación de la web del curso
+   - Actividad de la clase, si corresponde
+   - Evidencia esperada, si corresponde
    - Nota breve si algún enlace quedó relativo y debe convertirse a URL pública
 12. Indicación breve de uso:
    - Qué parte conviene publicar en la web
