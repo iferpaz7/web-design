@@ -78,7 +78,7 @@ const Footer: React.FC<FooterProps> = ({
             © {year} ITSAE Ecuador - Todos los derechos reservados
           </p>
           <p className="text-xs text-primary-400 dark:text-gray-500 mt-2">
-            Diseñado con sistema de componentes reutilizables
+            Diseño Web para Marketing Digital · 100% Online
           </p>
         </div>
       </div>

@@ -1,8 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import PresentacionSemana12 from '../../components/PresentacionSemana12';
+import TemaDetalle from '../../components/TemaDetalle.astro';
+import { syllabusUnits } from '../../data/syllabus';
+
+const unit = syllabusUnits[2];
+const tema = unit.temas[3];
 ---
 
-<Layout title="Unidad 3 - Tema 4: Formularios, Plugins y SEO - ITSAE">
-	<PresentacionSemana12 client:load />
+<Layout title={`Unidad ${unit.numero} - Tema ${tema.numero}: ${tema.titulo} - ITSAE`}>
+  <TemaDetalle unit={unit} tema={tema} />
 </Layout>

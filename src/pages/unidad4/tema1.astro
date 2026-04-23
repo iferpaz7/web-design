@@ -1,11 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import PresentacionSemana13 from '../../components/PresentacionSemana13.tsx';
+import TemaDetalle from '../../components/TemaDetalle.astro';
+import { syllabusUnits } from '../../data/syllabus';
+
+const unit = syllabusUnits[3];
+const tema = unit.temas[0];
 ---
 
-<Layout title="Unidad 4 - Tema 1: WooCommerce - E-Commerce en WordPress - ITSAE">
-	<main>
-		<!-- Presentación -->
-		<PresentacionSemana13 client:load />
-	</main>
+<Layout title={`Unidad ${unit.numero} - Tema ${tema.numero}: ${tema.titulo} - ITSAE`}>
+  <TemaDetalle unit={unit} tema={tema} />
 </Layout>

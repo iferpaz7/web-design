@@ -1,8 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import PresentacionSemana6 from '../../components/PresentacionSemana6.tsx';
+import TemaDetalle from '../../components/TemaDetalle.astro';
+import { syllabusUnits } from '../../data/syllabus';
+
+const unit = syllabusUnits[1];
+const tema = unit.temas[1];
 ---
 
-<Layout title="Unidad 2 - Tema 2: Componentes y Design Systems - ITSAE">
-	<PresentacionSemana6 client:load />
+<Layout title={`Unidad ${unit.numero} - Tema ${tema.numero}: ${tema.titulo} - ITSAE`}>
+  <TemaDetalle unit={unit} tema={tema} />
 </Layout>

@@ -1,0 +1,62 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import TemaPresentacion from '../../../components/TemaPresentacion';
+import { syllabusUnits } from '../../../data/syllabus';
+
+export function getStaticPaths() {
+  return syllabusUnits.flatMap((unit) =>
+    unit.temas.map((tema) => ({
+      params: {
+        unidad: `unidad${unit.numero}`,
+        tema: `tema${tema.numero}`
+      },
+      props: {
+        unit,
+        tema
+      }
+    }))
+  );
+}
+
+const { unit, tema } = Astro.props;
+const printHref = `/imprimir${tema.href}`;
+---
+
+<Layout title={`Presentación · Unidad ${unit.numero} · Tema ${tema.numero} - ITSAE`} hideChrome={true}>
+  <main class="min-h-screen bg-linear-to-br from-slate-100 via-white to-slate-200 px-4 py-6 dark:from-gray-950 dark:via-gray-900 dark:to-gray-900 sm:px-6">
+    <div class="mx-auto max-w-7xl space-y-6">
+      <div class="flex flex-col gap-4 rounded-3xl border border-gray-200 bg-white/90 p-5 shadow-lg backdrop-blur dark:border-gray-700 dark:bg-gray-900/85 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.24em] text-gray-500 dark:text-gray-400">Ruta de exposición</p>
+          <h1 class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">Unidad {unit.numero} · Tema {tema.numero}: {tema.titulo}</h1>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">Esta vista está optimizada para dictar clase desde la web, sin depender de archivos PPT externos. Usa <strong>F</strong> para pantalla completa y las flechas para navegar.</p>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <a
+            href={printHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-full border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-gray-400 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800"
+          >
+            Imprimir o guardar PDF
+          </a>
+          <a
+            href={tema.href}
+            class="rounded-full border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-gray-400 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800"
+          >
+            Volver a la guía
+          </a>
+          <a
+            href="/"
+            class="rounded-full bg-gray-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
+          >
+            Ir al inicio
+          </a>
+        </div>
+      </div>
+
+      <TemaPresentacion unit={unit} tema={tema} mode="standalone" client:load />
+    </div>
+  </main>
+</Layout>

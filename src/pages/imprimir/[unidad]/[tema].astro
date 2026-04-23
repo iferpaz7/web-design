@@ -1,0 +1,26 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import TemaImpresion from '../../../components/TemaImpresion.astro';
+import { syllabusUnits } from '../../../data/syllabus';
+
+export function getStaticPaths() {
+  return syllabusUnits.flatMap((unit) =>
+    unit.temas.map((tema) => ({
+      params: {
+        unidad: `unidad${unit.numero}`,
+        tema: `tema${tema.numero}`
+      },
+      props: {
+        unit,
+        tema
+      }
+    }))
+  );
+}
+
+const { unit, tema } = Astro.props;
+---
+
+<Layout title={`Imprimir · Unidad ${unit.numero} · Tema ${tema.numero} - ITSAE`} hideChrome={true}>
+  <TemaImpresion unit={unit} tema={tema} />
+</Layout>

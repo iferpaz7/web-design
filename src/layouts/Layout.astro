@@ -5,9 +5,10 @@ import Footer from '../components/Footer.tsx';
 
 export interface Props {
 	title?: string;
+	hideChrome?: boolean;
 }
 
-const { title = "Diseño Web para Marketing - ITSAE" } = Astro.props;
+const { title = "Diseño Web para Marketing - ITSAE", hideChrome = false } = Astro.props;
 const currentPath = Astro.url.pathname;
 ---
 
@@ -24,12 +25,12 @@ const currentPath = Astro.url.pathname;
 	</head>
 	<body class="font-sans antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 		<!-- Navbar Component -->
-		<Navbar currentPath={currentPath} client:load />
+		{!hideChrome && <Navbar currentPath={currentPath} client:load />}
 		
 		<!-- Main Content -->
 		<slot />
 		
 		<!-- Footer Component -->
-		<Footer client:load />
+		{!hideChrome && <Footer client:load />}
 	</body>
 </html>

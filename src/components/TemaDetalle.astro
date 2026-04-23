@@ -1,0 +1,233 @@
+---
+import TemaPresentacion from './TemaPresentacion';
+import type { SyllabusTema, SyllabusUnit } from '../data/syllabus';
+
+interface Props {
+  unit: SyllabusUnit;
+  tema: SyllabusTema;
+}
+
+const { unit, tema } = Astro.props;
+
+const colorStyles = {
+  amber: {
+    hero: 'from-amber-500 to-orange-500',
+    soft: 'text-amber-100',
+    badge: 'bg-amber-100 text-amber-800',
+    panel: 'bg-amber-50 dark:bg-amber-950/20',
+    border: 'border-amber-500'
+  },
+  blue: {
+    hero: 'from-blue-600 to-cyan-600',
+    soft: 'text-blue-100',
+    badge: 'bg-blue-100 text-blue-800',
+    panel: 'bg-blue-50 dark:bg-blue-950/20',
+    border: 'border-blue-500'
+  },
+  emerald: {
+    hero: 'from-emerald-600 to-teal-600',
+    soft: 'text-emerald-100',
+    badge: 'bg-emerald-100 text-emerald-800',
+    panel: 'bg-emerald-50 dark:bg-emerald-950/20',
+    border: 'border-emerald-500'
+  },
+  purple: {
+    hero: 'from-purple-600 to-fuchsia-600',
+    soft: 'text-purple-100',
+    badge: 'bg-purple-100 text-purple-800',
+    panel: 'bg-purple-50 dark:bg-purple-950/20',
+    border: 'border-purple-500'
+  }
+} as const;
+
+const styles = colorStyles[unit.color];
+const presentationHref = `/presentacion${tema.href}`;
+const printHref = `/imprimir${tema.href}`;
+const nextTema = unit.temas.find((item) => item.numero === tema.numero + 1);
+const continuity = nextTema
+  ? `Próximo tema: ${nextTema.titulo}.`
+  : unit.numero < 4
+    ? `Este tema cierra la Unidad ${unit.numero}. El siguiente paso es avanzar a la Unidad ${unit.numero + 1}.`
+    : 'Este tema cierra la última unidad y prepara la presentación final y el examen bimestral.';
+---
+
+<main class="min-h-screen bg-linear-to-br from-slate-50 via-white to-slate-100 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
+  <div class={`bg-linear-to-r ${styles.hero} text-white py-5`}>
+    <div class="max-w-6xl mx-auto px-6">
+      <nav class="flex items-center justify-between gap-4">
+        <a href="/" class={`hover:text-white transition-colors ${styles.soft}`}>← Volver al inicio</a>
+        <div class="text-center">
+          <h1 class="text-xl font-bold">Unidad {unit.numero} · Tema {tema.numero}</h1>
+          <p class={`text-sm ${styles.soft}`}>{tema.titulo}</p>
+        </div>
+        <div class={`text-right text-sm ${styles.soft}`}>
+          <p>ITSAE</p>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-6 py-10 sm:py-12 space-y-8">
+    <section class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8">
+      <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">Formato de clase</p>
+          <h2 class="mt-2 text-2xl font-bold text-gray-800 dark:text-gray-100">Estudia o dicta la clase desde la misma web</h2>
+          <p class="mt-2 text-gray-600 dark:text-gray-300">Usa la guía para profundizar y cambia a modo presentación cuando quieras exponer sin depender de PowerPoint.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href={presentationHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-full border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-gray-400 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700"
+          >
+            Abrir ruta de exposición
+          </a>
+          <a
+            href={printHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-full border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-gray-400 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700"
+          >
+            Imprimir o guardar PDF
+          </a>
+          <button
+            type="button"
+            data-view-toggle="guide"
+            class="rounded-full bg-gray-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
+          >
+            Guía de clase
+          </button>
+          <button
+            type="button"
+            data-view-toggle="presentation"
+            class="rounded-full border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-gray-400 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700"
+          >
+            Modo presentación
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div data-topic-view="guide" class="space-y-8">
+    <section class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+      <div class="flex flex-wrap items-center gap-3 mb-5">
+        <span class={`text-sm font-semibold px-3 py-1 rounded-full ${styles.badge}`}>Tema actualizado</span>
+        <span class="bg-gray-100 text-gray-700 text-sm font-semibold px-3 py-1 rounded-full dark:bg-gray-700 dark:text-gray-200">Unidad {unit.numero}</span>
+        <span class="bg-slate-100 text-slate-700 text-sm font-semibold px-3 py-1 rounded-full dark:bg-slate-700 dark:text-slate-100">Diseño Web</span>
+      </div>
+
+      <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">Panorama general</h2>
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">{tema.panorama}</p>
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed">{tema.descripcion}</p>
+    </section>
+
+    <section class="grid md:grid-cols-2 gap-6">
+      <div class={`p-6 rounded-xl border-l-4 ${styles.panel} ${styles.border}`}>
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">Objetivos de aprendizaje</h3>
+        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+          {tema.objetivos.map((objetivo) => <li>• {objetivo}</li>)}
+        </ul>
+      </div>
+
+      <div class="bg-slate-50 dark:bg-slate-800/80 p-6 rounded-xl border-l-4 border-slate-400">
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">Ideas clave del tema</h3>
+        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+          {tema.ideasClave.map((idea) => <li>• {idea}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+      <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">Relación con la unidad</h2>
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4"><strong>Capacidad de la unidad:</strong> {unit.capacidad}</p>
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed"><strong>Evidencia esperada:</strong> {unit.evidencia}</p>
+    </section>
+
+    <section class="grid lg:grid-cols-2 gap-6">
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">Actividad sugerida</h2>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">{tema.actividad}</p>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">Criterio de evidencia</h2>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">{tema.evidencia}</p>
+      </div>
+    </section>
+
+    <section class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+      <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">Herramientas y recursos de trabajo</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        {tema.herramientas.map((herramienta) => (
+          <div class="rounded-xl bg-gray-50 dark:bg-gray-700 p-4">
+            <p class="text-gray-700 dark:text-gray-200">{herramienta}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class={`rounded-2xl p-8 ${styles.panel}`}>
+      <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">Continuidad del curso</h2>
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">Este contenido está alineado con el sílabo actualizado del curso y con una secuencia de trabajo que prioriza estrategia, prototipado, publicación viable y mejora continua.</p>
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed">{continuity}</p>
+    </section>
+    </div>
+
+    <div data-topic-view="presentation" class="hidden">
+      <TemaPresentacion unit={unit} tema={tema} client:load />
+    </div>
+  </div>
+</main>
+
+<script>
+  const guideSection = document.querySelector<HTMLElement>('[data-topic-view="guide"]');
+  const presentationSection = document.querySelector<HTMLElement>('[data-topic-view="presentation"]');
+  const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-view-toggle]'));
+
+  const setActiveView = (view: 'guide' | 'presentation') => {
+    const showingPresentation = view === 'presentation';
+
+    guideSection?.classList.toggle('hidden', showingPresentation);
+    presentationSection?.classList.toggle('hidden', !showingPresentation);
+
+    buttons.forEach((button) => {
+      const isActive = button.dataset.viewToggle === view;
+      button.classList.toggle('bg-gray-900', isActive);
+      button.classList.toggle('text-white', isActive);
+      button.classList.toggle('dark:bg-white', isActive);
+      button.classList.toggle('dark:text-gray-900', isActive);
+      button.classList.toggle('border', !isActive);
+      button.classList.toggle('border-gray-300', !isActive);
+      button.classList.toggle('text-gray-700', !isActive);
+      button.classList.toggle('hover:bg-gray-50', !isActive);
+      button.classList.toggle('dark:border-gray-600', !isActive);
+      button.classList.toggle('dark:text-gray-200', !isActive);
+      button.classList.toggle('dark:hover:bg-gray-700', !isActive);
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    if (showingPresentation) {
+      params.set('modo', 'presentacion');
+    } else {
+      params.delete('modo');
+    }
+
+    const query = params.toString();
+    const nextUrl = `${window.location.pathname}${query ? `?${query}` : ''}`;
+    window.history.replaceState({}, '', nextUrl);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      setActiveView(button.dataset.viewToggle === 'presentation' ? 'presentation' : 'guide');
+    });
+  });
+
+  const initialMode = new URLSearchParams(window.location.search).get('modo') === 'presentacion'
+    ? 'presentation'
+    : 'guide';
+  setActiveView(initialMode);
+</script>
