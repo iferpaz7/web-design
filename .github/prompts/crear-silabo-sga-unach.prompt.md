@@ -17,11 +17,15 @@ Usa estos inputs:
 - Fuente UNACH: ${input:fuenteUnach:URL, catálogo, repositorio o referencia bibliográfica de UNACH}
 - Ajustes adicionales: ${input:ajustes:Indicaciones específicas del docente o coordinador}
 
+Si `${input:fuenteUnach}` no se proporciona, usa por defecto esta búsqueda del catálogo de biblioteca UNACH como punto de partida para obtener bibliografía relacionada y refinarla según el tema solicitado:
+- `https://catalogobiblio.unach.cl/vufind/Search/Results?lookfor=dise%C3%B1o+web&type=AllFields&filter%5B%5D=language%3A%22Spanish%22&limit=20`
+
 Instrucciones obligatorias:
 - Redacta en español formal, claro y con tono institucional ecuatoriano.
 - Mantén esta estructura: sumilla, objetivo general, resultados de aprendizaje o competencias, unidades, actividades por sesión, estrategias metodológicas básicas, aspectos y técnicas de evaluación, bibliografía y enlaces.
 - Alinea el contenido con el enfoque práctico del curso y con la carrera indicada.
 - Prioriza bibliografía verificable proveniente de la fuente UNACH proporcionada.
+- Si no se entrega una fuente UNACH específica, comienza la búsqueda bibliográfica desde el catálogo UNACH por defecto, adapta los términos de búsqueda al tema o asignatura y selecciona solo referencias realmente pertinentes.
 - Usa búsqueda online para localizar, contrastar y verificar fuentes académicas, institucionales y recursos pertinentes cuando sea necesario.
 - Si necesitas complementar, agrega fuentes académicas o institucionales adicionales, pero deja claro cuáles provienen de UNACH y cuáles son complementarias.
 - Toda la bibliografía debe quedar en formato APA 7.ª edición.
@@ -34,4 +38,8 @@ Formato de salida:
    - "Fuentes UNACH utilizadas"
    - "Fuentes complementarias utilizadas"
 
-Si el input `${input:fuenteUnach}` es insuficiente, pide primero la información faltante antes de completar la bibliografía.
+**Creación de archivos obligatoria:** Una vez generado el contenido, crea físicamente el archivo en disco. No es suficiente mostrarlo en el chat.
+- Ruta: `docs/silabos/silabo-{carrera}-{nivel}-{fecha}.md`
+- Usa la fecha del día en que se ejecuta el prompt si no se proporciona.
+
+Si la fuente UNACH proporcionada o la búsqueda por defecto no son suficientes para sostener una bibliografía pertinente y verificable, pide primero la información faltante antes de completar la bibliografía.

@@ -38,4 +38,8 @@ Formato de salida:
 4. Clave de respuestas o pauta de evaluación.
 5. Breve nota final con la trazabilidad temática respecto al sílabo.
 
+**Creación de archivos obligatoria:** Una vez generado el contenido, crea físicamente el archivo en disco. No es suficiente mostrarlo en el chat.
+- Ruta: `docs/examenes/examen-bimestre{n}-{fecha}.md`
+- Crea también `docs/examenes/clave-bimestre{n}-{fecha}.md` con la clave de respuestas o pauta de corrección separada (para que el docente la guarde aparte del examen que entrega a los estudiantes).
+
 Si el número de preguntas no es coherente con el tipo solicitado, propone una distribución razonable antes de generar el examen.

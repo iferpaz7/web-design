@@ -3,7 +3,7 @@ name: "preparar-roadmap-clase-completa"
 description: "Prepara el roadmap maestro de una clase dinámica y memorable, separando la salida para la web, la salida operativa para docs y la salida de recursos para Canvas LMS. Úsalo para planificar una sesión magistral o mixta alineada al sílabo y a la filosofía ITSAE."
 argument-hint: "unidad=... tema=... fecha=... profesor=... duracion=..."
 agent: "agent"
-tools: [search, web]
+tools: [search, web, vscode/askQuestion]
 ---
 
 Prepara el roadmap completo de una clase basada en [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md) y, cuando corresponda, en [src/data/syllabus.ts](../../src/data/syllabus.ts).
@@ -36,7 +36,20 @@ Usa estos inputs:
 - Fuentes prioritarias UNACH: ${input:fuenteUnach:URL, catálogo o referencia de biblioteca UNACH}
 - Ajustes: ${input:ajustes:Énfasis, restricciones o necesidades específicas}
 
-Instrucciones obligatorias:
+Si uno o más de los inputs listados anteriormente (excepto Ajustes y Fuentes prioritarias UNACH) no fueron proporcionados al ejecutar el prompt, usa obligatoriamente `#tool:vscode/askQuestion` para solicitar al usuario los parámetros faltantes en una lista breve y clara **antes de generar cualquier contenido**.
+Una vez que el usuario complete los datos faltantes, retoma la generación usando esos valores sin reiniciar innecesariamente el resto del trabajo.
+
+Si `fuenteUnach` no se proporciona, usa por defecto esta búsqueda del catálogo de biblioteca UNACH como punto de partida para obtener bibliografía relacionada y refinarla según el tema solicitado:
+- `https://catalogobiblio.unach.cl/vufind/Search/Results?lookfor=dise%C3%B1o+web&type=AllFields&filter%5B%5D=language%3A%22Spanish%22&limit=20`
+
+Instrucciones obligatorias para la generación:
+- No asumas valores para fecha, profesor, modalidad, duración, `modoWeb`, `modoDocs`, `modoCanvas` o `urlBaseSitio` si no fueron entregados.
+- **Creación de archivos obligatoria:** Una vez generado el contenido, crea físicamente los archivos en disco usando las herramientas disponibles. No es suficiente mostrar el contenido como texto en el chat. Usa esta estructura jerárquica:
+  - `docs/clases/unidad{n}/tema{m}/roadmap-{fecha}.md` — con el contenido de `salidaDocs`.
+  - `docs/clases/unidad{n}/tema{m}/canvas-{fecha}.md` — con el contenido de `salidaCanvasDocs`.
+  - Si `modoWeb` indica reemplazo o actualización, edita directamente en `src/data/syllabus.ts` el objeto del tema correspondiente, actualizando los campos `panorama`, `objetivos`, `ideasClave`, `actividad`, `evidencia`, `herramientas` y `presentationBlocks`.
+  - Si `modoWeb` es solo convivencia o generación, muestra los bloques TypeScript listos para copiar pero no edites el archivo.
+  - **Siempre actualiza `presentationBlocks`** en `src/data/syllabus.ts` para el tema indicado, ya sea como reemplazo o como propuesta comentada junto al bloque actual. La presentación del sitio se deriva de este campo.
 - Redacta en español formal, pedagógico e institucional, con enfoque ITSAE.
 - Diseña la clase para que sea dinámica, clara, significativa y recordable para los estudiantes.
 - Mantén esta secuencia base, adaptándola con criterio al tema y duración:
@@ -52,6 +65,7 @@ Instrucciones obligatorias:
 - La meditación debe ser breve, pertinente, respetuosa, conectada con el tema y coherente con la filosofía del ITSAE. No la fuerces ni la vuelvas genérica.
 - Desglosa el tema en subtemas, conceptos clave, ejemplos, analogías, aplicaciones prácticas y alertas sobre errores comunes.
 - Usa búsqueda online para localizar y verificar fuentes académicas, institucionales, artículos, videos, revistas y recursos que fortalezcan la clase magistral.
+- Si no se entrega una fuente UNACH específica, comienza la búsqueda bibliográfica desde el catálogo UNACH por defecto, adapta los términos de búsqueda al tema o asignatura y selecciona solo referencias realmente pertinentes para sustentar la clase.
 - Prioriza fuentes en este orden:
   1. Biblioteca o repositorios UNACH.
   2. Fuentes institucionales o académicas confiables.
@@ -66,7 +80,7 @@ Instrucciones obligatorias:
 - Si el tipo de clase es magistral, mantén predominio expositivo sin perder dinamismo.
 - Si el tipo de clase es práctica o mixta, incorpora ejercicios o producción estudiantil con tiempos definidos.
 - Genera también una presentación de clase lista para exposición, organizada por diapositivas, con contenido breve y notas de apoyo para el docente.
-- Genera además una salida compatible con el contenido web actual del curso. Si el usuario lo pide o si `${input:modoWeb}` lo indica, entrega bloques listos para escribir, actualizar o reemplazar el contenido actual en la web, priorizando el formato conceptual de [src/data/syllabus.ts](../../src/data/syllabus.ts).
+- Genera además una salida compatible con el contenido web actual del curso. Si el usuario lo pide o si `modoWeb` lo indica, entrega bloques listos para escribir, actualizar o reemplazar el contenido actual en la web, priorizando el formato conceptual de [src/data/syllabus.ts](../../src/data/syllabus.ts).
 - Genera además una salida en Markdown para Canvas LMS lista para guardarse en `docs/` y luego copiarse o subirse a la plataforma como sección de recursos por clase.
 - Separa explícitamente la salida en tres niveles:
    1. `salidaWeb`: contenido estable, reutilizable y apto para estudiantes.
@@ -90,14 +104,14 @@ Instrucciones obligatorias:
    - lista de recursos con nombre, tipo, propósito breve y enlace;
    - enlace a la presentación alojada en la web del curso;
    - cuando corresponda, enlace a la guía del tema y a la versión imprimible o PDF del tema.
-- Si `${input:urlBaseSitio}` está disponible, construye enlaces absolutos para la web del curso usando esta base.
-- Si `${input:urlBaseSitio}` no está disponible, entrega enlaces relativos válidos del sitio y marca que falta convertirlos a URL pública antes de subir a Canvas LMS.
+- Si `urlBaseSitio` está disponible, construye enlaces absolutos para la web del curso usando esta base.
+- Si `urlBaseSitio` no está disponible, entrega enlaces relativos válidos del sitio y marca que falta convertirlos a URL pública antes de subir a Canvas LMS.
 - Para construir los enlaces internos del curso, usa esta lógica:
    - guía del tema: `/unidad{n}/tema{m}`
    - presentación: `/presentacion/unidad{n}/tema{m}`
    - imprimir o PDF: `/imprimir/unidad{n}/tema{m}`
 - En `salidaCanvasDocs`, no incluyas bibliografía extensa ni desarrollo completo del roadmap; prioriza usabilidad para el estudiante y facilidad de carga en la plataforma.
-- Propón también un nombre de archivo Markdown apto para `docs/`, por ejemplo: `docs/canvas-unidad{n}-tema{m}-{fecha}.md`.
+- Usa esta ruta para el archivo Canvas: `docs/clases/unidad{n}/tema{m}/canvas-{fecha}.md`.
 - Toda bibliografía debe quedar en APA 7.ª edición.
 - No inventes referencias. Si falta información bibliográfica, márcala como pendiente de validación.
 
@@ -167,10 +181,10 @@ Formato de salida:
 13. Bibliografía en APA 7.ª edición.
 14. Recomendación final para el docente sobre cómo hacer que la clase deje mayor recordación en los estudiantes.
 
-Si la información de `${input:fuenteUnach}` no es suficiente para sustentar la parte académica, solicita más datos antes de cerrar la respuesta.
+Si la fuente UNACH proporcionada o la búsqueda por defecto no son suficientes para sostener la parte académica con bibliografía pertinente y verificable, solicita más datos antes de cerrar la respuesta.
 
-Si `${input:modoWeb}` indica reemplazo, redacta los bloques web con criterio de sustitución completa del contenido anterior. Si indica convivencia, redacta los bloques como propuesta ampliada sin asumir reemplazo automático.
+Si `modoWeb` indica reemplazo, redacta los bloques web con criterio de sustitución completa del contenido anterior. Si indica convivencia, redacta los bloques como propuesta ampliada sin asumir reemplazo automático.
 
-Si `${input:modoDocs}` pide ambos formatos, entrega primero `salidaDocs` y luego `salidaWeb`. Si pide solo resumen docente, conserva la estructura Markdown pero reduce el detalle operativo a lo esencial.
+Si `modoDocs` pide ambos formatos, entrega primero `salidaDocs` y luego `salidaWeb`. Si pide solo resumen docente, conserva la estructura Markdown pero reduce el detalle operativo a lo esencial.
 
-Si `${input:modoCanvas}` pide ambos formatos, entrega `salidaCanvasDocs` completa. Si pide solo resumen de recursos, conserva objetivo y enlaces esenciales.
+Si `modoCanvas` pide ambos formatos, entrega `salidaCanvasDocs` completa. Si pide solo resumen de recursos, conserva objetivo y enlaces esenciales.

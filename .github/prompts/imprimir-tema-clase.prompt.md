@@ -37,3 +37,9 @@ Formato de salida:
   - Profesor
 - Cierre con bibliografía y una línea de espacio para firma o validación docente.
 - Incluye una subsección breve de "Recursos sugeridos para ampliación" cuando existan fuentes online pertinentes.
+
+**Creación de archivos obligatoria:** Una vez generado el contenido, crea físicamente el archivo en disco. No es suficiente mostrarlo en el chat.
+- Ruta: `docs/guias/unidad{n}/tema{m}/guia-{fecha}.md`
+- También incluye el enlace a la presentación y a la versión imprimible del sitio web al final del documento:
+  - Presentación: `{urlBase}/presentacion/unidad{n}/tema{m}` (si la URL base está disponible)
+  - Imprimible: `{urlBase}/imprimir/unidad{n}/tema{m}`
