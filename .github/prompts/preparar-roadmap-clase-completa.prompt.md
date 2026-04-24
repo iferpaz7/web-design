@@ -1,12 +1,12 @@
 ---
 name: "preparar-roadmap-clase-completa"
-description: "Prepara el roadmap maestro de una clase dinámica y memorable, separando la salida para la web, la salida operativa para docs y la salida de recursos para Canvas LMS. Úsalo para planificar una sesión magistral o mixta alineada al sílabo y a la filosofía ITSAE."
-argument-hint: "unidad=... tema=... fecha=... profesor=... duracion=..."
+description: "Prepara el roadmap maestro de una clase dinámica y memorable, levantando los datos como inputs del prompt y separando la salida para la web, docs y Canvas LMS. Úsalo para planificar una sesión magistral o mixta alineada al sílabo y a la filosofía ITSAE."
+argument-hint: "Completa los inputs del prompt: unidad, tema, fecha, profesor, duracion, modalidad, tipoClase, profundidad, criterio, cantidad, modoWeb, modoDocs, modoCanvas y urlBaseSitio"
 agent: "agent"
-tools: [search, web, vscode/askQuestion]
+tools: [search, web]
 ---
 
-Prepara el roadmap completo de una clase basada en [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md) y, cuando corresponda, en [src/data/syllabus.ts](../../src/data/syllabus.ts).
+Prepara el roadmap completo de una clase basada en [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md) y, de manera prioritaria cuando el tema ya exista en la web del curso, en [src/data/syllabus.ts](../../src/data/syllabus.ts).
 
 Este prompt debe resolver en una sola salida lo que normalmente se haría por separado para:
 - desglose temático,
@@ -36,14 +36,22 @@ Usa estos inputs:
 - Fuentes prioritarias UNACH: ${input:fuenteUnach:URL, catálogo o referencia de biblioteca UNACH}
 - Ajustes: ${input:ajustes:Énfasis, restricciones o necesidades específicas}
 
-Si uno o más de los inputs listados anteriormente (excepto Ajustes y Fuentes prioritarias UNACH) no fueron proporcionados al ejecutar el prompt, usa obligatoriamente `#tool:vscode/askQuestion` para solicitar al usuario los parámetros faltantes en una lista breve y clara **antes de generar cualquier contenido**.
-Una vez que el usuario complete los datos faltantes, retoma la generación usando esos valores sin reiniciar innecesariamente el resto del trabajo.
+Regla de ejecución del prompt:
+- Levanta estos datos desde los inputs del prompt antes de generar cualquier contenido.
+- Trata como obligatorios todos los inputs anteriores excepto `fuenteUnach` y `ajustes`.
+- No solicites estos datos nuevamente en el chat si ya vienen resueltos por `${input:...}`.
+- Si al ejecutarse el prompt algún campo obligatorio quedó vacío, detén la generación y responde únicamente con una lista breve de los campos faltantes para que el usuario vuelva a ejecutar el prompt completándolos.
 
 Si `fuenteUnach` no se proporciona, usa por defecto esta búsqueda del catálogo de biblioteca UNACH como punto de partida para obtener bibliografía relacionada y refinarla según el tema solicitado:
 - `https://catalogobiblio.unach.cl/vufind/Search/Results?lookfor=dise%C3%B1o+web&type=AllFields&filter%5B%5D=language%3A%22Spanish%22&limit=20`
 
 Instrucciones obligatorias para la generación:
 - No asumas valores para fecha, profesor, modalidad, duración, `modoWeb`, `modoDocs`, `modoCanvas` o `urlBaseSitio` si no fueron entregados.
+- Considera que `unidad`, `tema`, `fecha`, `profesor`, `duracion`, `modalidad`, `tipoClase`, `profundidad`, `criterio`, `cantidad`, `modoWeb`, `modoDocs`, `modoCanvas` y `urlBaseSitio` deben entrar por los inputs del prompt y deben estar resueltos antes de continuar.
+- Antes de proponer contenido nuevo para la clase o para la web, revisa el tema correspondiente en `src/data/syllabus.ts` y toma sus topics actuales como línea base pedagógica y conceptual.
+- Si el tema ya existe en el contenido web actual, genera la clase como una mejora, ampliación o refinamiento de esos topics existentes, preservando la coherencia con `panorama`, `objetivos`, `ideasClave`, `actividad`, `evidencia`, `herramientas` y `presentationBlocks` salvo que el usuario pida un reemplazo explícito.
+- Si detectas vacíos, desactualización o baja profundidad en los topics actuales, fortalécelos sin romper la estructura conceptual del tema ni la continuidad del curso.
+- Si el tema solicitado no existe todavía en `src/data/syllabus.ts`, entonces sí construye la propuesta desde el sílabo y deja claro que se trata de contenido nuevo para incorporar al sitio.
 - **Creación de archivos obligatoria:** Una vez generado el contenido, crea físicamente los archivos en disco usando las herramientas disponibles. No es suficiente mostrar el contenido como texto en el chat. Usa esta estructura jerárquica:
   - `docs/clases/unidad{n}/tema{m}/roadmap-{fecha}.md` — con el contenido de `salidaDocs`.
   - `docs/clases/unidad{n}/tema{m}/canvas-{fecha}.md` — con el contenido de `salidaCanvasDocs`.
@@ -80,7 +88,7 @@ Instrucciones obligatorias para la generación:
 - Si el tipo de clase es magistral, mantén predominio expositivo sin perder dinamismo.
 - Si el tipo de clase es práctica o mixta, incorpora ejercicios o producción estudiantil con tiempos definidos.
 - Genera también una presentación de clase lista para exposición, organizada por diapositivas, con contenido breve y notas de apoyo para el docente.
-- Genera además una salida compatible con el contenido web actual del curso. Si el usuario lo pide o si `modoWeb` lo indica, entrega bloques listos para escribir, actualizar o reemplazar el contenido actual en la web, priorizando el formato conceptual de [src/data/syllabus.ts](../../src/data/syllabus.ts).
+- Genera además una salida compatible con el contenido web actual del curso. Si el usuario lo pide o si `modoWeb` lo indica, entrega bloques listos para escribir, actualizar o reemplazar el contenido actual en la web, priorizando el formato conceptual de [src/data/syllabus.ts](../../src/data/syllabus.ts) y reutilizando como base los topics que ya existan para ese tema.
 - Genera además una salida en Markdown para Canvas LMS lista para guardarse en `docs/` y luego copiarse o subirse a la plataforma como sección de recursos por clase.
 - Separa explícitamente la salida en tres niveles:
    1. `salidaWeb`: contenido estable, reutilizable y apto para estudiantes.
@@ -96,6 +104,7 @@ Instrucciones obligatorias para la generación:
    - presentationBlocks
 - En `salidaWeb`, no incluyas elementos volátiles o de ejecución puntual como saludo inicial, oración, meditación, tiempos exactos por bloque, observaciones internas del docente o notas dependientes de una fecha específica.
 - En `salidaWeb`, prioriza claridad conceptual, permanencia y reutilización en la guía del tema, la presentación y la versión imprimible.
+- En `salidaWeb`, cuando el tema ya exista en la web, presenta la propuesta como mejora editorial y pedagógica de los topics actuales, no como reinvención desconectada del contenido ya publicado, excepto si el usuario solicita reemplazo total.
 - En `salidaDocs`, sí incluye la secuencia completa de clase, decisiones pedagógicas, tiempos sugeridos, momentos de apertura y cierre, recomendaciones de conducción, preguntas detonantes y observaciones prácticas para la sesión específica.
 - Cuando generes `salidaDocs`, redacta el contenido en formato Markdown listo para guardarse en `docs/`, con título, metadatos básicos de la clase y secciones claramente identificables.
 - En `salidaCanvasDocs`, redacta un Markdown breve y ordenado, pensado para publicarse en Canvas LMS como recurso de clase, sin instrucciones internas de conducción docente.

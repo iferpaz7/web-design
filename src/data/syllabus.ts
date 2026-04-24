@@ -64,19 +64,35 @@ export const syllabusUnits: SyllabusUnit[] = [
         herramientas: ['Brief de campaña', 'Mapa simple del embudo de conversión', 'Benchmark de páginas de referencia'],
         presentationBlocks: [
           {
-            title: 'Marco estratégico para explicar el tema',
+            title: 'La página web como activo estratégico',
             items: [
-              'Visibilidad: la página web permite presencia continua y amplía el alcance del mensaje.',
-              'Credibilidad: una interfaz profesional funciona como señal inmediata de confianza.',
-              'Conversión: toda página debe orientar una acción medible, no solo informar.'
+              'Visibilidad: presencia continua y verificable, no efímera como una publicación en redes.',
+              'Credibilidad: una interfaz profesional funciona como señal inmediata de confianza para el usuario.',
+              'Conversión: toda página debe orientar al usuario hacia una acción medible, no solo informar o mostrar.'
             ]
           },
           {
-            title: 'Proceso base de creación de la página web',
+            title: 'El embudo de conversión',
             items: [
-              'Planeación: objetivo, público, propuesta de valor y alcance.',
-              'Análisis: competencia, necesidades del usuario y contenido disponible.',
-              'Diseño, implementación y mantenimiento: la calidad de la página web depende de revisar cada fase, no solo del resultado visual.'
+              'Conciencia: el usuario se entera de que la marca existe.',
+              'Interés y decisión: el usuario evalúa si la propuesta le sirve.',
+              'Acción: el usuario completa el objetivo de la campaña (compra, registro, contacto).'
+            ]
+          },
+          {
+            title: 'Informativa vs. orientada a conversión',
+            items: [
+              'Una página informativa presenta; una página de conversión guía hacia una acción específica.',
+              'El objetivo define el tipo de página; el tipo de página define su estructura y contenido.',
+              'Tener página web no es suficiente: debe tener un objetivo claro y un destino para el tráfico de campaña.'
+            ]
+          },
+          {
+            title: 'El brief como punto de partida',
+            items: [
+              'Negocio o proyecto, objetivo principal, público objetivo y acción esperada: los cuatro elementos del brief.',
+              'Sin brief, el diseño no tiene dirección ni criterio de evaluación.',
+              'Este documento es el inicio del proyecto integrador del curso.'
             ]
           }
         ]
