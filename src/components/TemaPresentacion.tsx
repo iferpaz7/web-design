@@ -254,7 +254,7 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({ unit, tema, mode = 
   const current = slides[currentSlide];
 
   return (
-    <div className={`${isStandalone ? 'min-h-[calc(100vh-10rem)]' : 'min-h-195'} rounded-[28px] bg-linear-to-br ${styles.shell} shadow-2xl transition-colors duration-300`}>
+    <div className={`${isStandalone ? 'h-dvh w-screen overflow-hidden rounded-none' : 'min-h-195 rounded-[28px]'} bg-linear-to-br ${styles.shell} shadow-2xl transition-colors duration-300`}>
       <div className={`bg-linear-to-r ${styles.hero} rounded-t-[28px] px-5 py-4 text-white sm:px-8 sm:py-5`}>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
