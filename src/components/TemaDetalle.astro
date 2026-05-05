@@ -43,6 +43,17 @@ const colorStyles = {
 const styles = colorStyles[unit.color];
 const presentationHref = `/presentacion${tema.href}`;
 const printHref = `/imprimir${tema.href}`;
+
+// Detect latest roadmap for this tema (if any)
+const allRoadmaps = import.meta.glob('../../docs/clases/**/roadmap-*.md');
+const roadmapPattern = new RegExp(`/unidad${unit.numero}/tema${tema.numero}/roadmap-`);
+const matchingRoadmaps = Object.keys(allRoadmaps).filter(k => roadmapPattern.test(k)).sort();
+const latestRoadmapKey = matchingRoadmaps.at(-1);
+let roadmapHref: string | null = null;
+if (latestRoadmapKey) {
+  const m = latestRoadmapKey.match(/docs\/clases\/([^/]+)\/([^/]+)\/(roadmap-[^/]+)\.md$/);
+  if (m) roadmapHref = `/imprimir/roadmap/${m[1]}/${m[2]}/${m[3]}`;
+}
 const nextTema = unit.temas.find((item) => item.numero === tema.numero + 1);
 const continuity = nextTema
   ? `Próximo tema: ${nextTema.titulo}.`
@@ -92,6 +103,16 @@ const continuity = nextTema
           >
             Imprimir o guardar PDF
           </a>
+          {roadmapHref && (
+            <a
+              href={roadmapHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-full border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-gray-400 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700"
+            >
+              Roadmap de clase
+            </a>
+          )}
           <button
             type="button"
             data-view-toggle="guide"

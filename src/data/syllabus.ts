@@ -64,6 +64,23 @@ export const syllabusUnits: SyllabusUnit[] = [
         herramientas: ['Brief de campaña', 'Mapa simple del embudo de conversión', 'Benchmark de páginas de referencia'],
         presentationBlocks: [
           {
+            title: 'Objetivo de la sesión',
+            items: [
+              'Por qué una página web existe dentro de una campaña de marketing digital.',
+              'El embudo de conversión y sus etapas fundamentales.',
+              'Diferencia entre página informativa y página orientada a conversión.',
+              'Formular el primer brief de campaña del curso.'
+            ]
+          },
+          {
+            title: '¿Para qué existe una página web?',
+            items: [
+              'No es decoración digital: es una herramienta con un objetivo concreto y medible.',
+              'Toda página debe responder: ¿a quién va dirigida?, ¿para qué existe? y ¿qué debe hacer el usuario?',
+              'Cada elemento de la página comunica algo; nada debería estar ahí sin propósito estratégico.'
+            ]
+          },
+          {
             title: 'La página web como activo estratégico',
             items: [
               'Visibilidad: presencia continua y verificable, no efímera como una publicación en redes.',
@@ -88,11 +105,27 @@ export const syllabusUnits: SyllabusUnit[] = [
             ]
           },
           {
-            title: 'El brief como punto de partida',
+            title: 'El brief de campaña',
             items: [
               'Negocio o proyecto, objetivo principal, público objetivo y acción esperada: los cuatro elementos del brief.',
               'Sin brief, el diseño no tiene dirección ni criterio de evaluación.',
               'Este documento es el inicio del proyecto integrador del curso.'
+            ]
+          },
+          {
+            title: 'Actividad: Tu primer brief',
+            items: [
+              'Piensa en un negocio real: el tuyo, el de un familiar, o uno inventado para el curso.',
+              'Escribe en el chat: Negocio → Objetivo → Público → Acción esperada del usuario.',
+              'Este es el primer documento de tu proyecto integrador del semestre.'
+            ]
+          },
+          {
+            title: 'Ideas clave y cierre',
+            items: [
+              'Toda página responde a un objetivo y a una audiencia definida.',
+              'La conversión depende de claridad, pertinencia y dirección de la acción hacia el usuario.',
+              'Próxima sesión: Principios de UX/UI aplicados a páginas de campaña y experiencias digitales.'
             ]
           }
         ]
@@ -119,19 +152,71 @@ export const syllabusUnits: SyllabusUnit[] = [
         herramientas: ['Heurísticas de usabilidad', 'Referentes visuales', 'Notas de evaluación UX'],
         presentationBlocks: [
           {
-            title: 'Heurísticas con impacto medible',
+            title: 'Objetivo de la sesión',
             items: [
-              'Cambios pequeños en interfaz pueden alterar la respuesta: en casos de referencia, un CTA más claro puede elevar la conversión de forma significativa.',
-              'El espacio en blanco no es relleno: mejora comprensión, orden visual y lectura rápida.',
-              'La lectura digital suele seguir patrones de escaneo como el modelo F, por eso importa qué aparece primero.'
+              'Identificar principios básicos de UX y UI aplicables a páginas web de campaña.',
+              'Relacionar la estructura visual con la facilidad de uso y la respuesta esperada del usuario.',
+              'Detectar problemas de interfaz que generan fricción y proponer mejoras concretas.'
+            ]
+          },
+          {
+            title: 'UX vs. UI: dos dimensiones inseparables',
+            items: [
+              'UX (User Experience) es cómo se siente usar algo: si el recorrido es claro, cómodo y sin fricción.',
+              'UI (User Interface) es lo que el usuario ve e interactúa: botones, colores, tipografía y estructura visual.',
+              'Analogía: UX es el viaje en automóvil; UI es el tablero y los controles. Ambas son inseparables en una página de campaña.'
+            ]
+          },
+          {
+            title: '5 principios UX para páginas de campaña',
+            items: [
+              'Claridad: el usuario entiende la propuesta de valor en menos de 5 segundos sin leer todo el texto.',
+              'Consistencia: elementos visuales y textuales coherentes reducen carga cognitiva y generan confianza.',
+              'Jerarquía visual: lo más importante domina visualmente; el CTA debe ser lo más visible de la pantalla.',
+              'Retroalimentación: el sistema confirma cada acción del usuario (carga, envío, error).',
+              'Reducción de fricción: cada paso innecesario es una oportunidad de abandono.'
+            ]
+          },
+          {
+            title: 'Heurísticas de Nielsen aplicadas a campañas',
+            items: [
+              'Visibilidad del estado del sistema: el usuario siempre sabe en qué parte del proceso está.',
+              'Consistencia y estándares: no inventar convenciones sin razón; seguir patrones que el usuario ya conoce.',
+              'Diseño estético y minimalista: cada elemento extra compite con el importante; menos es más en páginas de campaña.',
+              'Prevención de errores: diseñar para que el usuario no falle, no para recuperarse después del error.'
+            ]
+          },
+          {
+            title: 'Fricción, escaneo y conversión',
+            items: [
+              'Fricción UX: todo lo que retrasa, confunde o desanima al usuario antes de completar la acción deseada.',
+              'El patrón F de escaneo: el usuario lee horizontalmente en la cima y luego baja verticalmente; coloca lo importante primero.',
+              'Un formulario más corto convierte mejor: cada campo adicional reduce la probabilidad de completarlo.'
             ]
           },
           {
             title: 'Checklist rápido de interfaz',
             items: [
-              '¿El llamado a la acción principal destaca claramente por contraste?',
-              '¿El usuario entiende qué hacer sin leer toda la pantalla?',
-              '¿La jerarquía visual prioriza tarea y no decoración?'
+              '¿El llamado a la acción principal destaca claramente por contraste con el resto de la pantalla?',
+              '¿El usuario puede entender qué hacer sin tener que leer toda la pantalla?',
+              '¿La jerarquía visual prioriza la tarea principal y no la decoración?',
+              '¿La página funciona y se lee bien en dispositivo móvil?'
+            ]
+          },
+          {
+            title: 'Actividad: Ficha comparativa UX/UI',
+            items: [
+              'Abre las dos páginas de campaña indicadas y analiza cada una con los criterios del tema.',
+              'Evalúa: claridad del CTA, jerarquía visual, consistencia del diseño y fricción percibida al navegar.',
+              'Identifica un problema UX concreto por página y propone una mejora argumentada en los principios revisados.'
+            ]
+          },
+          {
+            title: 'Cierre y proyección',
+            items: [
+              'Aprendimos: UX vs. UI, 5 principios de experiencia, heurísticas de Nielsen, fricción y patrón de escaneo.',
+              'Próxima sesión: Jerarquía visual, tipografía, color y composición para comunicar y persuadir.',
+              'Reflexión: ¿Si pudieras mejorar solo un elemento de una página web, cuál sería y por qué?'
             ]
           }
         ]

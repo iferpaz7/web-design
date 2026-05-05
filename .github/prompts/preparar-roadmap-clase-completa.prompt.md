@@ -55,6 +55,7 @@ Instrucciones obligatorias para la generación:
 - **Creación de archivos obligatoria:** Una vez generado el contenido, crea físicamente los archivos en disco usando las herramientas disponibles. No es suficiente mostrar el contenido como texto en el chat. Usa esta estructura jerárquica:
   - `docs/clases/unidad{n}/tema{m}/roadmap-{fecha}.md` — con el contenido de `salidaDocs`.
   - `docs/clases/unidad{n}/tema{m}/canvas-{fecha}.md` — con el contenido de `salidaCanvasDocs`.
+  - El roadmap generado es automáticamente accesible como página imprimible en el sitio en la ruta `/imprimir/roadmap/unidad{n}/tema{m}/roadmap-{fecha}` gracias al componente `RoadmapImpresion.astro` y la ruta dinámica `src/pages/imprimir/roadmap/[...slug].astro`. Incluye este enlace en `salidaCanvasDocs`.
   - Si `modoWeb` indica reemplazo o actualización, edita directamente en `src/data/syllabus.ts` el objeto del tema correspondiente, actualizando los campos `panorama`, `objetivos`, `ideasClave`, `actividad`, `evidencia`, `herramientas` y `presentationBlocks`.
   - Si `modoWeb` es solo convivencia o generación, muestra los bloques TypeScript listos para copiar pero no edites el archivo.
   - **Siempre actualiza `presentationBlocks`** en `src/data/syllabus.ts` para el tema indicado, ya sea como reemplazo o como propuesta comentada junto al bloque actual. La presentación del sitio se deriva de este campo.
@@ -87,7 +88,7 @@ Instrucciones obligatorias para la generación:
 - Incluye momentos de participación, preguntas detonantes y estrategias para sostener la atención del grupo.
 - Si el tipo de clase es magistral, mantén predominio expositivo sin perder dinamismo.
 - Si el tipo de clase es práctica o mixta, incorpora ejercicios o producción estudiantil con tiempos definidos.
-- Genera también una presentación de clase lista para exposición, organizada por diapositivas, con contenido breve y notas de apoyo para el docente.
+- El contenido de la presentación de clase va **exclusivamente** en el campo `presentationBlocks` de `src/data/syllabus.ts` para el tema indicado. No lo dupliques en `salidaDocs` ni en el roadmap Markdown. La presentación en la web del curso se construye desde ese campo y es la fuente única.
 - Genera además una salida compatible con el contenido web actual del curso. Si el usuario lo pide o si `modoWeb` lo indica, entrega bloques listos para escribir, actualizar o reemplazar el contenido actual en la web, priorizando el formato conceptual de [src/data/syllabus.ts](../../src/data/syllabus.ts) y reutilizando como base los topics que ya existan para ese tema.
 - Genera además una salida en Markdown para Canvas LMS lista para guardarse en `docs/` y luego copiarse o subirse a la plataforma como sección de recursos por clase.
 - Separa explícitamente la salida en tres niveles:
@@ -114,7 +115,8 @@ Instrucciones obligatorias para la generación:
    - objetivo de la clase;
    - lista de recursos con nombre, tipo, propósito breve y enlace;
    - enlace a la presentación alojada en la web del curso;
-   - cuando corresponda, enlace a la guía del tema y a la versión imprimible o PDF del tema.
+   - cuando corresponda, enlace a la guía del tema y a la versión imprimible o PDF del tema;
+   - enlace al roadmap docente imprimible en la web del curso, construido con la lógica: `/imprimir/roadmap/unidad{n}/tema{m}/roadmap-{fecha}`.
 - Si `urlBaseSitio` está disponible, construye enlaces absolutos para la web del curso usando esta base.
 - Si `urlBaseSitio` no está disponible, entrega enlaces relativos válidos del sitio y marca que falta convertirlos a URL pública antes de subir a Canvas LMS.
 - Para construir los enlaces internos del curso, usa esta lógica:
@@ -166,11 +168,7 @@ Formato de salida:
    - Recurso web de apoyo
    - Video o recurso audiovisual útil
    - Recurso para profundización docente
-9. Presentación lista para clase:
-   - Título general
-   - Lista de diapositivas numeradas
-   - Contenido principal por diapositiva
-   - Nota breve del docente por diapositiva
+9. Nota sobre la presentación: el contenido de las diapositivas se genera dentro del campo `presentationBlocks` de `salidaWeb` y se escribe en `src/data/syllabus.ts`. La URL de la presentación en la web es `{urlBaseSitio}/presentacion/unidad{n}/tema{m}`.
 10. `salidaWeb` con bloques listos para el contenido web actual:
    - panorama
    - objetivos
