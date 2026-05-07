@@ -22,17 +22,17 @@ Usa estos inputs:
 - Unidad: ${input:unidad:Unidad del sílabo}
 - Tema: ${input:tema:Tema específico a dictar}
 - Fecha: ${input:fecha:Fecha de la clase}
-- Profesor: ${input:profesor:Nombre completo del docente}
-- Duración: ${input:duracion:Duración total de la clase}
-- Modalidad: ${input:modalidad:Presencial, virtual o híbrida}
+- Profesor: Ing. Ivan Paz
+- Duración: 120 min
+- Modalidad: virtual
 - Tipo de clase: ${input:tipoClase:Magistral, práctica o mixta}
 - Nivel de profundidad: ${input:profundidad:Básico, intermedio o avanzado}
 - Criterio metodológico principal: ${input:criterio:Investigación autónoma, en contacto con el docente o práctica experimental}
 - Cantidad de actividades: ${input:cantidad:Cantidad de actividades o momentos prácticos}
-- Modo de salida web: ${input:modoWeb:Solo generar bloques para web, proponer reemplazo del contenido actual o dejar ambos}
-- Modo de salida docs: ${input:modoDocs:Generar roadmap completo en markdown, resumen docente o ambos}
-- Modo de salida Canvas: ${input:modoCanvas:Generar recursos para Canvas LMS, resumen de recursos o ambos}
-- URL base del sitio publicado: ${input:urlBaseSitio:https://... donde está publicada la web del curso}
+- Modo de salida web: ambos
+- Modo de salida docs: ambos
+- Modo de salida Canvas: ambos
+- URL base del sitio publicado: https://web-design-itsae.netlify.app/
 - Fuentes prioritarias UNACH: ${input:fuenteUnach:URL, catálogo o referencia de biblioteca UNACH}
 - Ajustes: ${input:ajustes:Énfasis, restricciones o necesidades específicas}
 
@@ -46,8 +46,8 @@ Si `fuenteUnach` no se proporciona, usa por defecto esta búsqueda del catálogo
 - `https://catalogobiblio.unach.cl/vufind/Search/Results?lookfor=dise%C3%B1o+web&type=AllFields&filter%5B%5D=language%3A%22Spanish%22&limit=20`
 
 Instrucciones obligatorias para la generación:
-- No asumas valores para fecha, profesor, modalidad, duración, `modoWeb`, `modoDocs`, `modoCanvas` o `urlBaseSitio` si no fueron entregados.
-- Considera que `unidad`, `tema`, `fecha`, `profesor`, `duracion`, `modalidad`, `tipoClase`, `profundidad`, `criterio`, `cantidad`, `modoWeb`, `modoDocs`, `modoCanvas` y `urlBaseSitio` deben entrar por los inputs del prompt y deben estar resueltos antes de continuar.
+- No asumas valores para `fecha` si no fue entregada. Los campos `profesor`, `duracion`, `modalidad`, `modoWeb`, `modoDocs`, `modoCanvas` y `urlBaseSitio` ya tienen valores fijos en este prompt.
+- Considera que `unidad`, `tema`, `fecha`, `tipoClase`, `profundidad`, `criterio` y `cantidad` deben entrar por los inputs del prompt y deben estar resueltos antes de continuar. Los campos `profesor`, `duracion`, `modalidad`, `modoWeb`, `modoDocs`, `modoCanvas` y `urlBaseSitio` ya están definidos en este prompt.
 - Antes de proponer contenido nuevo para la clase o para la web, revisa el tema correspondiente en `src/data/syllabus.ts` y toma sus topics actuales como línea base pedagógica y conceptual.
 - Si el tema ya existe en el contenido web actual, genera la clase como una mejora, ampliación o refinamiento de esos topics existentes, preservando la coherencia con `panorama`, `objetivos`, `ideasClave`, `actividad`, `evidencia`, `herramientas` y `presentationBlocks` salvo que el usuario pida un reemplazo explícito.
 - Si detectas vacíos, desactualización o baja profundidad en los topics actuales, fortalécelos sin romper la estructura conceptual del tema ni la continuidad del curso.

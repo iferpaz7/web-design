@@ -224,38 +224,105 @@ export const syllabusUnits: SyllabusUnit[] = [
       {
         numero: 3,
         titulo: 'Jerarquía visual, tipografía, color y composición para comunicar y persuadir',
-        descripcion: 'Recursos visuales para destacar prioridades, reforzar mensajes y guiar decisiones.',
+        descripcion: 'Recursos visuales para destacar prioridades, reforzar mensajes y guiar decisiones del usuario.',
         href: '/unidad1/tema3',
         disponible: true,
-        panorama: 'La jerarquía visual organiza la lectura y orienta la atención. Este tema trabaja composición, contraste, tipografía y color como recursos para comunicar con intención y reforzar una propuesta de valor.',
+        panorama: 'La jerarquía visual organiza la lectura y orienta la atención antes de que el usuario lea una sola palabra. Este tema trabaja composición, contraste, tipografía y color como recursos para comunicar con intención y reforzar una propuesta de valor. En una página de campaña, ordenar lo importante de lo secundario puede ser la diferencia entre una conversión y un abandono.',
         objetivos: [
-          'Organizar visualmente una interfaz según prioridades de lectura.',
-          'Usar tipografía y color para reforzar claridad y coherencia.',
-          'Aplicar principios de composición a bloques de contenido.'
+          'Organizar visualmente una interfaz según prioridades de lectura y acción.',
+          'Usar tipografía con criterio comunicativo: escala, peso y legibilidad como herramientas.',
+          'Aplicar color de forma estratégica para comunicar, orientar y reforzar la identidad de marca.',
+          'Componer un hero section con jerarquía clara y justificar sus decisiones de diseño.'
         ],
         ideasClave: [
           'Lo importante debe ser visible antes de que el usuario lea en profundidad.',
-          'Tipografía y color no decoran: comunican y ordenan.',
-          'Una composición clara reduce carga cognitiva.'
+          'Tipografía y color no decoran: comunican y ordenan la lectura.',
+          'Una composición clara reduce carga cognitiva y mejora la conversión.',
+          'Cuando todo destaca, nada destaca: la jerarquía requiere decisiones de sacrificio.'
         ],
-        actividad: 'Rediseña el hero de una página de campaña y justifica su jerarquía visual.',
-        evidencia: 'Boceto o esquema visual con decisiones de composición justificadas.',
-        herramientas: ['Paleta base de marca', 'Escala tipográfica', 'Wireframe de hero section'],
+        actividad: 'Rediseña el hero section de una página de campaña con problemas de jerarquía y justifica al menos tres decisiones visuales tomadas.',
+        evidencia: 'Boceto o esquema visual con decisiones de composición justificadas en relación con el objetivo de campaña.',
+        herramientas: ['Paleta base de marca', 'Escala tipográfica', 'Wireframe de hero section', 'Ficha de auditoría visual'],
         presentationBlocks: [
           {
-            title: 'Indicadores de fricción que conviene explicar',
+            title: 'Objetivo de la sesión',
             items: [
-              'Una arquitectura confusa aumenta abandono porque el usuario no entiende dónde está ni qué sigue.',
-              'La accesibilidad no es un extra ético solamente: mejora comprensión, alcance y calidad percibida.',
-              'Los primeros segundos de lectura definen si el usuario profundiza o se retira.'
+              'Comprender qué es jerarquía visual y por qué organiza la lectura antes de que el usuario lea una palabra.',
+              'Usar tipografía y color como herramientas de comunicación, no solo de estética.',
+              'Aplicar principios de composición al hero section de una página de campaña.',
+              'Justificar decisiones de diseño visual con criterios claros y verificables.'
             ]
           },
           {
-            title: 'Marco de auditoría útil para clase',
+            title: 'Jerarquía visual: el orden que guía la mirada',
             items: [
-              'Usa heurísticas de Nielsen como referencia para revisar orientación, consistencia y control del usuario.',
-              'Evalúa contraste, tamaño tipográfico y secuencia de lectura antes de discutir estilo.',
-              'La composición debe responder a prioridades de lectura, no al gusto personal.'
+              'El usuario no lee una página web: la escanea en fracciones de segundo. La jerarquía decide qué ve primero.',
+              'Los cinco factores que crean jerarquía: tamaño, contraste, peso, posición y espacio en blanco.',
+              'Flujo visual previsible: el patrón F y el patrón Z determinan cómo recorre el usuario una pantalla.',
+              'Regla práctica: si todo destaca, nada destaca. La jerarquía exige decisiones de sacrificio.'
+            ]
+          },
+          {
+            title: 'Espacio en blanco: el elemento invisible que organiza',
+            items: [
+              'El espacio en blanco no es espacio vacío: es separador, respiración y señal de calidad.',
+              'Agrupar elementos relacionados y separar los distintos crea orden sin necesidad de palabras.',
+              'Las páginas cargadas visualmente generan estrés cognitivo; las páginas con espacio transmiten confianza.',
+              'Pregunta clave: ¿cada elemento en tu pantalla tiene espacio suficiente para ser visto con claridad?'
+            ]
+          },
+          {
+            title: 'Tipografía: comunicar con la forma de las letras',
+            items: [
+              'La tipografía no es decoración: el tipo, el tamaño y el peso de la fuente son mensajes en sí mismos.',
+              'Escala tipográfica: diferencia clara entre título (H1), subtítulo (H2) y cuerpo de texto evita confusión.',
+              'Legibilidad primero: una fuente elegante que nadie puede leer en pantalla es un obstáculo, no un recurso.',
+              'Límite práctico: no más de dos familias tipográficas en una misma pantalla. Más es ruido visual.'
+            ]
+          },
+          {
+            title: 'Color: señal, emoción y coherencia de marca',
+            items: [
+              'El color comunica antes de que el usuario lea: temperatura (frío/cálido), urgencia, confianza, acción.',
+              'Contraste de color: texto oscuro sobre fondo claro es el mínimo indispensable de legibilidad.',
+              'El color de marca debe reservarse para los elementos de mayor importancia, no aplicarse en todo.',
+              'Paleta práctica: un color principal, uno de apoyo y uno de acción (CTA). Tres es suficiente.'
+            ]
+          },
+          {
+            title: 'El hero section: anatomía de la primera pantalla',
+            items: [
+              'El hero es lo primero que ve el usuario: debe comunicar quién eres, qué ofreces y qué hacer en segundos.',
+              'Elementos esenciales: titular (propuesta de valor), subtítulo de apoyo, CTA principal, imagen o fondo contextual.',
+              'El CTA debe ser el elemento visualmente más diferenciado de la pantalla por contraste y posición.',
+              'Regla de tres: si el hero necesita más de tres mensajes distintos, está intentando hacer demasiado.'
+            ]
+          },
+          {
+            title: 'Errores comunes que destruyen la jerarquía',
+            items: [
+              'Todo en negrita o mayúsculas: cuando todo es énfasis, nada lo es.',
+              'CTA del mismo color que otros elementos: el botón de acción se pierde en el ruido visual.',
+              'Imagen grande sin texto jerárquico encima: la imagen domina pero el mensaje no llega.',
+              'Más de cuatro colores distintos en una sección: el ojo no sabe dónde ir primero.'
+            ]
+          },
+          {
+            title: 'Actividad: Rediseña el hero con criterio',
+            items: [
+              'Observa el hero presentado: identifica qué no tiene jerarquía, qué tipografía falla y qué color sobra.',
+              'Propón una versión mejorada: boceto, esquema escrito o herramienta digital. Tienes 12 minutos.',
+              'Comparte en el chat una sola decisión que tomaste y por qué la tomaste.',
+              'Criterio: aplica al menos dos principios del tema con coherencia en el objetivo de campaña.'
+            ]
+          },
+          {
+            title: 'Ideas clave y cierre',
+            items: [
+              'Lo importante debe ser visible antes de que el usuario lea en profundidad.',
+              'Tipografía y color no decoran: comunican y ordenan.',
+              'Una composición clara reduce carga cognitiva y mejora la conversión.',
+              'Próxima sesión: Usabilidad, accesibilidad y lectura móvil como criterios de calidad.'
             ]
           }
         ]
