@@ -1,12 +1,23 @@
 ---
-name: "preparar-roadmap-clase-completa"
-description: "Prepara el roadmap maestro de una clase dinámica y memorable, levantando los datos como inputs del prompt y separando la salida para la web, docs y Canvas LMS. Úsalo para planificar una sesión magistral o mixta alineada al sílabo y a la filosofía ITSAE."
-argument-hint: "Completa los inputs del prompt: unidad, tema, fecha, profesor, duracion, modalidad, tipoClase, profundidad, criterio, cantidad, modoWeb, modoDocs, modoCanvas y urlBaseSitio"
-agent: "agent"
-tools: [search, web]
+description: "Prepara el roadmap maestro de una clase dinámica y memorable, alineada a la sesión exacta del sílabo SGA. Levanta los inputs del prompt, consulta la tabla de sesiones del sílabo para extraer capacidad, horas y evidencia, y separa la salida para la web, docs y Canvas LMS. Úsalo para planificar una sesión magistral o mixta coherente con la asignatura de Diseño Web para Marketing Digital y la filosofía ITSAE."
+argument-hint: "Inputs obligatorios: unidad (1-4), tema (1-4 dentro de la unidad), fecha, tipoClase, profundidad, criterio, cantidad. Opcionales: fuenteUnach, ajustes."
 ---
 
-Prepara el roadmap completo de una clase basada en [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md) y, de manera prioritaria cuando el tema ya exista en la web del curso, en [src/data/syllabus.ts](../../src/data/syllabus.ts).
+Prepara el roadmap completo de una clase usando como fuente primaria el sílabo oficial de la asignatura en [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md) y, de manera complementaria cuando el tema ya exista en la web del curso, en [src/data/syllabus.ts](../../src/data/syllabus.ts).
+
+**Antes de generar cualquier contenido**, lee el sílabo completo y localiza la fila de la tabla "Actividades por sesión" que coincida con la **combinación de `unidad` y `tema`** indicadas en los inputs (el número de tema equivale al número de sesión dentro de la unidad, ya que ambos reinician en 1 en cada unidad). Extrae de esa fila:
+- El número de tema / sesión dentro de la unidad.
+- La capacidad específica declarada en el sílabo para esa fila (campo "Capacidades").
+- El tema oficial del sílabo (campo "Tema").
+- Las horas presenciales (HP), horas a distancia (HD) y horas autónomas (HAA) correspondientes.
+- La unidad a la que pertenece.
+
+Identifica además:
+- El resultado de aprendizaje o competencia del sílabo que cubre esta unidad (sección "Resultado de aprendizaje o competencias").
+- El detalle e inclusiones temáticas declarados para la unidad correspondiente (sección "Unidades").
+- El tipo de evidencia esperada para esa unidad según el sílabo.
+
+Usa estos datos extraídos del sílabo como ancla pedagógica: el objetivo de la sesión, los contenidos, las actividades y la evidencia de la clase deben ser coherentes con la capacidad declarada en esa fila y con el resultado de aprendizaje de la unidad.
 
 Este prompt debe resolver en una sola salida lo que normalmente se haría por separado para:
 - desglose temático,
@@ -19,9 +30,9 @@ Este prompt debe resolver en una sola salida lo que normalmente se haría por se
 Sigue también la guía institucional en [itsae-filosofia-docencia](../instructions/itsae-filosofia-docencia.instructions.md).
 
 Usa estos inputs:
-- Unidad: ${input:unidad:Unidad del sílabo}
-- Tema: ${input:tema:Tema específico a dictar}
-- Fecha: ${input:fecha:Fecha de la clase}
+- Unidad: ${input:unidad:Número de unidad (1-4)}
+- Tema: ${input:tema:Número de tema dentro de la unidad (1-4)}
+- Fecha: ${input:fecha:Fecha de la clase (YYYY-MM-DD)}
 - Profesor: Ing. Ivan Paz
 - Duración: 120 min
 - Modalidad: virtual
@@ -33,29 +44,40 @@ Usa estos inputs:
 - Modo de salida docs: ambos
 - Modo de salida Canvas: ambos
 - URL base del sitio publicado: https://web-design-itsae.netlify.app/
-- Fuentes prioritarias UNACH: ${input:fuenteUnach:URL, catálogo o referencia de biblioteca UNACH}
-- Ajustes: ${input:ajustes:Énfasis, restricciones o necesidades específicas}
+- Fuentes prioritarias UNACH: ${input:fuenteUnach:URL, catálogo o referencia de biblioteca UNACH (opcional)}
+- Ajustes: ${input:ajustes:Énfasis, restricciones o necesidades específicas (opcional)}
 
 Regla de ejecución del prompt:
 - Levanta estos datos desde los inputs del prompt antes de generar cualquier contenido.
-- Trata como obligatorios todos los inputs anteriores excepto `fuenteUnach` y `ajustes`.
+- Trata como obligatorios: `unidad`, `tema`, `fecha`, `tipoClase`, `profundidad`, `criterio` y `cantidad`. Los campos `profesor`, `duracion`, `modalidad`, `modoWeb`, `modoDocs`, `modoCanvas` y `urlBaseSitio` ya tienen valores fijos en este prompt. Los campos `fuenteUnach` y `ajustes` son opcionales.
 - No solicites estos datos nuevamente en el chat si ya vienen resueltos por `${input:...}`.
 - Si al ejecutarse el prompt algún campo obligatorio quedó vacío, detén la generación y responde únicamente con una lista breve de los campos faltantes para que el usuario vuelva a ejecutar el prompt completándolos.
+- Usa `unidad` + `tema` como clave compuesta para localizar la fila exacta en la tabla del sílabo (ej. Unidad 2, Tema 3).
 
-Si `fuenteUnach` no se proporciona, usa por defecto esta búsqueda del catálogo de biblioteca UNACH como punto de partida para obtener bibliografía relacionada y refinarla según el tema solicitado:
-- `https://catalogobiblio.unach.cl/vufind/Search/Results?lookfor=dise%C3%B1o+web&type=AllFields&filter%5B%5D=language%3A%22Spanish%22&limit=20`
+Prioridad de fuentes bibliográficas:
+1. Usa como primera fuente la bibliografía oficial de la asignatura listada en el sílabo (sección "Bibliografía"). Estas referencias ya están en APA 7.ª edición y son las que el estudiante debe conocer.
+2. Si `fuenteUnach` fue proporcionado, úsalo como segunda fuente.
+3. Si `fuenteUnach` no se proporciona, usa como tercera fuente esta búsqueda del catálogo de biblioteca UNACH y refina los términos según el tema:
+   `https://catalogobiblio.unach.cl/vufind/Search/Results?lookfor=dise%C3%B1o+web&type=AllFields&filter%5B%5D=language%3A%22Spanish%22&limit=20`
+4. Complementa con fuentes web especializadas, videos y recursos digitales solo cuando las anteriores no cubran el tema con suficiente profundidad.
 
 Instrucciones obligatorias para la generación:
 - No asumas valores para `fecha` si no fue entregada. Los campos `profesor`, `duracion`, `modalidad`, `modoWeb`, `modoDocs`, `modoCanvas` y `urlBaseSitio` ya tienen valores fijos en este prompt.
-- Considera que `unidad`, `tema`, `fecha`, `tipoClase`, `profundidad`, `criterio` y `cantidad` deben entrar por los inputs del prompt y deben estar resueltos antes de continuar. Los campos `profesor`, `duracion`, `modalidad`, `modoWeb`, `modoDocs`, `modoCanvas` y `urlBaseSitio` ya están definidos en este prompt.
+- Considera que `unidad`, `tema`, `sesion`, `fecha`, `tipoClase`, `profundidad`, `criterio` y `cantidad` deben entrar por los inputs del prompt y deben estar resueltos antes de continuar.
+- El objetivo de aprendizaje de la clase debe ser una redacción operativa de la capacidad declarada en el sílabo para esa sesión, no una elaboración libre desconectada del documento oficial.
+- Las actividades deben estar alineadas al porcentaje y tipo de evaluación del sílabo (proyectos 40 %, talleres 30 %, actividades asincrónicas 15 %, participación 15 %). Especifica en la ficha de cada actividad a qué componente de evaluación contribuye.
+- La evidencia propuesta para la clase debe ser coherente con la evidencia declarada para la unidad en el sílabo. Si la clase es la última de la unidad o la que cierra una entrega, prioriza que la actividad cierre o adelante esa evidencia.
+- Las estrategias metodológicas deben alinearse a las declaradas en el sílabo: cognitivas (análisis de casos, comparación de referentes, discusión guiada, resolución de problemas), aplicativas (prototipado, maquetación, publicación, revisión de desempeño) y formativas (autorregulación, colaboración, ética digital, retroalimentación).
+- Cuando corresponda, incluye en la secuencia de clase un momento de retroalimentación sobre la sesión anterior, alineado a la lógica de progresión temática del sílabo.
+- Al inicio de la `salidaDocs`, indica explícitamente: número de sesión, capacidad del sílabo para esa sesión, resultado de aprendizaje de la unidad al que contribuye, tipo de evidencia esperada para la unidad y horas (HD/HP/HAA) según el sílabo.
 - Antes de proponer contenido nuevo para la clase o para la web, revisa el tema correspondiente en `src/data/syllabus.ts` y toma sus topics actuales como línea base pedagógica y conceptual.
 - Si el tema ya existe en el contenido web actual, genera la clase como una mejora, ampliación o refinamiento de esos topics existentes, preservando la coherencia con `panorama`, `objetivos`, `ideasClave`, `actividad`, `evidencia`, `herramientas` y `presentationBlocks` salvo que el usuario pida un reemplazo explícito.
 - Si detectas vacíos, desactualización o baja profundidad en los topics actuales, fortalécelos sin romper la estructura conceptual del tema ni la continuidad del curso.
 - Si el tema solicitado no existe todavía en `src/data/syllabus.ts`, entonces sí construye la propuesta desde el sílabo y deja claro que se trata de contenido nuevo para incorporar al sitio.
 - **Creación de archivos obligatoria:** Una vez generado el contenido, crea físicamente los archivos en disco usando las herramientas disponibles. No es suficiente mostrar el contenido como texto en el chat. Usa esta estructura jerárquica:
-  - `docs/clases/unidad{n}/tema{m}/roadmap-{fecha}.md` — con el contenido de `salidaDocs`.
-  - `docs/clases/unidad{n}/tema{m}/canvas-{fecha}.md` — con el contenido de `salidaCanvasDocs`.
-  - El roadmap generado es automáticamente accesible como página imprimible en el sitio en la ruta `/imprimir/roadmap/unidad{n}/tema{m}/roadmap-{fecha}` gracias al componente `RoadmapImpresion.astro` y la ruta dinámica `src/pages/imprimir/roadmap/[...slug].astro`. Incluye este enlace en `salidaCanvasDocs`.
+  - `docs/clases/unidad${input:unidad}/tema${input:tema}/roadmap-${input:fecha}.md` — con el contenido de `salidaDocs`.
+  - `docs/clases/unidad${input:unidad}/tema${input:tema}/canvas-${input:fecha}.md` — con el contenido de `salidaCanvasDocs`.
+  - El roadmap generado es automáticamente accesible como página imprimible en el sitio en la ruta `/imprimir/roadmap/unidad${input:unidad}/tema${input:tema}/roadmap-${input:fecha}` gracias al componente `RoadmapImpresion.astro` y la ruta dinámica `src/pages/imprimir/roadmap/[...slug].astro`. Incluye este enlace en `salidaCanvasDocs`.
   - Si `modoWeb` indica reemplazo o actualización, edita directamente en `src/data/syllabus.ts` el objeto del tema correspondiente, actualizando los campos `panorama`, `objetivos`, `ideasClave`, `actividad`, `evidencia`, `herramientas` y `presentationBlocks`.
   - Si `modoWeb` es solo convivencia o generación, muestra los bloques TypeScript listos para copiar pero no edites el archivo.
   - **Siempre actualiza `presentationBlocks`** en `src/data/syllabus.ts` para el tema indicado, ya sea como reemplazo o como propuesta comentada junto al bloque actual. La presentación del sitio se deriva de este campo.
@@ -117,16 +139,16 @@ Instrucciones obligatorias para la generación:
    - lista de recursos con nombre, tipo, propósito breve y enlace;
    - enlace a la presentación alojada en la web del curso;
    - cuando corresponda, enlace a la guía del tema y a la versión imprimible o PDF del tema;
-   - enlace al roadmap docente imprimible en la web del curso, construido con la lógica: `/imprimir/roadmap/unidad{n}/tema{m}/roadmap-{fecha}`.
+   - enlace al roadmap docente imprimible en la web del curso, construido con la lógica: `/imprimir/roadmap/unidad${input:unidad}/tema${input:tema}/roadmap-${input:fecha}`.
 - Si `urlBaseSitio` está disponible, construye enlaces absolutos para la web del curso usando esta base.
 - Si `urlBaseSitio` no está disponible, entrega enlaces relativos válidos del sitio y marca que falta convertirlos a URL pública antes de subir a Canvas LMS.
 - Para construir los enlaces internos del curso, usa esta lógica:
-   - guía del tema: `/unidad{n}/tema{m}`
-   - presentación: `/presentacion/unidad{n}/tema{m}`
-   - imprimir o PDF: `/imprimir/unidad{n}/tema{m}`
+   - guía del tema: `/unidad${input:unidad}/tema${input:tema}`
+   - presentación: `/presentacion/unidad${input:unidad}/tema${input:tema}`
+   - imprimir o PDF: `/imprimir/unidad${input:unidad}/tema${input:tema}`
 - En `salidaCanvasDocs`, no incluyas bibliografía extensa ni desarrollo completo del roadmap; prioriza usabilidad para el estudiante y facilidad de carga en la plataforma.
 - Cuando incluyas enlaces en `salidaCanvasDocs`, preséntalos en una línea visible y simple con esta forma: `Enlace: [URL](URL)`.
-- Usa esta ruta para el archivo Canvas: `docs/clases/unidad{n}/tema{m}/canvas-{fecha}.md`.
+- Usa esta ruta para el archivo Canvas: `docs/clases/unidad${input:unidad}/tema${input:tema}/canvas-${input:fecha}.md`.
 - Toda bibliografía debe quedar en APA 7.ª edición.
 - No inventes referencias. Si falta información bibliográfica, márcala como pendiente de validación.
 
@@ -135,11 +157,18 @@ Formato de salida:
    - Asignatura
    - Unidad
    - Tema
+   - Número de sesión (según sílabo)
+   - Tema oficial del sílabo para esa sesión
+   - Capacidad declarada en el sílabo para esa sesión
+   - Resultado de aprendizaje de la unidad al que contribuye
+   - Tipo de evidencia esperada para la unidad
+   - Horas: HD / HP / HAA (según tabla del sílabo)
    - Fecha
    - Profesor
    - Duración
    - Modalidad
    - Tipo de clase
+   - Componentes de evaluación que cubre la clase (proyectos / talleres / participación / asincrónico)
 2. Propósito general de la sesión.
 3. Objetivos de aprendizaje de la clase.
 4. `salidaDocs` en Markdown lista para `docs/`, con:
@@ -165,11 +194,13 @@ Formato de salida:
    - Criterio de evaluación
 7. Preguntas detonantes para mantener participación.
 8. Recursos sugeridos para clase magistral:
-   - Fuente académica principal
+   - Referencia de la bibliografía oficial del sílabo más pertinente al tema de la sesión
+   - Fuente académica complementaria (UNACH u otra fuente confiable)
    - Recurso web de apoyo
    - Video o recurso audiovisual útil
    - Recurso para profundización docente
-9. Nota sobre la presentación: el contenido de las diapositivas se genera dentro del campo `presentationBlocks` de `salidaWeb` y se escribe en `src/data/syllabus.ts`. La URL de la presentación en la web es `{urlBaseSitio}/presentacion/unidad{n}/tema{m}`.
+   - Enlace o recurso oficial listado en el sílabo (sección "Enlaces de Internet") si aplica al tema
+9. Nota sobre la presentación: el contenido de las diapositivas se genera dentro del campo `presentationBlocks` de `salidaWeb` y se escribe en `src/data/syllabus.ts`. La URL de la presentación en la web es `https://web-design-itsae.netlify.app/presentacion/unidad${input:unidad}/tema${input:tema}`.
 10. `salidaWeb` con bloques listos para el contenido web actual:
    - panorama
    - objetivos

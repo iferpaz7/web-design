@@ -3,7 +3,6 @@ name: "crear-silabo-sga-unach"
 description: "Redacta un sílabo en formato SGA alineado al curso y con bibliografía priorizada desde fuentes de UNACH en APA 7. Úsalo cuando necesites crear o rehacer un sílabo institucional."
 argument-hint: "tema=... carrera=... nivel=... fuenteUnach=... ajustes=..."
 agent: "agent"
-tools: [search, web]
 ---
 
 Genera un sílabo institucional en español, listo para SGA, tomando como base el estilo, la estructura y el tono de [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md).
@@ -39,7 +38,7 @@ Formato de salida:
    - "Fuentes complementarias utilizadas"
 
 **Creación de archivos obligatoria:** Una vez generado el contenido, crea físicamente el archivo en disco. No es suficiente mostrarlo en el chat.
-- Ruta: `docs/silabos/silabo-{carrera}-{nivel}-{fecha}.md`
+- Ruta: `docs/silabos/silabo-${input:carrera}-${input:nivel}-${input:fecha}.md`
 - Usa la fecha del día en que se ejecuta el prompt si no se proporciona.
 
 Si la fuente UNACH proporcionada o la búsqueda por defecto no son suficientes para sostener una bibliografía pertinente y verificable, pide primero la información faltante antes de completar la bibliografía.

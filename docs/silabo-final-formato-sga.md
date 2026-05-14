@@ -43,26 +43,26 @@ Diseñar, prototipar, publicar y optimizar una página web orientada a campaña 
 
 ## Actividades por sesión
 
-| Sesión | Unidad | Capacidades | Tema | HD | HP | HAA |
+| Tema | Unidad | Capacidades | Descripción del tema | HD | HP | HAA |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | Unidad 1 | Comprender el rol de la página web dentro de una campaña y su función en el embudo de conversión. | Rol de la página web en la estrategia de marketing digital. | 1 | 1 | 1 |
 | 2 | Unidad 1 | Reconocer principios de experiencia de usuario aplicables a páginas de campaña. | Principios de UX/UI aplicados a experiencias digitales. | 1 | 1 | 1 |
 | 3 | Unidad 1 | Organizar visualmente la información para priorizar comprensión y acción. | Jerarquía visual, tipografía, color y composición. | 1 | 1 | 1 |
 | 4 | Unidad 1 | Aplicar criterios de calidad para lectura, navegación y adaptación móvil. | Usabilidad, accesibilidad y lectura móvil. | 1 | 1 | 1 |
-| 5 | Unidad 2 | Definir el enfoque del mensaje según audiencia e intención del usuario. | Segmentación, intención del usuario y enfoque del mensaje. | 1 | 1 | 1 |
-| 6 | Unidad 2 | Construir el recorrido del usuario por bloques y secciones. | Arquitectura de la información y recorrido del usuario. | 1 | 1 | 1 |
-| 7 | Unidad 2 | Redactar contenidos persuasivos para cada sección de la página web | Titulares, beneficios, prueba social y llamados a la acción. | 1 | 1 | 1 |
-| 8 | Unidad 2 | Traducir la estructura y el contenido en un prototipo visual validable. | Prototipado de baja y media fidelidad. | 1 | 1 | 1 |
-| 9 | Bimestre I | Integrar y evidenciar los aprendizajes alcanzados en las dos primeras unidades. | Examen Bimestre I. | 1 | 1 | 1 |
-| 10 | Unidad 3 | Seleccionar una herramienta viable para la publicación de la página web. | Publicación en nube, constructores visuales y CMS accesibles. | 1 | 1 | 1 |
-| 11 | Unidad 3 | Construir la página por secciones y adaptarla a distintos dispositivos. | Maquetación y adaptación responsiva. | 1 | 1 | 1 |
-| 12 | Unidad 3 | Integrar un mecanismo funcional de conversión o contacto. | Formularios, captura de contactos y rutas de conversión. | 1 | 1 | 1 |
-| 13 | Unidad 3 | Verificar la calidad final antes de publicación o presentación. | Revisión de enlaces, legibilidad, carga y recursos. | 1 | 1 | 1 |
-| 14 | Unidad 4 | Identificar oportunidades de mejora de la página web. | Principios de optimización orientada a la conversión. | 1 | 1 | 1 |
-| 15 | Unidad 4 | Aplicar criterios básicos de visibilidad y rendimiento. | SEO básico y rendimiento. | 1 | 1 | 1 |
-| 16 | Unidad 4 | Interpretar indicadores y evidencias de desempeño. | Medición básica del comportamiento y conversiones. | 1 | 1 | 1 |
-| 17 | Unidad 4 | Sustentar mejoras y preparar el cierre del proyecto final. | Presentación final e iteración de la página web. | 1 | 1 | 1 |
-| 18 | Bimestre II | Integrar y sustentar los aprendizajes logrados durante todo el período académico. | Examen Bimestre II. | 1 | 1 | 1 |
+| 1 | Unidad 2 | Definir el enfoque del mensaje según audiencia e intención del usuario. | Segmentación, intención del usuario y enfoque del mensaje. | 1 | 1 | 1 |
+| 2 | Unidad 2 | Construir el recorrido del usuario por bloques y secciones. | Arquitectura de la información y recorrido del usuario. | 1 | 1 | 1 |
+| 3 | Unidad 2 | Redactar contenidos persuasivos para cada sección de la página web. | Titulares, beneficios, prueba social y llamados a la acción. | 1 | 1 | 1 |
+| 4 | Unidad 2 | Traducir la estructura y el contenido en un prototipo visual validable. | Prototipado de baja y media fidelidad. | 1 | 1 | 1 |
+| — | Bimestre I | Integrar y evidenciar los aprendizajes alcanzados en las dos primeras unidades. | Examen Bimestre I. | 1 | 1 | 1 |
+| 1 | Unidad 3 | Seleccionar una herramienta viable para la publicación de la página web. | Publicación en nube, constructores visuales y CMS accesibles. | 1 | 1 | 1 |
+| 2 | Unidad 3 | Construir la página por secciones y adaptarla a distintos dispositivos. | Maquetación y adaptación responsiva. | 1 | 1 | 1 |
+| 3 | Unidad 3 | Integrar un mecanismo funcional de conversión o contacto. | Formularios, captura de contactos y rutas de conversión. | 1 | 1 | 1 |
+| 4 | Unidad 3 | Verificar la calidad final antes de publicación o presentación. | Revisión de enlaces, legibilidad, carga y recursos. | 1 | 1 | 1 |
+| 1 | Unidad 4 | Identificar oportunidades de mejora de la página web. | Principios de optimización orientada a la conversión. | 1 | 1 | 1 |
+| 2 | Unidad 4 | Aplicar criterios básicos de visibilidad y rendimiento. | SEO básico y rendimiento. | 1 | 1 | 1 |
+| 3 | Unidad 4 | Interpretar indicadores y evidencias de desempeño. | Medición básica del comportamiento y conversiones. | 1 | 1 | 1 |
+| 4 | Unidad 4 | Sustentar mejoras y preparar el cierre del proyecto final. | Presentación final e iteración de la página web. | 1 | 1 | 1 |
+| — | Bimestre II | Integrar y sustentar los aprendizajes logrados durante todo el período académico. | Examen Bimestre II. | 1 | 1 | 1 |
 
 ## Estrategias metodológicas básicas
 

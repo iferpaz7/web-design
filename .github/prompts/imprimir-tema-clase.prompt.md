@@ -3,7 +3,6 @@ name: "imprimir-tema-clase"
 description: "Genera un tema listo para impresión o PDF con fecha y nombre del profesor. Úsalo para entregar o archivar material de clase."
 argument-hint: "unidad=... tema=... fecha=... profesor=..."
 agent: "agent"
-tools: [search, web]
 ---
 
 Genera una versión lista para impresión de un tema del curso, tomando como base [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md) y [src/data/syllabus.ts](../../src/data/syllabus.ts).
@@ -16,6 +15,7 @@ Usa estos inputs:
 - Fecha: ${input:fecha:Fecha de la clase}
 - Profesor: ${input:profesor:Nombre completo del docente}
 - Modalidad: ${input:modalidad:Presencial, virtual o híbrida}
+- URL base del sitio publicado: https://web-design-itsae.netlify.app/
 - Ajustes: ${input:ajustes:Indicaciones adicionales}
 
 Instrucciones obligatorias:
@@ -39,7 +39,7 @@ Formato de salida:
 - Incluye una subsección breve de "Recursos sugeridos para ampliación" cuando existan fuentes online pertinentes.
 
 **Creación de archivos obligatoria:** Una vez generado el contenido, crea físicamente el archivo en disco. No es suficiente mostrarlo en el chat.
-- Ruta: `docs/guias/unidad{n}/tema{m}/guia-{fecha}.md`
+- Ruta: `docs/guias/unidad${input:unidad}/tema${input:tema}/guia-${input:fecha}.md`
 - También incluye el enlace a la presentación y a la versión imprimible del sitio web al final del documento:
-  - Presentación: `{urlBase}/presentacion/unidad{n}/tema{m}` (si la URL base está disponible)
-  - Imprimible: `{urlBase}/imprimir/unidad{n}/tema{m}`
+  - Presentación: `https://web-design-itsae.netlify.app/presentacion/unidad${input:unidad}/tema${input:tema}` (si la URL base está disponible)
+  - Imprimible: `https://web-design-itsae.netlify.app/imprimir/unidad${input:unidad}/tema${input:tema}`

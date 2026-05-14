@@ -3,7 +3,6 @@ name: "generar-examen-bimestral"
 description: "Genera un examen por bimestre con fecha, cantidad de preguntas y balance teórico-práctico. Úsalo para Bimestre I o II según el sílabo."
 argument-hint: "bimestre=... fecha=... cantidadPreguntas=... tipo=..."
 agent: "agent"
-tools: [search, web]
 ---
 
 Genera un examen bimestral alineado a [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md).
@@ -39,7 +38,7 @@ Formato de salida:
 5. Breve nota final con la trazabilidad temática respecto al sílabo.
 
 **Creación de archivos obligatoria:** Una vez generado el contenido, crea físicamente el archivo en disco. No es suficiente mostrarlo en el chat.
-- Ruta: `docs/examenes/examen-bimestre{n}-{fecha}.md`
-- Crea también `docs/examenes/clave-bimestre{n}-{fecha}.md` con la clave de respuestas o pauta de corrección separada (para que el docente la guarde aparte del examen que entrega a los estudiantes).
+- Ruta: `docs/examenes/examen-bimestre${input:bimestre}-${input:fecha}.md`
+- Crea también `docs/examenes/clave-bimestre${input:bimestre}-${input:fecha}.md` con la clave de respuestas o pauta de corrección separada (para que el docente la guarde aparte del examen que entrega a los estudiantes).
 
 Si el número de preguntas no es coherente con el tipo solicitado, propone una distribución razonable antes de generar el examen.
