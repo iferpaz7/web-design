@@ -333,35 +333,59 @@ export const syllabusUnits: SyllabusUnit[] = [
         descripcion: 'Buenas prácticas para que la experiencia sea comprensible, inclusiva y efectiva en distintos dispositivos.',
         href: '/unidad1/tema4',
         disponible: true,
-        panorama: 'La calidad de una página web también se mide por su facilidad de uso, su accesibilidad y su comportamiento en móvil. Este tema introduce criterios mínimos para revisar legibilidad, navegación, contraste y adaptación a pantallas pequeñas.',
+        panorama: 'La calidad de una página web no solo se mide por su estética, sino por su facilidad de uso, su accesibilidad y su comportamiento real en pantallas móviles. En un entorno "Mobile-First", preparar la interacción es como preparar la buena tierra para el usuario: eliminando fricciones, cuidando contrastes y priorizando accesibilidad universal.',
         objetivos: [
-          'Aplicar criterios básicos de usabilidad y accesibilidad.',
-          'Evaluar lectura y navegación en móvil.',
-          'Construir una lista de cotejo para revisión de calidad.'
+          'Aplicar criterios básicos de usabilidad e interactividad sin fricción.',
+          'Evaluar lectura y navegación en móvil bajo principios Mobile-First.',
+          'Auditar un producto visual usando checklist de calidad técnica y accesibilidad.'
         ],
         ideasClave: [
-          'Una página útil debe poder leerse y recorrerse con facilidad.',
-          'La accesibilidad mejora la experiencia de todas las personas usuarias.',
-          'Móvil ya no es opcional: es parte central del diseño.'
+          'Las interfaces útiles reducen al máximo la decisión cognitiva.',
+          'La accesibilidad beneficia a todos los usuarios; la claridad no es un favor, es un deber ético.',
+          'Móvil ya no es una opción de diseño adicional, debe ser el territorio principal auditado.'
         ],
-        actividad: 'Revisa un prototipo o página existente con una lista de cotejo de calidad visual, legibilidad y accesibilidad.',
-        evidencia: 'Lista de cotejo aplicada con observaciones y mejoras sugeridas.',
-        herramientas: ['Checklist de usabilidad', 'Revisión en móvil', 'Criterios básicos de accesibilidad'],
+        actividad: 'La Buena Tierra Digital: Inspecciona con tu celular y un checklist una maqueta/web para detectar problemas de legibilidad, contraste y barreras de accesibilidad.',
+        evidencia: 'Lista de cotejo aplicada con observaciones, bloqueos detectados y mejoras sugeridas.',
+        herramientas: ['Checklist de usabilidad (10 puntos)', 'Revisión técnica en Smartphone', 'Criterios de contraste (W3C/WCAG)'],
         presentationBlocks: [
           {
-            title: 'Móvil y calidad percibida',
+            title: 'Objetivo de la sesión',
             items: [
-              'El tráfico móvil suele ser mayoritario; por eso la lectura y la navegación deben validarse primero en pantallas pequeñas.',
-              'Diseñar mobile-first obliga a priorizar contenido, espaciado y acción principal.',
-              'Una página accesible y legible reduce fricción para todas las personas usuarias, no solo para casos especiales.'
+              'Entender la relación vital entre calidad técnica, usabilidad y experiencia.',
+              'Auditar interfaces con visión Mobile-First y empatía al usuario.',
+              'Realizar nuestro check-up preventivo de calidad (cierre de unidad).'
             ]
           },
           {
-            title: 'Lista corta de control antes de publicar',
+            title: 'Usabilidad Mínima Viable',
             items: [
-              'Contraste suficiente entre texto y fondo.',
-              'Botones y enlaces fáciles de pulsar en móvil.',
-              'Mensajes, navegación y CTA comprensibles en menos de una pantalla.'
+              'No exijas pensar de más al usuario: la interfaz debe ser autoevidente.',
+              'Emplea las convenciones: menús, logos y estructuras donde el usuario ya sabe buscarlas.',
+              'Consistencia: reduce la carga de aprendizaje al unificar estilos de botones y enlaces.'
+            ]
+          },
+          {
+            title: 'Mobile-First (Móvil no es accesorio)',
+            items: [
+              'Aceptar el volumen de tráfico: tu contenido se consumirá en su gran mayoría por pantallas de 6 pulgadas.',
+              'Diseñar primero la versión apilada te obliga a editar, priorizar y reducir lo que es meramente cosmético.',
+              'Las áreas táctiles y márgenes importan. "Pulsable por un pulgar".'
+            ]
+          },
+          {
+            title: 'Diseño Inclusivo: Accesibilidad, el "Buen Terreno"',
+            items: [
+              'Preparar un terreno digital libre de tropiezos para capacidades visuales y cognitivas diversas.',
+              'Altos contrastes (WCAG), texto nunca menor a 16px.',
+              'Legibilidad como acto de respeto: no complique lo que puede ser claro.'
+            ]
+          },
+          {
+            title: 'Taller: Auditoría de Accesibilidad',
+            items: [
+              'Revisaremos una base de componentes o prototipo utilizando una Matriz de 10 puntos provista por el docente.',
+              'Valida con tu celular y socializa qué resulta frustrante de leer o utilizar en este demo.',
+              'Marca mejoras para nuestra próxima unidad de construcción real.'
             ]
           }
         ]
