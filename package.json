@@ -2,12 +2,6 @@
   "name": "diseno-web-presentaciones",
   "type": "module",
   "version": "1.0.0",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "sharp"
-    ]
-  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -15,16 +9,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^5.0.4",
-    "@tailwindcss/vite": "^4.2.4",
-    "astro": "^6.2.2",
-    "lucide-react": "^1.14.0",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
-    "tailwindcss": "^4.2.4"
+    "@astrojs/react": "^5.0.5",
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.3.5",
+    "lucide-react": "^1.16.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
-    "@types/react": "^19.2.14",
+    "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
     "typescript": "^6.0.3"
   }
