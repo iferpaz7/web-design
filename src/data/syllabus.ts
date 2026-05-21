@@ -407,27 +407,74 @@ export const syllabusUnits: SyllabusUnit[] = [
         descripcion: 'Definición del público, sus necesidades y el ángulo de comunicación más pertinente.',
         href: '/unidad2/tema1',
         disponible: true,
-        panorama: 'El contenido solo funciona cuando responde a una intención concreta. Este tema organiza el mensaje desde el perfil del usuario, sus motivaciones, objeciones y el momento en que entra en contacto con la propuesta.',
+        panorama: 'El contenido solo funciona cuando responde a una intención concreta. Este tema organiza el mensaje desde el perfil del usuario: quién es, qué motivaciones tiene, qué objeciones enfrenta y en qué momento entra en contacto con la propuesta. Un mensaje preciso no es un mensaje para todos; es un mensaje que la persona correcta reconoce de inmediato como relevante para ella.',
         objetivos: [
-          'Definir el perfil del usuario y su intención principal.',
-          'Priorizar la propuesta de valor más relevante para ese perfil.',
-          'Elegir un enfoque de mensaje claro y diferenciado.'
+          'Construir un perfil de usuario documentando su objetivo, necesidad, objeción y contexto de entrada.',
+          'Identificar la intención de visita dominante y relacionarla con la estructura del contenido.',
+          'Formular la propuesta de valor en términos de beneficio para el usuario, no de características del producto.',
+          'Redactar el mensaje central de la página en una sola frase verificable y diferenciada.'
         ],
         ideasClave: [
-          'No se comunica igual a todos los públicos ni en todos los momentos.',
-          'La propuesta de valor debe responder a una necesidad concreta.',
-          'El mensaje central guía el resto del contenido.'
+          'No se comunica igual a todos los públicos ni en todos los momentos: segmentar es enfocar para resonar.',
+          'La intención de visita define qué debe decir la página y dónde debe estar el llamado a la acción.',
+          'La propuesta de valor traduce características en beneficios concretos para el usuario.',
+          'El mensaje central es el ancla de todo el contenido que vendrá: una frase que el usuario reconocería como escrita para él.'
         ],
-        actividad: 'Construye una ficha de usuario con objetivo, necesidad, objeción y promesa principal.',
-        evidencia: 'Perfil de usuario y mensaje central de la página web.',
-        herramientas: ['Ficha de audiencia', 'Mapa de empatía', 'Propuesta de valor'],
+        actividad: 'Construye una ficha de usuario con perfil, objetivo, necesidad, objeción principal y momento de entrada. Luego redacta el mensaje central de tu página en una sola frase de máximo 20 palabras.',
+        evidencia: 'Ficha de usuario completa con mensaje central redactado. Primer insumo de contenido del proyecto integrador de la Unidad 2.',
+        herramientas: ['Ficha de audiencia', 'Mapa de empatía', 'Propuesta de valor', 'Buyer persona'],
         presentationBlocks: [
           {
-            title: 'Preguntas filtro para definir mensaje',
+            title: 'Objetivo de la sesión',
+            items: [
+              'Definir quién es el usuario de tu página: perfil, motivaciones y objeciones reales.',
+              'Identificar con qué intención llega el usuario y qué espera encontrar.',
+              'Formular la propuesta de valor como beneficio concreto, no como lista de características.',
+              'Redactar el mensaje central que guiará el contenido de toda la Unidad 2.'
+            ]
+          },
+          {
+            title: '¿Por qué importa conocer a tu usuario?',
+            items: [
+              'Un mensaje que intenta hablarle a todos, en la práctica no le habla a nadie.',
+              'El usuario llega con una pregunta o problema ya formulado: la página que lo responde de inmediato convierte mejor.',
+              'Cuanto más específico es el perfil, más reconocible resulta el mensaje para quien importa.'
+            ]
+          },
+          {
+            title: 'Segmentación: enfocar para resonar',
+            items: [
+              'Segmentar no es excluir: es decidir con quién vale la pena hablar con claridad y profundidad.',
+              'Variables clave: demográficas (quién es), psicográficas (qué valora), conductuales (cómo actúa) y contextuales (cuándo y desde dónde llega).',
+              'Diferencia entre público objetivo y buyer persona: el primero es un grupo; el segundo tiene nombre, historia y motivaciones propias.',
+              'Error frecuente: "hombres y mujeres de 18 a 65 años interesados en el producto." Tan amplio que no orienta ninguna decisión de contenido.'
+            ]
+          },
+          {
+            title: 'Intención del usuario: los cuatro tipos',
+            items: [
+              'Informativa: quiere entender o aprender. ("¿Qué es el marketing de contenidos?")',
+              'Transaccional: está listo para actuar. ("Contratar diseño web en Riobamba")',
+              'Comparativa: está evaluando opciones. ("Mejor plataforma de ecommerce para Ecuador")',
+              'De confirmación: casi decide y busca validación final. ("Opiniones sobre Shopify Ecuador")',
+              'Clave: la intención dominante define la posición del CTA, el tono del mensaje y la secuencia de secciones.'
+            ]
+          },
+          {
+            title: 'Propuesta de valor: de característica a beneficio',
+            items: [
+              'Fórmula: [qué hace] + [para quién] + [qué problema resuelve] + [qué la diferencia].',
+              '❌ "Somos una empresa comprometida con la calidad y el servicio." (No dice nada útil al usuario.)',
+              '✅ "Diseñamos tu tienda en línea en 7 días y empiezas a vender desde el primer mes, sin conocimientos técnicos."',
+              'Prueba de los 5 segundos: si el usuario no entiende tu propuesta de valor en 5 segundos, el diseño falló antes que el contenido.'
+            ]
+          },
+          {
+            title: 'Preguntas filtro para definir el mensaje',
             items: [
               '¿Quién es la persona usuaria y en qué momento de decisión entra a la página?',
               '¿Qué objeción principal debe resolverse antes de pedir una acción?',
-              '¿Qué promesa concreta y verificable puede sostener el contenido?'
+              '¿Qué promesa concreta y verificable puede sostener el contenido de la página?'
             ]
           },
           {
@@ -435,7 +482,33 @@ export const syllabusUnits: SyllabusUnit[] = [
             items: [
               'Si el mensaje intenta hablarle a todo el mundo, pierde claridad y fuerza.',
               'El usuario decide muy rápido si una página le sirve; por eso el enfoque debe aparecer de inmediato.',
-              'La promesa central debe poder resumirse en una frase breve y entendible.'
+              'La promesa central debe poder resumirse en una frase breve, verificable y entendible sin contexto adicional.'
+            ]
+          },
+          {
+            title: 'Mapa de empatía: ver desde los ojos del usuario',
+            items: [
+              'Qué piensa y siente: sus miedos, aspiraciones y frustraciones principales.',
+              'Qué ve: el entorno, los referentes, lo que le ofrecen otras páginas similares.',
+              'Qué dice y hace: cómo se expresa sobre el problema, qué acciones ya tomó antes de llegar.',
+              'Qué le duele y qué gana: las objeciones reales y el resultado que espera obtener.'
+            ]
+          },
+          {
+            title: 'Actividad: Ficha de usuario y mensaje central',
+            items: [
+              'Abre el brief de tu proyecto de la Unidad 1 y completa la ficha de usuario.',
+              'Define: perfil del usuario, objetivo, necesidad principal, objeción más probable y momento de entrada.',
+              'Redacta el mensaje central de tu página en una sola frase (máximo 20 palabras).',
+              'Criterio: el mensaje debe ser concreto, diferenciado y reconocible por el usuario que definiste.'
+            ]
+          },
+          {
+            title: 'Ideas clave y proyección',
+            items: [
+              'Segmentar es enfocar para resonar: el usuario correcto, en el momento correcto, con el mensaje correcto.',
+              'La intención de visita define la estructura; la propuesta de valor define el contenido; el mensaje central los ancla a ambos.',
+              'Próxima sesión: Unidad 2, Tema 2 — tomaremos esta ficha de usuario y construiremos la arquitectura de secciones de la página.'
             ]
           }
         ]
