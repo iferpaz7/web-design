@@ -516,38 +516,110 @@ export const syllabusUnits: SyllabusUnit[] = [
       {
         numero: 2,
         titulo: 'Organización de contenidos por bloques, secciones y recorrido del usuario',
-        descripcion: 'Estructuración del contenido para que el usuario avance con lógica y sin fricción.',
+        descripcion: 'Estructuración del contenido para que el usuario avance con lógica y sin fricción hacia la acción esperada.',
         href: '/unidad2/tema2',
         disponible: true,
-        panorama: 'Una buena arquitectura de la información permite decidir qué mostrar primero, cómo agrupar contenidos y en qué orden presentar beneficios, evidencia y llamados a la acción. Este tema organiza el recorrido del usuario por bloques funcionales.',
+        panorama: 'La arquitectura de la información decide qué ve el usuario primero, qué sigue después y qué acción se le pide al final. Una página de campaña no es una acumulación de secciones: es un recorrido diseñado con criterio, donde cada bloque tiene una función concreta y un lugar justificado. Este tema organiza la estructura del contenido desde el perfil del usuario y el objetivo de conversión, aplicando patrones verificados como AIDA y el principio de la pirámide invertida. Una arquitectura bien construida reduce fricción, aumenta comprensión y convierte más.',
         objetivos: [
-          'Ordenar contenidos por prioridad y función comunicativa.',
-          'Diseñar el recorrido del usuario por secciones.',
-          'Construir una estructura lógica para una página de campaña.'
+          'Identificar los bloques funcionales de una página de campaña y su propósito comunicativo específico.',
+          'Ordenar secciones aplicando patrones de recorrido verificados como AIDA y PAS.',
+          'Justificar el orden de cada bloque en relación con el perfil de usuario y el objetivo de la campaña.',
+          'Construir un mapa de secciones propio como insumo estructural del proyecto integrador.'
         ],
         ideasClave: [
-          'El orden del contenido modifica la comprensión y la respuesta del usuario.',
-          'Cada bloque debe cumplir una función concreta dentro del recorrido.',
-          'La arquitectura reduce desorden y mejora claridad.'
+          'El orden del contenido no es arbitrario: responde a la lógica del usuario, no a la preferencia del diseñador.',
+          'Cada bloque de la página debe cumplir una función comunicativa concreta dentro del recorrido del usuario.',
+          'Una buena arquitectura reduce fricción: el usuario avanza sin tener que pensar demasiado en qué hacer.',
+          'La pirámide invertida coloca lo más importante primero: propuesta de valor antes que detalles.',
+          'Un mapa de secciones claro es la base del prototipado; sin arquitectura definida, el prototipo será desordenado.',
+          'El primer CTA debe aparecer antes del tercer bloque; si el usuario llega al footer sin una oportunidad de actuar, la arquitectura falló.'
         ],
-        actividad: 'Diseña un wireframe estructural con las secciones principales de la página y su propósito.',
-        evidencia: 'Mapa de secciones o wireframe funcional.',
-        herramientas: ['Wireframe', 'Mapa de contenido', 'Secuencia narrativa por bloques'],
+        actividad: 'Construye el mapa de secciones de tu página de campaña: define 5-6 bloques, declara el propósito comunicativo de cada uno, indica el contenido principal y justifica el orden según el perfil de tu usuario.',
+        evidencia: 'Mapa de secciones con 5-6 bloques definidos, función de cada bloque declarada, contenido principal indicado y orden justificado en relación con el perfil de usuario. Segundo insumo del proyecto integrador de la Unidad 2.',
+        herramientas: ['Mapa de secciones (papel, Figma o Google Docs)', 'Plantilla de bloques funcionales', 'Patrón AIDA', 'Patrón PAS', 'Wireframe estructural básico'],
         presentationBlocks: [
           {
-            title: 'Arquitectura que convierte',
+            title: 'Objetivo de la sesión',
             items: [
-              'Una mala navegación incrementa abandono porque obliga al usuario a pensar demasiado.',
-              'La regla de los 3 clics ayuda a revisar si el contenido importante está demasiado enterrado.',
-              'El orden de las secciones cambia comprensión, confianza y respuesta.'
+              'Identificar los bloques funcionales de una página de campaña y su propósito comunicativo.',
+              'Ordenar secciones con patrones de recorrido verificados: AIDA y PAS.',
+              'Justificar el orden de cada bloque en relación con el perfil de usuario.',
+              'Construir el mapa de secciones de tu página de campaña como insumo del proyecto integrador.'
             ]
           },
           {
-            title: 'Secuencia útil de bloques',
+            title: '¿Qué es la arquitectura de la información?',
             items: [
-              'Hero: propuesta de valor y acción principal.',
-              'Beneficios y prueba social: reducen riesgo percibido.',
-              'Cierre con CTA: convierte la lectura en respuesta.'
+              'Es el mapa que le dice al usuario dónde está, qué puede hacer y qué encontrará si sigue avanzando.',
+              'No es sobre colores ni tipografía: es sobre estructura, orden y función comunicativa.',
+              'Las páginas que convierten tienen recorridos claros, no solo diseños bonitos.',
+              'Steve Krug en "No me hagas pensar": la mejor arquitectura es la que el usuario no necesita pensar para seguir.'
+            ]
+          },
+          {
+            title: 'Los seis bloques funcionales de una página de campaña',
+            items: [
+              'Hero: comunica quién eres y qué ofreces en 3-5 segundos. Titular, subtítulo, CTA y imagen contextual.',
+              'Beneficios: ¿por qué elegirte? Responde objeciones anticipadas en formato visual (3-4 puntos).',
+              'Prueba social: testimonios, logos, números. Reduce el riesgo percibido del usuario.',
+              'Detalle: explica en profundidad para los usuarios que siguen explorando después de ver lo esencial.',
+              'CTA de cierre: el último llamado antes de que el usuario abandone. Directo y contextual.',
+              'Footer: contacto, redes, navegación secundaria. No convierte directamente, pero retiene y orienta.'
+            ]
+          },
+          {
+            title: 'Patrones de recorrido: AIDA y PAS',
+            items: [
+              'AIDA: Atención → Interés → Deseo → Acción. El esquema narrativo clásico de campaña.',
+              'PAS: Problema → Agitación → Solución. Más directo; útil para páginas de respuesta rápida.',
+              'El usuario toma en promedio 50 ms para decidir si la página le interesa: la arquitectura no puede depender de que lea todo.',
+              'Usa AIDA cuando el usuario necesita ser convencido; usa PAS cuando el usuario ya reconoce su problema.'
+            ]
+          },
+          {
+            title: 'La pirámide invertida del contenido',
+            items: [
+              'Lo más importante va primero: mensaje central, propuesta de valor y CTA principal — visibles sin hacer scroll.',
+              'Luego el contexto: beneficios, explicación y evidencia de soporte para quienes siguen leyendo.',
+              'Al final los detalles: especificaciones, política de privacidad y footer.',
+              'Error frecuente: enterrar la propuesta de valor en el tercer bloque para "construir contexto". El usuario no espera ni lee en orden.'
+            ]
+          },
+          {
+            title: 'Regla práctica: el primer CTA',
+            items: [
+              'El primer llamado a la acción debe aparecer antes de que el usuario termine de ver el tercer bloque.',
+              'No es necesario que esté en el hero, pero sí en la zona de decisión inicial.',
+              'Si el usuario llega al footer sin haber visto una oportunidad de actuar, la arquitectura falló.',
+              'El CTA tardío no es modestia del diseñador: es una oportunidad de conversión desperdiciada.'
+            ]
+          },
+          {
+            title: 'Errores comunes de arquitectura',
+            items: [
+              'Múltiples mensajes principales en el hero: el usuario no sabe qué hacer primero.',
+              'CTA ausente o tardío: el usuario lee y sale sin haber tenido la oportunidad de actuar.',
+              'Bloques sin propósito definido: secciones que se ven bien pero no cumplen función comunicativa.',
+              'Estructura por intuición del diseñador, no por lógica del usuario: tiene sentido para quien diseñó, no para quien llega.',
+              'Prueba social antes que la propuesta de valor: el usuario aún no sabe qué le estás ofreciendo.'
+            ]
+          },
+          {
+            title: 'Actividad: Mapa de Secciones Guiado',
+            items: [
+              'Abre tu ficha de usuario y el mensaje central redactado en la sesión anterior.',
+              'Define 5-6 secciones para tu página. Para cada una: nombre, propósito comunicativo, contenido principal y acción esperada.',
+              'Ordena las secciones y justifica el orden en relación con el perfil de tu usuario.',
+              'Criterio: el mapa debe tener al menos un CTA en los tres primeros bloques y el orden debe seguir una lógica verificable.'
+            ]
+          },
+          {
+            title: 'Ideas clave y proyección',
+            items: [
+              'El orden no es arbitrario: responde a la lógica del usuario, no al gusto del diseñador.',
+              'Cada bloque debe cumplir una función concreta; si no la cumple, no debería estar.',
+              'Un mapa de secciones claro es la base del prototipado: sin arquitectura, el prototipo será desordenado.',
+              'Próxima sesión: Unidad 2, Tema 3 — redactaremos el contenido persuasivo de cada sección definida hoy.'
             ]
           }
         ]
