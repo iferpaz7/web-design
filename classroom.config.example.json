@@ -1,0 +1,18 @@
+{
+  "site_url": "https://web-design-itsae.netlify.app",
+  "credentials_file": "credentials.json",
+  "token_file": "token.json",
+  "default_course": {
+    "name": "Diseño Web para Marketing Digital",
+    "section": "2026",
+    "descriptionHeading": "Diseño Web para Marketing Digital",
+    "description": "Curso para planificar, diseñar, prototipar, publicar y optimizar páginas web orientadas a campañas de marketing digital y conversión.",
+    "room": "Virtual",
+    "ownerId": "me",
+    "courseState": "ACTIVE"
+  },
+  "sync": {
+    "default_state": "DRAFT",
+    "default_points": 10
+  }
+}

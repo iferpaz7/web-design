@@ -1,4 +1,5 @@
 # Diseño Web para Marketing Digital
+
 ## Unidad 2 — Tema 1: Segmentación, intención del usuario y enfoque del mensaje
 
 **Asignatura:** Diseño Web para Marketing Digital
@@ -61,48 +62,6 @@ Enlace: https://web-design-itsae.netlify.app/imprimir/roadmap/unidad2/tema1/road
 
 ---
 
-## Actividad de la clase: Ficha de usuario y mensaje central
-
-Esta actividad contribuye al componente Talleres y ejercicios aplicados (30% de la evaluación).
-
-Instrucciones:
-
-1. Toma el brief de tu proyecto elaborado en la Unidad 1.
-2. Completa la ficha de usuario para tu proyecto respondiendo estos cinco puntos:
-   - Perfil del usuario: ¿quién es en términos concretos? (nombre ficticio, edad aproximada, contexto)
-   - Objetivo del usuario: ¿qué busca lograr al entrar a la página?
-   - Necesidad principal: ¿qué problema o incomodidad lo trajo aquí?
-   - Objeción más probable: ¿qué duda o miedo lo haría irse sin actuar?
-   - Momento de entrada: ¿viene informado y listo para decidir, o está apenas explorando?
-3. Con base en esa ficha, redacta el mensaje central de tu página en una sola frase (máximo 20 palabras).
-4. Publica tu ficha completa y mensaje central en el espacio indicado por el docente.
-
----
-
-## Evidencia esperada
-
-Ficha de usuario completa con mensaje central redactado.
-
-Este documento es el primer insumo de contenido de la Unidad 2 y la base de los textos, la arquitectura y el prototipo que desarrollarás en los próximos temas.
-
----
-
-## Actividad asincrónica para esta semana
-
-Esta actividad contribuye al componente Actividades asincrónicas y retroalimentación (15% de la evaluación).
-
-Instrucciones:
-
-1. Selecciona dos páginas web de negocios del mismo sector o tipo que tu proyecto integrador.
-2. Para cada página, analiza y documenta por escrito:
-   - ¿Quién es el usuario implícito que asume esa página? (descríbelo en 2 a 3 líneas)
-   - ¿Qué intención de visita parece asumir la página: informativa, comparativa, transaccional?
-   - ¿Cuál es el mensaje central que puedes inferir del titular o del hero section?
-   - ¿Qué objeción responde o ignora la página?
-3. Entrega tus respuestas en el foro o tarea de Canvas antes de la próxima sesión.
-
----
-
 ## Próxima sesión
 
 Unidad 2, Tema 2: Organización de contenidos por bloques, secciones y recorrido del usuario.
@@ -111,4 +70,4 @@ Tomaremos la ficha de usuario y el mensaje central que construiste hoy y los tra
 
 ---
 
-*Nota: todos los enlaces de este documento apuntan al sitio publicado del curso en https://web-design-itsae.netlify.app/. Si algún enlace no carga, verifica la disponibilidad del sitio o consulta directamente al docente.*
+_Nota: todos los enlaces de este documento apuntan al sitio publicado del curso en https://web-design-itsae.netlify.app/. Si algún enlace no carga, verifica la disponibilidad del sitio o consulta directamente al docente._

@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "classroom": "PYTHONPATH=.python_deps python3 tools/google_classroom/classroom_cli.py"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.5",

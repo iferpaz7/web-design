@@ -1,11 +1,12 @@
 ---
-description: "Prepara el roadmap maestro de una clase dinámica y memorable, alineada a la sesión exacta del sílabo SGA. Levanta los inputs del prompt, consulta la tabla de sesiones del sílabo para extraer capacidad, horas y evidencia, y separa la salida para la web, docs y Canvas LMS. Úsalo para planificar una sesión magistral o mixta coherente con la asignatura de Diseño Web para Marketing Digital y la filosofía ITSAE."
+description: "Prepara el roadmap maestro de una clase dinámica y memorable, alineada a la sesión exacta del sílabo SGA. Levanta los inputs del prompt, consulta la tabla de sesiones del sílabo para extraer capacidad, horas y evidencia, y separa la salida para la web, docs y Google Classroom. Úsalo para planificar una sesión magistral o mixta coherente con la asignatura de Diseño Web para Marketing Digital y la filosofía ITSAE."
 argument-hint: "Inputs obligatorios: unidad (1-4), tema (1-4 dentro de la unidad), fecha, tipoClase, profundidad, criterio, cantidad. Opcionales: fuenteUnach, ajustes."
 ---
 
 Prepara el roadmap completo de una clase usando como fuente primaria el sílabo oficial de la asignatura en [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md) y, de manera complementaria cuando el tema ya exista en la web del curso, en [src/data/syllabus.ts](../../src/data/syllabus.ts).
 
 **Antes de generar cualquier contenido**, lee el sílabo completo y localiza la fila de la tabla "Actividades por sesión" que coincida con la **combinación de `unidad` y `tema`** indicadas en los inputs (el número de tema equivale al número de sesión dentro de la unidad, ya que ambos reinician en 1 en cada unidad). Extrae de esa fila:
+
 - El número de tema / sesión dentro de la unidad.
 - La capacidad específica declarada en el sílabo para esa fila (campo "Capacidades").
 - El tema oficial del sílabo (campo "Tema").
@@ -13,6 +14,7 @@ Prepara el roadmap completo de una clase usando como fuente primaria el sílabo 
 - La unidad a la que pertenece.
 
 Identifica además:
+
 - El resultado de aprendizaje o competencia del sílabo que cubre esta unidad (sección "Resultado de aprendizaje o competencias").
 - El detalle e inclusiones temáticas declarados para la unidad correspondiente (sección "Unidades").
 - El tipo de evidencia esperada para esa unidad según el sílabo.
@@ -20,16 +22,18 @@ Identifica además:
 Usa estos datos extraídos del sílabo como ancla pedagógica: el objetivo de la sesión, los contenidos, las actividades y la evidencia de la clase deben ser coherentes con la capacidad declarada en esa fila y con el resultado de aprendizaje de la unidad.
 
 Este prompt debe resolver en una sola salida lo que normalmente se haría por separado para:
+
 - desglose temático,
 - generación de actividades,
 - preparación de presentación,
 - adaptación del contenido al sitio web actual del curso,
 - generación de una versión docente exportable a `docs`,
-- y generación de un Markdown de recursos para subir a Canvas LMS.
+- y generación de un Markdown de publicación listo para Google Classroom.
 
 Sigue también la guía institucional en [itsae-filosofia-docencia](../instructions/itsae-filosofia-docencia.instructions.md).
 
 Usa estos inputs:
+
 - Unidad: ${input:unidad:Número de unidad (1-4)}
 - Tema: ${input:tema:Número de tema dentro de la unidad (1-4)}
 - Fecha: ${input:fecha:Fecha de la clase (YYYY-MM-DD)}
@@ -42,19 +46,21 @@ Usa estos inputs:
 - Cantidad de actividades: ${input:cantidad:Cantidad de actividades o momentos prácticos}
 - Modo de salida web: ambos
 - Modo de salida docs: ambos
-- Modo de salida Canvas: ambos
+- Modo de salida Google Classroom: ambos
 - URL base del sitio publicado: https://web-design-itsae.netlify.app/
 - Fuentes prioritarias UNACH: ${input:fuenteUnach:URL, catálogo o referencia de biblioteca UNACH (opcional)}
 - Ajustes: ${input:ajustes:Énfasis, restricciones o necesidades específicas (opcional)}
 
 Regla de ejecución del prompt:
+
 - Levanta estos datos desde los inputs del prompt antes de generar cualquier contenido.
-- Trata como obligatorios: `unidad`, `tema`, `fecha`, `tipoClase`, `profundidad`, `criterio` y `cantidad`. Los campos `profesor`, `duracion`, `modalidad`, `modoWeb`, `modoDocs`, `modoCanvas` y `urlBaseSitio` ya tienen valores fijos en este prompt. Los campos `fuenteUnach` y `ajustes` son opcionales.
+- Trata como obligatorios: `unidad`, `tema`, `fecha`, `tipoClase`, `profundidad`, `criterio` y `cantidad`. Los campos `profesor`, `duracion`, `modalidad`, `modoWeb`, `modoDocs`, `modoGoogleClassroom` y `urlBaseSitio` ya tienen valores fijos en este prompt. Los campos `fuenteUnach` y `ajustes` son opcionales.
 - No solicites estos datos nuevamente en el chat si ya vienen resueltos por `${input:...}`.
 - Si al ejecutarse el prompt algún campo obligatorio quedó vacío, detén la generación y responde únicamente con una lista breve de los campos faltantes para que el usuario vuelva a ejecutar el prompt completándolos.
 - Usa `unidad` + `tema` como clave compuesta para localizar la fila exacta en la tabla del sílabo (ej. Unidad 2, Tema 3).
 
 Prioridad de fuentes bibliográficas:
+
 1. Usa como primera fuente la bibliografía oficial de la asignatura listada en el sílabo (sección "Bibliografía"). Estas referencias ya están en APA 7.ª edición y son las que el estudiante debe conocer.
 2. Si `fuenteUnach` fue proporcionado, úsalo como segunda fuente.
 3. Si `fuenteUnach` no se proporciona, usa como tercera fuente esta búsqueda del catálogo de biblioteca UNACH y refina los términos según el tema:
@@ -62,7 +68,8 @@ Prioridad de fuentes bibliográficas:
 4. Complementa con fuentes web especializadas, videos y recursos digitales solo cuando las anteriores no cubran el tema con suficiente profundidad.
 
 Instrucciones obligatorias para la generación:
-- No asumas valores para `fecha` si no fue entregada. Los campos `profesor`, `duracion`, `modalidad`, `modoWeb`, `modoDocs`, `modoCanvas` y `urlBaseSitio` ya tienen valores fijos en este prompt.
+
+- No asumas valores para `fecha` si no fue entregada. Los campos `profesor`, `duracion`, `modalidad`, `modoWeb`, `modoDocs`, `modoGoogleClassroom` y `urlBaseSitio` ya tienen valores fijos en este prompt.
 - Considera que `unidad`, `tema`, `sesion`, `fecha`, `tipoClase`, `profundidad`, `criterio` y `cantidad` deben entrar por los inputs del prompt y deben estar resueltos antes de continuar.
 - El objetivo de aprendizaje de la clase debe ser una redacción operativa de la capacidad declarada en el sílabo para esa sesión, no una elaboración libre desconectada del documento oficial.
 - Las actividades deben estar alineadas al porcentaje y tipo de evaluación del sílabo (proyectos 40 %, talleres 30 %, actividades asincrónicas 15 %, participación 15 %). Especifica en la ficha de cada actividad a qué componente de evaluación contribuye.
@@ -76,8 +83,9 @@ Instrucciones obligatorias para la generación:
 - Si el tema solicitado no existe todavía en `src/data/syllabus.ts`, entonces sí construye la propuesta desde el sílabo y deja claro que se trata de contenido nuevo para incorporar al sitio.
 - **Creación de archivos obligatoria:** Una vez generado el contenido, crea físicamente los archivos en disco usando las herramientas disponibles. No es suficiente mostrar el contenido como texto en el chat. Usa esta estructura jerárquica:
   - `docs/clases/unidad${input:unidad}/tema${input:tema}/roadmap-${input:fecha}.md` — con el contenido de `salidaDocs`.
-  - `docs/clases/unidad${input:unidad}/tema${input:tema}/canvas-${input:fecha}.md` — con el contenido de `salidaCanvasDocs`.
-  - El roadmap generado es automáticamente accesible como página imprimible en el sitio en la ruta `/imprimir/roadmap/unidad${input:unidad}/tema${input:tema}/roadmap-${input:fecha}` gracias al componente `RoadmapImpresion.astro` y la ruta dinámica `src/pages/imprimir/roadmap/[...slug].astro`. Incluye este enlace en `salidaCanvasDocs`.
+  - `docs/clases/unidad${input:unidad}/tema${input:tema}/classroom-${input:fecha}.md` — con el contenido del **material** de `salidaGoogleClassroomDocs`.
+  - `docs/clases/unidad${input:unidad}/tema${input:tema}/actividad-${input:fecha}.md` — con el contenido de la **tarea/assignment** de `salidaGoogleClassroomDocs`.
+  - El roadmap generado es automáticamente accesible como página imprimible en el sitio en la ruta `/imprimir/roadmap/unidad${input:unidad}/tema${input:tema}/roadmap-${input:fecha}` gracias al componente `RoadmapImpresion.astro` y la ruta dinámica `src/pages/imprimir/roadmap/[...slug].astro`. Incluye este enlace en el archivo `classroom-${input:fecha}.md`.
   - Si `modoWeb` indica reemplazo o actualización, edita directamente en `src/data/syllabus.ts` el objeto del tema correspondiente, actualizando los campos `panorama`, `objetivos`, `ideasClave`, `actividad`, `evidencia`, `herramientas` y `presentationBlocks`.
   - Si `modoWeb` es solo convivencia o generación, muestra los bloques TypeScript listos para copiar pero no edites el archivo.
   - **Siempre actualiza `presentationBlocks`** en `src/data/syllabus.ts` para el tema indicado, ya sea como reemplazo o como propuesta comentada junto al bloque actual. La presentación del sitio se deriva de este campo.
@@ -113,46 +121,79 @@ Instrucciones obligatorias para la generación:
 - Si el tipo de clase es práctica o mixta, incorpora ejercicios o producción estudiantil con tiempos definidos.
 - El contenido de la presentación de clase va **exclusivamente** en el campo `presentationBlocks` de `src/data/syllabus.ts` para el tema indicado. No lo dupliques en `salidaDocs` ni en el roadmap Markdown. La presentación en la web del curso se construye desde ese campo y es la fuente única.
 - Genera además una salida compatible con el contenido web actual del curso. Si el usuario lo pide o si `modoWeb` lo indica, entrega bloques listos para escribir, actualizar o reemplazar el contenido actual en la web, priorizando el formato conceptual de [src/data/syllabus.ts](../../src/data/syllabus.ts) y reutilizando como base los topics que ya existan para ese tema.
-- Genera además una salida en Markdown para Canvas LMS lista para guardarse en `docs/` y luego copiarse o subirse a la plataforma como sección de recursos por clase.
+- Genera además una salida en Markdown para Google Classroom lista para guardarse en `docs/` y luego publicarse con el CLI `python3 tools/google_classroom/classroom_cli.py sync-classes`.
 - Separa explícitamente la salida en tres niveles:
-   1. `salidaWeb`: contenido estable, reutilizable y apto para estudiantes.
-   2. `salidaDocs`: contenido operativo, contextual y fechado para uso docente.
-   3. `salidaCanvasDocs`: contenido breve, limpio y publicable como sección de recursos en Canvas LMS.
+  1.  `salidaWeb`: contenido estable, reutilizable y apto para estudiantes.
+  2.  `salidaDocs`: contenido operativo, contextual y fechado para uso docente.
+  3.  `salidaGoogleClassroomDocs`: **dos archivos separados** para Google Classroom:
+      - `classroom-${input:fecha}.md` — solo el **material** (recursos, objetivo, enlaces). El CLI lo sube como `courseWorkMaterial`.
+      - `actividad-${input:fecha}.md` — solo la **tarea/assignment** (instrucciones, evidencia, criterios). El CLI lo sube como `courseWork`.
 - Cuando prepares contenido para web, usa una estructura compatible con estos campos:
-   - panorama
-   - objetivos
-   - ideasClave
-   - actividad
-   - evidencia
-   - herramientas
-   - presentationBlocks
+  - panorama
+  - objetivos
+  - ideasClave
+  - actividad
+  - evidencia
+  - herramientas
+  - presentationBlocks
 - En `salidaWeb`, no incluyas elementos volátiles o de ejecución puntual como saludo inicial, oración, meditación, tiempos exactos por bloque, observaciones internas del docente o notas dependientes de una fecha específica.
 - En `salidaWeb`, prioriza claridad conceptual, permanencia y reutilización en la guía del tema, la presentación y la versión imprimible.
 - En `salidaWeb`, cuando el tema ya exista en la web, presenta la propuesta como mejora editorial y pedagógica de los topics actuales, no como reinvención desconectada del contenido ya publicado, excepto si el usuario solicita reemplazo total.
 - En `salidaDocs`, sí incluye la secuencia completa de clase, decisiones pedagógicas, tiempos sugeridos, momentos de apertura y cierre, recomendaciones de conducción, preguntas detonantes y observaciones prácticas para la sesión específica.
 - Cuando generes `salidaDocs`, redacta el contenido en formato Markdown listo para guardarse en `docs/`, con título, metadatos básicos de la clase y secciones claramente identificables.
-- En `salidaCanvasDocs`, redacta un Markdown breve y ordenado, pensado para publicarse en Canvas LMS como recurso de clase, sin instrucciones internas de conducción docente.
-- En `salidaCanvasDocs`, usa texto plano estructurado con encabezados simples, listas y numeración. No uses etiquetas HTML, no uses tablas y no entregues bloques de código.
-- En `salidaCanvasDocs`, prioriza un formato fácil de copiar y pegar tanto en Canvas como en un editor HTML o visual, sin necesidad de limpiar etiquetas o rehacer la estructura.
-- En `salidaCanvasDocs`, incluye obligatoriamente:
-   - objetivo de la clase;
-   - lista de recursos con nombre, tipo, propósito breve y enlace;
-   - enlace a la presentación alojada en la web del curso;
-   - cuando corresponda, enlace a la guía del tema y a la versión imprimible o PDF del tema;
-   - enlace al roadmap docente imprimible en la web del curso, construido con la lógica: `/imprimir/roadmap/unidad${input:unidad}/tema${input:tema}/roadmap-${input:fecha}`.
+- En `salidaGoogleClassroomDocs`, usa texto plano estructurado con encabezados simples, listas y numeración. No uses etiquetas HTML, no uses tablas y no entregues bloques de código.
+- En `salidaGoogleClassroomDocs`, prioriza una estructura estable para lectura automática: objetivo, recursos, actividad y evidencia deben quedar en secciones separadas; los criterios de evaluación van al final de `## Evidencia esperada` precedidos de `**Criterios:**`.
+- El archivo `classroom-${input:fecha}.md` incluye obligatoriamente:
+  - objetivo de la clase;
+  - tema sugerido de Google Classroom: `Unidad ${input:unidad}`;
+  - estado sugerido: `DRAFT` (salvo que el usuario pida `PUBLISHED`);
+  - lista de recursos con nombre, tipo, propósito breve y enlace;
+  - enlace a la presentación alojada en la web del curso;
+  - enlace a la guía del tema y a la versión imprimible;
+  - enlace al roadmap docente: `/imprimir/roadmap/unidad${input:unidad}/tema${input:tema}/roadmap-${input:fecha}`.
+  - **no incluir** instrucciones de la actividad ni evidencia; eso va en `actividad-${input:fecha}.md`.
+- El archivo `actividad-${input:fecha}.md` incluye obligatoriamente:
+  - título operativo de la actividad;
+  - objetivo de la clase (mismo que en el material);
+  - tema sugerido de Google Classroom: `Unidad ${input:unidad}`;
+  - estado sugerido: `DRAFT`;
+  - puntaje sugerido;
+  - instrucciones numeradas de la actividad;
+  - evidencia esperada;
+  - criterios de evaluación al final de `## Evidencia esperada` con `**Criterios:**`;
+  - enlace a la web del curso como recurso de apoyo;
+  - **no incluir** la lista de recursos de clase; eso va en `classroom-${input:fecha}.md`.
 - Si `urlBaseSitio` está disponible, construye enlaces absolutos para la web del curso usando esta base.
-- Si `urlBaseSitio` no está disponible, entrega enlaces relativos válidos del sitio y marca que falta convertirlos a URL pública antes de subir a Canvas LMS.
+- Si `urlBaseSitio` no está disponible, entrega enlaces relativos válidos del sitio y marca que falta convertirlos a URL pública antes de publicar en Google Classroom.
 - Para construir los enlaces internos del curso, usa esta lógica:
-   - guía del tema: `/unidad${input:unidad}/tema${input:tema}`
-   - presentación: `/presentacion/unidad${input:unidad}/tema${input:tema}`
-   - imprimir o PDF: `/imprimir/unidad${input:unidad}/tema${input:tema}`
-- En `salidaCanvasDocs`, no incluyas bibliografía extensa ni desarrollo completo del roadmap; prioriza usabilidad para el estudiante y facilidad de carga en la plataforma.
-- Cuando incluyas enlaces en `salidaCanvasDocs`, preséntalos en una línea visible y simple con esta forma: `Enlace: [URL](URL)`.
-- Usa esta ruta para el archivo Canvas: `docs/clases/unidad${input:unidad}/tema${input:tema}/canvas-${input:fecha}.md`.
+  - guía del tema: `/unidad${input:unidad}/tema${input:tema}`
+  - presentación: `/presentacion/unidad${input:unidad}/tema${input:tema}`
+  - imprimir o PDF: `/imprimir/unidad${input:unidad}/tema${input:tema}`
+- En `salidaGoogleClassroomDocs`, no incluyas bibliografía extensa ni desarrollo completo del roadmap; prioriza usabilidad para el estudiante y publicación limpia en Classroom.
+- Cuando incluyas enlaces en `salidaGoogleClassroomDocs`, preséntalos en una línea visible y simple con esta forma: `Enlace: [URL](URL)`.
+- Rutas de los archivos a crear:
+  - `docs/clases/unidad${input:unidad}/tema${input:tema}/classroom-${input:fecha}.md` — material de clase.
+  - `docs/clases/unidad${input:unidad}/tema${input:tema}/actividad-${input:fecha}.md` — tarea/assignment.
+- Usa siempre el nombre Google Classroom y evita referirte a otras plataformas de aula virtual.
+- La estructura canónica de `classroom-${input:fecha}.md` para el CLI:
+  - `# Título de la clase`
+  - línea breve: `Asignatura: ... | Fecha: ... | Docente: ...`
+  - `## Objetivo de la clase`
+  - `## Publicación sugerida en Google Classroom` — solo referencia docente; no es parseado por el CLI.
+  - `## Recursos de la clase`
+  - `### Nombre del recurso` con `Tipo: ...`, `Propósito: ...`, `Enlace: [URL](URL)`
+- La estructura canónica de `actividad-${input:fecha}.md` para el CLI:
+  - `# Título de la actividad`
+  - línea breve: `Asignatura: ... | Fecha: ... | Docente: ...`
+  - `## Objetivo de la clase`
+  - `## Publicación sugerida en Google Classroom` — solo referencia docente; no es parseado por el CLI.
+  - `## Actividad de la clase: Nombre de la actividad`
+  - `## Evidencia esperada` — con `**Criterios:** [lista breve]` al final
 - Toda bibliografía debe quedar en APA 7.ª edición.
 - No inventes referencias. Si falta información bibliográfica, márcala como pendiente de validación.
 
 Formato de salida:
+
 1. Ficha inicial de la clase con:
    - Asignatura
    - Unidad
@@ -202,27 +243,42 @@ Formato de salida:
    - Enlace o recurso oficial listado en el sílabo (sección "Enlaces de Internet") si aplica al tema
 9. Nota sobre la presentación: el contenido de las diapositivas se genera dentro del campo `presentationBlocks` de `salidaWeb` y se escribe en `src/data/syllabus.ts`. La URL de la presentación en la web es `https://web-design-itsae.netlify.app/presentacion/unidad${input:unidad}/tema${input:tema}`.
 10. `salidaWeb` con bloques listos para el contenido web actual:
-   - panorama
-   - objetivos
-   - ideasClave
-   - actividad
-   - evidencia
-   - herramientas
-   - presentationBlocks
-11. `salidaCanvasDocs` en Markdown lista para `docs/`, con:
-   - Nombre sugerido del archivo
-   - Título de la clase o recurso
-   - Línea breve con asignatura, fecha y docente
-   - Objetivo de la clase
-   - Sección de recursos
-   - Lista de enlaces de apoyo, incluyendo la presentación de la web del curso
-   - Actividad de la clase, si corresponde
-   - Evidencia esperada, si corresponde
-   - Nota breve si algún enlace quedó relativo y debe convertirse a URL pública
+
+- panorama
+- objetivos
+- ideasClave
+- actividad
+- evidencia
+- herramientas
+- presentationBlocks
+
+11. `salidaGoogleClassroomDocs` en Markdown, dos archivos separados listos para `docs/`:
+
+    **Archivo 1 — Material** (`classroom-${input:fecha}.md`):
+    - Título de la clase
+    - Línea breve con asignatura, fecha y docente
+    - Objetivo de la clase
+    - Metadatos de publicación (solo referencia docente): tema, estado
+    - Sección `## Recursos de la clase`, con subtítulo `### Nombre del recurso` por cada recurso
+    - Enlace a la presentación, guía del tema e imprimible del sitio del curso
+    - Enlace al roadmap docente imprimible
+
+    **Archivo 2 — Tarea/Assignment** (`actividad-${input:fecha}.md`):
+    - Título operativo de la actividad
+    - Línea breve con asignatura, fecha y docente
+    - Objetivo de la clase
+    - Metadatos de publicación (solo referencia docente): tema, estado, puntaje
+    - Sección `## Actividad de la clase: Nombre de la actividad` con instrucciones numeradas
+    - Sección `## Evidencia esperada` con criterios al final (`**Criterios:**`)
+    - Enlace a la web del curso como referencia de apoyo
+    - Nota breve si algún enlace quedó relativo
+
 12. Indicación breve de uso:
-   - Qué parte conviene publicar en la web
-   - Qué parte conviene conservar solo en `docs`
-   - Qué parte conviene subir a Canvas LMS
+
+- Qué parte conviene publicar en la web
+- Qué parte conviene conservar solo en `docs`
+- Qué parte conviene sincronizar con Google Classroom
+
 13. Bibliografía en APA 7.ª edición.
 14. Recomendación final para el docente sobre cómo hacer que la clase deje mayor recordación en los estudiantes.
 
@@ -232,4 +288,4 @@ Si `modoWeb` indica reemplazo, redacta los bloques web con criterio de sustituci
 
 Si `modoDocs` pide ambos formatos, entrega primero `salidaDocs` y luego `salidaWeb`. Si pide solo resumen docente, conserva la estructura Markdown pero reduce el detalle operativo a lo esencial.
 
-Si `modoCanvas` pide ambos formatos, entrega `salidaCanvasDocs` completa. Si pide solo resumen de recursos, conserva objetivo y enlaces esenciales.
+Si `modoGoogleClassroom` pide ambos formatos, entrega `salidaGoogleClassroomDocs` completa. Si pide solo resumen de recursos, conserva objetivo, recursos enlazados, actividad y evidencia esenciales.

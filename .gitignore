@@ -5,6 +5,10 @@ dist/
 
 # dependencies
 node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+.python_deps/
 
 # logs
 npm-debug.log*
@@ -15,6 +19,11 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+
+# Google OAuth local secrets
+credentials.json
+token.json
+classroom.config.json
 
 # macOS-specific files
 .DS_Store

@@ -14,7 +14,7 @@ y decisiones justificadas.
 
 ---
 
-## Recursos del tema
+## Recursos de la clase
 
 ### Materiales del curso
 
@@ -45,34 +45,6 @@ y decisiones justificadas.
 
 8. Google Fonts Knowledge — Tipografía para la web
    Enlace: https://fonts.google.com/knowledge
-
----
-
-## Actividades de la clase
-
-### Actividad 1 — Rediseño guiado del hero (sincrónica, en clase)
-
-A partir de un hero section con problemas de jerarquía presentado por el docente:
-
-1. Identifica qué no funciona visualmente y por qué.
-2. Propón una versión mejorada con boceto, esquema escrito o herramienta digital.
-3. Comparte en el chat una decisión de diseño y su justificación.
-
-Evidencia esperada: boceto o esquema con al menos tres decisiones de composición justificadas.
-
-### Actividad 2 — Auditoría visual comparativa (asincrónica, para enviar)
-
-1. Elige dos páginas web reales de tu sector o de tu proyecto del curso.
-2. Completa una ficha de análisis visual con los siguientes campos por página:
-   - Jerarquía percibida
-   - Uso de tipografía
-   - Uso del color
-   - Composición del hero section
-   - Un problema detectado
-   - Una propuesta de mejora argumentada
-3. Entrega capturas anotadas o descripción escrita en Canvas LMS antes de la próxima sesión.
-
-Evidencia esperada: ficha de análisis con capturas o descripción escrita.
 
 ---
 

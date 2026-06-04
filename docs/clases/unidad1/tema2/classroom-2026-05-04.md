@@ -14,7 +14,7 @@ Reconocer principios fundamentales de experiencia de usuario (UX) e interfaz de 
 
 ---
 
-## Recursos del curso
+## Recursos de la clase
 
 ### Presentación de la clase
 
@@ -51,22 +51,3 @@ Enlace: [https://web-design-itsae.netlify.app/imprimir/roadmap/unidad1/tema2/roa
    - Propósito: Referencia principal sobre usabilidad web en español; lectura recomendada para profundizar
 
 ---
-
-## Actividad de la clase
-
-Analiza dos páginas de campaña indicadas por el docente y completa una ficha comparativa evaluando los siguientes criterios para cada página:
-
-1. Claridad del llamado a la acción (CTA) principal
-2. Jerarquía visual: ¿qué elemento domina la pantalla?
-3. Consistencia del diseño visual
-4. Fricción percibida al navegar
-
-Para cada página, identifica al menos un problema UX concreto y propone una mejora fundamentada en los principios revisados en clase.
-
-## Evidencia esperada
-
-Ficha comparativa completada con observaciones pertinentes y mejoras argumentadas, coherentes con los principios de UX/UI revisados en la sesión.
-
----
-
-*Nota: Los enlaces a la presentación, guía e imprimible del tema apuntan al sitio publicado del curso en https://web-design-itsae.netlify.app. Verificar que la URL esté activa antes de compartir este recurso en Canvas LMS.*

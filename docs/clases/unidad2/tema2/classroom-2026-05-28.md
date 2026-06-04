@@ -1,4 +1,5 @@
 # Diseño Web para Marketing Digital — Unidad 2 · Tema 2
+
 ## Arquitectura de la información y recorrido del usuario
 
 **Asignatura:** Diseño Web para Marketing Digital | **Fecha:** 28 de mayo de 2026 | **Docente:** Ing. Ivan Paz
@@ -24,57 +25,28 @@ Construir el recorrido del usuario por bloques y secciones, organizando el conte
 ## Recursos de la clase
 
 ### Presentación de la sesión
+
 Enlace: [https://web-design-itsae.netlify.app/presentacion/unidad2/tema2](https://web-design-itsae.netlify.app/presentacion/unidad2/tema2)
 
 ### Guía del tema en el sitio del curso
+
 Enlace: [https://web-design-itsae.netlify.app/unidad2/tema2](https://web-design-itsae.netlify.app/unidad2/tema2)
 
 ### Versión imprimible del tema
+
 Enlace: [https://web-design-itsae.netlify.app/imprimir/unidad2/tema2](https://web-design-itsae.netlify.app/imprimir/unidad2/tema2)
 
 ### Roadmap docente imprimible de esta sesión
+
 Enlace: [https://web-design-itsae.netlify.app/imprimir/roadmap/unidad2/tema2/roadmap-2026-05-28](https://web-design-itsae.netlify.app/imprimir/roadmap/unidad2/tema2/roadmap-2026-05-28)
-
----
-
-## Herramientas sugeridas para la actividad
-
-- Figma (versión gratuita): https://figma.com
-- Google Docs o cualquier procesador de texto
-- Papel y lápiz (completamente válido para el mapa inicial)
-
----
-
-## Actividad de la clase: Mapa de Secciones Guiado
-
-Usa la ficha de usuario y el mensaje central que construiste en la sesión anterior para diseñar el mapa de secciones de tu página de campaña.
-
-Para cada sección, define los siguientes cuatro elementos:
-
-1. Nombre del bloque — hero, beneficios, prueba social, CTA, etc.
-2. Propósito comunicativo — ¿qué debe lograr en el usuario que pasa por ese bloque?
-3. Contenido principal — escribe 1 o 2 frases de lo que irá en esa sección.
-4. Acción esperada — ¿qué hace o siente el usuario después de ver este bloque?
-
-Incluye al menos 5 secciones y justifica el orden en relación con el perfil de tu usuario.
-
----
-
-## Evidencia esperada
-
-Mapa de secciones de tu página de campaña con 5-6 bloques definidos, función declarada, contenido principal indicado y orden justificado.
-
-Este documento es el segundo insumo del proyecto integrador de la Unidad 2.
-
-Componente de evaluación: Talleres (30 %) y avance del proyecto de unidad (40 %).
 
 ---
 
 ## Bibliografía de referencia
 
-- Krug, S. (2006). *No me hagas pensar: Una aproximación a la usabilidad en la web*. Pearson Educación.
-- Córcoles Tendero, J. E. (2014). *Diseño de interfaces web*. RA-MA Editorial.
-- Nielsen Norman Group. (s.f.). *Information architecture*. Recuperado de https://www.nngroup.com/articles/information-architecture/
+- Krug, S. (2006). _No me hagas pensar: Una aproximación a la usabilidad en la web_. Pearson Educación.
+- Córcoles Tendero, J. E. (2014). _Diseño de interfaces web_. RA-MA Editorial.
+- Nielsen Norman Group. (s.f.). _Information architecture_. Recuperado de https://www.nngroup.com/articles/information-architecture/
 
 ---
 
