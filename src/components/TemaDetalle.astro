@@ -1,6 +1,6 @@
 ---
-import TemaPresentacion from "./TemaPresentacion";
-import type { SyllabusTema, SyllabusUnit } from "../data/syllabus";
+import TemaPresentacion from './TemaPresentacion';
+import type { SyllabusTema, SyllabusUnit } from '../data/syllabus';
 
 interface Props {
   unit: SyllabusUnit;
@@ -11,33 +11,33 @@ const { unit, tema } = Astro.props;
 
 const colorStyles = {
   amber: {
-    hero: "from-amber-500 to-orange-500",
-    soft: "text-amber-100",
-    badge: "bg-amber-100 text-amber-800",
-    panel: "bg-amber-50 dark:bg-amber-950/20",
-    border: "border-amber-500",
+    hero: 'from-amber-500 to-orange-500',
+    soft: 'text-amber-100',
+    badge: 'bg-amber-100 text-amber-800',
+    panel: 'bg-amber-50 dark:bg-amber-950/20',
+    border: 'border-amber-500'
   },
   blue: {
-    hero: "from-blue-600 to-cyan-600",
-    soft: "text-blue-100",
-    badge: "bg-blue-100 text-blue-800",
-    panel: "bg-blue-50 dark:bg-blue-950/20",
-    border: "border-blue-500",
+    hero: 'from-blue-600 to-cyan-600',
+    soft: 'text-blue-100',
+    badge: 'bg-blue-100 text-blue-800',
+    panel: 'bg-blue-50 dark:bg-blue-950/20',
+    border: 'border-blue-500'
   },
   emerald: {
-    hero: "from-emerald-600 to-teal-600",
-    soft: "text-emerald-100",
-    badge: "bg-emerald-100 text-emerald-800",
-    panel: "bg-emerald-50 dark:bg-emerald-950/20",
-    border: "border-emerald-500",
+    hero: 'from-emerald-600 to-teal-600',
+    soft: 'text-emerald-100',
+    badge: 'bg-emerald-100 text-emerald-800',
+    panel: 'bg-emerald-50 dark:bg-emerald-950/20',
+    border: 'border-emerald-500'
   },
   purple: {
-    hero: "from-purple-600 to-fuchsia-600",
-    soft: "text-purple-100",
-    badge: "bg-purple-100 text-purple-800",
-    panel: "bg-purple-50 dark:bg-purple-950/20",
-    border: "border-purple-500",
-  },
+    hero: 'from-purple-600 to-fuchsia-600',
+    soft: 'text-purple-100',
+    badge: 'bg-purple-100 text-purple-800',
+    panel: 'bg-purple-50 dark:bg-purple-950/20',
+    border: 'border-purple-500'
+  }
 } as const;
 
 const styles = colorStyles[unit.color];
@@ -45,9 +45,9 @@ const presentationHref = `/presentacion${tema.href}`;
 const printHref = `/imprimir${tema.href}`;
 
 // Detect latest roadmap for this tema (if any)
-const allRoadmaps = import.meta.glob("../../docs/clases/**/roadmap-*.md");
+const allRoadmaps = import.meta.glob('../../docs/clases/**/roadmap-*.md');
 const roadmapPattern = new RegExp(
-  `/unidad${unit.numero}/tema${tema.numero}/roadmap-`,
+  `/unidad${unit.numero}/tema${tema.numero}/roadmap-`
 );
 const matchingRoadmaps = Object.keys(allRoadmaps)
   .filter((k) => roadmapPattern.test(k))
@@ -56,7 +56,7 @@ const latestRoadmapKey = matchingRoadmaps.at(-1);
 let roadmapHref: string | null = null;
 if (latestRoadmapKey) {
   const m = latestRoadmapKey.match(
-    /docs\/clases\/([^/]+)\/([^/]+)\/(roadmap-[^/]+)\.md$/,
+    /docs\/clases\/([^/]+)\/([^/]+)\/(roadmap-[^/]+)\.md$/
   );
   if (m) roadmapHref = `/imprimir/roadmap/${m[1]}/${m[2]}/${m[3]}`;
 }
@@ -65,14 +65,14 @@ const continuity = nextTema
   ? `Próximo tema: ${nextTema.titulo}.`
   : unit.numero < 4
     ? `Este tema cierra la Unidad ${unit.numero}. El siguiente paso es avanzar a la Unidad ${unit.numero + 1}.`
-    : "Este tema cierra la última unidad y prepara la presentación final y el examen bimestral.";
+    : 'Este tema cierra la última unidad y prepara la presentación final y el examen bimestral.';
 ---
 
 <main
   class="min-h-screen bg-linear-to-br from-slate-50 via-white to-slate-100 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800"
 >
   <div class={`bg-linear-to-r ${styles.hero} text-white py-5`}>
-    <div class="max-w-6xl mx-auto px-6">
+    <div class="mx-auto max-w-6xl px-6">
       <nav class="flex items-center justify-between gap-4">
         <a href="/" class={`hover:text-white transition-colors ${styles.soft}`}
           >← Volver al inicio</a
@@ -90,14 +90,14 @@ const continuity = nextTema
     </div>
   </div>
 
-  <div class="max-w-5xl mx-auto px-6 py-10 sm:py-12 space-y-8">
-    <section class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 sm:p-8">
+  <div class="mx-auto max-w-5xl space-y-8 px-6 py-10 sm:py-12">
+    <section class="rounded-2xl bg-white p-6 shadow-xl sm:p-8 dark:bg-gray-800">
       <div
         class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"
       >
         <div>
           <p
-            class="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400"
+            class="text-sm font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400"
           >
             Formato de clase
           </p>
@@ -164,39 +164,39 @@ const continuity = nextTema
     </section>
 
     <div data-topic-view="guide" class="space-y-8">
-      <section class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
-        <div class="flex flex-wrap items-center gap-3 mb-5">
+      <section class="rounded-2xl bg-white p-8 shadow-xl dark:bg-gray-800">
+        <div class="mb-5 flex flex-wrap items-center gap-3">
           <span
             class={`text-sm font-semibold px-3 py-1 rounded-full ${styles.badge}`}
             >Tema actualizado</span
           >
           <span
-            class="bg-gray-100 text-gray-700 text-sm font-semibold px-3 py-1 rounded-full dark:bg-gray-700 dark:text-gray-200"
+            class="rounded-full bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 dark:bg-gray-700 dark:text-gray-200"
             >Unidad {unit.numero}</span
           >
           <span
-            class="bg-slate-100 text-slate-700 text-sm font-semibold px-3 py-1 rounded-full dark:bg-slate-700 dark:text-slate-100"
+            class="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-700 dark:bg-slate-700 dark:text-slate-100"
             >Diseño Web</span
           >
         </div>
 
-        <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+        <h2 class="mb-4 text-3xl font-bold text-gray-800 dark:text-gray-100">
           Panorama general
         </h2>
-        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+        <p class="mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
           {tema.panorama}
         </p>
-        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300">
           {tema.descripcion}
         </p>
       </section>
 
-      <section class="grid md:grid-cols-2 gap-6">
+      <section class="grid gap-6 md:grid-cols-2">
         <div
           class={`p-6 rounded-xl border-l-4 ${styles.panel} ${styles.border}`}
         >
           <h3
-            class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3"
+            class="mb-3 text-xl font-semibold text-gray-800 dark:text-gray-100"
           >
             Objetivos de aprendizaje
           </h3>
@@ -206,10 +206,10 @@ const continuity = nextTema
         </div>
 
         <div
-          class="bg-slate-50 dark:bg-slate-800/80 p-6 rounded-xl border-l-4 border-slate-400"
+          class="rounded-xl border-l-4 border-slate-400 bg-slate-50 p-6 dark:bg-slate-800/80"
         >
           <h3
-            class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3"
+            class="mb-3 text-xl font-semibold text-gray-800 dark:text-gray-100"
           >
             Ideas clave del tema
           </h3>
@@ -219,62 +219,62 @@ const continuity = nextTema
         </div>
       </section>
 
-      <section class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
-        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+      <section class="rounded-2xl bg-white p-8 shadow-xl dark:bg-gray-800">
+        <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
           Relación con la unidad
         </h2>
-        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+        <p class="mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
           <strong>Capacidad de la unidad:</strong>
           {unit.capacidad}
         </p>
-        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300">
           <strong>Evidencia esperada:</strong>
           {unit.evidencia}
         </p>
       </section>
 
       <section class={`rounded-2xl p-8 ${styles.panel}`}>
-        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+        <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
           Continuidad del curso
         </h2>
-        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+        <p class="mb-3 leading-relaxed text-gray-700 dark:text-gray-300">
           Este contenido está alineado con el sílabo actualizado del curso y con
           una secuencia de trabajo que prioriza estrategia, prototipado,
           publicación viable y mejora continua.
         </p>
-        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300">
           {continuity}
         </p>
       </section>
     </div>
 
     <div data-topic-view="activity" class="hidden space-y-8">
-      <section class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
-        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+      <section class="rounded-2xl bg-white p-8 shadow-xl dark:bg-gray-800">
+        <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
           Actividad sugerida
         </h2>
-        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300">
           {tema.actividad}
         </p>
       </section>
 
-      <section class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
-        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+      <section class="rounded-2xl bg-white p-8 shadow-xl dark:bg-gray-800">
+        <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
           Criterio de evidencia
         </h2>
-        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300">
           {tema.evidencia}
         </p>
       </section>
 
-      <section class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
-        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">
+      <section class="rounded-2xl bg-white p-8 shadow-xl dark:bg-gray-800">
+        <h2 class="mb-6 text-2xl font-bold text-gray-800 dark:text-gray-100">
           Herramientas y recursos de trabajo
         </h2>
-        <div class="grid md:grid-cols-2 gap-4">
+        <div class="grid gap-4 md:grid-cols-2">
           {
             tema.herramientas.map((herramienta) => (
-              <div class="rounded-xl bg-gray-50 dark:bg-gray-700 p-4">
+              <div class="rounded-xl bg-gray-50 p-4 dark:bg-gray-700">
                 <p class="text-gray-700 dark:text-gray-200">{herramienta}</p>
               </div>
             ))
@@ -291,60 +291,60 @@ const continuity = nextTema
 
 <script>
   const guideSection = document.querySelector<HTMLElement>(
-    '[data-topic-view="guide"]',
+    '[data-topic-view="guide"]'
   );
   const presentationSection = document.querySelector<HTMLElement>(
-    '[data-topic-view="presentation"]',
+    '[data-topic-view="presentation"]'
   );
   const activitySection = document.querySelector<HTMLElement>(
-    '[data-topic-view="activity"]',
+    '[data-topic-view="activity"]'
   );
   const tabButtons = Array.from(
-    document.querySelectorAll<HTMLButtonElement>("[data-tab]"),
+    document.querySelectorAll<HTMLButtonElement>('[data-tab]')
   );
 
-  const setActiveTab = (tab: "guide" | "presentation" | "activity") => {
-    guideSection?.classList.toggle("hidden", tab !== "guide");
-    presentationSection?.classList.toggle("hidden", tab !== "presentation");
-    activitySection?.classList.toggle("hidden", tab !== "activity");
+  const setActiveTab = (tab: 'guide' | 'presentation' | 'activity') => {
+    guideSection?.classList.toggle('hidden', tab !== 'guide');
+    presentationSection?.classList.toggle('hidden', tab !== 'presentation');
+    activitySection?.classList.toggle('hidden', tab !== 'activity');
 
     tabButtons.forEach((button) => {
       const isActive = button.dataset.tab === tab;
-      button.classList.toggle("bg-white", isActive);
-      button.classList.toggle("text-slate-900", isActive);
-      button.classList.toggle("shadow-sm", isActive);
-      button.classList.toggle("border", isActive);
-      button.classList.toggle("border-slate-300", isActive);
-      button.classList.toggle("bg-transparent", !isActive);
-      button.classList.toggle("text-slate-600", !isActive);
-      button.classList.toggle("dark:text-slate-300", !isActive);
-      button.classList.toggle("dark:bg-slate-900", !isActive);
+      button.classList.toggle('bg-white', isActive);
+      button.classList.toggle('text-slate-900', isActive);
+      button.classList.toggle('shadow-sm', isActive);
+      button.classList.toggle('border', isActive);
+      button.classList.toggle('border-slate-300', isActive);
+      button.classList.toggle('bg-transparent', !isActive);
+      button.classList.toggle('text-slate-600', !isActive);
+      button.classList.toggle('dark:text-slate-300', !isActive);
+      button.classList.toggle('dark:bg-slate-900', !isActive);
     });
 
     const params = new URLSearchParams(window.location.search);
-    params.set("tab", tab);
+    params.set('tab', tab);
     const query = params.toString();
-    const nextUrl = `${window.location.pathname}${query ? `?${query}` : ""}`;
-    window.history.replaceState({}, "", nextUrl);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const nextUrl = `${window.location.pathname}${query ? `?${query}` : ''}`;
+    window.history.replaceState({}, '', nextUrl);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   tabButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener('click', () => {
       const selectedTab =
-        button.dataset.tab === "presentation"
-          ? "presentation"
-          : button.dataset.tab === "activity"
-            ? "activity"
-            : "guide";
+        button.dataset.tab === 'presentation'
+          ? 'presentation'
+          : button.dataset.tab === 'activity'
+            ? 'activity'
+            : 'guide';
       setActiveTab(selectedTab);
     });
   });
 
   const initialTab =
-    (new URLSearchParams(window.location.search).get("tab") as
-      | "guide"
-      | "presentation"
-      | "activity") || "guide";
+    (new URLSearchParams(window.location.search).get('tab') as
+      | 'guide'
+      | 'presentation'
+      | 'activity') || 'guide';
   setActiveTab(initialTab);
 </script>

@@ -39,39 +39,46 @@ const UnidadCard: React.FC<UnidadCardProps> = ({
     Palette,
     Zap
   };
-  
+
   const Icon = iconMap[iconName];
   // Design Tokens - Colores por unidad
-  const colorClasses: Record<UnidadColor, {
-    gradient: string;
-    text: string;
-    cardBg: string;
-    cardText: string;
-    cardHover: string;
-  }> = {
+  const colorClasses: Record<
+    UnidadColor,
+    {
+      gradient: string;
+      text: string;
+      cardBg: string;
+      cardText: string;
+      cardHover: string;
+    }
+  > = {
     amber: {
-      gradient: 'from-amber-500 to-amber-600 dark:from-amber-600 dark:to-amber-700',
+      gradient:
+        'from-amber-500 to-amber-600 dark:from-amber-600 dark:to-amber-700',
       text: 'text-amber-100',
       cardBg: 'bg-amber-50 dark:bg-amber-900/20',
       cardText: 'text-amber-800 dark:text-amber-300',
       cardHover: 'hover:bg-amber-100 dark:hover:bg-amber-900/30'
     },
     blue: {
-      gradient: 'from-primary-700 to-primary-600 dark:from-primary-800 dark:to-primary-700',
+      gradient:
+        'from-primary-700 to-primary-600 dark:from-primary-800 dark:to-primary-700',
       text: 'text-primary-100',
       cardBg: 'bg-blue-50 dark:bg-blue-900/20',
       cardText: 'text-blue-800 dark:text-blue-300',
       cardHover: 'hover:bg-blue-100 dark:hover:bg-blue-900/30'
     },
     emerald: {
-      gradient: 'from-emerald-600 to-emerald-700 dark:from-emerald-700 dark:to-emerald-800',
+      gradient:
+        'from-emerald-600 to-emerald-700 dark:from-emerald-700 dark:to-emerald-800',
       text: 'text-emerald-100',
       cardBg: 'bg-emerald-50 dark:bg-emerald-900/20',
       cardText: 'text-emerald-800 dark:text-emerald-300',
       cardHover: 'hover:bg-emerald-100 dark:hover:bg-emerald-900/30'
     },
     purple: {
-      gradient: 'from-purple-600 to-pink-500 dark:from-purple-700 dark:to-pink-600',
+      gradient:
+        'from-purple-600 to-pink-500 dark:from-purple-700 dark:to-pink-600',
       text: 'text-purple-100',
       cardBg: 'bg-purple-50 dark:bg-purple-900/20',
       cardText: 'text-purple-800 dark:text-purple-300',
@@ -82,39 +89,47 @@ const UnidadCard: React.FC<UnidadCardProps> = ({
   const colors = colorClasses[color];
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+    <div className="overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl dark:bg-gray-800">
       {/* Header con gradiente */}
       <div className={`bg-linear-to-r ${colors.gradient} p-4 sm:p-6`}>
-        <Icon className="w-10 h-10 sm:w-12 sm:h-12 text-white mb-4" />
-        <div className="text-xs font-semibold text-white/70 uppercase tracking-wider mb-1">Unidad {numero}</div>
-        <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">{titulo}</h2>
-        <p className={`${colors.text} text-sm sm:text-sm leading-relaxed opacity-90`}>{descripcion}</p>
+        <Icon className="mb-4 h-10 w-10 text-white sm:h-12 sm:w-12" />
+        <div className="mb-1 text-xs font-semibold tracking-wider text-white/70 uppercase">
+          Unidad {numero}
+        </div>
+        <h2 className="mb-2 text-xl font-bold text-white sm:text-2xl">
+          {titulo}
+        </h2>
+        <p
+          className={`${colors.text} text-sm leading-relaxed opacity-90 sm:text-sm`}
+        >
+          {descripcion}
+        </p>
       </div>
 
       {/* Lista de temas */}
-      <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+      <div className="space-y-3 p-4 sm:space-y-4 sm:p-6">
         {temas.map((tema) => (
           <a
             key={tema.numero}
             href={tema.href}
-            className={`
-              block p-3 sm:p-4 rounded-lg transition-colors
-              ${tema.disponible 
+            className={`block rounded-lg p-3 transition-colors sm:p-4 ${
+              tema.disponible
                 ? `${colors.cardBg} ${colors.cardHover}`
                 : 'bg-gray-100 dark:bg-gray-700'
-              }
-            `}
+            } `}
           >
-            <h3 className={`
-              font-semibold text-sm sm:text-base
-              ${tema.disponible 
-                ? colors.cardText
-                : 'text-gray-500 dark:text-gray-400'
-              }
-            `}>
-              {tema.disponible ? `Tema ${tema.numero}: ${tema.titulo}` : `Tema ${tema.numero}: Próximamente`}
+            <h3
+              className={`text-sm font-semibold sm:text-base ${
+                tema.disponible
+                  ? colors.cardText
+                  : 'text-gray-500 dark:text-gray-400'
+              } `}
+            >
+              {tema.disponible
+                ? `Tema ${tema.numero}: ${tema.titulo}`
+                : `Tema ${tema.numero}: Próximamente`}
             </h3>
-            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+            <p className="text-xs text-gray-600 sm:text-sm dark:text-gray-400">
               {tema.descripcion}
             </p>
           </a>

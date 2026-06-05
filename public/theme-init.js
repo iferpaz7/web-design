@@ -1,13 +1,15 @@
 // Script para inicializar el tema antes del render (evita flash)
-(function() {
+(function () {
   function getSystemTheme() {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
   }
 
   function applyTheme(theme) {
     const root = document.documentElement;
     const actualTheme = theme === 'system' ? getSystemTheme() : theme;
-    
+
     if (actualTheme === 'dark') {
       root.classList.add('dark');
     } else {
@@ -20,10 +22,12 @@
   applyTheme(savedTheme);
 
   // Escuchar cambios en el tema del sistema
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
-    const currentTheme = localStorage.getItem('itsae-theme') || 'system';
-    if (currentTheme === 'system') {
-      applyTheme('system');
-    }
-  });
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', function () {
+      const currentTheme = localStorage.getItem('itsae-theme') || 'system';
+      if (currentTheme === 'system') {
+        applyTheme('system');
+      }
+    });
 })();

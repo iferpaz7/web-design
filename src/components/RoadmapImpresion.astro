@@ -24,9 +24,15 @@ const presentacionHref = `/presentacion/unidad${unidadNum}/tema${temaNum}`;
     data-print-toolbar
     class="sticky top-0 z-10 border-b border-gray-200 bg-white/95 backdrop-blur print:hidden"
   >
-    <div class="mx-auto flex max-w-5xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
+    <div
+      class="mx-auto flex max-w-5xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-center sm:justify-between"
+    >
       <div>
-        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-gray-500">Roadmap docente</p>
+        <p
+          class="text-xs font-semibold tracking-[0.24em] text-gray-500 uppercase"
+        >
+          Roadmap docente
+        </p>
         <h1 class="mt-1 text-lg font-bold text-gray-900">
           Unidad {unidadNum} · Tema {temaNum} · {fecha}
         </h1>
@@ -55,13 +61,17 @@ const presentacionHref = `/presentacion/unidad${unidadNum}/tema${temaNum}`;
     </div>
   </section>
 
-  <article class="roadmap-prose mx-auto max-w-5xl px-6 py-8 sm:py-12 print:max-w-none print:px-0 print:py-0">
+  <article
+    class="roadmap-prose mx-auto max-w-5xl px-6 py-8 sm:py-12 print:max-w-none print:px-0 print:py-0"
+  >
     <Content />
   </article>
 </main>
 
 <script>
-  const printButton = document.querySelector<HTMLButtonElement>('[data-print-action]');
+  const printButton = document.querySelector<HTMLButtonElement>(
+    '[data-print-action]'
+  );
   printButton?.addEventListener('click', () => window.print());
 </script>
 
@@ -228,7 +238,7 @@ const presentacionHref = `/presentacion/unidad${unidadNum}/tema${temaNum}`;
     }
 
     .roadmap-prose a[href]::after {
-      content: " (" attr(href) ")";
+      content: ' (' attr(href) ')';
       font-size: 0.75em;
       color: #6b7280;
       word-break: break-all;

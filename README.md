@@ -9,24 +9,28 @@ Sitio web de presentaciones para el curso de Diseño Web para Marketing Digital 
 El curso está organizado en **4 unidades** con **4 temas** cada una:
 
 ### Unidad 1: Fundamentos del Diseño Web
+
 - **Tema 1**: Introducción al Diseño Web
 - **Tema 2**: Principios de Diseño Visual ✅
 - **Tema 3**: Arquitectura de Información, Accesibilidad y Usabilidad ✅
 - **Tema 4**: Próximamente
 
 ### Unidad 2: Experiencia de Usuario (UX/UI)
+
 - **Tema 1**: Principios de UX
 - **Tema 2**: Wireframes y Prototipos
 - **Tema 3**: Testing y Optimización
 - **Tema 4**: Accesibilidad Web
 
 ### Unidad 3: Desarrollo y Tecnologías
+
 - **Tema 1**: WordPress + Elementor (Setup Inicial)
 - **Tema 2**: Layouts Responsivos con Elementor
 - **Tema 3**: Responsive Design
 - **Tema 4**: Performance y SEO
 
 ### Unidad 4: Marketing Digital y Conversión
+
 - **Tema 1**: Landing Pages Efectivas
 - **Tema 2**: E-commerce y Conversión
 - **Tema 3**: Analytics y Métricas
@@ -56,6 +60,7 @@ npm run preview # Vista previa de producción
 **Color Primario Base**: `#003366`
 
 **Escala de Primarios**:
+
 ```css
 primary-50:  #f0f7ff    primary-600: #0066cc
 primary-100: #e0efff    primary-700: #004080
@@ -66,6 +71,7 @@ primary-500: #0891ff
 ```
 
 **Colores Secundarios**:
+
 ```css
 itsae-accent:   #ff6b35  (naranja)
 itsae-success:  #10b981  (verde)
@@ -75,21 +81,23 @@ itsae-error:    #ef4444  (rojo)
 
 ### Colores por Unidad
 
-| Unidad | Header | Acento |
-|--------|--------|--------|
-| **Unidad 1** - Fundamentos | Naranja `#ff6b35` | Orange/Red |
-| **Unidad 2** - UX/UI | Azul `#004080` | Primary |
-| **Unidad 3** - Desarrollo | Verde `#10b981` | Emerald |
-| **Unidad 4** - Marketing | Púrpura | Purple/Pink |
+| Unidad                     | Header            | Acento      |
+| -------------------------- | ----------------- | ----------- |
+| **Unidad 1** - Fundamentos | Naranja `#ff6b35` | Orange/Red  |
+| **Unidad 2** - UX/UI       | Azul `#004080`    | Primary     |
+| **Unidad 3** - Desarrollo  | Verde `#10b981`   | Emerald     |
+| **Unidad 4** - Marketing   | Púrpura           | Purple/Pink |
 
 ### 🌓 Dark/Light Mode
 
 **3 Modos Disponibles**:
+
 - **Light**: Tema claro
-- **Dark**: Tema oscuro  
+- **Dark**: Tema oscuro
 - **System**: Detecta preferencia del sistema
 
 **Características**:
+
 - ✅ Persistencia en `localStorage` (clave: `itsae-theme`)
 - ✅ Sin flash de contenido (FOUC prevention)
 - ✅ Detección automática de cambios del sistema
@@ -97,6 +105,7 @@ itsae-error:    #ef4444  (rojo)
 - ✅ Contraste WCAG 2.1 AA
 
 **Patrones de Clases**:
+
 ```css
 /* Fondos */
 bg-white dark:bg-gray-800
@@ -113,12 +122,14 @@ transition-colors duration-300
 ### 📱 Responsive Design (Mobile-First)
 
 **Breakpoints**:
+
 - `sm`: 640px (tablet)
 - `md`: 768px (tablet landscape)
 - `lg`: 1024px (desktop)
 - `xl`: 1280px (desktop large)
 
 **Ejemplos**:
+
 ```css
 /* Tipografía */
 text-xl sm:text-2xl lg:text-3xl
@@ -178,14 +189,13 @@ grid-cols-1 lg:grid-cols-2
 6. Incluir transiciones: `transition-colors duration-300`
 
 **Ejemplo de componente**:
+
 ```tsx
-<div className="bg-white dark:bg-gray-800 p-4 sm:p-6 lg:p-8 rounded-xl transition-colors duration-300">
-  <h2 className="text-2xl sm:text-3xl lg:text-4xl text-gray-800 dark:text-gray-200 mb-4">
+<div className="rounded-xl bg-white p-4 transition-colors duration-300 sm:p-6 lg:p-8 dark:bg-gray-800">
+  <h2 className="mb-4 text-2xl text-gray-800 sm:text-3xl lg:text-4xl dark:text-gray-200">
     Título
   </h2>
-  <p className="text-gray-600 dark:text-gray-300">
-    Contenido
-  </p>
+  <p className="text-gray-600 dark:text-gray-300">Contenido</p>
 </div>
 ```
 
@@ -194,11 +204,11 @@ grid-cols-1 lg:grid-cols-2
 Configuración en `src/styles/globals.css`:
 
 ```css
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --color-scheme: light dark;
-  
+
   /* Custom colors */
   --color-itsae-primary: #003366;
   --color-primary-800: #003366;
@@ -217,34 +227,41 @@ Instituto Tecnológico Superior Adventista del Ecuador - ITSAE Ecuador
 ## 📚 Design System Documentation
 
 ### Components Created
+
 This project implements a professional design system with 6 reusable components:
 
 **Button.tsx** - Professional button with 75 variants:
+
 - 5 types (primary, secondary, accent, success, ghost)
 - 3 sizes (sm, md, lg) following 8px system
 - 5 states (default, hover, active, disabled, focus)
 
 **Card.tsx** - Generic card with 3 variants:
+
 - default (shadow-lg), elevated (shadow-xl), outlined (border)
 - Configurable padding (none, sm, md, lg)
 - Optional hover animation
 
 **UnidadCard.tsx** - Specialized unit card:
+
 - 4 color schemes (amber, blue, emerald, purple)
 - Dynamic icon support
 - Theme list with availability status
 
 **StatCard.tsx** - Statistics display:
+
 - Icon-based stats
 - 3 color variants
 - Responsive design
 
 **Footer.tsx** - Reusable footer:
+
 - Adventist education gradients
 - 3-column responsive grid
 - Dynamic year and institution data
 
 **Navbar.tsx** - Global navigation:
+
 - 4 dropdown menus (units)
 - Mobile hamburger menu
 - Integrated ThemeToggle
@@ -253,6 +270,7 @@ This project implements a professional design system with 6 reusable components:
 ### Design Tokens Implemented
 
 **Adventist Education Color Palette:**
+
 ```css
 Primary (Blue):   #003366 → Complete 50-950 scale (11 tones)
 Accent (Gold):    #FFB81C → Complete 50-900 scale (10 tones)
@@ -260,27 +278,32 @@ Success (Green):  #10B981 → Complete 50-900 scale (10 tones)
 ```
 
 **8px Spacing System:**
+
 ```css
 sm: 16px (8×2)  |  md: 24px (8×3)  |  lg: 32px (8×4)
 xl: 48px (8×6)  |  2xl: 64px (8×8)
 ```
 
 **Typography:**
+
 - Sans: Inter, Open Sans
 - Headings: Montserrat, Inter
 
 ### Metrics & ROI
 
 **Code Reduction:**
+
 - index.astro: 500 lines → 120 lines (76% reduction)
 - Duplicate cards: 4×80 lines → 1 component (95% reduction)
 
 **Maintenance Impact:**
+
 - Change primary color: 2 hours → 2 minutes (98% faster)
 - Redesign cards: 4 files → 1 component (75% easier)
 - Add new unit: 80 lines → 8 lines (90% less code)
 
 **Development Speed:**
+
 - Monthly tasks: 68 hours → 15 hours (78% time savings)
 - ROI: System pays for itself in 7 days
 

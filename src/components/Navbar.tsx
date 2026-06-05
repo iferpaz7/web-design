@@ -49,14 +49,14 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
   };
 
   return (
-    <nav className="bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-50 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="sticky top-0 z-50 bg-white shadow-lg transition-colors duration-300 dark:bg-gray-800">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo / Brand */}
-          <div className="shrink-0 flex items-center">
-            <a href="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 bg-linear-to-r from-primary-600 to-accent-500 rounded-lg flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-white" />
+          <div className="flex shrink-0 items-center">
+            <a href="/" className="group flex items-center space-x-3">
+              <div className="from-primary-600 to-accent-500 flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-r">
+                <BookOpen className="h-6 w-6 text-white" />
               </div>
               <div className="hidden sm:block">
                 <h1 className="text-lg font-bold text-gray-900 dark:text-white">
@@ -70,33 +70,39 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-1 md:flex-1 md:justify-center">
+          <div className="hidden md:flex md:flex-1 md:items-center md:justify-center md:space-x-1">
             <a
               href="/"
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
                 isActive('/')
                   ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
-                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                  : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700'
               }`}
             >
               Inicio
             </a>
 
             {navItems.slice(1).map((item) => (
-              <div key={item.label} className="relative group">
+              <div key={item.label} className="group relative">
                 <button
                   onClick={() => toggleDropdown(item.label)}
-                  className="px-4 py-2 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center space-x-1"
+                  className="flex items-center space-x-1 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
                 >
                   <span>{item.label}</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${dropdownOpen === item.label ? 'rotate-180' : ''}`} />
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform ${dropdownOpen === item.label ? 'rotate-180' : ''}`}
+                  />
                 </button>
 
                 {/* Dropdown Menu */}
                 {item.items && (
-                  <div className={`absolute left-0 mt-1 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-200 ${
-                    dropdownOpen === item.label ? 'opacity-100 visible' : 'opacity-0 invisible'
-                  }`}>
+                  <div
+                    className={`absolute left-0 mt-1 w-64 rounded-lg border border-gray-200 bg-white shadow-xl transition-all duration-200 dark:border-gray-700 dark:bg-gray-800 ${
+                      dropdownOpen === item.label
+                        ? 'visible opacity-100'
+                        : 'invisible opacity-0'
+                    }`}
+                  >
                     <div className="py-2">
                       {item.items.map((subItem) => (
                         <a
@@ -105,7 +111,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
                           className={`block px-4 py-2 text-sm transition-colors ${
                             isActive(subItem.href)
                               ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 font-semibold'
-                              : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                              : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700'
                           }`}
                         >
                           {subItem.label}
@@ -119,22 +125,22 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
           </div>
 
           {/* Theme Toggle - Desktop */}
-          <div className="hidden md:flex md:items-center md:ml-4">
+          <div className="hidden md:ml-4 md:flex md:items-center">
             <ThemeToggle />
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="flex items-center space-x-2 md:hidden">
             <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              className="rounded-lg p-2 text-gray-700 transition-colors hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
+                <X className="h-6 w-6" />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Menu className="h-6 w-6" />
               )}
             </button>
           </div>
@@ -142,15 +148,15 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden pb-4 border-t border-gray-200 dark:border-gray-700 mt-2">
+          <div className="mt-2 border-t border-gray-200 pb-4 md:hidden dark:border-gray-700">
             <div className="space-y-1 pt-2">
               <a
                 href="/"
                 onClick={closeMobileMenu}
-                className={`block px-4 py-2 rounded-lg text-base font-medium transition-colors ${
+                className={`block rounded-lg px-4 py-2 text-base font-medium transition-colors ${
                   isActive('/')
                     ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                    : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700'
                 }`}
               >
                 Inicio
@@ -160,23 +166,25 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
                 <div key={item.label} className="space-y-1">
                   <button
                     onClick={() => toggleDropdown(item.label)}
-                    className="w-full text-left px-4 py-2 rounded-lg text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center justify-between"
+                    className="flex w-full items-center justify-between rounded-lg px-4 py-2 text-left text-base font-medium text-gray-700 transition-colors hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
                   >
                     <span>{item.label}</span>
-                    <ChevronDown className={`w-4 h-4 transition-transform ${dropdownOpen === item.label ? 'rotate-180' : ''}`} />
+                    <ChevronDown
+                      className={`h-4 w-4 transition-transform ${dropdownOpen === item.label ? 'rotate-180' : ''}`}
+                    />
                   </button>
 
                   {dropdownOpen === item.label && item.items && (
-                    <div className="pl-4 space-y-1">
+                    <div className="space-y-1 pl-4">
                       {item.items.map((subItem) => (
                         <a
                           key={subItem.href}
                           href={subItem.href}
                           onClick={closeMobileMenu}
-                          className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
+                          className={`block rounded-lg px-4 py-2 text-sm transition-colors ${
                             isActive(subItem.href)
                               ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 font-semibold'
-                              : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
+                              : 'text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700'
                           }`}
                         >
                           {subItem.label}

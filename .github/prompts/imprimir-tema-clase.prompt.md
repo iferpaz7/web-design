@@ -1,8 +1,8 @@
 ---
-name: "imprimir-tema-clase"
-description: "Genera un tema listo para impresión o PDF con fecha y nombre del profesor. Úsalo para entregar o archivar material de clase."
-argument-hint: "unidad=... tema=... fecha=... profesor=..."
-agent: "agent"
+name: 'imprimir-tema-clase'
+description: 'Genera un tema listo para impresión o PDF con fecha y nombre del profesor. Úsalo para entregar o archivar material de clase.'
+argument-hint: 'unidad=... tema=... fecha=... profesor=...'
+agent: 'agent'
 ---
 
 Genera una versión lista para impresión de un tema del curso, tomando como base [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md) y [src/data/syllabus.ts](../../src/data/syllabus.ts).
@@ -10,6 +10,7 @@ Genera una versión lista para impresión de un tema del curso, tomando como bas
 Sigue también la guía institucional en [itsae-filosofia-docencia](../instructions/itsae-filosofia-docencia.instructions.md).
 
 Usa estos inputs:
+
 - Unidad: ${input:unidad:Unidad del sílabo}
 - Tema: ${input:tema:Tema a imprimir}
 - Fecha: ${input:fecha:Fecha de la clase}
@@ -19,6 +20,7 @@ Usa estos inputs:
 - Ajustes: ${input:ajustes:Indicaciones adicionales}
 
 Instrucciones obligatorias:
+
 - Redacta un material formal, limpio y listo para exportar a PDF.
 - Incluye encabezado institucional con asignatura, unidad, tema, fecha y docente.
 - Organiza el contenido en: propósito, objetivos, desarrollo del tema, conceptos clave, ejemplo aplicado, actividad sugerida, bibliografía y observaciones.
@@ -28,6 +30,7 @@ Instrucciones obligatorias:
 - La bibliografía debe quedar en APA 7.ª edición.
 
 Formato de salida:
+
 - Documento en Markdown con títulos claros.
 - Bloque inicial con:
   - Asignatura
@@ -39,6 +42,7 @@ Formato de salida:
 - Incluye una subsección breve de "Recursos sugeridos para ampliación" cuando existan fuentes online pertinentes.
 
 **Creación de archivos obligatoria:** Una vez generado el contenido, crea físicamente el archivo en disco. No es suficiente mostrarlo en el chat.
+
 - Ruta: `docs/guias/unidad${input:unidad}/tema${input:tema}/guia-${input:fecha}.md`
 - También incluye el enlace a la presentación y a la versión imprimible del sitio web al final del documento:
   - Presentación: `https://web-design-itsae.netlify.app/presentacion/unidad${input:unidad}/tema${input:tema}` (si la URL base está disponible)

@@ -21,6 +21,9 @@ export function getStaticPaths() {
 const { unit, tema } = Astro.props;
 ---
 
-<Layout title={`Imprimir · Unidad ${unit.numero} · Tema ${tema.numero} - ITSAE`} hideChrome={true}>
+<Layout
+  title={`Imprimir · Unidad ${unit.numero} · Tema ${tema.numero} - ITSAE`}
+  hideChrome={true}
+>
   <TemaImpresion unit={unit} tema={tema} />
 </Layout>

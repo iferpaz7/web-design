@@ -1,8 +1,8 @@
 ---
-name: "generar-examen-bimestral"
-description: "Genera un examen por bimestre con fecha, cantidad de preguntas y balance teórico-práctico. Úsalo para Bimestre I o II según el sílabo."
-argument-hint: "bimestre=... fecha=... cantidadPreguntas=... tipo=..."
-agent: "agent"
+name: 'generar-examen-bimestral'
+description: 'Genera un examen por bimestre con fecha, cantidad de preguntas y balance teórico-práctico. Úsalo para Bimestre I o II según el sílabo.'
+argument-hint: 'bimestre=... fecha=... cantidadPreguntas=... tipo=...'
+agent: 'agent'
 ---
 
 Genera un examen bimestral alineado a [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md).

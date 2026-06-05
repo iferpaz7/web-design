@@ -43,26 +43,26 @@ Diseñar, prototipar, publicar y optimizar una página web orientada a campaña 
 
 ## Actividades por sesión
 
-| Tema | Unidad | Capacidades | Descripción del tema | HD | HP | HAA |
-| --- | --- | --- | --- | --- | --- | --- |
-| 1 | Unidad 1 | Comprender el rol de la página web dentro de una campaña y su función en el embudo de conversión. | Rol de la página web en la estrategia de marketing digital. | 1 | 1 | 1 |
-| 2 | Unidad 1 | Reconocer principios de experiencia de usuario aplicables a páginas de campaña. | Principios de UX/UI aplicados a experiencias digitales. | 1 | 1 | 1 |
-| 3 | Unidad 1 | Organizar visualmente la información para priorizar comprensión y acción. | Jerarquía visual, tipografía, color y composición. | 1 | 1 | 1 |
-| 4 | Unidad 1 | Aplicar criterios de calidad para lectura, navegación y adaptación móvil. | Usabilidad, accesibilidad y lectura móvil. | 1 | 1 | 1 |
-| 1 | Unidad 2 | Definir el enfoque del mensaje según audiencia e intención del usuario. | Segmentación, intención del usuario y enfoque del mensaje. | 1 | 1 | 1 |
-| 2 | Unidad 2 | Construir el recorrido del usuario por bloques y secciones. | Arquitectura de la información y recorrido del usuario. | 1 | 1 | 1 |
-| 3 | Unidad 2 | Redactar contenidos persuasivos para cada sección de la página web. | Titulares, beneficios, prueba social y llamados a la acción. | 1 | 1 | 1 |
-| 4 | Unidad 2 | Traducir la estructura y el contenido en un prototipo visual validable. | Prototipado de baja y media fidelidad. | 1 | 1 | 1 |
-| — | Bimestre I | Integrar y evidenciar los aprendizajes alcanzados en las dos primeras unidades. | Examen Bimestre I. | 1 | 1 | 1 |
-| 1 | Unidad 3 | Seleccionar una herramienta viable para la publicación de la página web. | Publicación en nube, constructores visuales y CMS accesibles. | 1 | 1 | 1 |
-| 2 | Unidad 3 | Construir la página por secciones y adaptarla a distintos dispositivos. | Maquetación y adaptación responsiva. | 1 | 1 | 1 |
-| 3 | Unidad 3 | Integrar un mecanismo funcional de conversión o contacto. | Formularios, captura de contactos y rutas de conversión. | 1 | 1 | 1 |
-| 4 | Unidad 3 | Verificar la calidad final antes de publicación o presentación. | Revisión de enlaces, legibilidad, carga y recursos. | 1 | 1 | 1 |
-| 1 | Unidad 4 | Identificar oportunidades de mejora de la página web. | Principios de optimización orientada a la conversión. | 1 | 1 | 1 |
-| 2 | Unidad 4 | Aplicar criterios básicos de visibilidad y rendimiento. | SEO básico y rendimiento. | 1 | 1 | 1 |
-| 3 | Unidad 4 | Interpretar indicadores y evidencias de desempeño. | Medición básica del comportamiento y conversiones. | 1 | 1 | 1 |
-| 4 | Unidad 4 | Sustentar mejoras y preparar el cierre del proyecto final. | Presentación final e iteración de la página web. | 1 | 1 | 1 |
-| — | Bimestre II | Integrar y sustentar los aprendizajes logrados durante todo el período académico. | Examen Bimestre II. | 1 | 1 | 1 |
+| Tema | Unidad      | Capacidades                                                                                       | Descripción del tema                                          | HD  | HP  | HAA |
+| ---- | ----------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | --- | --- | --- |
+| 1    | Unidad 1    | Comprender el rol de la página web dentro de una campaña y su función en el embudo de conversión. | Rol de la página web en la estrategia de marketing digital.   | 1   | 1   | 1   |
+| 2    | Unidad 1    | Reconocer principios de experiencia de usuario aplicables a páginas de campaña.                   | Principios de UX/UI aplicados a experiencias digitales.       | 1   | 1   | 1   |
+| 3    | Unidad 1    | Organizar visualmente la información para priorizar comprensión y acción.                         | Jerarquía visual, tipografía, color y composición.            | 1   | 1   | 1   |
+| 4    | Unidad 1    | Aplicar criterios de calidad para lectura, navegación y adaptación móvil.                         | Usabilidad, accesibilidad y lectura móvil.                    | 1   | 1   | 1   |
+| 1    | Unidad 2    | Definir el enfoque del mensaje según audiencia e intención del usuario.                           | Segmentación, intención del usuario y enfoque del mensaje.    | 1   | 1   | 1   |
+| 2    | Unidad 2    | Construir el recorrido del usuario por bloques y secciones.                                       | Arquitectura de la información y recorrido del usuario.       | 1   | 1   | 1   |
+| 3    | Unidad 2    | Redactar contenidos persuasivos para cada sección de la página web.                               | Titulares, beneficios, prueba social y llamados a la acción.  | 1   | 1   | 1   |
+| 4    | Unidad 2    | Traducir la estructura y el contenido en un prototipo visual validable.                           | Prototipado de baja y media fidelidad.                        | 1   | 1   | 1   |
+| —    | Bimestre I  | Integrar y evidenciar los aprendizajes alcanzados en las dos primeras unidades.                   | Examen Bimestre I.                                            | 1   | 1   | 1   |
+| 1    | Unidad 3    | Seleccionar una herramienta viable para la publicación de la página web.                          | Publicación en nube, constructores visuales y CMS accesibles. | 1   | 1   | 1   |
+| 2    | Unidad 3    | Construir la página por secciones y adaptarla a distintos dispositivos.                           | Maquetación y adaptación responsiva.                          | 1   | 1   | 1   |
+| 3    | Unidad 3    | Integrar un mecanismo funcional de conversión o contacto.                                         | Formularios, captura de contactos y rutas de conversión.      | 1   | 1   | 1   |
+| 4    | Unidad 3    | Verificar la calidad final antes de publicación o presentación.                                   | Revisión de enlaces, legibilidad, carga y recursos.           | 1   | 1   | 1   |
+| 1    | Unidad 4    | Identificar oportunidades de mejora de la página web.                                             | Principios de optimización orientada a la conversión.         | 1   | 1   | 1   |
+| 2    | Unidad 4    | Aplicar criterios básicos de visibilidad y rendimiento.                                           | SEO básico y rendimiento.                                     | 1   | 1   | 1   |
+| 3    | Unidad 4    | Interpretar indicadores y evidencias de desempeño.                                                | Medición básica del comportamiento y conversiones.            | 1   | 1   | 1   |
+| 4    | Unidad 4    | Sustentar mejoras y preparar el cierre del proyecto final.                                        | Presentación final e iteración de la página web.              | 1   | 1   | 1   |
+| —    | Bimestre II | Integrar y sustentar los aprendizajes logrados durante todo el período académico.                 | Examen Bimestre II.                                           | 1   | 1   | 1   |
 
 ## Estrategias metodológicas básicas
 
@@ -72,24 +72,24 @@ Se aplicarán estrategias metodológicas de tipo cognitivo, aplicativas y format
 
 La evaluación de la asignatura se orienta al desempeño mediante un proyecto integrador que avanza por entregas parciales durante las cuatro unidades. La valoración se centra en la pertinencia estratégica, la claridad del mensaje, la experiencia de usuario, la funcionalidad de la página web, la coherencia visual y la capacidad de justificar decisiones de mejora, en relación con el perfil profesional de la carrera y sus contextos de aplicación.
 
-* Proyectos por unidad: 40%
-* Talleres y ejercicios aplicados: 30%
-* Actividades asincrónicas y retroalimentación: 15%
-* Participación y colaboración: 15%
+- Proyectos por unidad: 40%
+- Talleres y ejercicios aplicados: 30%
+- Actividades asincrónicas y retroalimentación: 15%
+- Participación y colaboración: 15%
 
 ## Bibliografía
 
-* Córcoles Tendero, J. E. (2014). *Diseño de interfaces web*. RA-MA Editorial.
-* Fernández Casado, P. E. (2021). *Accesibilidad web: Diseño de aplicaciones*. RA-MA Editorial.
-* Fernández Casado, P. E. (2024). *Iniciación a la creación de páginas web*. RA-MA Editorial.
-* Krug, S. (2006). *No me hagas pensar: Una aproximación a la usabilidad en la web*. Pearson Educación.
-* Martínez Rolán, X. (2019). *Diseño de páginas web: WordPress para todos los públicos*. Altaria.
+- Córcoles Tendero, J. E. (2014). _Diseño de interfaces web_. RA-MA Editorial.
+- Fernández Casado, P. E. (2021). _Accesibilidad web: Diseño de aplicaciones_. RA-MA Editorial.
+- Fernández Casado, P. E. (2024). _Iniciación a la creación de páginas web_. RA-MA Editorial.
+- Krug, S. (2006). _No me hagas pensar: Una aproximación a la usabilidad en la web_. Pearson Educación.
+- Martínez Rolán, X. (2019). _Diseño de páginas web: WordPress para todos los públicos_. Altaria.
 
 ## Enlaces de Internet
 
-* [Figma](https://figma.com)
-* [WordPress.org](https://wordpress.org)
-* [Elementor](https://elementor.com)
-* [Google Search Central](https://developers.google.com/search/docs)
-* [Google Analytics Help](https://support.google.com/analytics)
-* [PageSpeed Insights](https://pagespeed.web.dev)
+- [Figma](https://figma.com)
+- [WordPress.org](https://wordpress.org)
+- [Elementor](https://elementor.com)
+- [Google Search Central](https://developers.google.com/search/docs)
+- [Google Analytics Help](https://support.google.com/analytics)
+- [PageSpeed Insights](https://pagespeed.web.dev)

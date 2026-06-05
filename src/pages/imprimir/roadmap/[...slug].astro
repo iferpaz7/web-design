@@ -5,19 +5,23 @@ import RoadmapImpresion from '../../../components/RoadmapImpresion.astro';
 export async function getStaticPaths() {
   const files = import.meta.glob('../../../../docs/clases/**/roadmap-*.md');
 
-  return Object.entries(files).map(([filePath, resolver]) => {
-    // filePath example: ../../../../docs/clases/unidad1/tema2/roadmap-2026-05-04.md
-    const match = filePath.match(/docs\/clases\/([^/]+)\/([^/]+)\/(roadmap-[^/]+)\.md$/);
-    if (!match) return null;
+  return Object.entries(files)
+    .map(([filePath, resolver]) => {
+      // filePath example: ../../../../docs/clases/unidad1/tema2/roadmap-2026-05-04.md
+      const match = filePath.match(
+        /docs\/clases\/([^/]+)\/([^/]+)\/(roadmap-[^/]+)\.md$/
+      );
+      if (!match) return null;
 
-    const [, unidad, tema, filename] = match;
-    const slug = `${unidad}/${tema}/${filename}`;
+      const [, unidad, tema, filename] = match;
+      const slug = `${unidad}/${tema}/${filename}`;
 
-    return {
-      params: { slug },
-      props: { resolver, unidad, tema, filename }
-    };
-  }).filter(Boolean);
+      return {
+        params: { slug },
+        props: { resolver, unidad, tema, filename }
+      };
+    })
+    .filter(Boolean);
 }
 
 const { resolver, unidad, tema, filename } = Astro.props as {

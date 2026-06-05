@@ -36,19 +36,25 @@ export const syllabusUnits: SyllabusUnit[] = [
   {
     numero: 1,
     titulo: 'Estrategia digital, UX/UI y fundamentos de conversión',
-    descripcion: 'Comprende cómo una página web organiza la atención, la comprensión y la acción del usuario.',
+    descripcion:
+      'Comprende cómo una página web organiza la atención, la comprensión y la acción del usuario.',
     color: 'amber',
     iconName: 'BookOpen',
-    capacidad: 'Comprender el rol de la página web dentro de una campaña y estructurarla para guiar la atención, la comprensión y la acción del usuario.',
-    evidencia: 'Brief de campaña, mapa de estructura y lista de cotejo de calidad.',
+    capacidad:
+      'Comprender el rol de la página web dentro de una campaña y estructurarla para guiar la atención, la comprensión y la acción del usuario.',
+    evidencia:
+      'Brief de campaña, mapa de estructura y lista de cotejo de calidad.',
     temas: [
       {
         numero: 1,
-        titulo: 'Rol de la página web en la estrategia de marketing digital y en el embudo de conversión',
-        descripcion: 'Cómo una página de campaña se conecta con objetivos, públicos y decisiones medibles.',
+        titulo:
+          'Rol de la página web en la estrategia de marketing digital y en el embudo de conversión',
+        descripcion:
+          'Cómo una página de campaña se conecta con objetivos, públicos y decisiones medibles.',
         href: '/unidad1/tema1',
         disponible: true,
-        panorama: 'Este tema introduce la lógica estratégica del curso: una página web no es una pieza aislada, sino una solución digital que debe responder a objetivos concretos de captación, interacción o conversión. El análisis parte de la relación entre objetivo, mensaje, audiencia y acción esperada.',
+        panorama:
+          'Este tema introduce la lógica estratégica del curso: una página web no es una pieza aislada, sino una solución digital que debe responder a objetivos concretos de captación, interacción o conversión. El análisis parte de la relación entre objetivo, mensaje, audiencia y acción esperada.',
         objetivos: [
           'Reconocer el papel de la página web dentro de una estrategia de marketing digital.',
           'Relacionar objetivos de campaña con acciones medibles del usuario.',
@@ -59,9 +65,15 @@ export const syllabusUnits: SyllabusUnit[] = [
           'La conversión depende de claridad, pertinencia y dirección de la acción.',
           'El diseño web es una herramienta estratégica, no solo estética.'
         ],
-        actividad: 'Elabora un brief corto de campaña que incluya objetivo, público, propuesta de valor y acción principal esperada.',
-        evidencia: 'Brief inicial de la página web con objetivo y público definidos.',
-        herramientas: ['Brief de campaña', 'Mapa simple del embudo de conversión', 'Benchmark de páginas de referencia'],
+        actividad:
+          'Elabora un brief corto de campaña que incluya objetivo, público, propuesta de valor y acción principal esperada.',
+        evidencia:
+          'Brief inicial de la página web con objetivo y público definidos.',
+        herramientas: [
+          'Brief de campaña',
+          'Mapa simple del embudo de conversión',
+          'Benchmark de páginas de referencia'
+        ],
         presentationBlocks: [
           {
             title: 'Objetivo de la sesión',
@@ -132,11 +144,14 @@ export const syllabusUnits: SyllabusUnit[] = [
       },
       {
         numero: 2,
-        titulo: 'Principios de UX/UI aplicados a páginas de campaña y experiencias digitales',
-        descripcion: 'Criterios para diseñar interfaces claras, útiles y coherentes con el comportamiento del usuario.',
+        titulo:
+          'Principios de UX/UI aplicados a páginas de campaña y experiencias digitales',
+        descripcion:
+          'Criterios para diseñar interfaces claras, útiles y coherentes con el comportamiento del usuario.',
         href: '/unidad1/tema2',
         disponible: true,
-        panorama: 'La experiencia de usuario organiza la interacción; la interfaz da forma visible a esa experiencia. Este tema se centra en principios de jerarquía, consistencia, contraste y orientación visual aplicados a páginas de campaña.',
+        panorama:
+          'La experiencia de usuario organiza la interacción; la interfaz da forma visible a esa experiencia. Este tema se centra en principios de jerarquía, consistencia, contraste y orientación visual aplicados a páginas de campaña.',
         objetivos: [
           'Identificar principios básicos de UX y UI aplicables a páginas web.',
           'Relacionar la estructura visual con la facilidad de uso.',
@@ -147,9 +162,14 @@ export const syllabusUnits: SyllabusUnit[] = [
           'La consistencia visual mejora comprensión y confianza.',
           'Una buena experiencia reduce esfuerzo y mejora conversión.'
         ],
-        actividad: 'Analiza dos páginas de referencia y compara cómo resuelven navegación, jerarquía y llamados a la acción.',
+        actividad:
+          'Analiza dos páginas de referencia y compara cómo resuelven navegación, jerarquía y llamados a la acción.',
         evidencia: 'Ficha comparativa de criterios UX/UI aplicados.',
-        herramientas: ['Heurísticas de usabilidad', 'Referentes visuales', 'Notas de evaluación UX'],
+        herramientas: [
+          'Heurísticas de usabilidad',
+          'Referentes visuales',
+          'Notas de evaluación UX'
+        ],
         presentationBlocks: [
           {
             title: 'Objetivo de la sesión',
@@ -223,11 +243,14 @@ export const syllabusUnits: SyllabusUnit[] = [
       },
       {
         numero: 3,
-        titulo: 'Jerarquía visual, tipografía, color y composición para comunicar y persuadir',
-        descripcion: 'Recursos visuales para destacar prioridades, reforzar mensajes y guiar decisiones del usuario.',
+        titulo:
+          'Jerarquía visual, tipografía, color y composición para comunicar y persuadir',
+        descripcion:
+          'Recursos visuales para destacar prioridades, reforzar mensajes y guiar decisiones del usuario.',
         href: '/unidad1/tema3',
         disponible: true,
-        panorama: 'La jerarquía visual organiza la lectura y orienta la atención antes de que el usuario lea una sola palabra. Este tema trabaja composición, contraste, tipografía y color como recursos para comunicar con intención y reforzar una propuesta de valor. En una página de campaña, ordenar lo importante de lo secundario puede ser la diferencia entre una conversión y un abandono.',
+        panorama:
+          'La jerarquía visual organiza la lectura y orienta la atención antes de que el usuario lea una sola palabra. Este tema trabaja composición, contraste, tipografía y color como recursos para comunicar con intención y reforzar una propuesta de valor. En una página de campaña, ordenar lo importante de lo secundario puede ser la diferencia entre una conversión y un abandono.',
         objetivos: [
           'Organizar visualmente una interfaz según prioridades de lectura y acción.',
           'Usar tipografía con criterio comunicativo: escala, peso y legibilidad como herramientas.',
@@ -240,9 +263,16 @@ export const syllabusUnits: SyllabusUnit[] = [
           'Una composición clara reduce carga cognitiva y mejora la conversión.',
           'Cuando todo destaca, nada destaca: la jerarquía requiere decisiones de sacrificio.'
         ],
-        actividad: 'Rediseña el hero section de una página de campaña con problemas de jerarquía y justifica al menos tres decisiones visuales tomadas.',
-        evidencia: 'Boceto o esquema visual con decisiones de composición justificadas en relación con el objetivo de campaña.',
-        herramientas: ['Paleta base de marca', 'Escala tipográfica', 'Wireframe de hero section', 'Ficha de auditoría visual'],
+        actividad:
+          'Rediseña el hero section de una página de campaña con problemas de jerarquía y justifica al menos tres decisiones visuales tomadas.',
+        evidencia:
+          'Boceto o esquema visual con decisiones de composición justificadas en relación con el objetivo de campaña.',
+        herramientas: [
+          'Paleta base de marca',
+          'Escala tipográfica',
+          'Wireframe de hero section',
+          'Ficha de auditoría visual'
+        ],
         presentationBlocks: [
           {
             title: 'Objetivo de la sesión',
@@ -329,11 +359,14 @@ export const syllabusUnits: SyllabusUnit[] = [
       },
       {
         numero: 4,
-        titulo: 'Usabilidad, accesibilidad y lectura móvil como criterios de calidad',
-        descripcion: 'Buenas prácticas para que la experiencia sea comprensible, inclusiva y efectiva en distintos dispositivos.',
+        titulo:
+          'Usabilidad, accesibilidad y lectura móvil como criterios de calidad',
+        descripcion:
+          'Buenas prácticas para que la experiencia sea comprensible, inclusiva y efectiva en distintos dispositivos.',
         href: '/unidad1/tema4',
         disponible: true,
-        panorama: 'La calidad de una página web no solo se mide por su estética, sino por su facilidad de uso, su accesibilidad y su comportamiento real en pantallas móviles. En un entorno "Mobile-First", preparar la interacción es como preparar la buena tierra para el usuario: eliminando fricciones, cuidando contrastes y priorizando accesibilidad universal.',
+        panorama:
+          'La calidad de una página web no solo se mide por su estética, sino por su facilidad de uso, su accesibilidad y su comportamiento real en pantallas móviles. En un entorno "Mobile-First", preparar la interacción es como preparar la buena tierra para el usuario: eliminando fricciones, cuidando contrastes y priorizando accesibilidad universal.',
         objetivos: [
           'Aplicar criterios básicos de usabilidad e interactividad sin fricción.',
           'Evaluar lectura y navegación en móvil bajo principios Mobile-First.',
@@ -344,9 +377,15 @@ export const syllabusUnits: SyllabusUnit[] = [
           'La accesibilidad beneficia a todos los usuarios; la claridad no es un favor, es un deber ético.',
           'Móvil ya no es una opción de diseño adicional, debe ser el territorio principal auditado.'
         ],
-        actividad: 'La Buena Tierra Digital: Inspecciona con tu celular y un checklist una maqueta/web para detectar problemas de legibilidad, contraste y barreras de accesibilidad.',
-        evidencia: 'Lista de cotejo aplicada con observaciones, bloqueos detectados y mejoras sugeridas.',
-        herramientas: ['Checklist de usabilidad (10 puntos)', 'Revisión técnica en Smartphone', 'Criterios de contraste (W3C/WCAG)'],
+        actividad:
+          'La Buena Tierra Digital: Inspecciona con tu celular y un checklist una maqueta/web para detectar problemas de legibilidad, contraste y barreras de accesibilidad.',
+        evidencia:
+          'Lista de cotejo aplicada con observaciones, bloqueos detectados y mejoras sugeridas.',
+        herramientas: [
+          'Checklist de usabilidad (10 puntos)',
+          'Revisión técnica en Smartphone',
+          'Criterios de contraste (W3C/WCAG)'
+        ],
         presentationBlocks: [
           {
             title: 'Objetivo de la sesión',
@@ -394,20 +433,26 @@ export const syllabusUnits: SyllabusUnit[] = [
   },
   {
     numero: 2,
-    titulo: 'Arquitectura de la información, contenido persuasivo y prototipado',
-    descripcion: 'Traduce la propuesta de valor en estructura, mensaje y prototipos validables antes de publicar.',
+    titulo:
+      'Arquitectura de la información, contenido persuasivo y prototipado',
+    descripcion:
+      'Traduce la propuesta de valor en estructura, mensaje y prototipos validables antes de publicar.',
     color: 'blue',
     iconName: 'Monitor',
-    capacidad: 'Diseñar el recorrido del usuario y traducir la propuesta de valor en una estructura clara, persuasiva y validable antes de publicar.',
-    evidencia: 'Contenido final por secciones y prototipo navegable o maqueta visual validable.',
+    capacidad:
+      'Diseñar el recorrido del usuario y traducir la propuesta de valor en una estructura clara, persuasiva y validable antes de publicar.',
+    evidencia:
+      'Contenido final por secciones y prototipo navegable o maqueta visual validable.',
     temas: [
       {
         numero: 1,
         titulo: 'Segmentación, intención del usuario y enfoque del mensaje',
-        descripcion: 'Definición del público, sus necesidades y el ángulo de comunicación más pertinente.',
+        descripcion:
+          'Definición del público, sus necesidades y el ángulo de comunicación más pertinente.',
         href: '/unidad2/tema1',
         disponible: true,
-        panorama: 'El contenido solo funciona cuando responde a una intención concreta. Este tema organiza el mensaje desde el perfil del usuario: quién es, qué motivaciones tiene, qué objeciones enfrenta y en qué momento entra en contacto con la propuesta. Un mensaje preciso no es un mensaje para todos; es un mensaje que la persona correcta reconoce de inmediato como relevante para ella.',
+        panorama:
+          'El contenido solo funciona cuando responde a una intención concreta. Este tema organiza el mensaje desde el perfil del usuario: quién es, qué motivaciones tiene, qué objeciones enfrenta y en qué momento entra en contacto con la propuesta. Un mensaje preciso no es un mensaje para todos; es un mensaje que la persona correcta reconoce de inmediato como relevante para ella.',
         objetivos: [
           'Construir un perfil de usuario documentando su objetivo, necesidad, objeción y contexto de entrada.',
           'Identificar la intención de visita dominante y relacionarla con la estructura del contenido.',
@@ -420,9 +465,16 @@ export const syllabusUnits: SyllabusUnit[] = [
           'La propuesta de valor traduce características en beneficios concretos para el usuario.',
           'El mensaje central es el ancla de todo el contenido que vendrá: una frase que el usuario reconocería como escrita para él.'
         ],
-        actividad: 'Construye una ficha de usuario con perfil, objetivo, necesidad, objeción principal y momento de entrada. Luego redacta el mensaje central de tu página en una sola frase de máximo 20 palabras.',
-        evidencia: 'Ficha de usuario completa con mensaje central redactado. Primer insumo de contenido del proyecto integrador de la Unidad 2.',
-        herramientas: ['Ficha de audiencia', 'Mapa de empatía', 'Propuesta de valor', 'Buyer persona'],
+        actividad:
+          'Construye una ficha de usuario con perfil, objetivo, necesidad, objeción principal y momento de entrada. Luego redacta el mensaje central de tu página en una sola frase de máximo 20 palabras.',
+        evidencia:
+          'Ficha de usuario completa con mensaje central redactado. Primer insumo de contenido del proyecto integrador de la Unidad 2.',
+        herramientas: [
+          'Ficha de audiencia',
+          'Mapa de empatía',
+          'Propuesta de valor',
+          'Buyer persona'
+        ],
         presentationBlocks: [
           {
             title: 'Objetivo de la sesión',
@@ -515,11 +567,14 @@ export const syllabusUnits: SyllabusUnit[] = [
       },
       {
         numero: 2,
-        titulo: 'Organización de contenidos por bloques, secciones y recorrido del usuario',
-        descripcion: 'Estructuración del contenido para que el usuario avance con lógica y sin fricción hacia la acción esperada.',
+        titulo:
+          'Organización de contenidos por bloques, secciones y recorrido del usuario',
+        descripcion:
+          'Estructuración del contenido para que el usuario avance con lógica y sin fricción hacia la acción esperada.',
         href: '/unidad2/tema2',
         disponible: true,
-        panorama: 'La arquitectura de la información decide qué ve el usuario primero, qué sigue después y qué acción se le pide al final. Una página de campaña no es una acumulación de secciones: es un recorrido diseñado con criterio, donde cada bloque tiene una función concreta y un lugar justificado. Este tema organiza la estructura del contenido desde el perfil del usuario y el objetivo de conversión, aplicando patrones verificados como AIDA y el principio de la pirámide invertida. Una arquitectura bien construida reduce fricción, aumenta comprensión y convierte más.',
+        panorama:
+          'La arquitectura de la información decide qué ve el usuario primero, qué sigue después y qué acción se le pide al final. Una página de campaña no es una acumulación de secciones: es un recorrido diseñado con criterio, donde cada bloque tiene una función concreta y un lugar justificado. Este tema organiza la estructura del contenido desde el perfil del usuario y el objetivo de conversión, aplicando patrones verificados como AIDA y el principio de la pirámide invertida. Una arquitectura bien construida reduce fricción, aumenta comprensión y convierte más.',
         objetivos: [
           'Identificar los bloques funcionales de una página de campaña y su propósito comunicativo específico.',
           'Ordenar secciones aplicando patrones de recorrido verificados como AIDA y PAS.',
@@ -534,9 +589,17 @@ export const syllabusUnits: SyllabusUnit[] = [
           'Un mapa de secciones claro es la base del prototipado; sin arquitectura definida, el prototipo será desordenado.',
           'El primer CTA debe aparecer antes del tercer bloque; si el usuario llega al footer sin una oportunidad de actuar, la arquitectura falló.'
         ],
-        actividad: 'Construye el mapa de secciones de tu página de campaña: define 5-6 bloques, declara el propósito comunicativo de cada uno, indica el contenido principal y justifica el orden según el perfil de tu usuario.',
-        evidencia: 'Mapa de secciones con 5-6 bloques definidos, función de cada bloque declarada, contenido principal indicado y orden justificado en relación con el perfil de usuario. Segundo insumo del proyecto integrador de la Unidad 2.',
-        herramientas: ['Mapa de secciones (papel, Figma o Google Docs)', 'Plantilla de bloques funcionales', 'Patrón AIDA', 'Patrón PAS', 'Wireframe estructural básico'],
+        actividad:
+          'Construye el mapa de secciones de tu página de campaña: define 5-6 bloques, declara el propósito comunicativo de cada uno, indica el contenido principal y justifica el orden según el perfil de tu usuario.',
+        evidencia:
+          'Mapa de secciones con 5-6 bloques definidos, función de cada bloque declarada, contenido principal indicado y orden justificado en relación con el perfil de usuario. Segundo insumo del proyecto integrador de la Unidad 2.',
+        herramientas: [
+          'Mapa de secciones (papel, Figma o Google Docs)',
+          'Plantilla de bloques funcionales',
+          'Patrón AIDA',
+          'Patrón PAS',
+          'Wireframe estructural básico'
+        ],
         presentationBlocks: [
           {
             title: 'Objetivo de la sesión',
@@ -626,11 +689,14 @@ export const syllabusUnits: SyllabusUnit[] = [
       },
       {
         numero: 3,
-        titulo: 'Redacción de titulares, beneficios, prueba social y llamados a la acción',
-        descripcion: 'Textos breves, claros y persuasivos para cada sección clave de la página de campaña.',
+        titulo:
+          'Redacción de titulares, beneficios, prueba social y llamados a la acción',
+        descripcion:
+          'Textos breves, claros y persuasivos para cada sección clave de la página de campaña.',
         href: '/unidad2/tema3',
         disponible: true,
-        panorama: 'Una página de campaña puede tener buena estructura y diseño, pero si el texto no comunica con claridad la propuesta de valor, el usuario abandona sin actuar. Este tema trabaja los cuatro elementos textuales que más influyen en la decisión del usuario: el titular que sintetiza la promesa, los beneficios que transforman características en resultados, la prueba social que reduce el riesgo percibido y el llamado a la acción que orienta el paso siguiente. Redactar con criterio persuasivo no es manipular: es comunicar con honestidad lo que la propuesta puede hacer por el usuario.',
+        panorama:
+          'Una página de campaña puede tener buena estructura y diseño, pero si el texto no comunica con claridad la propuesta de valor, el usuario abandona sin actuar. Este tema trabaja los cuatro elementos textuales que más influyen en la decisión del usuario: el titular que sintetiza la promesa, los beneficios que transforman características en resultados, la prueba social que reduce el riesgo percibido y el llamado a la acción que orienta el paso siguiente. Redactar con criterio persuasivo no es manipular: es comunicar con honestidad lo que la propuesta puede hacer por el usuario.',
         objetivos: [
           'Redactar titulares que comuniquen la propuesta de valor de forma clara y diferenciada.',
           'Transformar características del producto o servicio en beneficios comprensibles para el usuario.',
@@ -644,9 +710,16 @@ export const syllabusUnits: SyllabusUnit[] = [
           'Un CTA sin verbo concreto y resultado claro es un botón de esperanza, no una instrucción.',
           'Tres a cuatro beneficios bien redactados convierten más que una lista de quince características.'
         ],
-        actividad: 'Con acompañamiento del docente, redacta el titular, subtítulo, tres beneficios clave y los dos CTAs principales de tu proyecto integrador, usando la ficha de usuario y el mapa de secciones como base.',
-        evidencia: 'Borrador de copy con titular, subtítulo, tres beneficios y dos CTAs redactados para las secciones clave del proyecto. Insumo directo de la evidencia de la Unidad 2 (contenido final por secciones).',
-        herramientas: ['Ficha de usuario (insumo U2T1)', 'Mapa de secciones (insumo U2T2)', 'Plantilla de copy por secciones', 'Google Docs o herramienta de edición de texto'],
+        actividad:
+          'Con acompañamiento del docente, redacta el titular, subtítulo, tres beneficios clave y los dos CTAs principales de tu proyecto integrador, usando la ficha de usuario y el mapa de secciones como base.',
+        evidencia:
+          'Borrador de copy con titular, subtítulo, tres beneficios y dos CTAs redactados para las secciones clave del proyecto. Insumo directo de la evidencia de la Unidad 2 (contenido final por secciones).',
+        herramientas: [
+          'Ficha de usuario (insumo U2T1)',
+          'Mapa de secciones (insumo U2T2)',
+          'Plantilla de copy por secciones',
+          'Google Docs o herramienta de edición de texto'
+        ],
         presentationBlocks: [
           {
             title: 'Objetivo de la sesión',
@@ -658,7 +731,8 @@ export const syllabusUnits: SyllabusUnit[] = [
             ]
           },
           {
-            title: 'Puente con la sesión anterior (Arquitectura de la información)',
+            title:
+              'Puente con la sesión anterior (Arquitectura de la información)',
             items: [
               'Pregunta de enlace: ¿cuál es el propósito comunicativo del hero section en el mapa de secciones que construiste?',
               'El mapa define qué bloques existen; el copy define qué dice cada uno.',
@@ -683,7 +757,8 @@ export const syllabusUnits: SyllabusUnit[] = [
             ]
           },
           {
-            title: 'Características vs. beneficios: la diferencia que convierte',
+            title:
+              'Características vs. beneficios: la diferencia que convierte',
             items: [
               'Característica: lo que el producto tiene o hace. Beneficio: lo que el usuario gana, logra o deja de sufrir.',
               'Fórmula: "[Característica] te permite [beneficio concreto para el usuario]."',
@@ -751,11 +826,14 @@ export const syllabusUnits: SyllabusUnit[] = [
       },
       {
         numero: 4,
-        titulo: 'Prototipado de baja y media fidelidad con herramientas visuales y criterios de marca',
-        descripcion: 'Conversión de la estructura y el contenido en una maqueta navegable y presentable.',
+        titulo:
+          'Prototipado de baja y media fidelidad con herramientas visuales y criterios de marca',
+        descripcion:
+          'Conversión de la estructura y el contenido en una maqueta navegable y presentable.',
         href: '/unidad2/tema4',
         disponible: true,
-        panorama: 'El prototipo permite validar estructura, contenido y dirección visual antes de publicar. Este tema se concentra en transformar el esquema de contenidos en una propuesta visual navegable con criterios de marca y consistencia.',
+        panorama:
+          'El prototipo permite validar estructura, contenido y dirección visual antes de publicar. Este tema se concentra en transformar el esquema de contenidos en una propuesta visual navegable con criterios de marca y consistencia.',
         objetivos: [
           'Pasar de wireframe a maqueta visual con criterios de marca.',
           'Preparar un prototipo que pueda revisarse y mejorarse.',
@@ -766,9 +844,14 @@ export const syllabusUnits: SyllabusUnit[] = [
           'La fidelidad visual debe responder al objetivo de validación.',
           'Una maqueta útil es aquella que puede discutirse y corregirse.'
         ],
-        actividad: 'Construye un prototipo navegable de tu página con estructura, copy y estilo base.',
+        actividad:
+          'Construye un prototipo navegable de tu página con estructura, copy y estilo base.',
         evidencia: 'Prototipo navegable o maqueta visual validable.',
-        herramientas: ['Figma o herramienta equivalente', 'Guía de marca básica', 'Checklist de revisión visual'],
+        herramientas: [
+          'Figma o herramienta equivalente',
+          'Guía de marca básica',
+          'Checklist de revisión visual'
+        ],
         presentationBlocks: [
           {
             title: 'Disciplina de prototipado',
@@ -792,20 +875,27 @@ export const syllabusUnits: SyllabusUnit[] = [
   },
   {
     numero: 3,
-    titulo: 'Producción y publicación de la página web con herramientas viables',
-    descripcion: 'Publica una página funcional con herramientas accesibles, coherencia visual y rutas de conversión simples.',
+    titulo:
+      'Producción y publicación de la página web con herramientas viables',
+    descripcion:
+      'Publica una página funcional con herramientas accesibles, coherencia visual y rutas de conversión simples.',
     color: 'emerald',
     iconName: 'Palette',
-    capacidad: 'Construir y publicar una página web funcional mediante herramientas accesibles, cuidando lectura móvil, coherencia visual y cumplimiento del objetivo de campaña.',
-    evidencia: 'Página web publicada o compartible y formulario o mecanismo de conversión funcional.',
+    capacidad:
+      'Construir y publicar una página web funcional mediante herramientas accesibles, cuidando lectura móvil, coherencia visual y cumplimiento del objetivo de campaña.',
+    evidencia:
+      'Página web publicada o compartible y formulario o mecanismo de conversión funcional.',
     temas: [
       {
         numero: 1,
-        titulo: 'Publicación de páginas en entornos de baja fricción: nube, constructores visuales y CMS accesibles',
-        descripcion: 'Selección de ruta de publicación según viabilidad técnica, tiempo y objetivo del proyecto.',
+        titulo:
+          'Publicación de páginas en entornos de baja fricción: nube, constructores visuales y CMS accesibles',
+        descripcion:
+          'Selección de ruta de publicación según viabilidad técnica, tiempo y objetivo del proyecto.',
         href: '/unidad3/tema1',
         disponible: true,
-        panorama: 'La publicación de la página web no debe depender de barreras técnicas innecesarias. Este tema compara rutas viables como WordPress en la nube, constructores visuales y otras herramientas accesibles para asegurar ejecución realista.',
+        panorama:
+          'La publicación de la página web no debe depender de barreras técnicas innecesarias. Este tema compara rutas viables como WordPress en la nube, constructores visuales y otras herramientas accesibles para asegurar ejecución realista.',
         objetivos: [
           'Comparar rutas de publicación según complejidad y alcance.',
           'Elegir una herramienta viable para el contexto del curso.',
@@ -816,9 +906,16 @@ export const syllabusUnits: SyllabusUnit[] = [
           'Una ruta viable reduce bloqueo y mejora continuidad del proyecto.',
           'Publicar con criterio es más importante que publicar con complejidad.'
         ],
-        actividad: 'Elige la ruta de publicación de tu proyecto y susténtala con criterios de viabilidad, tiempo y funcionalidad.',
+        actividad:
+          'Elige la ruta de publicación de tu proyecto y susténtala con criterios de viabilidad, tiempo y funcionalidad.',
         evidencia: 'Plan breve de implementación y herramienta seleccionada.',
-        herramientas: ['WordPress en nube', 'Carrd', 'Canva', 'Google Sites', 'Framer u otra opción validada'],
+        herramientas: [
+          'WordPress en nube',
+          'Carrd',
+          'Canva',
+          'Google Sites',
+          'Framer u otra opción validada'
+        ],
         presentationBlocks: [
           {
             title: 'Criterios para elegir plataforma',
@@ -840,11 +937,14 @@ export const syllabusUnits: SyllabusUnit[] = [
       },
       {
         numero: 2,
-        titulo: 'Maquetación por secciones y adaptación a dispositivos: móvil, tablet y escritorio',
-        descripcion: 'Construcción visual de la página web con prioridad en lectura, ritmo y adaptación responsive.',
+        titulo:
+          'Maquetación por secciones y adaptación a dispositivos: móvil, tablet y escritorio',
+        descripcion:
+          'Construcción visual de la página web con prioridad en lectura, ritmo y adaptación responsive.',
         href: '/unidad3/tema2',
         disponible: true,
-        panorama: 'Una vez definida la ruta de publicación, el siguiente paso es maquetar la página web por secciones y asegurar que su lectura funcione correctamente en distintos tamaños de pantalla. El foco está en ritmo visual, espaciado y adaptación responsive.',
+        panorama:
+          'Una vez definida la ruta de publicación, el siguiente paso es maquetar la página web por secciones y asegurar que su lectura funcione correctamente en distintos tamaños de pantalla. El foco está en ritmo visual, espaciado y adaptación responsive.',
         objetivos: [
           'Construir la página por bloques según el prototipo validado.',
           'Ajustar espaciado, jerarquía y alineación en móvil y escritorio.',
@@ -855,9 +955,14 @@ export const syllabusUnits: SyllabusUnit[] = [
           'La maquetación debe respetar la jerarquía definida en el prototipo.',
           'La claridad visual depende de ritmo, alineación y contraste.'
         ],
-        actividad: 'Maqueta las secciones principales de tu página web y documenta ajustes clave para versión móvil.',
+        actividad:
+          'Maqueta las secciones principales de tu página web y documenta ajustes clave para versión móvil.',
         evidencia: 'Avance funcional de la página con adaptación responsive.',
-        herramientas: ['Constructor visual o CMS elegido', 'Vista previa móvil', 'Guía de espaciado y jerarquía'],
+        herramientas: [
+          'Constructor visual o CMS elegido',
+          'Vista previa móvil',
+          'Guía de espaciado y jerarquía'
+        ],
         presentationBlocks: [
           {
             title: 'Responsive con criterio',
@@ -879,11 +984,14 @@ export const syllabusUnits: SyllabusUnit[] = [
       },
       {
         numero: 3,
-        titulo: 'Formularios, captura de contactos y rutas de conversión simples',
-        descripcion: 'Integración de mecanismos de respuesta medible: formularios, botones o enlaces de acción.',
+        titulo:
+          'Formularios, captura de contactos y rutas de conversión simples',
+        descripcion:
+          'Integración de mecanismos de respuesta medible: formularios, botones o enlaces de acción.',
         href: '/unidad3/tema3',
         disponible: true,
-        panorama: 'La página web debe facilitar una acción concreta. Este tema trabaja formularios, botones y rutas de conversión simples para que la página no solo informe, sino que también permita registrar una respuesta útil para marketing.',
+        panorama:
+          'La página web debe facilitar una acción concreta. Este tema trabaja formularios, botones y rutas de conversión simples para que la página no solo informe, sino que también permita registrar una respuesta útil para marketing.',
         objetivos: [
           'Configurar un mecanismo funcional de conversión o contacto.',
           'Diseñar llamados a la acción claros y visibles.',
@@ -894,9 +1002,16 @@ export const syllabusUnits: SyllabusUnit[] = [
           'No toda conversión es compra: también puede ser contacto, registro o consulta.',
           'La prueba funcional es parte del diseño.'
         ],
-        actividad: 'Integra un formulario o mecanismo de contacto y verifica su funcionamiento de extremo a extremo.',
-        evidencia: 'Prueba funcional de conversión con capturas o registro de verificación.',
-        herramientas: ['Formulario nativo o embebido', 'Botones de acción', 'Google Forms o Tally', 'Registro de pruebas'],
+        actividad:
+          'Integra un formulario o mecanismo de contacto y verifica su funcionamiento de extremo a extremo.',
+        evidencia:
+          'Prueba funcional de conversión con capturas o registro de verificación.',
+        herramientas: [
+          'Formulario nativo o embebido',
+          'Botones de acción',
+          'Google Forms o Tally',
+          'Registro de pruebas'
+        ],
         presentationBlocks: [
           {
             title: 'Conversión simple, pero medible',
@@ -918,11 +1033,14 @@ export const syllabusUnits: SyllabusUnit[] = [
       },
       {
         numero: 4,
-        titulo: 'Revisión de calidad antes de publicar: enlaces, legibilidad, carga y recursos',
-        descripcion: 'Control final de la página web antes de entregarla o compartirla como producto funcional.',
+        titulo:
+          'Revisión de calidad antes de publicar: enlaces, legibilidad, carga y recursos',
+        descripcion:
+          'Control final de la página web antes de entregarla o compartirla como producto funcional.',
         href: '/unidad3/tema4',
         disponible: true,
-        panorama: 'Antes de presentar la página web, es necesario revisar enlaces, legibilidad, recursos visuales, tiempos de carga y coherencia general. Este tema consolida la etapa de control de calidad con criterios prácticos y verificables.',
+        panorama:
+          'Antes de presentar la página web, es necesario revisar enlaces, legibilidad, recursos visuales, tiempos de carga y coherencia general. Este tema consolida la etapa de control de calidad con criterios prácticos y verificables.',
         objetivos: [
           'Aplicar una revisión final de calidad visual y funcional.',
           'Corregir errores de enlace, contraste, lectura o carga básica.',
@@ -933,9 +1051,15 @@ export const syllabusUnits: SyllabusUnit[] = [
           'Detalles pequeños pueden afectar confianza y conversión.',
           'Una revisión final ordenada mejora la presentación profesional.'
         ],
-        actividad: 'Ejecuta una revisión final con lista de cotejo y aplica correcciones antes de publicar o entregar.',
-        evidencia: 'Página web publicada o compartible con observaciones corregidas.',
-        herramientas: ['Lista de verificación final', 'Prueba de enlaces', 'Revisión en móvil y escritorio'],
+        actividad:
+          'Ejecuta una revisión final con lista de cotejo y aplica correcciones antes de publicar o entregar.',
+        evidencia:
+          'Página web publicada o compartible con observaciones corregidas.',
+        herramientas: [
+          'Lista de verificación final',
+          'Prueba de enlaces',
+          'Revisión en móvil y escritorio'
+        ],
         presentationBlocks: [
           {
             title: 'Umbrales mínimos de salida',
@@ -960,19 +1084,24 @@ export const syllabusUnits: SyllabusUnit[] = [
   {
     numero: 4,
     titulo: 'Optimización, medición y proyección profesional',
-    descripcion: 'Evalúa, mejora y sustenta la página web con criterios de conversión, visibilidad y medición básica.',
+    descripcion:
+      'Evalúa, mejora y sustenta la página web con criterios de conversión, visibilidad y medición básica.',
     color: 'purple',
     iconName: 'Zap',
-    capacidad: 'Evaluar el desempeño de la página web y proponer mejoras con base en objetivos, métricas y criterios de presentación profesional.',
-    evidencia: 'Versión optimizada de la página web y reporte ejecutivo de mejoras con medición básica.',
+    capacidad:
+      'Evaluar el desempeño de la página web y proponer mejoras con base en objetivos, métricas y criterios de presentación profesional.',
+    evidencia:
+      'Versión optimizada de la página web y reporte ejecutivo de mejoras con medición básica.',
     temas: [
       {
         numero: 1,
         titulo: 'Principios de optimización orientada a la conversión',
-        descripcion: 'Criterios para detectar oportunidades de mejora en claridad, estructura y llamados a la acción.',
+        descripcion:
+          'Criterios para detectar oportunidades de mejora en claridad, estructura y llamados a la acción.',
         href: '/unidad4/tema1',
         disponible: true,
-        panorama: 'Optimizar no significa rehacer todo, sino identificar qué elementos generan más fricción o menor respuesta. Este tema revisa principios básicos de optimización orientada a la conversión para tomar decisiones de mejora con criterio.',
+        panorama:
+          'Optimizar no significa rehacer todo, sino identificar qué elementos generan más fricción o menor respuesta. Este tema revisa principios básicos de optimización orientada a la conversión para tomar decisiones de mejora con criterio.',
         objetivos: [
           'Detectar puntos de fricción en una página ya construida.',
           'Priorizar mejoras según impacto esperado.',
@@ -983,9 +1112,14 @@ export const syllabusUnits: SyllabusUnit[] = [
           'Optimizar implica observar, comparar y justificar cambios.',
           'La conversión mejora cuando disminuye la fricción.'
         ],
-        actividad: 'Realiza una auditoría breve de la página web y prioriza tres mejoras de alto impacto.',
+        actividad:
+          'Realiza una auditoría breve de la página web y prioriza tres mejoras de alto impacto.',
         evidencia: 'Lista priorizada de mejoras con justificación.',
-        herramientas: ['Checklist CRO básico', 'Matriz impacto-esfuerzo', 'Capturas antes y después'],
+        herramientas: [
+          'Checklist CRO básico',
+          'Matriz impacto-esfuerzo',
+          'Capturas antes y después'
+        ],
         presentationBlocks: [
           {
             title: 'Marco básico de CRO',
@@ -1007,11 +1141,14 @@ export const syllabusUnits: SyllabusUnit[] = [
       },
       {
         numero: 2,
-        titulo: 'Fundamentos de visibilidad, estructura SEO y rendimiento básico',
-        descripcion: 'Ajustes elementales para que la página web sea encontrable, legible y técnicamente más sólida.',
+        titulo:
+          'Fundamentos de visibilidad, estructura SEO y rendimiento básico',
+        descripcion:
+          'Ajustes elementales para que la página web sea encontrable, legible y técnicamente más sólida.',
         href: '/unidad4/tema2',
         disponible: true,
-        panorama: 'La página web debe ser comprensible para usuarios y ordenada para buscadores. Este tema aborda títulos, estructura, legibilidad, textos alternativos y mejoras de rendimiento básico sin exigir configuraciones avanzadas.',
+        panorama:
+          'La página web debe ser comprensible para usuarios y ordenada para buscadores. Este tema aborda títulos, estructura, legibilidad, textos alternativos y mejoras de rendimiento básico sin exigir configuraciones avanzadas.',
         objetivos: [
           'Aplicar criterios básicos de SEO on-page y estructura semántica.',
           'Revisar elementos que impactan legibilidad y rendimiento.',
@@ -1022,9 +1159,14 @@ export const syllabusUnits: SyllabusUnit[] = [
           'El rendimiento percibido afecta experiencia y permanencia.',
           'SEO básico y calidad editorial trabajan juntos.'
         ],
-        actividad: 'Ajusta títulos, descripciones, textos alternativos y recursos pesados de tu página web.',
+        actividad:
+          'Ajusta títulos, descripciones, textos alternativos y recursos pesados de tu página web.',
         evidencia: 'Registro de ajustes aplicados a SEO y rendimiento básico.',
-        herramientas: ['Revisión de headings', 'PageSpeed Insights', 'Checklist SEO on-page'],
+        herramientas: [
+          'Revisión de headings',
+          'PageSpeed Insights',
+          'Checklist SEO on-page'
+        ],
         presentationBlocks: [
           {
             title: 'SEO técnico y rendimiento en lenguaje claro',
@@ -1046,11 +1188,14 @@ export const syllabusUnits: SyllabusUnit[] = [
       },
       {
         numero: 3,
-        titulo: 'Medición básica del comportamiento, conversiones e interpretación de datos',
-        descripcion: 'Lectura inicial de señales de uso y respuesta para tomar decisiones de mejora.',
+        titulo:
+          'Medición básica del comportamiento, conversiones e interpretación de datos',
+        descripcion:
+          'Lectura inicial de señales de uso y respuesta para tomar decisiones de mejora.',
         href: '/unidad4/tema3',
         disponible: true,
-        panorama: 'Medir permite decidir con evidencia. Este tema introduce una aproximación básica a indicadores de comportamiento, conversiones y observación de resultados para construir una mejora razonada de la página web.',
+        panorama:
+          'Medir permite decidir con evidencia. Este tema introduce una aproximación básica a indicadores de comportamiento, conversiones y observación de resultados para construir una mejora razonada de la página web.',
         objetivos: [
           'Identificar indicadores simples de comportamiento y conversión.',
           'Relacionar métricas básicas con oportunidades de mejora.',
@@ -1061,9 +1206,15 @@ export const syllabusUnits: SyllabusUnit[] = [
           'Los datos deben leerse en función del objetivo de la página web.',
           'Medir sirve para decidir, no solo para registrar.'
         ],
-        actividad: 'Elabora un reporte breve con observaciones sobre comportamiento, conversiones o pruebas realizadas.',
-        evidencia: 'Borrador de reporte ejecutivo de resultados y oportunidades.',
-        herramientas: ['Registro de interacciones', 'GA4 o analítica básica si aplica', 'Tabla simple de hallazgos'],
+        actividad:
+          'Elabora un reporte breve con observaciones sobre comportamiento, conversiones o pruebas realizadas.',
+        evidencia:
+          'Borrador de reporte ejecutivo de resultados y oportunidades.',
+        herramientas: [
+          'Registro de interacciones',
+          'GA4 o analítica básica si aplica',
+          'Tabla simple de hallazgos'
+        ],
         presentationBlocks: [
           {
             title: 'Métricas que sí ayudan a decidir',
@@ -1085,11 +1236,14 @@ export const syllabusUnits: SyllabusUnit[] = [
       },
       {
         numero: 4,
-        titulo: 'Iteración de la página web, presentación final y argumentación de mejoras',
-        descripcion: 'Cierre del proyecto con ajustes finales, sustentación y enfoque profesional.',
+        titulo:
+          'Iteración de la página web, presentación final y argumentación de mejoras',
+        descripcion:
+          'Cierre del proyecto con ajustes finales, sustentación y enfoque profesional.',
         href: '/unidad4/tema4',
         disponible: true,
-        panorama: 'El cierre del curso exige revisar, optimizar y presentar la página web como una solución justificada. Este tema prepara la entrega final y la argumentación de decisiones de diseño, contenido, publicación y mejora.',
+        panorama:
+          'El cierre del curso exige revisar, optimizar y presentar la página web como una solución justificada. Este tema prepara la entrega final y la argumentación de decisiones de diseño, contenido, publicación y mejora.',
         objetivos: [
           'Consolidar la versión final de la página web.',
           'Sustentar decisiones de mejora con argumentos claros.',
@@ -1100,9 +1254,14 @@ export const syllabusUnits: SyllabusUnit[] = [
           'Una mejora vale más cuando se puede justificar.',
           'El proyecto final debe evidenciar proceso, no solo resultado.'
         ],
-        actividad: 'Prepara la entrega final de la página web y una exposición breve que resuma decisiones, mejoras y resultados.',
+        actividad:
+          'Prepara la entrega final de la página web y una exposición breve que resuma decisiones, mejoras y resultados.',
         evidencia: 'Página web optimizada y reporte ejecutivo final.',
-        herramientas: ['Guion de presentación', 'Versión final publicada o compartible', 'Reporte ejecutivo de mejoras'],
+        herramientas: [
+          'Guion de presentación',
+          'Versión final publicada o compartible',
+          'Reporte ejecutivo de mejoras'
+        ],
         presentationBlocks: [
           {
             title: 'Secuencia recomendada para cerrar el proyecto',

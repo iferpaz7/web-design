@@ -1,8 +1,8 @@
 ---
-name: "crear-silabo-sga-unach"
-description: "Redacta un sílabo en formato SGA alineado al curso y con bibliografía priorizada desde fuentes de UNACH en APA 7. Úsalo cuando necesites crear o rehacer un sílabo institucional."
-argument-hint: "tema=... carrera=... nivel=... fuenteUnach=... ajustes=..."
-agent: "agent"
+name: 'crear-silabo-sga-unach'
+description: 'Redacta un sílabo en formato SGA alineado al curso y con bibliografía priorizada desde fuentes de UNACH en APA 7. Úsalo cuando necesites crear o rehacer un sílabo institucional.'
+argument-hint: 'tema=... carrera=... nivel=... fuenteUnach=... ajustes=...'
+agent: 'agent'
 ---
 
 Genera un sílabo institucional en español, listo para SGA, tomando como base el estilo, la estructura y el tono de [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md).
@@ -10,6 +10,7 @@ Genera un sílabo institucional en español, listo para SGA, tomando como base e
 Sigue también la guía institucional en [itsae-filosofia-docencia](../instructions/itsae-filosofia-docencia.instructions.md).
 
 Usa estos inputs:
+
 - Tema o asignatura: ${input:tema:Nombre de la asignatura}
 - Carrera: ${input:carrera:Tecnología o carrera a la que pertenece}
 - Nivel o período: ${input:nivel:Nivel, semestre o período académico}
@@ -17,9 +18,11 @@ Usa estos inputs:
 - Ajustes adicionales: ${input:ajustes:Indicaciones específicas del docente o coordinador}
 
 Si `${input:fuenteUnach}` no se proporciona, usa por defecto esta búsqueda del catálogo de biblioteca UNACH como punto de partida para obtener bibliografía relacionada y refinarla según el tema solicitado:
+
 - `https://catalogobiblio.unach.cl/vufind/Search/Results?lookfor=dise%C3%B1o+web&type=AllFields&filter%5B%5D=language%3A%22Spanish%22&limit=20`
 
 Instrucciones obligatorias:
+
 - Redacta en español formal, claro y con tono institucional ecuatoriano.
 - Mantén esta estructura: sumilla, objetivo general, resultados de aprendizaje o competencias, unidades, actividades por sesión, estrategias metodológicas básicas, aspectos y técnicas de evaluación, bibliografía y enlaces.
 - Alinea el contenido con el enfoque práctico del curso y con la carrera indicada.
@@ -32,12 +35,14 @@ Instrucciones obligatorias:
 - No uses lenguaje genérico; aterriza capacidades, evidencias y sesiones a la asignatura indicada.
 
 Formato de salida:
+
 1. Sílabo completo en Markdown.
 2. Sección final llamada "Notas de trazabilidad" con dos listas:
    - "Fuentes UNACH utilizadas"
    - "Fuentes complementarias utilizadas"
 
 **Creación de archivos obligatoria:** Una vez generado el contenido, crea físicamente el archivo en disco. No es suficiente mostrarlo en el chat.
+
 - Ruta: `docs/silabos/silabo-${input:carrera}-${input:nivel}-${input:fecha}.md`
 - Usa la fecha del día en que se ejecuta el prompt si no se proporciona.
 

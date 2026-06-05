@@ -22,7 +22,10 @@ const { unit, tema } = Astro.props;
 const printHref = `/imprimir${tema.href}`;
 ---
 
-<Layout title={`Presentación · Unidad ${unit.numero} · Tema ${tema.numero} - ITSAE`} hideChrome={true}>
+<Layout
+  title={`Presentación · Unidad ${unit.numero} · Tema ${tema.numero} - ITSAE`}
+  hideChrome={true}
+>
   <div class="h-dvh w-screen overflow-hidden">
     <TemaPresentacion unit={unit} tema={tema} mode="standalone" client:load />
   </div>

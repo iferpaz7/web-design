@@ -1,55 +1,82 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import UnidadCard from "../components/UnidadCard.tsx";
-import StatCard from "../components/StatCard.tsx";
-import Card from "../components/Card.tsx";
-import { syllabusUnits } from "../data/syllabus";
+import Layout from '../layouts/Layout.astro';
+import UnidadCard from '../components/UnidadCard.tsx';
+import StatCard from '../components/StatCard.tsx';
+import Card from '../components/Card.tsx';
+import { syllabusUnits } from '../data/syllabus';
 
 const unidades = syllabusUnits;
 ---
 
 <Layout title="Diseño Web para Marketing Digital - ITSAE">
-  <main class="min-h-screen bg-linear-to-br from-primary-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
-
+  <main
+    class="from-primary-50 min-h-screen bg-linear-to-br to-blue-50 transition-colors duration-300 dark:from-gray-900 dark:to-gray-800"
+  >
     <!-- ===== HERO ===== -->
-    <header class="bg-linear-to-r from-primary-800 to-primary-600 dark:from-primary-900 dark:to-primary-700 text-white py-16 sm:py-24 relative overflow-hidden">
+    <header
+      class="from-primary-800 to-primary-600 dark:from-primary-900 dark:to-primary-700 relative overflow-hidden bg-linear-to-r py-16 text-white sm:py-24"
+    >
       <div class="absolute inset-0 opacity-10">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-accent-400 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary-400 rounded-full blur-3xl"></div>
+        <div
+          class="bg-accent-400 absolute top-0 right-0 h-96 w-96 rounded-full blur-3xl"
+        >
+        </div>
+        <div
+          class="bg-primary-400 absolute bottom-0 left-0 h-96 w-96 rounded-full blur-3xl"
+        >
+        </div>
       </div>
 
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
-        <div class="inline-block px-4 py-2 bg-accent-500 rounded-full text-sm font-semibold mb-6">
+      <div class="relative z-10 mx-auto max-w-6xl px-4 text-center sm:px-6">
+        <div
+          class="bg-accent-500 mb-6 inline-block rounded-full px-4 py-2 text-sm font-semibold"
+        >
           🎓 Curso Completo · 100% Online · 100% Práctico
         </div>
 
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        <h1
+          class="mb-6 text-3xl leading-tight font-bold sm:text-5xl lg:text-6xl"
+        >
           Diseña webs que<br />
-          <span class="bg-linear-to-r from-accent-400 to-accent-200 bg-clip-text text-transparent">
+          <span
+            class="from-accent-400 to-accent-200 bg-linear-to-r bg-clip-text text-transparent"
+          >
             venden de verdad
           </span>
         </h1>
 
-        <p class="text-lg sm:text-xl lg:text-2xl text-primary-100 mb-4 max-w-3xl mx-auto font-medium">
-          Aprende <strong class="text-white">Diseño Web para Marketing Digital</strong> con un enfoque aplicado: desde estrategia y UX/UI hasta prototipado, publicación viable y medición.
+        <p
+          class="text-primary-100 mx-auto mb-4 max-w-3xl text-lg font-medium sm:text-xl lg:text-2xl"
+        >
+          Aprende <strong class="text-white"
+            >Diseño Web para Marketing Digital</strong
+          > con un enfoque aplicado: desde estrategia y UX/UI hasta prototipado, publicación
+          viable y medición.
         </p>
-        <p class="text-base sm:text-lg text-primary-200 max-w-2xl mx-auto mb-6">
-          Trabajarás con un proyecto integrador, herramientas accesibles y criterios reales de conversión para construir un activo web funcional y defendible.
+        <p class="text-primary-200 mx-auto mb-6 max-w-2xl text-base sm:text-lg">
+          Trabajarás con un proyecto integrador, herramientas accesibles y
+          criterios reales de conversión para construir un activo web funcional
+          y defendible.
         </p>
-        <p class="text-sm sm:text-base text-primary-100/90 max-w-3xl mx-auto mb-10">
-          Cada tema incluye ahora <strong class="text-white">guía de clase y modo presentación web</strong>, para que puedas estudiar, exponer y dictar contenido desde el mismo sitio sin depender de PPTs.
+        <p
+          class="text-primary-100/90 mx-auto mb-10 max-w-3xl text-sm sm:text-base"
+        >
+          Cada tema incluye ahora <strong class="text-white"
+            >guía de clase y modo presentación web</strong
+          >, para que puedas estudiar, exponer y dictar contenido desde el mismo
+          sitio sin depender de PPTs.
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <div class="mb-12 flex flex-col justify-center gap-4 sm:flex-row">
           <a
             href="#pensum"
-            class="inline-block bg-accent-500 hover:bg-accent-400 text-white font-bold px-8 py-4 rounded-xl text-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            class="bg-accent-500 hover:bg-accent-400 inline-block rounded-xl px-8 py-4 text-lg font-bold text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
           >
             Ver el Temario Completo →
           </a>
           <a
             href="#perfil"
-            class="inline-block bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-4 rounded-xl text-lg transition-all duration-200 border border-white/20"
+            class="inline-block rounded-xl border border-white/20 bg-white/10 px-8 py-4 text-lg font-semibold text-white transition-all duration-200 hover:bg-white/20"
           >
             ¿Es para mí?
           </a>
@@ -57,40 +84,62 @@ const unidades = syllabusUnits;
 
         <!-- Stats -->
         <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
-          <div class="bg-white/10 backdrop-blur-sm rounded-lg px-5 py-4">
-            <div class="text-2xl sm:text-3xl font-bold text-accent-400">18</div>
-            <div class="text-xs sm:text-sm text-primary-200">Semanas planificadas</div>
+          <div class="rounded-lg bg-white/10 px-5 py-4 backdrop-blur-sm">
+            <div class="text-accent-400 text-2xl font-bold sm:text-3xl">18</div>
+            <div class="text-primary-200 text-xs sm:text-sm">
+              Semanas planificadas
+            </div>
           </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-lg px-5 py-4">
-            <div class="text-2xl sm:text-3xl font-bold text-accent-400">4</div>
-            <div class="text-xs sm:text-sm text-primary-200">Unidades formativas</div>
+          <div class="rounded-lg bg-white/10 px-5 py-4 backdrop-blur-sm">
+            <div class="text-accent-400 text-2xl font-bold sm:text-3xl">4</div>
+            <div class="text-primary-200 text-xs sm:text-sm">
+              Unidades formativas
+            </div>
           </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-lg px-5 py-4">
-            <div class="text-2xl sm:text-3xl font-bold text-accent-400">16</div>
-            <div class="text-xs sm:text-sm text-primary-200">Temas del curso</div>
+          <div class="rounded-lg bg-white/10 px-5 py-4 backdrop-blur-sm">
+            <div class="text-accent-400 text-2xl font-bold sm:text-3xl">16</div>
+            <div class="text-primary-200 text-xs sm:text-sm">
+              Temas del curso
+            </div>
           </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-lg px-5 py-4">
-            <div class="text-2xl sm:text-3xl font-bold text-accent-400">2</div>
-            <div class="text-xs sm:text-sm text-primary-200">Exámenes bimestrales</div>
+          <div class="rounded-lg bg-white/10 px-5 py-4 backdrop-blur-sm">
+            <div class="text-accent-400 text-2xl font-bold sm:text-3xl">2</div>
+            <div class="text-primary-200 text-xs sm:text-sm">
+              Exámenes bimestrales
+            </div>
           </div>
         </div>
       </div>
     </header>
 
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-16 sm:space-y-20">
-
+    <div
+      class="mx-auto max-w-6xl space-y-16 px-4 py-12 sm:space-y-20 sm:px-6 sm:py-16"
+    >
       <!-- ===== PERFIL DEL ESTUDIANTE ===== -->
       <section id="perfil">
         <Card padding="lg" hover={false}>
-          <div class="text-center max-w-3xl mx-auto">
-            <span class="inline-block px-3 py-1 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-400 text-sm font-semibold rounded-full mb-4">
+          <div class="mx-auto max-w-3xl text-center">
+            <span
+              class="bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-400 mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold"
+            >
               ¿Para quién es este curso?
             </span>
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2
+              class="mb-6 text-2xl font-bold text-gray-900 sm:text-3xl dark:text-white"
+            >
               Hecho para quienes quieren resultados, no solo conocimiento
             </h2>
-            <p class="text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              Este curso está diseñado para <strong class="text-gray-800 dark:text-gray-200">estudiantes de marketing digital</strong>, emprendedores y profesionales que necesitan diseñar activos web con criterio estratégico, buena experiencia de usuario y una ruta de publicación viable. No exige programación previa ni depende de licencias costosas: aquí aprendes a resolver objetivos reales con herramientas accesibles y decisiones bien sustentadas.
+            <p
+              class="text-base leading-relaxed text-gray-600 sm:text-lg dark:text-gray-400"
+            >
+              Este curso está diseñado para <strong
+                class="text-gray-800 dark:text-gray-200"
+                >estudiantes de marketing digital</strong
+              >, emprendedores y profesionales que necesitan diseñar activos web
+              con criterio estratégico, buena experiencia de usuario y una ruta
+              de publicación viable. No exige programación previa ni depende de
+              licencias costosas: aquí aprendes a resolver objetivos reales con
+              herramientas accesibles y decisiones bien sustentadas.
             </p>
           </div>
         </Card>
@@ -98,52 +147,94 @@ const unidades = syllabusUnits;
 
       <!-- ===== QUÉ VAS A LOGRAR ===== -->
       <section id="logros">
-        <div class="text-center mb-10">
-          <span class="inline-block px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 text-sm font-semibold rounded-full mb-4">
+        <div class="mb-10 text-center">
+          <span
+            class="bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400 mb-4 inline-block rounded-full px-3 py-1 text-sm font-semibold"
+          >
             Resultados concretos
           </span>
-          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+          <h2
+            class="text-2xl font-bold text-gray-900 sm:text-3xl dark:text-white"
+          >
             Qué vas a lograr al terminar
           </h2>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <Card padding="lg" hover={true}>
             <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center shrink-0 text-amber-600 dark:text-amber-400 font-bold text-lg">1</div>
+              <div
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-amber-100 text-lg font-bold text-amber-600 dark:bg-amber-900/30 dark:text-amber-400"
+              >
+                1
+              </div>
               <div>
-                <h3 class="font-bold text-gray-800 dark:text-gray-200 mb-2">Planificar activos web orientados a conversión</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Aprenderás a definir objetivos, público, propuesta de valor y estructura para que cada página responda a una intención clara.</p>
+                <h3 class="mb-2 font-bold text-gray-800 dark:text-gray-200">
+                  Planificar activos web orientados a conversión
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  Aprenderás a definir objetivos, público, propuesta de valor y
+                  estructura para que cada página responda a una intención
+                  clara.
+                </p>
               </div>
             </div>
           </Card>
 
           <Card padding="lg" hover={true}>
             <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center shrink-0 text-blue-600 dark:text-blue-400 font-bold text-lg">2</div>
+              <div
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-100 text-lg font-bold text-blue-600 dark:bg-blue-900/30 dark:text-blue-400"
+              >
+                2
+              </div>
               <div>
-                <h3 class="font-bold text-gray-800 dark:text-gray-200 mb-2">Prototipar experiencias claras y consistentes</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Trabajarás arquitectura de la información, copy persuasivo y prototipos visuales que puedan validarse antes de publicar.</p>
+                <h3 class="mb-2 font-bold text-gray-800 dark:text-gray-200">
+                  Prototipar experiencias claras y consistentes
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  Trabajarás arquitectura de la información, copy persuasivo y
+                  prototipos visuales que puedan validarse antes de publicar.
+                </p>
               </div>
             </div>
           </Card>
 
           <Card padding="lg" hover={true}>
             <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center shrink-0 text-emerald-600 dark:text-emerald-400 font-bold text-lg">3</div>
+              <div
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-lg font-bold text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400"
+              >
+                3
+              </div>
               <div>
-                <h3 class="font-bold text-gray-800 dark:text-gray-200 mb-2">Publicar páginas funcionales con herramientas viables</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Construirás un activo web compartible usando rutas de publicación accesibles y mecanismos simples de contacto o conversión.</p>
+                <h3 class="mb-2 font-bold text-gray-800 dark:text-gray-200">
+                  Publicar páginas funcionales con herramientas viables
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  Construirás un activo web compartible usando rutas de
+                  publicación accesibles y mecanismos simples de contacto o
+                  conversión.
+                </p>
               </div>
             </div>
           </Card>
 
           <Card padding="lg" hover={true}>
             <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center shrink-0 text-purple-600 dark:text-purple-400 font-bold text-lg">4</div>
+              <div
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-purple-100 text-lg font-bold text-purple-600 dark:bg-purple-900/30 dark:text-purple-400"
+              >
+                4
+              </div>
               <div>
-                <h3 class="font-bold text-gray-800 dark:text-gray-200 mb-2">Optimizar, medir y sustentar mejoras</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Cerrarás el curso con un activo optimizado, criterios básicos de SEO y medición, y un reporte ejecutivo de mejoras.</p>
+                <h3 class="mb-2 font-bold text-gray-800 dark:text-gray-200">
+                  Optimizar, medir y sustentar mejoras
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                  Cerrarás el curso con un activo optimizado, criterios básicos
+                  de SEO y medición, y un reporte ejecutivo de mejoras.
+                </p>
               </div>
             </div>
           </Card>
@@ -152,43 +243,55 @@ const unidades = syllabusUnits;
 
       <!-- ===== PÉNSUM / TEMARIO ===== -->
       <section id="pensum">
-        <div class="text-center mb-12">
-          <span class="inline-block px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-sm font-semibold rounded-full mb-4">
+        <div class="mb-12 text-center">
+          <span
+            class="mb-4 inline-block rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400"
+          >
             Pénsum del Curso
           </span>
-          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2
+            class="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl dark:text-white"
+          >
             Contenido del Curso
           </h2>
-          <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            4 unidades formativas · 18 semanas planificadas · 2 evaluaciones bimestrales · Enfoque aplicado y orientado a resultados
+          <p class="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-400">
+            4 unidades formativas · 18 semanas planificadas · 2 evaluaciones
+            bimestrales · Enfoque aplicado y orientado a resultados
           </p>
-          <p class="text-sm sm:text-base text-gray-500 dark:text-gray-400 max-w-2xl mx-auto mt-4">
-            Cada ruta temática puede usarse en dos formatos: lectura guiada para el estudiante y presentación interactiva para exposición docente.
+          <p
+            class="mx-auto mt-4 max-w-2xl text-sm text-gray-500 sm:text-base dark:text-gray-400"
+          >
+            Cada ruta temática puede usarse en dos formatos: lectura guiada para
+            el estudiante y presentación interactiva para exposición docente.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-          {unidades.map((unidad) => (
-            <UnidadCard
-              numero={unidad.numero}
-              titulo={unidad.titulo}
-              descripcion={unidad.descripcion}
-              color={unidad.color}
-              iconName={unidad.iconName}
-              temas={unidad.temas}
-              client:load
-            />
-          ))}
+        <div class="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2">
+          {
+            unidades.map((unidad) => (
+              <UnidadCard
+                numero={unidad.numero}
+                titulo={unidad.titulo}
+                descripcion={unidad.descripcion}
+                color={unidad.color}
+                iconName={unidad.iconName}
+                temas={unidad.temas}
+                client:load
+              />
+            ))
+          }
         </div>
       </section>
 
       <!-- ===== POR QUÉ ESTE CURSO ===== -->
       <section id="por-que">
         <Card padding="lg" hover={false}>
-          <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-gray-200 mb-8 text-center">
+          <h2
+            class="mb-8 text-center text-2xl font-bold text-gray-800 sm:text-3xl dark:text-gray-200"
+          >
             ¿Por qué este curso?
           </h2>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
             <StatCard
               iconName="BookOpen"
               title="Contenido actualizado"
@@ -216,28 +319,40 @@ const unidades = syllabusUnits;
 
       <!-- ===== CTA FINAL ===== -->
       <section id="cta">
-        <div class="bg-linear-to-r from-primary-800 to-primary-600 dark:from-primary-900 dark:to-primary-700 rounded-2xl p-8 sm:p-12 text-center text-white relative overflow-hidden">
+        <div
+          class="from-primary-800 to-primary-600 dark:from-primary-900 dark:to-primary-700 relative overflow-hidden rounded-2xl bg-linear-to-r p-8 text-center text-white sm:p-12"
+        >
           <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-0 right-0 w-64 h-64 bg-accent-400 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary-400 rounded-full blur-3xl"></div>
+            <div
+              class="bg-accent-400 absolute top-0 right-0 h-64 w-64 rounded-full blur-3xl"
+            >
+            </div>
+            <div
+              class="bg-primary-400 absolute bottom-0 left-0 h-64 w-64 rounded-full blur-3xl"
+            >
+            </div>
           </div>
           <div class="relative z-10">
-            <h2 class="text-2xl sm:text-4xl font-bold mb-4">
+            <h2 class="mb-4 text-2xl font-bold sm:text-4xl">
               Tu próximo proyecto empieza aquí
             </h2>
-            <p class="text-primary-100 text-base sm:text-lg max-w-2xl mx-auto mb-8">
-              A lo largo del período académico construirás un activo web completo, desde el brief hasta la optimización final. <strong class="text-white">El recorrido empieza aquí.</strong>
+            <p
+              class="text-primary-100 mx-auto mb-8 max-w-2xl text-base sm:text-lg"
+            >
+              A lo largo del período académico construirás un activo web
+              completo, desde el brief hasta la optimización final. <strong
+                class="text-white">El recorrido empieza aquí.</strong
+              >
             </p>
             <a
               href="#pensum"
-              class="inline-block bg-accent-500 hover:bg-accent-400 text-white font-bold px-10 py-4 rounded-xl text-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+              class="bg-accent-500 hover:bg-accent-400 inline-block rounded-xl px-10 py-4 text-lg font-bold text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl"
             >
               Explorar el Temario →
             </a>
           </div>
         </div>
       </section>
-
     </div>
   </main>
 </Layout>

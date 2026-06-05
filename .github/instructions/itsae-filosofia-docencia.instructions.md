@@ -1,7 +1,8 @@
 ---
-description: "Use when creating prompts, syllabi, class materials, presentations, exams, activities, or teaching resources aligned with ITSAE philosophy, Christian principles, service, entrepreneurship, and practical higher education."
-name: "itsae-filosofia-docencia"
+description: 'Use when creating prompts, syllabi, class materials, presentations, exams, activities, or teaching resources aligned with ITSAE philosophy, Christian principles, service, entrepreneurship, and practical higher education.'
+name: 'itsae-filosofia-docencia'
 ---
+
 # Filosofía ITSAE para Materiales Docentes
 
 Al generar materiales académicos o docentes para ITSAE, alinea el contenido con este marco institucional:
