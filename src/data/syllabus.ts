@@ -627,38 +627,124 @@ export const syllabusUnits: SyllabusUnit[] = [
       {
         numero: 3,
         titulo: 'Redacción de titulares, beneficios, prueba social y llamados a la acción',
-        descripcion: 'Construcción de textos breves, claros y persuasivos para cada bloque clave.',
+        descripcion: 'Textos breves, claros y persuasivos para cada sección clave de la página de campaña.',
         href: '/unidad2/tema3',
         disponible: true,
-        panorama: 'La persuasión en una página depende en gran parte del lenguaje. Este tema trabaja titulares, beneficios, prueba social y llamados a la acción como elementos que reducen incertidumbre y orientan la respuesta del usuario.',
+        panorama: 'Una página de campaña puede tener buena estructura y diseño, pero si el texto no comunica con claridad la propuesta de valor, el usuario abandona sin actuar. Este tema trabaja los cuatro elementos textuales que más influyen en la decisión del usuario: el titular que sintetiza la promesa, los beneficios que transforman características en resultados, la prueba social que reduce el riesgo percibido y el llamado a la acción que orienta el paso siguiente. Redactar con criterio persuasivo no es manipular: es comunicar con honestidad lo que la propuesta puede hacer por el usuario.',
         objetivos: [
-          'Redactar titulares claros y alineados a una propuesta de valor.',
-          'Transformar características en beneficios comprensibles.',
-          'Construir llamados a la acción concretos y visibles.'
+          'Redactar titulares que comuniquen la propuesta de valor de forma clara y diferenciada.',
+          'Transformar características del producto o servicio en beneficios comprensibles para el usuario.',
+          'Seleccionar y ubicar prueba social de forma estratégica dentro del recorrido de la página.',
+          'Construir llamados a la acción específicos con verbo, beneficio y dirección concreta.'
         ],
         ideasClave: [
-          'El usuario primero busca claridad, luego profundidad.',
-          'Los beneficios deben hablar del resultado para la persona usuaria.',
-          'La prueba social ayuda a reducir riesgo percibido.'
+          'El titular es la primera promesa visible: si no funciona en 5 segundos, el resto no importa.',
+          'Un beneficio que no describe el resultado del usuario es solo una característica disfrazada.',
+          'La prueba social va después de la propuesta de valor, nunca antes: el usuario primero necesita entender qué le ofreces.',
+          'Un CTA sin verbo concreto y resultado claro es un botón de esperanza, no una instrucción.',
+          'Tres a cuatro beneficios bien redactados convierten más que una lista de quince características.'
         ],
-        actividad: 'Escribe el contenido de un hero, una sección de beneficios y un CTA final para tu proyecto.',
-        evidencia: 'Borrador de contenidos por secciones.',
-        herramientas: ['Plantilla de copy', 'Banco de CTA', 'Ejemplos de prueba social'],
+        actividad: 'Con acompañamiento del docente, redacta el titular, subtítulo, tres beneficios clave y los dos CTAs principales de tu proyecto integrador, usando la ficha de usuario y el mapa de secciones como base.',
+        evidencia: 'Borrador de copy con titular, subtítulo, tres beneficios y dos CTAs redactados para las secciones clave del proyecto. Insumo directo de la evidencia de la Unidad 2 (contenido final por secciones).',
+        herramientas: ['Ficha de usuario (insumo U2T1)', 'Mapa de secciones (insumo U2T2)', 'Plantilla de copy por secciones', 'Google Docs o herramienta de edición de texto'],
         presentationBlocks: [
           {
-            title: 'Criterios de copy persuasivo',
+            title: 'Objetivo de la sesión',
             items: [
-              'Convierte características en beneficios: explica el resultado para la persona usuaria, no solo la función.',
-              'La prueba social reduce riesgo y acelera la decisión cuando el mensaje principal ya es claro.',
-              'Un CTA fuerte usa verbo, beneficio y dirección concreta de la acción.'
+              'Redactar titulares que comunican la propuesta de valor en 5 segundos o menos.',
+              'Transformar características en beneficios concretos usando la fórmula vista en clase.',
+              'Ubicar la prueba social de forma estratégica dentro del recorrido de la página.',
+              'Construir CTAs específicos con verbo, beneficio y dirección concreta para tu proyecto.'
             ]
           },
           {
-            title: 'Errores comunes del mensaje',
+            title: 'Puente con la sesión anterior (Arquitectura de la información)',
             items: [
-              'Titulares ambiguos que suenan bonitos pero no dicen qué se ofrece.',
-              'Bloques extensos sin jerarquía ni subtítulos.',
-              'Llamados a la acción genéricos que no explican el siguiente paso.'
+              'Pregunta de enlace: ¿cuál es el propósito comunicativo del hero section en el mapa de secciones que construiste?',
+              'El mapa define qué bloques existen; el copy define qué dice cada uno.',
+              'Sin arquitectura clara, el copy puede ser brillante y aun así perderse en el desorden.'
+            ]
+          },
+          {
+            title: 'El titular: la primera promesa visible',
+            items: [
+              'El titular es el elemento más leído de toda la página. Si no funciona, el usuario no sigue.',
+              'Fórmula: [beneficio principal] + [para quién] + [diferenciador o condición].',
+              'Prueba de los 5 segundos: si el usuario no puede responder "¿qué ofrece esta página?" en 5 segundos, el titular falló.',
+              '❌ "Somos una empresa comprometida con la calidad." → ✅ "Tu tienda en línea lista en 7 días. Sin conocimientos técnicos."'
+            ]
+          },
+          {
+            title: 'El subtítulo: ampliar sin repetir',
+            items: [
+              'El subtítulo amplía el titular con contexto: ¿para quién exactamente? ¿qué obtienes? ¿por qué ahora?',
+              'No repite lo mismo con otras palabras: agrega información útil o especifica la promesa.',
+              'Regla práctica: si el subtítulo puede eliminarse sin perder información esencial, no agrega valor.'
+            ]
+          },
+          {
+            title: 'Características vs. beneficios: la diferencia que convierte',
+            items: [
+              'Característica: lo que el producto tiene o hace. Beneficio: lo que el usuario gana, logra o deja de sufrir.',
+              'Fórmula: "[Característica] te permite [beneficio concreto para el usuario]."',
+              '❌ "Diseño responsivo." → ✅ "Tu tienda se ve perfecta en el celular de tu cliente."',
+              'Incluye 3-4 beneficios clave; más de cinco genera ruido y diluye el mensaje.'
+            ]
+          },
+          {
+            title: 'Prueba social: cómo el usuario decide que puede confiar',
+            items: [
+              'Tipos: testimonios con nombre y resultado, números verificables, logos de aliados, historia de usuario antes/después.',
+              'Posición estratégica: va después de la propuesta de valor inicial, nunca antes.',
+              '❌ "Excelente servicio, muy recomendado." → ✅ "Lancé mi tienda en 9 días y en el primer mes tuve 18 pedidos. — María Cárdenas, Riobamba."',
+              'Un testimonio sin nombre, sin foto y sin resultado concreto no genera confianza: genera sospecha.'
+            ]
+          },
+          {
+            title: 'CTA: anatomía de un llamado que funciona',
+            items: [
+              'El CTA es una instrucción, no una sugerencia: debe ser directo, visible y contextual.',
+              'Anatomía: verbo de acción + beneficio o resultado + condición o urgencia (opcional).',
+              '❌ "Haz clic aquí." / "Enviar." / "Más información." → ✅ "Agenda tu consulta gratuita." / "Quiero mi tienda en 7 días."',
+              'Un CTA que no dice cuál es el siguiente paso concreto no es un CTA: es un botón de esperanza.'
+            ]
+          },
+          {
+            title: 'Errores comunes de copy persuasivo',
+            items: [
+              'Titular que habla de la empresa, no del beneficio para el usuario.',
+              'Beneficios redactados como características sin transformar ("tenemos diseño responsivo").',
+              'Prueba social sin nombre ni resultado concreto ("muy recomendado").',
+              'CTA genérico que no describe el siguiente paso ("haz clic aquí").',
+              'Prueba social antes de la propuesta de valor: el usuario aún no sabe qué le estás ofreciendo.'
+            ]
+          },
+          {
+            title: 'Actividad guiada: copy de tu proyecto',
+            items: [
+              'Abre tu ficha de usuario (U2T1) y tu mapa de secciones (U2T2). Tenlos visibles mientras escribes.',
+              'Redacta: titular del hero, subtítulo, tres beneficios en formato título + descripción breve, CTA principal y CTA de cierre.',
+              'Comparte tu titular en el chat para recibir retroalimentación del docente en tiempo real.',
+              'El docente acompaña el proceso: da retroalimentación puntual y sistematiza errores y aciertos observados.'
+            ]
+          },
+          {
+            title: 'Criterios de evaluación del taller',
+            items: [
+              'El titular comunica propuesta de valor con diferenciador en dos líneas o menos.',
+              'Los tres beneficios están formulados como resultado para el usuario, no como características.',
+              'Los CTAs tienen verbo de acción, beneficio concreto y dirección explícita.',
+              'El contenido es coherente con la ficha de usuario y el mapa de secciones del proyecto.',
+              'Componente de evaluación: talleres y ejercicios aplicados (30 %) y participación activa (15 %).'
+            ]
+          },
+          {
+            title: 'Ideas clave y proyección',
+            items: [
+              'El titular es la primera promesa visible; si no funciona, el resto no importa.',
+              'Un beneficio que no describe el resultado del usuario es solo una característica disfrazada.',
+              'La prueba social va después de la propuesta de valor, no antes.',
+              'Próxima sesión: Prototipado de baja y media fidelidad — tomaremos este copy y le daremos forma visual.'
             ]
           }
         ]
