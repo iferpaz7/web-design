@@ -30,6 +30,7 @@ DEFAULT_CONFIG = ROOT / "classroom.config.json"
 DEFAULT_CREDENTIALS = ROOT / "credentials.json"
 DEFAULT_TOKEN = ROOT / "token.json"
 DEFAULT_SITE_URL = "https://web-design-itsae.netlify.app"
+SYLLABUS_PATH = ROOT / "docs" / "silabo-final-formato-sga.md"
 DEFAULT_CLASS_DOC_GLOBS = (
     "docs/clases/**/classroom-*.md",
     "docs/clases/**/actividad-*.md",
@@ -58,6 +59,7 @@ class ClassDoc:
     date: str | None
     unit_number: int | None
     topic_number: int | None
+    session_topic: str
     objective: str
     resources: list[dict[str, str]]
     activity_title: str
@@ -193,6 +195,14 @@ def strip_markdown_links(text: str) -> str:
     return re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
 
 
+def first_content_line(text: str) -> str:
+    for line in text.splitlines():
+        clean = line.strip().strip("*").strip()
+        if clean:
+            return strip_markdown_links(clean)
+    return ""
+
+
 def section_text(markdown: str, heading: str) -> str:
     pattern = rf"^##\s+{re.escape(heading)}\s*$"
     match = re.search(pattern, markdown, re.MULTILINE | re.IGNORECASE)
@@ -258,6 +268,47 @@ def parse_date(markdown: str, path: Path) -> str | None:
     return None
 
 
+def official_topic_title(unit_number: int | None, topic_number: int | None) -> str:
+    if unit_number is None or topic_number is None or not SYLLABUS_PATH.exists():
+        return ""
+
+    target_unit = f"Unidad {unit_number}".casefold()
+    for line in SYLLABUS_PATH.read_text(encoding="utf-8").splitlines():
+        if not line.startswith("|"):
+            continue
+        cells = [cell.strip() for cell in line.strip("|").split("|")]
+        if len(cells) < 4:
+            continue
+        if cells[0] == "---" or cells[0].casefold() == "tema":
+            continue
+        if cells[0] == str(topic_number) and cells[1].casefold() == target_unit:
+            return cells[3].strip()
+    return ""
+
+
+def fallback_topic_title(doc: ClassDoc) -> str:
+    for candidate in (doc.session_topic, doc.subtitle, doc.title):
+        clean = candidate.strip()
+        clean = re.sub(r"^Clase\s+[—-]\s+", "", clean, flags=re.IGNORECASE)
+        clean = re.sub(r"^Recursos de Clase\s+[—-]\s+", "", clean, flags=re.IGNORECASE)
+        clean = re.sub(r"^Diseño Web para Marketing Digital\s*[—-]?\s*", "", clean, flags=re.IGNORECASE)
+        clean = re.sub(r"^U\d+\s*/\s*Tema\s*\d+\s*:\s*", "", clean, flags=re.IGNORECASE)
+        clean = re.sub(r"^Unidad\s*\d+\s*[—·,/-]*\s*Tema\s*\d+\s*:?\s*", "", clean, flags=re.IGNORECASE)
+        clean = clean.strip(" -—·:")
+        if clean and not re.fullmatch(r"Unidad\s+\d+,\s*Tema\s+\d+", clean, flags=re.IGNORECASE):
+            return clean
+    return "Clase"
+
+
+def class_material_title(doc: ClassDoc) -> str:
+    unit = doc.unit_number
+    topic = doc.topic_number
+    topic_title = (official_topic_title(unit, topic) or fallback_topic_title(doc)).rstrip(".")
+    if unit is not None and topic is not None:
+        return f"Clase: Unidad {unit} - Tema {topic} - {topic_title}"
+    return f"Clase: {topic_title}"
+
+
 def parse_class_doc(path: Path, site_url: str = DEFAULT_SITE_URL) -> ClassDoc:
     markdown = path.read_text(encoding="utf-8")
     unit_number, topic_number = parse_unit_topic(path)
@@ -275,6 +326,7 @@ def parse_class_doc(path: Path, site_url: str = DEFAULT_SITE_URL) -> ClassDoc:
             activity_section = section_text(markdown, activity_title)
 
     evidence = section_text(markdown, "Evidencia esperada")
+    session_topic = first_content_line(section_text(markdown, "Tema de la sesión"))
     links = find_links(markdown)
     return ClassDoc(
         path=path,
@@ -283,6 +335,7 @@ def parse_class_doc(path: Path, site_url: str = DEFAULT_SITE_URL) -> ClassDoc:
         date=parse_date(markdown, path),
         unit_number=unit_number,
         topic_number=topic_number,
+        session_topic=session_topic,
         objective=section_text(markdown, "Objetivo de la clase"),
         resources=parse_resources(markdown),
         activity_title=activity_title or "Actividad de la clase",
@@ -372,7 +425,7 @@ def topic_id_for_name(service, course_id: str, name: str, create: bool, dry_run:
 def class_material_body(doc: ClassDoc, state: str, topic_id: str | None) -> dict[str, Any]:
     urls = [resource["url"] for resource in doc.resources] or doc.site_links
     body: dict[str, Any] = {
-        "title": f"Clase: {doc.display_title}",
+        "title": class_material_title(doc),
         "description": "\n\n".join(
             part
             for part in [
@@ -617,6 +670,18 @@ def cmd_list_announcements(args: argparse.Namespace) -> None:
         print(f"{announcement.get('id')}\t{announcement.get('state')}\t{first_line}")
 
 
+def cmd_delete_announcement(args: argparse.Namespace) -> None:
+    if not args.yes:
+        fail("este comando elimina un anuncio. Repite con --yes si estás seguro.")
+    service = classroom_service(args)
+    execute(
+        service.courses()
+        .announcements()
+        .delete(courseId=args.course_id, id=args.announcement_id)
+    )
+    print(f"Anuncio eliminado: {args.announcement_id}")
+
+
 def cmd_list_materials(args: argparse.Namespace) -> None:
     service = classroom_service(args)
     materials = list_all(
@@ -647,6 +712,72 @@ def cmd_delete_material(args: argparse.Namespace) -> None:
         .delete(courseId=args.course_id, id=args.material_id)
     )
     print(f"Material eliminado: {args.material_id}")
+
+
+def material_urls_from_body(body: dict[str, Any]) -> set[str]:
+    urls: set[str] = set()
+    for material in body.get("materials", []):
+        url = material.get("link", {}).get("url")
+        if url:
+            urls.add(url)
+    return urls
+
+
+def cmd_sync_material_titles(args: argparse.Namespace) -> None:
+    service = None if args.dry_run else classroom_service(args)
+    config = load_config(args.config)
+    docs = class_doc_paths(args.glob or ["docs/clases/**/classroom-*.md"])
+    if args.only:
+        docs = [path for path in docs if args.only in str(path)]
+    if not docs:
+        fail("no encontré materiales classroom-*.md para sincronizar títulos")
+
+    existing_materials: list[dict[str, Any]] = []
+    if service:
+        existing_materials = list_all(
+            lambda token: service.courses()
+            .courseWorkMaterials()
+            .list(
+                courseId=args.course_id,
+                pageToken=token,
+                pageSize=100,
+                courseWorkMaterialStates=["DRAFT", "PUBLISHED"],
+            ),
+            "courseWorkMaterial",
+        )
+
+    for path in docs:
+        doc = parse_class_doc(path, site_url=config.get("site_url", DEFAULT_SITE_URL))
+        desired_title = class_material_title(doc)
+        desired_urls = material_urls_from_body(class_material_body(doc, "DRAFT", None))
+        match = None
+        for material in existing_materials:
+            current_urls = material_urls_from_body(material)
+            if desired_urls & current_urls:
+                match = material
+                break
+
+        if args.dry_run:
+            print(f"[dry-run] {path}: {desired_title}")
+            continue
+        if not match:
+            print(f"No encontré material existente para: {desired_title}")
+            continue
+        current_title = match.get("title", "")
+        if current_title == desired_title:
+            print(f"Título ya correcto: {desired_title}")
+            continue
+        updated = execute(
+            service.courses()
+            .courseWorkMaterials()
+            .patch(
+                courseId=args.course_id,
+                id=match["id"],
+                updateMask="title",
+                body={"title": desired_title},
+            )
+        )
+        print(f"Renombrado: {current_title} -> {updated.get('title')}")
 
 
 def cmd_list_assignments(args: argparse.Namespace) -> None:
@@ -891,6 +1022,12 @@ def build_parser() -> argparse.ArgumentParser:
     list_announcements.add_argument("--json", action="store_true")
     list_announcements.set_defaults(func=cmd_list_announcements)
 
+    delete_announcement = subparsers.add_parser("delete-announcement", help="Elimina anuncio")
+    delete_announcement.add_argument("course_id")
+    delete_announcement.add_argument("announcement_id")
+    delete_announcement.add_argument("--yes", action="store_true")
+    delete_announcement.set_defaults(func=cmd_delete_announcement)
+
     list_materials = subparsers.add_parser("list-materials", help="Lista materiales")
     list_materials.add_argument("course_id")
     list_materials.add_argument("--json", action="store_true")
@@ -901,6 +1038,16 @@ def build_parser() -> argparse.ArgumentParser:
     delete_material.add_argument("material_id")
     delete_material.add_argument("--yes", action="store_true")
     delete_material.set_defaults(func=cmd_delete_material)
+
+    sync_material_titles = subparsers.add_parser(
+        "sync-material-titles",
+        help="Normaliza títulos de materiales existentes desde classroom-*.md",
+    )
+    sync_material_titles.add_argument("course_id")
+    sync_material_titles.add_argument("--glob", action="append")
+    sync_material_titles.add_argument("--only")
+    sync_material_titles.add_argument("--dry-run", action="store_true")
+    sync_material_titles.set_defaults(func=cmd_sync_material_titles)
 
     list_assignments = subparsers.add_parser("list-assignments", help="Lista tareas")
     list_assignments.add_argument("course_id")
