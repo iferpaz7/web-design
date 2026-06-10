@@ -332,7 +332,8 @@ def list_all(request_factory, response_key: str) -> list[dict[str, Any]]:
 def find_by_title(items: list[dict[str, Any]], title: str) -> dict[str, Any] | None:
     normalized = title.strip().casefold()
     for item in items:
-        if item.get("title", "").strip().casefold() == normalized:
+        item_title = item.get("title") or item.get("name") or ""
+        if item_title.strip().casefold() == normalized:
             return item
     return None
 
@@ -440,6 +441,15 @@ def announcement_body(doc: ClassDoc, state: str, topic_id: str | None) -> dict[s
     if topic_id:
         body["topicId"] = topic_id
     return body
+
+
+def find_by_announcement_text(items: list[dict[str, Any]], text: str) -> dict[str, Any] | None:
+    normalized_first_line = text.strip().splitlines()[0].casefold()
+    for item in items:
+        item_first_line = item.get("text", "").strip().splitlines()[0].casefold()
+        if item_first_line == normalized_first_line:
+            return item
+    return None
 
 
 def cmd_print_scopes(_: argparse.Namespace) -> None:
@@ -586,6 +596,79 @@ def cmd_create_announcement(args: argparse.Namespace) -> None:
     print_json(created)
 
 
+def cmd_list_announcements(args: argparse.Namespace) -> None:
+    service = classroom_service(args)
+    announcements = list_all(
+        lambda token: service.courses()
+        .announcements()
+        .list(
+            courseId=args.course_id,
+            pageToken=token,
+            pageSize=100,
+            announcementStates=["DRAFT", "PUBLISHED"],
+        ),
+        "announcements",
+    )
+    if args.json:
+        print_json(announcements)
+        return
+    for announcement in announcements:
+        first_line = announcement.get("text", "").strip().splitlines()[0]
+        print(f"{announcement.get('id')}\t{announcement.get('state')}\t{first_line}")
+
+
+def cmd_list_materials(args: argparse.Namespace) -> None:
+    service = classroom_service(args)
+    materials = list_all(
+        lambda token: service.courses()
+        .courseWorkMaterials()
+        .list(
+            courseId=args.course_id,
+            pageToken=token,
+            pageSize=100,
+            courseWorkMaterialStates=["DRAFT", "PUBLISHED"],
+        ),
+        "courseWorkMaterial",
+    )
+    if args.json:
+        print_json(materials)
+        return
+    for material in materials:
+        print(f"{material.get('id')}\t{material.get('state')}\t{material.get('title')}")
+
+
+def cmd_delete_material(args: argparse.Namespace) -> None:
+    if not args.yes:
+        fail("este comando elimina un material. Repite con --yes si estás seguro.")
+    service = classroom_service(args)
+    execute(
+        service.courses()
+        .courseWorkMaterials()
+        .delete(courseId=args.course_id, id=args.material_id)
+    )
+    print(f"Material eliminado: {args.material_id}")
+
+
+def cmd_list_assignments(args: argparse.Namespace) -> None:
+    service = classroom_service(args)
+    assignments = list_all(
+        lambda token: service.courses()
+        .courseWork()
+        .list(
+            courseId=args.course_id,
+            pageToken=token,
+            pageSize=100,
+            courseWorkStates=["DRAFT", "PUBLISHED"],
+        ),
+        "courseWork",
+    )
+    if args.json:
+        print_json(assignments)
+        return
+    for assignment in assignments:
+        print(f"{assignment.get('id')}\t{assignment.get('state')}\t{assignment.get('title')}")
+
+
 def cmd_sync_classes(args: argparse.Namespace) -> None:
     service = None if args.dry_run else classroom_service(args)
     config = load_config(args.config)
@@ -602,18 +685,40 @@ def cmd_sync_classes(args: argparse.Namespace) -> None:
 
     existing_materials: list[dict[str, Any]] = []
     existing_work: list[dict[str, Any]] = []
+    existing_announcements: list[dict[str, Any]] = []
     if service and not args.force:
         existing_materials = list_all(
             lambda token: service.courses()
             .courseWorkMaterials()
-            .list(courseId=args.course_id, pageToken=token, pageSize=100),
+            .list(
+                courseId=args.course_id,
+                pageToken=token,
+                pageSize=100,
+                courseWorkMaterialStates=["DRAFT", "PUBLISHED"],
+            ),
             "courseWorkMaterial",
         )
         existing_work = list_all(
             lambda token: service.courses()
             .courseWork()
-            .list(courseId=args.course_id, pageToken=token, pageSize=100),
+            .list(
+                courseId=args.course_id,
+                pageToken=token,
+                pageSize=100,
+                courseWorkStates=["DRAFT", "PUBLISHED"],
+            ),
             "courseWork",
+        )
+        existing_announcements = list_all(
+            lambda token: service.courses()
+            .announcements()
+            .list(
+                courseId=args.course_id,
+                pageToken=token,
+                pageSize=100,
+                announcementStates=["DRAFT", "PUBLISHED"],
+            ),
+            "announcements",
         )
 
     for path in docs:
@@ -630,7 +735,9 @@ def cmd_sync_classes(args: argparse.Namespace) -> None:
                 print(f"[dry-run] Usar/crear tema: {doc.topic_name}")
 
         if args.materials and is_material_file:
-            body = class_material_body(doc, state, topic_id)
+            # Classroom currently rejects topicId on courseWorkMaterials creation
+            # for this tenant, so keep materials ungrouped and group assignments.
+            body = class_material_body(doc, state, None)
             existing = find_by_title(existing_materials, body["title"])
             if existing and not args.force:
                 print(f"Omitido material existente: {body['title']}")
@@ -664,9 +771,12 @@ def cmd_sync_classes(args: argparse.Namespace) -> None:
                 )
                 print(f"Tarea creada: {created.get('title')} ({created.get('id')})")
 
-        if args.announcements:
-            body = announcement_body(doc, state, topic_id)
-            if args.dry_run:
+        if args.announcements and is_material_file:
+            body = announcement_body(doc, state, None)
+            existing = find_by_announcement_text(existing_announcements, body["text"])
+            if existing and not args.force:
+                print(f"Omitido anuncio existente: {body['text'].splitlines()[0]}")
+            elif args.dry_run:
                 print_json({"create_announcement": body})
             else:
                 created = execute(
@@ -775,6 +885,27 @@ def build_parser() -> argparse.ArgumentParser:
     announcement.add_argument("--link", action="append", default=[])
     announcement.add_argument("--state", default="DRAFT", choices=["DRAFT", "PUBLISHED"])
     announcement.set_defaults(func=cmd_create_announcement)
+
+    list_announcements = subparsers.add_parser("list-announcements", help="Lista anuncios")
+    list_announcements.add_argument("course_id")
+    list_announcements.add_argument("--json", action="store_true")
+    list_announcements.set_defaults(func=cmd_list_announcements)
+
+    list_materials = subparsers.add_parser("list-materials", help="Lista materiales")
+    list_materials.add_argument("course_id")
+    list_materials.add_argument("--json", action="store_true")
+    list_materials.set_defaults(func=cmd_list_materials)
+
+    delete_material = subparsers.add_parser("delete-material", help="Elimina material")
+    delete_material.add_argument("course_id")
+    delete_material.add_argument("material_id")
+    delete_material.add_argument("--yes", action="store_true")
+    delete_material.set_defaults(func=cmd_delete_material)
+
+    list_assignments = subparsers.add_parser("list-assignments", help="Lista tareas")
+    list_assignments.add_argument("course_id")
+    list_assignments.add_argument("--json", action="store_true")
+    list_assignments.set_defaults(func=cmd_list_assignments)
 
     sync = subparsers.add_parser(
         "sync-classes",
