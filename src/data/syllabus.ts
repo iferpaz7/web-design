@@ -854,19 +854,85 @@ export const syllabusUnits: SyllabusUnit[] = [
         ],
         presentationBlocks: [
           {
-            title: 'Disciplina de prototipado',
+            title: 'Objetivo de la sesión',
             items: [
-              'Prototipar primero evita corregir problemas caros cuando ya se está publicando.',
-              'El sistema de 8 px ayuda a mantener ritmo visual y consistencia entre bloques.',
-              'Conviene validar tres vistas mínimas: móvil, tablet y escritorio.'
+              'Traducir el mapa de secciones y el copy persuasivo en un prototipo navegable de baja o media fidelidad.',
+              'Verificar jerarquía del hero, visibilidad del CTA y fluidez del recorrido en vista móvil.',
+              'Generar share link o exportación lista para revisión y retroalimentación antes de pasar a producción.'
             ]
           },
           {
-            title: 'Por qué Figma sigue siendo útil',
+            title: 'Los tres niveles de fidelidad',
             items: [
-              'El mercado laboral suele pedir prototipos y handoff claros; por eso el dominio de herramientas visuales sigue siendo transferible.',
-              'Un mockup bien hecho permite discutir marca, estructura y prioridad sin distraerse con la tecnología final.',
-              'La fidelidad media suele ser suficiente para validar recorrido y propuesta de valor.'
+              'Baja fidelidad: estructura y flujo. Papel, boceto o Balsamiq. Se usa para decidir qué va dónde sin invertir tiempo en estética.',
+              'Media fidelidad: estructura + jerarquía visual en escala de grises. Figma sin colores. Valida recorrido antes de colorear.',
+              'Alta fidelidad: diseño final + interacción completa. Solo cuando la estructura ya está validada.',
+              'Regla: la fidelidad debe responder al objetivo de validación, no a la presión de "que se vea bien".'
+            ]
+          },
+          {
+            title: 'Por qué prototipar ahorra tiempo',
+            items: [
+              'Un cambio estructural en boceto tarda 2 minutos. El mismo cambio en Figma con colores aplicados puede tomar 20.',
+              'El prototipo hace visible lo que la imaginación no detecta: secciones mal ordenadas, CTAs enterrados, jerarquías confusas.',
+              'Los errores que no se corrigen en prototipo se pagan en producción y en retrabajo.',
+              'Quien prepara bien el terreno antes de construir cosecha resultados — la misma lógica aplica al diseño web.'
+            ]
+          },
+          {
+            title: 'Anatomía de un wireframe de landing',
+            items: [
+              'Hero: titular, subtítulo, CTA principal, imagen o fondo. Es lo primero que ve el usuario; debe comunicar en 5 segundos.',
+              'Beneficios: 3–4 puntos en paralelo o lista. Cada beneficio responde a una objeción del usuario.',
+              'Prueba social: testimonios, logos, estadísticas. Valida la propuesta antes de pedir la acción.',
+              'Segundo CTA: antes del footer. Si el usuario llegó hasta aquí, está listo para actuar.',
+              'Regla crítica: el primer CTA debe aparecer antes del tercer bloque; si hay que desplazarse demasiado, la arquitectura falló.'
+            ]
+          },
+          {
+            title: 'Sistema de 8px y grilla móvil',
+            items: [
+              'El sistema de 8px establece que márgenes, rellenos y espaciados sean múltiplos de 8: 8, 16, 24, 32, 48.',
+              'Activa la grilla en Figma: 4 columnas para móvil (375px) y 12 columnas para escritorio (1440px).',
+              'El espaciado inconsistente se percibe como desorden aunque el contenido sea bueno.',
+              'Usar grilla no es rigidez: es el equivalente visual de escribir con buena ortografía.'
+            ]
+          },
+          {
+            title: 'Flujo navegable mínimo',
+            items: [
+              'Hotspot mínimo: el CTA del hero debe conectar con la pantalla del formulario o acción esperada.',
+              'Flujo crítico a validar: Entrada → Hero → Primer CTA → Formulario/Confirmación.',
+              'En Figma: modo Prototype, flecha entre frames, transición simple. No hace falta animar todo.',
+              'Pregunta de validación: ¿un usuario que no conoce tu proyecto completaría el recorrido sin confundirse?'
+            ]
+          },
+          {
+            title: 'Checklist de validación rápida',
+            items: [
+              '¿El titular del hero se entiende en 5 segundos sin desplazarse?',
+              '¿El CTA principal aparece antes del tercer bloque de contenido?',
+              '¿El contraste del CTA lo diferencia visualmente de los demás elementos de la pantalla?',
+              '¿En vista móvil la jerarquía se mantiene y el texto es legible sin zoom?',
+              '¿El flujo hero → CTA → destino funciona sin confusión ni pantallas huérfanas?'
+            ]
+          },
+          {
+            title: 'Actividad: Prototipo navegable de tu campaña',
+            items: [
+              'Abre tu mapa de secciones (Tema 2) y el copy redactado (Tema 3).',
+              'Crea frame móvil 375px y escritorio 1440px. Construye en escala de grises; sin colores de marca aún.',
+              'Conecta el CTA principal del hero con el frame de formulario o contacto.',
+              'Aplica el checklist. Ajusta al menos un elemento al ver el prototipo completo.',
+              'Entrega: share link público de Figma o imágenes exportadas de ambas vistas + nota de validación de 2–3 líneas.'
+            ]
+          },
+          {
+            title: 'Cierre de la Unidad 2',
+            items: [
+              'Lo que construiste hoy es la maqueta que publicarás en la Unidad 3. Si el prototipo es sólido, la producción será más rápida.',
+              'Un prototipo que "valida algo" vale más que uno que "se ve bien".',
+              'Próxima sesión — Unidad 3: Publicación en nube, constructores visuales y CMS accesibles.'
             ]
           }
         ]
