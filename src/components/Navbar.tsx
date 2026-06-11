@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, BookOpen, ChevronDown } from 'lucide-react';
+import { BookOpen, ChevronDown, Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { syllabusUnits } from '../data/syllabus';
 
@@ -49,13 +49,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-lg transition-colors duration-300 dark:bg-gray-800">
+    <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur transition-colors duration-300 dark:border-slate-800 dark:bg-gray-900/95">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo / Brand */}
           <div className="flex shrink-0 items-center">
             <a href="/" className="group flex items-center space-x-3">
-              <div className="from-primary-600 to-accent-500 flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-r">
+              <div className="from-primary-700 to-accent-500 flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-br shadow-sm">
                 <BookOpen className="h-6 w-6 text-white" />
               </div>
               <div className="hidden sm:block">
@@ -75,8 +75,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
               href="/"
               className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
                 isActive('/')
-                  ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
-                  : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700'
+                  ? 'bg-primary-50 text-primary-800 ring-primary-100 dark:bg-primary-900/30 dark:text-primary-200 dark:ring-primary-800 ring-1'
+                  : 'text-gray-700 hover:bg-slate-100 dark:text-gray-300 dark:hover:bg-gray-800'
               }`}
             >
               Inicio
@@ -85,8 +85,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
             {navItems.slice(1).map((item) => (
               <div key={item.label} className="group relative">
                 <button
+                  type="button"
                   onClick={() => toggleDropdown(item.label)}
-                  className="flex items-center space-x-1 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
+                  aria-expanded={dropdownOpen === item.label}
+                  className="flex items-center space-x-1 rounded-lg px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-slate-100 dark:text-gray-300 dark:hover:bg-gray-800"
                 >
                   <span>{item.label}</span>
                   <ChevronDown
@@ -97,7 +99,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
                 {/* Dropdown Menu */}
                 {item.items && (
                   <div
-                    className={`absolute left-0 mt-1 w-64 rounded-lg border border-gray-200 bg-white shadow-xl transition-all duration-200 dark:border-gray-700 dark:bg-gray-800 ${
+                    className={`absolute left-0 mt-2 w-72 rounded-lg border border-slate-200 bg-white p-1 shadow-lg transition-all duration-200 dark:border-slate-700 dark:bg-gray-900 ${
                       dropdownOpen === item.label
                         ? 'visible opacity-100'
                         : 'invisible opacity-0'
@@ -108,10 +110,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
                         <a
                           key={subItem.href}
                           href={subItem.href}
-                          className={`block px-4 py-2 text-sm transition-colors ${
+                          className={`block rounded-md px-3 py-2.5 text-sm leading-snug transition-colors ${
                             isActive(subItem.href)
-                              ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 font-semibold'
-                              : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700'
+                              ? 'bg-primary-50 text-primary-800 dark:bg-primary-900/30 dark:text-primary-200 font-semibold'
+                              : 'text-gray-700 hover:bg-slate-100 dark:text-gray-300 dark:hover:bg-gray-800'
                           }`}
                         >
                           {subItem.label}
@@ -131,11 +133,12 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
 
           {/* Mobile menu button */}
           <div className="flex items-center space-x-2 md:hidden">
-            <ThemeToggle />
             <button
+              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="rounded-lg p-2 text-gray-700 transition-colors hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
-              aria-label="Toggle menu"
+              className="rounded-lg p-2 text-gray-700 transition-colors hover:bg-slate-100 dark:text-gray-300 dark:hover:bg-gray-800"
+              aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -150,13 +153,20 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
         {mobileMenuOpen && (
           <div className="mt-2 border-t border-gray-200 pb-4 md:hidden dark:border-gray-700">
             <div className="space-y-1 pt-2">
+              <div className="mb-3 flex items-center justify-between rounded-lg bg-slate-50 px-4 py-3 dark:bg-gray-800">
+                <span className="text-sm font-semibold text-gray-700 dark:text-gray-200">
+                  Tema visual
+                </span>
+                <ThemeToggle />
+              </div>
+
               <a
                 href="/"
                 onClick={closeMobileMenu}
                 className={`block rounded-lg px-4 py-2 text-base font-medium transition-colors ${
                   isActive('/')
-                    ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
-                    : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700'
+                    ? 'bg-primary-50 text-primary-800 dark:bg-primary-900/30 dark:text-primary-200'
+                    : 'text-gray-700 hover:bg-slate-100 dark:text-gray-300 dark:hover:bg-gray-800'
                 }`}
               >
                 Inicio
@@ -165,8 +175,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
               {navItems.slice(1).map((item) => (
                 <div key={item.label} className="space-y-1">
                   <button
+                    type="button"
                     onClick={() => toggleDropdown(item.label)}
-                    className="flex w-full items-center justify-between rounded-lg px-4 py-2 text-left text-base font-medium text-gray-700 transition-colors hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700"
+                    aria-expanded={dropdownOpen === item.label}
+                    className="flex w-full items-center justify-between rounded-lg px-4 py-2 text-left text-base font-medium text-gray-700 transition-colors hover:bg-slate-100 dark:text-gray-300 dark:hover:bg-gray-800"
                   >
                     <span>{item.label}</span>
                     <ChevronDown
@@ -183,8 +195,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
                           onClick={closeMobileMenu}
                           className={`block rounded-lg px-4 py-2 text-sm transition-colors ${
                             isActive(subItem.href)
-                              ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 font-semibold'
-                              : 'text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700'
+                              ? 'bg-primary-50 text-primary-800 dark:bg-primary-900/30 dark:text-primary-200 font-semibold'
+                              : 'text-gray-600 hover:bg-slate-100 dark:text-gray-400 dark:hover:bg-gray-800'
                           }`}
                         >
                           {subItem.label}

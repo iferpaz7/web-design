@@ -3,33 +3,31 @@ import { Sun, Moon, Monitor } from 'lucide-react';
 
 type Theme = 'light' | 'dark' | 'system';
 
+const getSystemTheme = (): 'light' | 'dark' => {
+  if (typeof window !== 'undefined') {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
+  }
+  return 'light';
+};
+
+const applyTheme = (newTheme: Theme) => {
+  if (typeof window === 'undefined') return;
+
+  const root = document.documentElement;
+  const actualTheme = newTheme === 'system' ? getSystemTheme() : newTheme;
+
+  if (actualTheme === 'dark') {
+    root.classList.add('dark');
+  } else {
+    root.classList.remove('dark');
+  }
+};
+
 const ThemeToggle: React.FC = () => {
   const [theme, setTheme] = useState<Theme>('system');
   const [mounted, setMounted] = useState(false);
-
-  // Detectar tema del sistema
-  const getSystemTheme = (): 'light' | 'dark' => {
-    if (typeof window !== 'undefined') {
-      return window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light';
-    }
-    return 'light';
-  };
-
-  // Aplicar tema al DOM
-  const applyTheme = (newTheme: Theme) => {
-    if (typeof window === 'undefined') return;
-
-    const root = document.documentElement;
-    const actualTheme = newTheme === 'system' ? getSystemTheme() : newTheme;
-
-    if (actualTheme === 'dark') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
-  };
 
   // Inicializar tema desde localStorage o sistema
   useEffect(() => {
@@ -37,10 +35,17 @@ const ThemeToggle: React.FC = () => {
     const initialTheme = savedTheme || 'system';
 
     setTheme(initialTheme);
-    applyTheme(initialTheme);
     setMounted(true);
+  }, []);
 
-    // Escuchar cambios en el tema del sistema
+  useEffect(() => {
+    applyTheme(theme);
+    if (mounted) {
+      localStorage.setItem('itsae-theme', theme);
+    }
+  }, [mounted, theme]);
+
+  useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleSystemThemeChange = () => {
       if (theme === 'system') {
@@ -51,13 +56,11 @@ const ThemeToggle: React.FC = () => {
     mediaQuery.addEventListener('change', handleSystemThemeChange);
     return () =>
       mediaQuery.removeEventListener('change', handleSystemThemeChange);
-  }, []);
+  }, [theme]);
 
   // Cambiar tema
   const handleThemeChange = (newTheme: Theme) => {
     setTheme(newTheme);
-    localStorage.setItem('itsae-theme', newTheme);
-    applyTheme(newTheme);
   };
 
   // No renderizar hasta que esté montado (evita hidration mismatch)

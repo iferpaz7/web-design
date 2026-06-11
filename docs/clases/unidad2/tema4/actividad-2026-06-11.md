@@ -39,6 +39,7 @@ Entrega en esta tarea:
 - Una nota de validación de 2 a 3 líneas respondiendo: ¿qué hipótesis confirmó tu prototipo sobre el recorrido del usuario? ¿Qué cambiarías antes de publicar?
 
 **Criterios:**
+
 - El prototipo incluye hero, beneficios y CTA visible antes del tercer bloque.
 - El flujo hero → CTA → destino es navegable o está claramente indicado en el prototipo.
 - Las vistas móvil y escritorio están presentes.

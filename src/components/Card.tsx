@@ -23,10 +23,12 @@ const Card: React.FC<CardProps> = ({
 }) => {
   // Design Tokens - Variantes
   const variantClasses: Record<CardVariant, string> = {
-    default: 'bg-white dark:bg-gray-800 shadow-lg',
-    elevated: 'bg-white dark:bg-gray-800 shadow-xl',
+    default:
+      'border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-gray-800',
+    elevated:
+      'border border-slate-200 bg-white shadow-md dark:border-slate-700 dark:bg-gray-800',
     outlined:
-      'bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700'
+      'border border-slate-300 bg-white dark:border-slate-600 dark:bg-gray-800'
   };
 
   // Sistema de espaciado 8px
@@ -37,11 +39,13 @@ const Card: React.FC<CardProps> = ({
     lg: 'p-8' // 32px
   };
 
-  const hoverClasses = hover ? 'hover:shadow-2xl hover:-translate-y-1' : '';
+  const hoverClasses = hover
+    ? 'hover:-translate-y-0.5 hover:border-primary-200 hover:shadow-lg dark:hover:border-primary-800'
+    : '';
 
   return (
     <div
-      className={`rounded-2xl transition-all duration-300 ${variantClasses[variant]} ${paddingClasses[padding]} ${hoverClasses} ${className} `}
+      className={`rounded-lg transition-all duration-300 ${variantClasses[variant]} ${paddingClasses[padding]} ${hoverClasses} ${className} `}
     >
       {children}
     </div>

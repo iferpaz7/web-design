@@ -41,7 +41,6 @@ const colorStyles = {
 } as const;
 
 const styles = colorStyles[unit.color];
-const presentationHref = `/presentacion${tema.href}`;
 const printHref = `/imprimir${tema.href}`;
 
 // Detect latest roadmap for this tema (if any)
@@ -68,30 +67,32 @@ const continuity = nextTema
     : 'Este tema cierra la última unidad y prepara la presentación final y el examen bimestral.';
 ---
 
-<main
-  class="min-h-screen bg-linear-to-br from-slate-50 via-white to-slate-100 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800"
->
-  <div class={`bg-linear-to-r ${styles.hero} text-white py-5`}>
-    <div class="mx-auto max-w-6xl px-6">
-      <nav class="flex items-center justify-between gap-4">
-        <a href="/" class={`hover:text-white transition-colors ${styles.soft}`}
-          >← Volver al inicio</a
+<main class="min-h-screen bg-slate-50 dark:bg-gray-950">
+  <div class={`bg-linear-to-r ${styles.hero} py-5 text-white`}>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <nav
+        class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <a href="/" class={`transition-colors hover:text-white ${styles.soft}`}
+          >Volver al inicio</a
         >
-        <div class="text-center">
+        <div class="sm:text-center">
           <h1 class="text-xl font-bold">
             Unidad {unit.numero} · Tema {tema.numero}
           </h1>
           <p class={`text-sm ${styles.soft}`}>{tema.titulo}</p>
         </div>
-        <div class={`text-right text-sm ${styles.soft}`}>
+        <div class={`text-sm ${styles.soft} sm:text-right`}>
           <p>ITSAE</p>
         </div>
       </nav>
     </div>
   </div>
 
-  <div class="mx-auto max-w-5xl space-y-8 px-6 py-10 sm:py-12">
-    <section class="rounded-2xl bg-white p-6 shadow-xl sm:p-8 dark:bg-gray-800">
+  <div class="mx-auto max-w-6xl space-y-8 px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+    <section
+      class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm sm:p-6 dark:border-slate-800 dark:bg-gray-900"
+    >
       <div
         class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"
       >
@@ -115,7 +116,7 @@ const continuity = nextTema
               href={printHref}
               target="_blank"
               rel="noopener noreferrer"
-              class="rounded-full border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-gray-400 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700"
+              class="hover:border-primary-300 hover:bg-primary-50 rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition dark:border-slate-700 dark:text-slate-200 dark:hover:bg-gray-800"
             >
               Imprimir o guardar PDF
             </a>
@@ -125,7 +126,7 @@ const continuity = nextTema
                   href={roadmapHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="rounded-full border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-gray-400 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700"
+                  class="hover:border-primary-300 hover:bg-primary-50 rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition dark:border-slate-700 dark:text-slate-200 dark:hover:bg-gray-800"
                 >
                   Roadmap de clase
                 </a>
@@ -135,26 +136,28 @@ const continuity = nextTema
 
           <div
             role="tablist"
-            class="grid grid-cols-3 gap-2 rounded-2xl border border-slate-200 bg-slate-100 p-1 dark:border-slate-700 dark:bg-slate-900"
+            aria-label="Formatos disponibles del tema"
+            class="grid grid-cols-3 gap-1 rounded-lg border border-slate-200 bg-slate-100 p-1 dark:border-slate-700 dark:bg-slate-950"
           >
             <button
               type="button"
               data-tab="guide"
-              class="tab-button rounded-2xl px-4 py-3 text-sm font-semibold transition"
+              class="tab-button min-w-0 rounded-md px-1.5 py-3 text-[11px] leading-tight font-semibold transition sm:px-4 sm:text-sm"
             >
-              Guía de clase
+              <span class="sm:hidden">Guía</span>
+              <span class="hidden sm:inline">Guía de clase</span>
             </button>
             <button
               type="button"
               data-tab="presentation"
-              class="tab-button rounded-2xl px-4 py-3 text-sm font-semibold transition"
+              class="tab-button min-w-0 rounded-md px-1.5 py-3 text-[11px] leading-tight font-semibold transition sm:px-4 sm:text-sm"
             >
               Presentación
             </button>
             <button
               type="button"
               data-tab="activity"
-              class="tab-button rounded-2xl px-4 py-3 text-sm font-semibold transition"
+              class="tab-button min-w-0 rounded-md px-1.5 py-3 text-[11px] leading-tight font-semibold transition sm:px-4 sm:text-sm"
             >
               Actividad
             </button>
@@ -164,7 +167,9 @@ const continuity = nextTema
     </section>
 
     <div data-topic-view="guide" class="space-y-8">
-      <section class="rounded-2xl bg-white p-8 shadow-xl dark:bg-gray-800">
+      <section
+        class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900"
+      >
         <div class="mb-5 flex flex-wrap items-center gap-3">
           <span
             class={`text-sm font-semibold px-3 py-1 rounded-full ${styles.badge}`}
@@ -193,33 +198,35 @@ const continuity = nextTema
 
       <section class="grid gap-6 md:grid-cols-2">
         <div
-          class={`p-6 rounded-xl border-l-4 ${styles.panel} ${styles.border}`}
+          class={`rounded-lg border-l-4 p-6 ${styles.panel} ${styles.border}`}
         >
           <h3
             class="mb-3 text-xl font-semibold text-gray-800 dark:text-gray-100"
           >
             Objetivos de aprendizaje
           </h3>
-          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
-            {tema.objetivos.map((objetivo) => <li>• {objetivo}</li>)}
+          <ul class="list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300">
+            {tema.objetivos.map((objetivo) => <li>{objetivo}</li>)}
           </ul>
         </div>
 
         <div
-          class="rounded-xl border-l-4 border-slate-400 bg-slate-50 p-6 dark:bg-slate-800/80"
+          class="rounded-lg border-l-4 border-slate-400 bg-slate-50 p-6 dark:bg-slate-900"
         >
           <h3
             class="mb-3 text-xl font-semibold text-gray-800 dark:text-gray-100"
           >
             Ideas clave del tema
           </h3>
-          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
-            {tema.ideasClave.map((idea) => <li>• {idea}</li>)}
+          <ul class="list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300">
+            {tema.ideasClave.map((idea) => <li>{idea}</li>)}
           </ul>
         </div>
       </section>
 
-      <section class="rounded-2xl bg-white p-8 shadow-xl dark:bg-gray-800">
+      <section
+        class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900"
+      >
         <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
           Relación con la unidad
         </h2>
@@ -233,7 +240,9 @@ const continuity = nextTema
         </p>
       </section>
 
-      <section class={`rounded-2xl p-8 ${styles.panel}`}>
+      <section
+        class={`rounded-lg border border-slate-200 p-6 sm:p-8 dark:border-slate-800 ${styles.panel}`}
+      >
         <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
           Continuidad del curso
         </h2>
@@ -249,7 +258,9 @@ const continuity = nextTema
     </div>
 
     <div data-topic-view="activity" class="hidden space-y-8">
-      <section class="rounded-2xl bg-white p-8 shadow-xl dark:bg-gray-800">
+      <section
+        class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900"
+      >
         <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
           Actividad sugerida
         </h2>
@@ -258,7 +269,9 @@ const continuity = nextTema
         </p>
       </section>
 
-      <section class="rounded-2xl bg-white p-8 shadow-xl dark:bg-gray-800">
+      <section
+        class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900"
+      >
         <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
           Criterio de evidencia
         </h2>
@@ -267,14 +280,16 @@ const continuity = nextTema
         </p>
       </section>
 
-      <section class="rounded-2xl bg-white p-8 shadow-xl dark:bg-gray-800">
+      <section
+        class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900"
+      >
         <h2 class="mb-6 text-2xl font-bold text-gray-800 dark:text-gray-100">
           Herramientas y recursos de trabajo
         </h2>
         <div class="grid gap-4 md:grid-cols-2">
           {
             tema.herramientas.map((herramienta) => (
-              <div class="rounded-xl bg-gray-50 p-4 dark:bg-gray-700">
+              <div class="rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-gray-800">
                 <p class="text-gray-700 dark:text-gray-200">{herramienta}</p>
               </div>
             ))
@@ -311,14 +326,16 @@ const continuity = nextTema
     tabButtons.forEach((button) => {
       const isActive = button.dataset.tab === tab;
       button.classList.toggle('bg-white', isActive);
+      button.classList.toggle('dark:bg-gray-800', isActive);
       button.classList.toggle('text-slate-900', isActive);
+      button.classList.toggle('dark:text-white', isActive);
       button.classList.toggle('shadow-sm', isActive);
       button.classList.toggle('border', isActive);
       button.classList.toggle('border-slate-300', isActive);
+      button.classList.toggle('dark:border-slate-700', isActive);
       button.classList.toggle('bg-transparent', !isActive);
       button.classList.toggle('text-slate-600', !isActive);
       button.classList.toggle('dark:text-slate-300', !isActive);
-      button.classList.toggle('dark:bg-slate-900', !isActive);
     });
 
     const params = new URLSearchParams(window.location.search);

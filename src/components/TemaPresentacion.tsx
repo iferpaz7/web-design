@@ -71,6 +71,13 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
     return 'Este tema cierra la última unidad y prepara la entrega final y la evaluación bimestral.';
   }, [tema.numero, unit.numero, unit.temas]);
 
+  const panelRadius = isStandalone
+    ? 'rounded-lg sm:rounded-2xl'
+    : 'rounded-2xl';
+  const slideShellRadius = isStandalone
+    ? 'rounded-lg sm:rounded-3xl'
+    : 'rounded-3xl';
+
   const teachingSlides = useMemo(
     () =>
       tema.presentationBlocks?.map((block) => ({
@@ -81,7 +88,7 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
             {block.items.map((item, index) => (
               <div
                 key={item}
-                className={`rounded-2xl border p-5 ${styles.panel}`}
+                className={`${panelRadius} border p-4 sm:p-5 ${styles.panel}`}
               >
                 <div className="flex items-start gap-4">
                   <span
@@ -98,7 +105,7 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
           </div>
         )
       })) ?? [],
-    [styles.badge, styles.panel, tema.presentationBlocks]
+    [panelRadius, styles.badge, styles.panel, tema.presentationBlocks]
   );
 
   const slides: Slide[] = useMemo(
@@ -117,7 +124,9 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
               {tema.panorama}
             </p>
             <div className="grid gap-4 text-left md:grid-cols-3">
-              <div className={`rounded-2xl border p-5 ${styles.panel}`}>
+              <div
+                className={`${panelRadius} border p-4 sm:p-5 ${styles.panel}`}
+              >
                 <p className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
                   Unidad
                 </p>
@@ -125,7 +134,9 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
                   {unit.titulo}
                 </p>
               </div>
-              <div className={`rounded-2xl border p-5 ${styles.panel}`}>
+              <div
+                className={`${panelRadius} border p-4 sm:p-5 ${styles.panel}`}
+              >
                 <p className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
                   Resultado esperado
                 </p>
@@ -133,7 +144,9 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
                   {tema.evidencia}
                 </p>
               </div>
-              <div className={`rounded-2xl border p-5 ${styles.panel}`}>
+              <div
+                className={`${panelRadius} border p-4 sm:p-5 ${styles.panel}`}
+              >
                 <p className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
                   Actividad central
                 </p>
@@ -153,7 +166,7 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
             {tema.objetivos.map((objetivo, index) => (
               <div
                 key={objetivo}
-                className={`rounded-2xl border p-5 ${styles.panel}`}
+                className={`${panelRadius} border p-4 sm:p-5 ${styles.panel}`}
               >
                 <div className="flex items-start gap-4">
                   <span
@@ -178,7 +191,7 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
             {tema.ideasClave.map((idea) => (
               <div
                 key={idea}
-                className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800"
+                className={`${panelRadius} border border-gray-200 bg-white p-4 shadow-sm sm:p-6 dark:border-gray-700 dark:bg-gray-800`}
               >
                 <p
                   className={`mb-3 text-sm font-semibold tracking-wide uppercase ${styles.accentText}`}
@@ -199,7 +212,7 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
         subtitle: 'Como se conecta este tema con el resultado formativo',
         content: (
           <div className="grid gap-5 lg:grid-cols-2">
-            <div className={`rounded-2xl border p-6 ${styles.panel}`}>
+            <div className={`${panelRadius} border p-4 sm:p-6 ${styles.panel}`}>
               <p className="text-sm font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400">
                 Capacidad de la unidad
               </p>
@@ -207,7 +220,9 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
                 {unit.capacidad}
               </p>
             </div>
-            <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+            <div
+              className={`${panelRadius} border border-gray-200 bg-white p-4 sm:p-6 dark:border-gray-700 dark:bg-gray-800`}
+            >
               <p className="text-sm font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400">
                 Evidencia de la unidad
               </p>
@@ -223,7 +238,9 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
         subtitle: 'Que se hace en clase y que se espera como producto',
         content: (
           <div className="grid gap-5 lg:grid-cols-2">
-            <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+            <div
+              className={`${panelRadius} border border-gray-200 bg-white p-4 sm:p-6 dark:border-gray-700 dark:bg-gray-800`}
+            >
               <p
                 className={`mb-3 text-sm font-semibold tracking-wide uppercase ${styles.accentText}`}
               >
@@ -233,7 +250,7 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
                 {tema.actividad}
               </p>
             </div>
-            <div className={`rounded-2xl border p-6 ${styles.panel}`}>
+            <div className={`${panelRadius} border p-4 sm:p-6 ${styles.panel}`}>
               <p className="mb-3 text-sm font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400">
                 Criterio de evidencia
               </p>
@@ -252,7 +269,7 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
             {tema.herramientas.map((herramienta) => (
               <div
                 key={herramienta}
-                className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-800"
+                className={`${panelRadius} border border-gray-200 bg-white p-4 sm:p-5 dark:border-gray-700 dark:bg-gray-800`}
               >
                 <p className="text-base text-gray-800 dark:text-gray-200">
                   {herramienta}
@@ -267,14 +284,16 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
         subtitle: 'Como enlazar la sesion con el resto del curso',
         content: (
           <div className="space-y-5">
-            <div className={`rounded-2xl border p-6 ${styles.panel}`}>
+            <div className={`${panelRadius} border p-4 sm:p-6 ${styles.panel}`}>
               <p className="text-lg text-gray-800 dark:text-gray-200">
                 Este tema forma parte del sílabo actualizado del curso y
                 mantiene una secuencia de trabajo centrada en estrategia,
                 prototipado, publicacion viable y mejora continua.
               </p>
             </div>
-            <div className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+            <div
+              className={`${panelRadius} border border-gray-200 bg-white p-4 sm:p-6 dark:border-gray-700 dark:bg-gray-800`}
+            >
               <p
                 className={`mb-3 text-sm font-semibold tracking-wide uppercase ${styles.accentText}`}
               >
@@ -294,12 +313,14 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
       styles.badge,
       styles.panel,
       teachingSlides,
+      panelRadius,
       tema.actividad,
       tema.evidencia,
       tema.herramientas,
       tema.ideasClave,
       tema.objetivos,
       tema.panorama,
+      tema.numero,
       tema.titulo,
       unit.capacidad,
       unit.evidencia,
@@ -360,17 +381,17 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
 
   return (
     <div
-      className={`${isStandalone ? 'h-dvh w-screen overflow-hidden rounded-none' : 'min-h-195 rounded-[28px]'} bg-linear-to-br ${styles.shell} shadow-2xl transition-colors duration-300`}
+      className={`${isStandalone ? 'min-h-dvh w-full overflow-x-hidden rounded-none sm:h-dvh sm:w-screen sm:overflow-hidden' : 'min-h-195 rounded-[28px]'} bg-linear-to-br ${styles.shell} transition-colors duration-300 ${isStandalone ? '' : 'shadow-2xl'}`}
     >
       <div
-        className={`bg-linear-to-r ${styles.hero} rounded-t-[28px] px-5 py-4 text-white sm:px-8 sm:py-5`}
+        className={`bg-linear-to-r ${styles.hero} ${isStandalone ? '' : 'rounded-t-[28px]'} px-4 py-4 text-white sm:px-8 sm:py-5`}
       >
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="text-xs font-semibold tracking-[0.24em] text-white/70 uppercase">
+          <div className="min-w-0">
+            <p className="text-xs font-semibold tracking-[0.2em] text-white/70 uppercase sm:tracking-[0.24em]">
               Unidad {unit.numero} · Tema {tema.numero}
             </p>
-            <h2 className="mt-2 text-2xl font-bold sm:text-3xl">
+            <h2 className="mt-2 text-2xl leading-tight font-bold sm:text-3xl">
               {current.title}
             </h2>
             {current.subtitle && (
@@ -382,7 +403,7 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
           <button
             type="button"
             onClick={toggleFullscreen}
-            className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/20"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/20 sm:w-auto sm:rounded-xl"
           >
             {isFullscreen ? (
               <Minimize2 className="h-4 w-4" />
@@ -394,12 +415,12 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
         </div>
       </div>
 
-      <div className="p-5 sm:p-8">
-        <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div className="p-4 sm:p-8">
+        <div className="mb-4 flex flex-col gap-3 sm:mb-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
             Diapositiva {currentSlide + 1} de {slides.length}
           </p>
-          <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500 sm:text-sm dark:text-gray-400">
+          <div className="hidden flex-wrap items-center gap-2 text-xs text-gray-500 sm:flex sm:text-sm dark:text-gray-400">
             <span className="rounded-full bg-white/70 px-3 py-1 dark:bg-gray-800/70">
               Flechas: navegar
             </span>
@@ -417,23 +438,23 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
         </div>
 
         <div
-          className={`${isStandalone ? 'min-h-[60vh]' : 'min-h-130'} rounded-3xl border border-white/60 bg-white/80 p-5 shadow-lg backdrop-blur sm:p-8 dark:border-gray-700/60 dark:bg-gray-900/80`}
+          className={`${isStandalone ? 'min-h-[48vh] sm:min-h-[60vh]' : 'min-h-130'} ${slideShellRadius} border border-white/60 bg-white/80 p-4 shadow-lg backdrop-blur sm:p-8 dark:border-gray-700/60 dark:bg-gray-900/80`}
         >
           {current.content}
         </div>
 
-        <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-5 flex flex-col gap-4 sm:mt-6 sm:flex-row sm:items-center sm:justify-between">
           <button
             type="button"
             onClick={() => setCurrentSlide((prev) => Math.max(prev - 1, 0))}
             disabled={currentSlide === 0}
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-5 py-3 text-sm font-semibold text-white transition disabled:cursor-not-allowed disabled:opacity-40 dark:bg-white dark:text-gray-900"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-gray-900 px-5 py-3 text-sm font-semibold text-white transition disabled:cursor-not-allowed disabled:opacity-40 sm:rounded-xl dark:bg-white dark:text-gray-900"
           >
             <ChevronLeft className="h-4 w-4" />
             Anterior
           </button>
 
-          <div className="flex flex-wrap items-center justify-center gap-2">
+          <div className="flex max-h-12 flex-wrap items-center justify-center gap-2 overflow-hidden sm:max-h-none">
             {slides.map((slide, index) => (
               <button
                 key={slide.title}
@@ -451,7 +472,7 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
               setCurrentSlide((prev) => Math.min(prev + 1, slides.length - 1))
             }
             disabled={currentSlide === slides.length - 1}
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 px-5 py-3 text-sm font-semibold text-white transition disabled:cursor-not-allowed disabled:opacity-40 dark:bg-white dark:text-gray-900"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-gray-900 px-5 py-3 text-sm font-semibold text-white transition disabled:cursor-not-allowed disabled:opacity-40 sm:rounded-xl dark:bg-white dark:text-gray-900"
           >
             Siguiente
             <ChevronRight className="h-4 w-4" />
