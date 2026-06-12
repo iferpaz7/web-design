@@ -178,10 +178,13 @@ def first_heading(markdown: str, level: int = 1) -> str:
 def first_subtitle(markdown: str) -> str:
     ignored = {
         "objetivo de la clase",
+        "objetivo de la evaluación",
         "tema de la sesión",
         "recursos de la sesión",
         "recursos de la clase",
+        "recursos de repaso",
         "contenidos de la sesión",
+        "contenidos evaluados",
         "actividad de la clase",
         "evidencia esperada",
     }

@@ -833,20 +833,23 @@ export const syllabusUnits: SyllabusUnit[] = [
         href: '/unidad2/tema4',
         disponible: true,
         panorama:
-          'El prototipo permite validar estructura, contenido y dirección visual antes de publicar. Este tema se concentra en transformar el esquema de contenidos en una propuesta visual navegable con criterios de marca y consistencia.',
+          'Prototipar no es diseñar: es validar. Este tema cierra la Unidad 2 convirtiendo el mapa de secciones y el copy persuasivo en un prototipo navegable de baja o media fidelidad. El foco está en verificar que la estructura comunica, que el recorrido fluye y que el CTA es visible antes de invertir tiempo en producción. Un prototipo bien construido permite corregir en segundos lo que en producción costaría horas.',
         objetivos: [
-          'Pasar de wireframe a maqueta visual con criterios de marca.',
-          'Preparar un prototipo que pueda revisarse y mejorarse.',
-          'Detectar ajustes antes de la fase de publicación.'
+          'Distinguir entre los tres niveles de fidelidad y elegir el adecuado al objetivo de validación.',
+          'Construir un prototipo navegable aplicando el mapa de secciones y el copy del proyecto integrador.',
+          'Verificar que la jerarquía del hero, la visibilidad del CTA y la fluidez del recorrido funcionan en vista móvil.',
+          'Generar un share link o archivo exportable listo para revisión y retroalimentación.'
         ],
         ideasClave: [
-          'Prototipar ahorra tiempo, errores y retrabajo en publicación.',
-          'La fidelidad visual debe responder al objetivo de validación.',
-          'Una maqueta útil es aquella que puede discutirse y corregirse.'
+          'Prototipar ahorra tiempo, errores y retrabajo: lo que se corrige en boceto no se rehace en producción.',
+          'La fidelidad del prototipo debe responder al objetivo de validación, no a la presión de verse terminado.',
+          'El flujo crítico hero → CTA → destino es el mínimo navegable que debe funcionar antes de publicar.',
+          'Un checklist de validación aplicado al prototipo revela problemas que el ojo acostumbrado no ve.'
         ],
         actividad:
-          'Construye un prototipo navegable de tu página con estructura, copy y estilo base.',
-        evidencia: 'Prototipo navegable o maqueta visual validable.',
+          'Usando tu mapa de secciones (U2T2) y el copy redactado (U2T3), construye un prototipo navegable de baja o media fidelidad con frames para móvil (375 px) y escritorio (1440 px). Conecta el CTA del hero con el formulario o sección de contacto, aplica el checklist de validación y documenta al menos un ajuste realizado.',
+        evidencia:
+          'Share link público del prototipo o imagen exportada de las vistas móvil y escritorio, más una nota de validación de 2 a 3 líneas respondiendo qué confirmó el prototipo y qué cambiarías antes de publicar.',
         herramientas: [
           'Figma o herramienta equivalente',
           'Guía de marca básica',

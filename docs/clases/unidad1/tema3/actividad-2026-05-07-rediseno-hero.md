@@ -51,11 +51,16 @@ Enlace: [https://web-design-itsae.netlify.app/imprimir/roadmap/unidad1/tema3/roa
 
 ## Actividad de la clase: Rediseño guiado del hero
 
-El docente compartirá en pantalla un hero section con problemas de jerarquía, tipografía inconsistente y CTA poco visible. A partir de ese ejemplo:
+Analiza el siguiente hero section con problemas de jerarquía y rediseñalo aplicando los principios del tema.
+
+**Hero a rediseñar — Página de referencia:**
+Abre la página [https://www.marketingterms.com](https://www.marketingterms.com). Observa su hero section: el titular compite con demasiados elementos, el CTA no destaca por contraste, la tipografía no tiene escala clara y la imagen no refuerza la propuesta.
+
+A partir de ese ejemplo:
 
 1. **Identifica** qué no funciona visualmente y explica por qué con al menos un principio visto en clase.
 2. **Propón una versión mejorada** usando boceto en papel, esquema escrito o herramienta digital (Figma, Canva, etc.).
-3. **Comparte en el chat** al menos una decisión de diseño que tomaste y su justificación.
+3. **Documenta al menos tres decisiones de diseño** que tomaste y su justificación: qué cambiaste, por qué lo cambiaste y qué principio del tema respalda esa decisión.
 
 ---
 

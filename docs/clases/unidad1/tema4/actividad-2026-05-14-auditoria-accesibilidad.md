@@ -57,7 +57,12 @@ Enlace: [https://pagespeed.web.dev](https://pagespeed.web.dev)
 
 ## Actividad de la clase: Auditoría de accesibilidad y lectura móvil
 
-Usando tu dispositivo móvil real (no un simulador de escritorio), audita el sitio web asignado por el docente. Aplica el siguiente checklist de 10 puntos: marca con ✅ los criterios que se cumplen y con ❌ los que fallan, e indica brevemente una solución para cada falla encontrada.
+Usando tu dispositivo móvil real (no un simulador de escritorio), audita el siguiente sitio web aplicando el checklist de 10 puntos:
+
+**Sitio a auditar:**
+[https://www.pichincha.com](https://www.pichincha.com) — sitio institucional del Banco Pichincha Ecuador. Ingresa desde tu celular a la página principal y navega por al menos dos secciones adicionales (productos o servicios).
+
+Aplica el checklist de 10 puntos: marca con ✅ los criterios que se cumplen y con ❌ los que fallan, e indica brevemente una solución para cada falla encontrada.
 
 ### Checklist: La Buena Tierra Digital
 

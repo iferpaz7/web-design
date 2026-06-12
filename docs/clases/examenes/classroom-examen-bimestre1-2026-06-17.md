@@ -1,4 +1,4 @@
-# Bimestre I — Examen bimestral: Recursos de repaso
+# Bimestre I — Recursos de repaso para el Examen Bimestral
 
 **Asignatura:** Diseño Web para Marketing Digital
 **Fecha:** 17 de junio de 2026

@@ -51,14 +51,22 @@ Enlace: [https://web-design-itsae.netlify.app/imprimir/roadmap/unidad1/tema2/roa
 
 ## Actividad de la clase: Ficha comparativa de UX/UI
 
-El docente compartirá dos páginas de campaña al inicio de la clase. Ábrelas en tu dispositivo y completa una ficha comparativa evaluando los siguientes cuatro criterios para cada página:
+Analiza las siguientes dos páginas de campaña y completa la ficha comparativa con los cuatro criterios indicados:
+
+**Página A — Con problemas de UX/UI:**
+[https://www.cars.com](https://www.cars.com) — portal de compraventa de vehículos con menú sobrecargado, múltiples CTAs en competencia y jerarquía visual poco clara en la pantalla de entrada.
+
+**Página B — Con buena resolución de UX/UI:**
+[https://www.notion.so](https://www.notion.so) — landing page de producto con jerarquía clara, CTA visible y propuesta de valor comunicada en los primeros 5 segundos.
+
+Para cada página, evalúa los siguientes cuatro criterios:
 
 1. **Claridad del CTA principal:** ¿se entiende de inmediato qué debe hacer el usuario?
 2. **Jerarquía visual:** ¿qué elemento domina la pantalla al cargar la página?
 3. **Consistencia del diseño visual:** ¿los colores, tipografía y estilo son coherentes entre secciones?
 4. **Fricción percibida al navegar:** ¿hay algo que confunde, retrasa o desanima al usuario?
 
-Para cada página, identifica al menos un problema UX concreto y propone una mejora fundamentada en los principios revisados en clase.
+Para cada página, identifica al menos un problema UX concreto y propón una mejora fundamentada en los principios revisados en clase.
 
 ---
 
