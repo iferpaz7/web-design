@@ -48,6 +48,9 @@ SCOPES = [
     "https://www.googleapis.com/auth/classroom.profile.emails",
     "https://www.googleapis.com/auth/classroom.profile.photos",
     "https://www.googleapis.com/auth/classroom.topics",
+    # Google Forms + Drive (needed for create-form command)
+    "https://www.googleapis.com/auth/forms.body",
+    "https://www.googleapis.com/auth/drive.file",
 ]
 
 
@@ -948,6 +951,345 @@ def cmd_sync_classes(args: argparse.Namespace) -> None:
                 print(f"Anuncio creado: {created.get('id')}")
 
 
+# ---------------------------------------------------------------------------
+# Google Forms helpers
+# ---------------------------------------------------------------------------
+
+@dataclass
+class ExamQuestion:
+    index: int           # 1-based display number
+    title: str           # e.g. "Pregunta 1 — Estrategia digital y conversión"
+    points: str          # e.g. "2 puntos"
+    context: str         # blockquote / situación hipotética, may be empty
+    body: str            # full question text (sans title line)
+    section: str         # "SECCIÓN A" or "SECCIÓN B"
+
+
+def _strip_md_formatting(text: str) -> str:
+    """Remove bold markers, inline code and leading list chars for plain-text fields."""
+    text = re.sub(r"\*\*(.+?)\*\*", r"\1", text)
+    text = re.sub(r"`(.+?)`", r"\1", text)
+    text = re.sub(r"^[-*]\s+", "", text, flags=re.MULTILINE)
+    text = re.sub(r"^\d+\.\s+", "", text, flags=re.MULTILINE)
+    return text.strip()
+
+
+def parse_exam_markdown(path: Path) -> tuple[str, str, list[ExamQuestion]]:
+    """Return (form_title, form_description, questions) from an examen-*.md file."""
+    markdown = path.read_text(encoding="utf-8")
+
+    # Form title: first H1
+    title = first_heading(markdown, 1) or path.stem
+
+    # Description: instructions block (## Instrucciones generales)
+    instructions = section_text(markdown, "Instrucciones generales")
+    puntaje_block = section_text(markdown, "Puntaje total: 10 puntos") or ""
+    description = _strip_md_formatting(
+        "\n\n".join(part for part in [instructions, puntaje_block] if part)
+    )
+
+    questions: list[ExamQuestion] = []
+    current_section = ""
+
+    # Split on ### headings — each is a question or sub-section header
+    blocks = re.split(r"^(#{1,3} .+)$", markdown, flags=re.MULTILINE)
+
+    i = 0
+    while i < len(blocks):
+        block = blocks[i].strip()
+        # Track current SECCIÓN (## SECCIÓN A / ## SECCIÓN B)
+        if re.match(r"^## SECCI[ÓO]N", block, re.IGNORECASE):
+            current_section = re.sub(r"^##\s+", "", block).strip()
+            i += 1
+            continue
+
+        # Each ### block is a question
+        if block.startswith("### "):
+            heading = re.sub(r"^###\s+", "", block).strip()
+            body_text = blocks[i + 1].strip() if i + 1 < len(blocks) else ""
+            i += 2
+
+            # Extract points from heading, e.g. "(2 puntos)"
+            points_match = re.search(r"\((\d+\s*puntos?)\)", heading, re.IGNORECASE)
+            points = points_match.group(1) if points_match else ""
+
+            # Extract blockquote context (lines starting with >) as a separate field
+            context_lines = []
+            body_lines = []
+            for line in body_text.splitlines():
+                if line.strip().startswith(">"):
+                    context_lines.append(line.strip().lstrip(">").strip())
+                else:
+                    body_lines.append(line)
+            context = "\n".join(context_lines).strip()
+            body = _strip_md_formatting("\n".join(body_lines).strip())
+
+            # Only add blocks that look like numbered questions
+            if re.search(r"Pregunta\s+\d+", heading, re.IGNORECASE):
+                q_index = len(questions) + 1
+                questions.append(
+                    ExamQuestion(
+                        index=q_index,
+                        title=heading,
+                        points=points,
+                        context=context,
+                        body=body,
+                        section=current_section,
+                    )
+                )
+        else:
+            i += 1
+
+    return title, description, questions
+
+
+def _forms_service(args: argparse.Namespace):
+    """Build a Google Forms API service client reusing the same OAuth credentials."""
+    ensure_google_deps()
+    config = load_config(args.config)
+    credentials_path = resolve_project_path(args.credentials or config["credentials_file"])
+    token_path = resolve_project_path(args.token or config["token_file"])
+
+    if not credentials_path.exists():
+        fail(
+            f"no encuentro {credentials_path}. Descarga tu OAuth Desktop app "
+            "desde Google Cloud Console y guárdala como credentials.json."
+        )
+
+    credentials = None
+    if token_path.exists():
+        credentials = Credentials.from_authorized_user_file(str(token_path), SCOPES)
+
+    if not credentials or not credentials.valid:
+        if credentials and credentials.expired and credentials.refresh_token:
+            credentials.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(str(credentials_path), SCOPES)
+            credentials = flow.run_local_server(
+                port=0,
+                open_browser=not args.no_browser,
+                browser=args.browser,
+                timeout_seconds=args.oauth_timeout,
+                authorization_prompt_message=(
+                    "Abre este enlace en tu navegador y acepta los permisos:\n{url}\n"
+                ),
+            )
+        token_path.parent.mkdir(parents=True, exist_ok=True)
+        token_path.write_text(credentials.to_json(), encoding="utf-8")
+
+    return build("forms", "v1", credentials=credentials, cache_discovery=False)
+
+
+def _build_form_requests(questions: list[ExamQuestion]) -> list[dict[str, Any]]:
+    """
+    Build the batchUpdate requests list that populates the form with:
+    - One section break per SECCIÓN change
+    - One paragraph (long-answer) text item per question
+    The Form API uses an index-based insert; we build them in reverse order
+    so that inserting at index 0 each time preserves the final order.
+    """
+    requests: list[dict[str, Any]] = []
+    location_index = 0  # tracks where each item lands after all inserts
+
+    # Group by section to insert section breaks
+    seen_sections: list[str] = []
+
+    for q in questions:
+        # Insert a section-break header the first time we see a section
+        if q.section and q.section not in seen_sections:
+            seen_sections.append(q.section)
+            requests.append({
+                "createItem": {
+                    "item": {
+                        "title": q.section,
+                        "pageBreakItem": {},
+                    },
+                    "location": {"index": location_index},
+                }
+            })
+            location_index += 1
+
+        # Build the full question description
+        parts: list[str] = []
+        if q.points:
+            parts.append(f"[{q.points}]")
+        if q.context:
+            parts.append(f"Contexto:\n{q.context}")
+        if q.body:
+            parts.append(q.body)
+        description = "\n\n".join(parts)
+
+        requests.append({
+            "createItem": {
+                "item": {
+                    "title": q.title,
+                    "description": description,
+                    "questionItem": {
+                        "question": {
+                            "required": True,
+                            "textQuestion": {
+                                "paragraph": True,   # long-answer text box
+                            },
+                        }
+                    },
+                },
+                "location": {"index": location_index},
+            }
+        })
+        location_index += 1
+
+    return requests
+
+
+def cmd_create_form(args: argparse.Namespace) -> None:
+    """
+    Parse an examen-*.md file, create a Google Form with one long-answer question
+    per exam question, then optionally link the form to a Classroom assignment.
+    """
+    exam_path = Path(args.exam_file).expanduser()
+    if not exam_path.exists():
+        fail(f"no encuentro el archivo de examen: {exam_path}")
+
+    title, description, questions = parse_exam_markdown(exam_path)
+    if not questions:
+        fail("no se encontraron preguntas en el archivo de examen. Verifica el formato (### Pregunta N).")
+
+    if args.dry_run:
+        print(f"[dry-run] Título del form: {title}")
+        print(f"[dry-run] Preguntas encontradas: {len(questions)}")
+        for q in questions:
+            print(f"  [{q.section}] {q.title} ({q.points})")
+        return
+
+    forms = _forms_service(args)
+
+    # Step 1 — create the form shell (title only; description goes via batchUpdate)
+    created_form = execute(
+        forms.forms().create(body={"info": {"title": title, "documentTitle": title}})
+    )
+    form_id = created_form["formId"]
+    responder_url = created_form.get("responderUri", f"https://docs.google.com/forms/d/{form_id}/viewform")
+    edit_url = f"https://docs.google.com/forms/d/{form_id}/edit"
+    print(f"Form creado: {title}")
+    print(f"  Editar : {edit_url}")
+    print(f"  Enlace para estudiantes: {responder_url}")
+
+    # Step 2 — set description and add all questions via batchUpdate
+    update_requests: list[dict[str, Any]] = []
+
+    # Update form description
+    if description:
+        update_requests.append({
+            "updateFormInfo": {
+                "info": {"description": description},
+                "updateMask": "description",
+            }
+        })
+
+    # Add a "Nombre completo" text field at index 0 so responses are identifiable
+    update_requests.append({
+        "createItem": {
+            "item": {
+                "title": "Nombre completo",
+                "description": "Escribe tu nombre y apellido completos.",
+                "questionItem": {
+                    "question": {
+                        "required": True,
+                        "textQuestion": {"paragraph": False},
+                    }
+                },
+            },
+            "location": {"index": 0},
+        }
+    })
+
+    # Add exam questions (offset index by 1 because "Nombre" is at 0)
+    for i, req in enumerate(_build_form_requests(questions)):
+        create_item = req.get("createItem", {})
+        if "location" in create_item:
+            create_item["location"]["index"] += 1  # shift past "Nombre" field
+        update_requests.append(req)
+
+    execute(forms.forms().batchUpdate(formId=form_id, body={"requests": update_requests}))
+    print(f"  {len(questions)} preguntas agregadas al form.")
+
+    # Step 3 — optionally attach the form link to an existing Classroom assignment
+    if args.course_id and args.assignment_id:
+        classroom = classroom_service(args)
+        existing_work = execute(
+            classroom.courses()
+            .courseWork()
+            .get(courseId=args.course_id, id=args.assignment_id)
+        )
+        current_materials = existing_work.get("materials", [])
+        # Avoid duplicates
+        existing_urls = {
+            m.get("link", {}).get("url", "") for m in current_materials
+        }
+        if responder_url not in existing_urls:
+            current_materials.append({
+                "link": {
+                    "url": responder_url,
+                    "title": f"{title} — Formulario de respuestas",
+                }
+            })
+        # Strategy: delete the old assignment and recreate it with the form link included.
+        execute(
+            classroom.courses()
+            .courseWork()
+            .delete(courseId=args.course_id, id=args.assignment_id)
+        )
+
+        new_body: dict[str, Any] = {
+            "title": existing_work.get("title", title),
+            "workType": "ASSIGNMENT",
+            "state": existing_work.get("state", "DRAFT"),
+            "maxPoints": existing_work.get("maxPoints", 10),
+            "materials": current_materials,
+        }
+        # Preserve optional fields if present
+        for field in ("description", "topicId", "dueDate", "dueTime", "scheduledTime"):
+            if field in existing_work:
+                new_body[field] = existing_work[field]
+
+        created_work = execute(
+            classroom.courses().courseWork().create(courseId=args.course_id, body=new_body)
+        )
+        new_assignment_id = created_work.get("id", "")
+        print(
+            f"  Form vinculado a tarea Classroom: {created_work.get('title')} "
+            f"({new_assignment_id})"
+        )
+
+    # Step 4 — write the form URL back into the exam markdown as a footer comment
+    _write_form_url_to_exam(exam_path, responder_url, edit_url)
+
+    print("\nListo. Activa las respuestas y cambia el estado a PUBLISHED cuando estés listo.")
+
+
+def _write_form_url_to_exam(exam_path: Path, responder_url: str, edit_url: str) -> None:
+    """Append the generated form URLs as a metadata block at the end of the exam markdown."""
+    content = exam_path.read_text(encoding="utf-8")
+    marker = "<!-- google-form"
+    if marker in content:
+        # Replace existing block
+        content = re.sub(
+            r"<!-- google-form.*?-->",
+            f"<!-- google-form\nresponder: {responder_url}\neditar: {edit_url}\n-->",
+            content,
+            flags=re.DOTALL,
+        )
+    else:
+        content += (
+            f"\n\n<!-- google-form\n"
+            f"responder: {responder_url}\n"
+            f"editar: {edit_url}\n"
+            f"-->\n"
+        )
+    exam_path.write_text(content, encoding="utf-8")
+    print(f"  URLs guardadas en {exam_path.name}")
+
+
 def add_common_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument(
         "--config",
@@ -1109,6 +1451,26 @@ def build_parser() -> argparse.ArgumentParser:
     sync.add_argument("--no-assignments", dest="assignments", action="store_false")
     sync.add_argument("--announcements", action="store_true")
     sync.set_defaults(func=cmd_sync_classes, topics=True, materials=True, assignments=True)
+
+    create_form = subparsers.add_parser(
+        "create-form",
+        help="Crea un Google Form desde un archivo examen-*.md y lo vincula a Classroom",
+    )
+    create_form.add_argument("exam_file", help="Ruta al archivo examen-*.md")
+    create_form.add_argument(
+        "--course-id",
+        help="ID del curso Classroom al que vincular el form (opcional)",
+    )
+    create_form.add_argument(
+        "--assignment-id",
+        help="ID de la tarea Classroom donde adjuntar el enlace del form (opcional)",
+    )
+    create_form.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Muestra las preguntas que se crearían sin llamar a la API",
+    )
+    create_form.set_defaults(func=cmd_create_form)
 
     return parser
 

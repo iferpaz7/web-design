@@ -21,7 +21,15 @@ https://www.googleapis.com/auth/classroom.announcements
 https://www.googleapis.com/auth/classroom.profile.emails
 https://www.googleapis.com/auth/classroom.profile.photos
 https://www.googleapis.com/auth/classroom.topics
+https://www.googleapis.com/auth/forms.body
+https://www.googleapis.com/auth/drive.file
 ```
+
+Los dos últimos scopes son para el comando `create-form`. También debes habilitar en Google Cloud Console:
+- **Google Forms API**
+- **Google Drive API**
+
+Después de agregar los scopes nuevos, elimina `token.json` y vuelve a ejecutar `pnpm classroom auth`.
 
 Nota: no uso `classroom.grades` porque ya no aparece en la guía oficial de scopes; Google documenta que `classroom.coursework.students` permite gestionar tareas y calificaciones de clases que enseñas o administras.
 
@@ -180,3 +188,57 @@ python3 tools/google_classroom/classroom_cli.py delete-course COURSE_ID --yes
 - Scopes de Classroom: https://developers.google.com/workspace/classroom/guides/auth
 - Quickstart Python: https://developers.google.com/workspace/classroom/quickstart/python
 - Referencia REST: https://developers.google.com/workspace/classroom/reference/rest
+- Google Forms API: https://developers.google.com/forms/api/reference/rest
+
+## Crear un Google Form desde el examen
+
+El comando `create-form` lee un archivo `docs/examenes/examen-*.md` y genera automáticamente
+un Google Form con una pregunta de texto largo por cada pregunta del examen, organizado
+en secciones (Sección A / Sección B) y con un campo de nombre al inicio.
+
+### Requisitos previos (una sola vez)
+
+1. En [Google Cloud Console](https://console.cloud.google.com) → APIs & Services → Library:
+   - Activa **Google Forms API**
+   - Activa **Google Drive API**
+2. En la pantalla de consentimiento OAuth agrega los scopes:
+   - `https://www.googleapis.com/auth/forms.body`
+   - `https://www.googleapis.com/auth/drive.file`
+3. Elimina `token.json` y vuelve a autorizar:
+   ```bash
+   pnpm classroom auth
+   ```
+
+### Uso básico — solo crear el form
+
+```bash
+pnpm classroom create-form docs/examenes/examen-bimestre1-2026-06-17.md
+```
+
+Imprime los URLs del form (para editar y para estudiantes) y los guarda en el mismo
+archivo `.md` como comentario al final.
+
+### Dry-run — ver preguntas sin crear nada
+
+```bash
+pnpm classroom create-form docs/examenes/examen-bimestre1-2026-06-17.md --dry-run
+```
+
+### Crear y vincular automáticamente a la tarea en Classroom
+
+Necesitas el `COURSE_ID` y el `ASSIGNMENT_ID` de la tarea. Para obtener el assignment ID:
+
+```bash
+pnpm classroom list-assignments 798151026377
+```
+
+Luego:
+
+```bash
+pnpm classroom create-form docs/examenes/examen-bimestre1-2026-06-17.md \
+  --course-id 798151026377 \
+  --assignment-id ASSIGNMENT_ID
+```
+
+El form queda adjunto en la tarea de Classroom y los estudiantes lo verán directamente
+al abrir la actividad.
