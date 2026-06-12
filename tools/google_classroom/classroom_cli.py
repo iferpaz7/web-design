@@ -817,7 +817,7 @@ def cmd_sync_classes(args: argparse.Namespace) -> None:
     existing_materials: list[dict[str, Any]] = []
     existing_work: list[dict[str, Any]] = []
     existing_announcements: list[dict[str, Any]] = []
-    if service and not args.force:
+    if service and (not args.force or args.update):
         existing_materials = list_all(
             lambda token: service.courses()
             .courseWorkMaterials()
@@ -870,7 +870,23 @@ def cmd_sync_classes(args: argparse.Namespace) -> None:
             # for this tenant, so keep materials ungrouped and group assignments.
             body = class_material_body(doc, state, None)
             existing = find_by_title(existing_materials, body["title"])
-            if existing and not args.force:
+            if existing and args.update:
+                update_mask = "title,description"
+                if args.dry_run:
+                    print_json({"update_material": {"id": existing.get("id"), "body": body}})
+                else:
+                    updated = execute(
+                        service.courses()
+                        .courseWorkMaterials()
+                        .patch(
+                            courseId=args.course_id,
+                            id=existing["id"],
+                            updateMask=update_mask,
+                            body=body,
+                        )
+                    )
+                    print(f"Material actualizado: {updated.get('title')} ({updated.get('id')})")
+            elif existing and not args.force:
                 print(f"Omitido material existente: {body['title']}")
             elif args.dry_run:
                 print_json({"create_material": body})
@@ -892,7 +908,23 @@ def cmd_sync_classes(args: argparse.Namespace) -> None:
                 due_time=args.due_time,
             )
             existing = find_by_title(existing_work, body["title"])
-            if existing and not args.force:
+            if existing and args.update:
+                update_mask = "title,description,maxPoints"
+                if args.dry_run:
+                    print_json({"update_assignment": {"id": existing.get("id"), "body": body}})
+                else:
+                    updated = execute(
+                        service.courses()
+                        .courseWork()
+                        .patch(
+                            courseId=args.course_id,
+                            id=existing["id"],
+                            updateMask=update_mask,
+                            body=body,
+                        )
+                    )
+                    print(f"Tarea actualizada: {updated.get('title')} ({updated.get('id')})")
+            elif existing and not args.force:
                 print(f"Omitida tarea existente: {body['title']}")
             elif args.dry_run:
                 print_json({"create_assignment": body})
@@ -1070,6 +1102,7 @@ def build_parser() -> argparse.ArgumentParser:
     sync.add_argument("--due-date")
     sync.add_argument("--due-time")
     sync.add_argument("--force", action="store_true", help="Crea aunque ya exista un título igual")
+    sync.add_argument("--update", action="store_true", help="Actualiza descripción y materiales de ítems existentes en lugar de omitirlos")
     sync.add_argument("--dry-run", action="store_true")
     sync.add_argument("--no-topics", dest="topics", action="store_false")
     sync.add_argument("--no-materials", dest="materials", action="store_false")

@@ -121,13 +121,13 @@ Instrucciones obligatorias para la generación:
 - Si el tipo de clase es práctica o mixta, incorpora ejercicios o producción estudiantil con tiempos definidos.
 - El contenido de la presentación de clase va **exclusivamente** en el campo `presentationBlocks` de `src/data/syllabus.ts` para el tema indicado. No lo dupliques en `salidaDocs` ni en el roadmap Markdown. La presentación en la web del curso se construye desde ese campo y es la fuente única.
 - Genera además una salida compatible con el contenido web actual del curso. Si el usuario lo pide o si `modoWeb` lo indica, entrega bloques listos para escribir, actualizar o reemplazar el contenido actual en la web, priorizando el formato conceptual de [src/data/syllabus.ts](../../src/data/syllabus.ts) y reutilizando como base los topics que ya existan para ese tema.
-- Genera además una salida en Markdown para Google Classroom lista para guardarse en `docs/` y luego publicarse con el CLI `python3 tools/google_classroom/classroom_cli.py sync-classes`.
+- Genera además una salida en Markdown para Google Classroom lista para guardarse en `docs/` y luego publicarse con el CLI `pnpm classroom sync-classes COURSE_ID` (equivalente a `python3 tools/google_classroom/classroom_cli.py sync-classes`). Para actualizar ítems existentes usa `pnpm classroom sync-classes COURSE_ID --update`.
 - Separa explícitamente la salida en tres niveles:
-  1.  `salidaWeb`: contenido estable, reutilizable y apto para estudiantes.
-  2.  `salidaDocs`: contenido operativo, contextual y fechado para uso docente.
-  3.  `salidaGoogleClassroomDocs`: **dos archivos separados** para Google Classroom:
-      - `classroom-${input:fecha}.md` — solo el **material** (recursos, objetivo, enlaces). El CLI lo sube como `courseWorkMaterial`.
-      - `actividad-${input:fecha}.md` — solo la **tarea/assignment** (instrucciones, evidencia, criterios). El CLI lo sube como `courseWork`.
+  1. `salidaWeb`: contenido estable, reutilizable y apto para estudiantes.
+  2. `salidaDocs`: contenido operativo, contextual y fechado para uso docente.
+  3. `salidaGoogleClassroomDocs`: **dos archivos separados** para Google Classroom:
+     - `classroom-${input:fecha}.md` — solo el **material** (recursos, objetivo, enlaces). El CLI lo sube como `courseWorkMaterial`.
+     - `actividad-${input:fecha}.md` — solo la **tarea/assignment** (instrucciones, evidencia, criterios). El CLI lo sube como `courseWork`.
 - Cuando prepares contenido para web, usa una estructura compatible con estos campos:
   - panorama
   - objetivos
@@ -143,52 +143,225 @@ Instrucciones obligatorias para la generación:
 - Cuando generes `salidaDocs`, redacta el contenido en formato Markdown listo para guardarse en `docs/`, con título, metadatos básicos de la clase y secciones claramente identificables.
 - En `salidaGoogleClassroomDocs`, usa texto plano estructurado con encabezados simples, listas y numeración. No uses etiquetas HTML, no uses tablas y no entregues bloques de código.
 - En `salidaGoogleClassroomDocs`, prioriza una estructura estable para lectura automática: objetivo, recursos, actividad y evidencia deben quedar en secciones separadas; los criterios de evaluación van al final de `## Evidencia esperada` precedidos de `**Criterios:**`.
-- El archivo `classroom-${input:fecha}.md` incluye obligatoriamente:
-  - objetivo de la clase;
-  - tema sugerido de Google Classroom: `Unidad ${input:unidad}`;
-  - estado sugerido: `DRAFT` (salvo que el usuario pida `PUBLISHED`);
-  - lista de recursos con nombre, tipo, propósito breve y enlace;
-  - enlace a la presentación alojada en la web del curso;
-  - enlace a la guía del tema y a la versión imprimible;
-  - enlace al roadmap docente: `/imprimir/roadmap/unidad${input:unidad}/tema${input:tema}/roadmap-${input:fecha}`.
-  - **no incluir** instrucciones de la actividad ni evidencia; eso va en `actividad-${input:fecha}.md`.
-- El archivo `actividad-${input:fecha}.md` incluye obligatoriamente:
-  - título operativo de la actividad;
-  - objetivo de la clase (mismo que en el material);
-  - tema sugerido de Google Classroom: `Unidad ${input:unidad}`;
-  - estado sugerido: `DRAFT`;
-  - puntaje sugerido;
-  - instrucciones numeradas de la actividad;
-  - evidencia esperada;
-  - criterios de evaluación al final de `## Evidencia esperada` con `**Criterios:**`;
-  - enlace a la web del curso como recurso de apoyo;
-  - **no incluir** la lista de recursos de clase; eso va en `classroom-${input:fecha}.md`.
-- Si `urlBaseSitio` está disponible, construye enlaces absolutos para la web del curso usando esta base.
-- Si `urlBaseSitio` no está disponible, entrega enlaces relativos válidos del sitio y marca que falta convertirlos a URL pública antes de publicar en Google Classroom.
-- Para construir los enlaces internos del curso, usa esta lógica:
-  - guía del tema: `/unidad${input:unidad}/tema${input:tema}`
-  - presentación: `/presentacion/unidad${input:unidad}/tema${input:tema}`
-  - imprimir o PDF: `/imprimir/unidad${input:unidad}/tema${input:tema}`
-- En `salidaGoogleClassroomDocs`, no incluyas bibliografía extensa ni desarrollo completo del roadmap; prioriza usabilidad para el estudiante y publicación limpia en Classroom.
-- Cuando incluyas enlaces en `salidaGoogleClassroomDocs`, preséntalos en una línea visible y simple con esta forma: `Enlace: [URL](URL)`.
-- Rutas de los archivos a crear:
-  - `docs/clases/unidad${input:unidad}/tema${input:tema}/classroom-${input:fecha}.md` — material de clase.
-  - `docs/clases/unidad${input:unidad}/tema${input:tema}/actividad-${input:fecha}.md` — tarea/assignment.
+
+---
+
+## Estructura canónica de `classroom-${input:fecha}.md`
+
+Este archivo es el **material de clase** que el CLI sube como `courseWorkMaterial`. Sigue esta estructura exacta:
+
+```
+# Unidad ${input:unidad}, Tema ${input:tema} — Nombre oficial del tema
+
+**Asignatura:** Diseño Web para Marketing Digital
+**Fecha:** DD de mes de YYYY
+**Docente:** Ing. Ivan Paz
+
+---
+
+## Objetivo de la clase
+
+[Redacción operativa del objetivo, párrafo breve.]
+
+---
+
+## Contenidos de la sesión
+
+1. [Primer contenido o subtema tratado.]
+2. [Segundo contenido.]
+3. [...]
+
+---
+
+## Recursos de la clase
+
+### Presentación de la sesión
+
+Tipo: Presentación interactiva en línea
+Propósito: [Propósito breve.]
+Enlace: [URL completa](URL completa)
+
+### Guía del tema
+
+Tipo: Guía de estudio en línea
+Propósito: [Propósito breve.]
+Enlace: [URL completa](URL completa)
+
+### Versión imprimible del tema
+
+Tipo: Documento imprimible
+Propósito: [Propósito breve.]
+Enlace: [URL completa](URL completa)
+
+### Roadmap docente imprimible
+
+Tipo: Guía docente
+Propósito: [Propósito breve.]
+Enlace: [URL completa](URL completa)
+
+---
+
+## Recursos de apoyo
+
+### [Nombre del recurso externo 1]
+
+Tipo: [Tipo]
+Propósito: [Propósito breve.]
+Enlace: [URL](URL)   ← omitir si es solo bibliografía sin URL pública
+
+### [Nombre del recurso externo 2 / Bibliografía]
+
+Tipo: [Tipo]
+Propósito: [Propósito breve.]
+
+---
+
+## Próxima sesión    ← incluir solo si hay una sesión siguiente en la unidad
+
+[Una o dos frases describiendo el tema de la próxima clase y qué material traer.]
+
+---
+
+_Todos los enlaces apuntan al sitio publicado del curso en https://web-design-itsae.netlify.app/. Si algún enlace no carga, consulta directamente al docente._
+```
+
+Reglas del archivo `classroom-${input:fecha}.md`:
+
+- El H1 sigue el patrón: `# Unidad N, Tema N — Nombre oficial del tema`.
+- Los metadatos van en tres líneas separadas con negrita: `**Asignatura:**`, `**Fecha:**`, `**Docente:**`. La fecha en formato "DD de mes de YYYY" (no YYYY-MM-DD).
+- Separadores `---` entre cada sección principal.
+- `## Contenidos de la sesión` es una lista numerada de los temas o subtemas tratados en clase. Incluirla siempre.
+- `## Recursos de la clase` contiene únicamente los cuatro recursos internos del curso (presentación, guía, imprimible, roadmap). Cada uno con `### Nombre`, `Tipo:`, `Propósito:` y `Enlace:`.
+- `## Recursos de apoyo` contiene bibliografía del sílabo y recursos externos (artículos, herramientas, videos). Mismo formato de subencabezado con `Tipo:`, `Propósito:` y `Enlace:` cuando aplique.
+- `## Próxima sesión` se incluye cuando existe una sesión siguiente en la misma unidad. Omitir si es la última sesión de la unidad.
+- Nota de pie estándar al final.
+- **No incluir** `## Publicación sugerida en Google Classroom` en este archivo.
+- **No incluir** instrucciones de actividad ni evidencia; eso va en `actividad-${input:fecha}.md`.
+
+---
+
+## Estructura canónica de `actividad-${input:fecha}.md`
+
+Este archivo es la **tarea/assignment** que el CLI sube como `courseWork`. Sigue esta estructura exacta:
+
+```
+# Actividad de la clase: Nombre operativo de la actividad
+   ← Para actividades asincrónicas usar: # Actividad asincrónica: Nombre
+
+**Asignatura:** Diseño Web para Marketing Digital
+**Fecha:** DD de mes de YYYY
+**Docente:** Ing. Ivan Paz
+
+---
+
+## Objetivo de la clase
+   ← Para actividades asincrónicas: ## Objetivo de la actividad
+
+[Redacción operativa del objetivo, igual que en el classroom.]
+   ← Para actividades asincrónicas: objetivo específico de la tarea fuera de clase.
+
+> Esta es una actividad asincrónica (HAA). Se desarrolla fuera del horario de clase y se entrega antes de la siguiente sesión.
+   ← Incluir solo si la actividad es asincrónica (HAA).
+
+---
+
+## Publicación sugerida en Google Classroom
+
+- **Tema:** Unidad ${input:unidad}
+- **Estado:** DRAFT
+- **Tipo:** Tarea / Asignación
+- **Puntaje sugerido:** 10
+
+---
+
+## Recursos de apoyo
+
+### Presentación de la sesión
+
+Tipo: Presentación interactiva en línea
+Propósito: [Propósito breve orientado a la actividad.]
+Enlace: [URL completa](URL completa)
+
+### Guía del tema
+
+Tipo: Guía de estudio en línea
+Propósito: [Propósito breve.]
+Enlace: [URL completa](URL completa)
+
+### Versión imprimible del tema
+
+Tipo: Documento imprimible
+Propósito: [Propósito breve.]
+Enlace: [URL completa](URL completa)
+
+### Roadmap docente imprimible
+
+Tipo: Guía docente
+Propósito: [Propósito breve.]
+Enlace: [URL completa](URL completa)
+
+### [Recursos adicionales específicos de la actividad, si aplica]
+
+Tipo: [Tipo]
+Propósito: [Propósito breve.]
+Enlace: [URL](URL)
+
+---
+
+## Actividad de la clase: Nombre operativo de la actividad
+   ← Para actividades asincrónicas: ## Actividad de la clase: Nombre
+
+[Párrafo introductorio breve de contexto, si corresponde.]
+
+1. **[Paso 1 en negrita]:** instrucción concreta.
+2. **[Paso 2 en negrita]:** instrucción concreta.
+3. [...]
+
+---
+
+## Evidencia esperada
+
+[Descripción en una o dos frases de qué debe entregar el estudiante.]
+
+**Criterios:** [criterio 1], [criterio 2], [criterio 3 y siguientes].
+   ← Para criterios más extensos usar lista con guion:
+**Criterios:**
+- [Criterio 1.]
+- [Criterio 2.]
+- [...]
+```
+
+Reglas del archivo `actividad-${input:fecha}.md`:
+
+- El H1 usa `# Actividad de la clase:` para actividades sincrónicas y `# Actividad asincrónica:` para tareas HAA.
+- Los metadatos van en tres líneas separadas con negrita. La fecha en formato "DD de mes de YYYY".
+- Separadores `---` entre secciones principales.
+- `## Objetivo de la clase` usa el mismo objetivo que el classroom. Para actividades asincrónicas usar `## Objetivo de la actividad` con objetivo propio de la tarea, seguido de la nota HAA en blockquote.
+- `## Publicación sugerida en Google Classroom` es lista de viñetas con negrita: `**Tema:**`, `**Estado:**`, `**Tipo:**`, `**Puntaje sugerido:**`. Se incluye **solo en este archivo**, no en el classroom.
+- `## Recursos de apoyo` contiene los recursos necesarios para que el estudiante realice la actividad: siempre incluir presentación, guía, imprimible y roadmap del tema. Agregar recursos adicionales específicos si la actividad lo requiere (herramientas, checklist, etc.).
+- `## Actividad de la clase: Nombre` — el nombre en el H2 debe coincidir con el H1. El CLI parsea este H2 para extraer el título de la tarea.
+- Las instrucciones van numeradas. Los títulos de cada paso van en negrita cuando son sustantivos (ej. `**Titular del hero section:**`).
+- `## Evidencia esperada` cierra siempre con `**Criterios:**` seguido de lista o párrafo breve.
+- **No incluir** la lista de recursos de clase ni la sección `## Contenidos de la sesión`; eso va en `classroom-${input:fecha}.md`.
+- **No incluir** sección `## Próxima sesión`.
+
+---
+
+Reglas adicionales para `salidaGoogleClassroomDocs`:
+
+- Usa texto plano estructurado. No uses etiquetas HTML, tablas ni bloques de código.
+- El CLI parsea el H2 `## Actividad de la clase: Nombre` para extraer el título de la tarea. El CLI elimina el prefijo `"Actividad de la clase:"` y antepone `"Actividad: "`, resultando en `"Actividad: Nombre"` en Google Classroom. Usa este H2 exacto.
+- Cuando incluyas enlaces en estos archivos, preséntalos con esta forma: `Enlace: [URL completa](URL completa)`.
+- Si `urlBaseSitio` está disponible, construye enlaces absolutos usando esa base. Para construir los enlaces internos del curso:
+  - guía del tema: `${urlBaseSitio}/unidad${input:unidad}/tema${input:tema}`
+  - presentación: `${urlBaseSitio}/presentacion/unidad${input:unidad}/tema${input:tema}`
+  - imprimible: `${urlBaseSitio}/imprimir/unidad${input:unidad}/tema${input:tema}`
+  - roadmap docente: `${urlBaseSitio}/imprimir/roadmap/unidad${input:unidad}/tema${input:tema}/roadmap-${input:fecha}`
+- No incluyas bibliografía extensa ni desarrollo completo del roadmap; prioriza usabilidad para el estudiante.
 - Usa siempre el nombre Google Classroom y evita referirte a otras plataformas de aula virtual.
-- La estructura canónica de `classroom-${input:fecha}.md` para el CLI:
-  - `# Título de la clase`
-  - línea breve: `Asignatura: ... | Fecha: ... | Docente: ...`
-  - `## Objetivo de la clase`
-  - `## Publicación sugerida en Google Classroom` — solo referencia docente; no es parseado por el CLI.
-  - `## Recursos de la clase`
-  - `### Nombre del recurso` con `Tipo: ...`, `Propósito: ...`, `Enlace: [URL](URL)`
-- La estructura canónica de `actividad-${input:fecha}.md` para el CLI:
-  - `# Título de la actividad`
-  - línea breve: `Asignatura: ... | Fecha: ... | Docente: ...`
-  - `## Objetivo de la clase`
-  - `## Publicación sugerida en Google Classroom` — solo referencia docente; no es parseado por el CLI.
-  - `## Actividad de la clase: Nombre de la actividad`
-  - `## Evidencia esperada` — con `**Criterios:** [lista breve]` al final
+
+---
+
 - Toda bibliografía debe quedar en APA 7.ª edición.
 - No inventes referencias. Si falta información bibliográfica, márcala como pendiente de validación.
 
@@ -216,12 +389,12 @@ Formato de salida:
    - Título del documento
    - Metadatos de la sesión
    - Roadmap completo de la sesión, por momentos, con esta estructura por cada momento:
-   - Nombre del momento
-   - Tiempo sugerido
-   - Objetivo del momento
-   - Qué hará el docente
-   - Qué harán los estudiantes
-   - Recursos o apoyos necesarios
+     - Nombre del momento
+     - Tiempo sugerido
+     - Objetivo del momento
+     - Qué hará el docente
+     - Qué harán los estudiantes
+     - Recursos o apoyos necesarios
 5. Desarrollo temático desglosado:
    - Subtemas
    - Conceptos clave
@@ -243,41 +416,24 @@ Formato de salida:
    - Enlace o recurso oficial listado en el sílabo (sección "Enlaces de Internet") si aplica al tema
 9. Nota sobre la presentación: el contenido de las diapositivas se genera dentro del campo `presentationBlocks` de `salidaWeb` y se escribe en `src/data/syllabus.ts`. La URL de la presentación en la web es `https://web-design-itsae.netlify.app/presentacion/unidad${input:unidad}/tema${input:tema}`.
 10. `salidaWeb` con bloques listos para el contenido web actual:
-
-- panorama
-- objetivos
-- ideasClave
-- actividad
-- evidencia
-- herramientas
-- presentationBlocks
-
+    - panorama
+    - objetivos
+    - ideasClave
+    - actividad
+    - evidencia
+    - herramientas
+    - presentationBlocks
 11. `salidaGoogleClassroomDocs` en Markdown, dos archivos separados listos para `docs/`:
 
-    **Archivo 1 — Material** (`classroom-${input:fecha}.md`):
-    - Título de la clase
-    - Línea breve con asignatura, fecha y docente
-    - Objetivo de la clase
-    - Metadatos de publicación (solo referencia docente): tema, estado
-    - Sección `## Recursos de la clase`, con subtítulo `### Nombre del recurso` por cada recurso
-    - Enlace a la presentación, guía del tema e imprimible del sitio del curso
-    - Enlace al roadmap docente imprimible
+    **Archivo 1 — Material** (`classroom-${input:fecha}.md`): siguiendo la estructura canónica definida arriba.
 
-    **Archivo 2 — Tarea/Assignment** (`actividad-${input:fecha}.md`):
-    - Título operativo de la actividad
-    - Línea breve con asignatura, fecha y docente
-    - Objetivo de la clase
-    - Metadatos de publicación (solo referencia docente): tema, estado, puntaje
-    - Sección `## Actividad de la clase: Nombre de la actividad` con instrucciones numeradas
-    - Sección `## Evidencia esperada` con criterios al final (`**Criterios:**`)
-    - Enlace a la web del curso como referencia de apoyo
-    - Nota breve si algún enlace quedó relativo
+    **Archivo 2 — Tarea/Assignment** (`actividad-${input:fecha}.md`): siguiendo la estructura canónica definida arriba.
 
 12. Indicación breve de uso:
-
-- Qué parte conviene publicar en la web
-- Qué parte conviene conservar solo en `docs`
-- Qué parte conviene sincronizar con Google Classroom
+    - Qué parte conviene publicar en la web
+    - Qué parte conviene conservar solo en `docs`
+    - Qué parte conviene sincronizar con Google Classroom usando `pnpm classroom sync-classes COURSE_ID`
+    - Recordar que para actualizar ítems ya existentes en Classroom se usa `pnpm classroom sync-classes COURSE_ID --update`
 
 13. Bibliografía en APA 7.ª edición.
 14. Recomendación final para el docente sobre cómo hacer que la clase deje mayor recordación en los estudiantes.
