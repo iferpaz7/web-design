@@ -37,14 +37,14 @@
 | En desarrollo | Varios elementos son vagos o intercambiables; no reflejan el proyecto concreto del estudiante. | 1.0 |
 | Insuficiente | Los elementos son genéricos en su totalidad; no reflejan ningún proyecto específico. | 0 |
 
-### Criterio 4 — Calidad de la redacción y presentación (2.5 pts máx)
+### Criterio 4 — Respaldo bibliográfico institucional (2.5 pts máx)
 
 | Nivel | Descripción | Puntos |
 |---|---|---|
-| Excelente | La redacción es clara, breve y escaneable; el formato facilita la lectura y la revisión; sin errores ortográficos relevantes. | 2.5 |
-| Satisfactorio | La redacción es comprensible pero con algunas redundancias, párrafos innecesarios o inconsistencias de formato. | 1.75 |
-| En desarrollo | La redacción dificulta la comprensión o el formato hace difícil identificar los elementos evaluados. | 1.0 |
-| Insuficiente | La redacción es confusa o el entregable no tiene una presentación legible. | 0 |
+| Excelente | Cita al menos una fuente de la biblioteca UNACH (eLibro, VuFind, Digitalia u otra base institucional) que sustente una decisión concreta del entregable; la referencia está en APA 7.ª edición o es verificable, y la conexión con el contenido es explícita. | 2.5 |
+| Satisfactorio | Cita una fuente institucional UNACH pero la conexión con el entregable es débil, o la referencia está incompleta aunque sea verificable. | 1.75 |
+| En desarrollo | Cita únicamente fuentes externas no institucionales (sitio web, blog, video) sin recurrir a la biblioteca UNACH. | 1.0 |
+| Insuficiente | No cita ninguna fuente, o la fuente citada no existe o no es verificable. | 0 |
 
 ---
 
@@ -55,4 +55,4 @@
 | Pertinencia estratégica | Responde al perfil de usuario, objetivo de campaña y mensaje central del proyecto. | Excelente | Responde directamente al perfil de usuario, objetivo y mensaje central del proyecto integrador. | 2.5 | Satisfactorio | Responde al proyecto con desfases menores respecto al perfil o mensaje central previo. | 1.75 | En desarrollo | Desconectado del perfil de usuario o del objetivo de campaña del proyecto. | 1 | Insuficiente | Sin relación con el proyecto integrador; podría ser cualquier proyecto genérico. | 0 |
 | Aplicación de la estructura del tema | Aplica correctamente los modelos del tema sin omisiones ni errores conceptuales. | Excelente | Aplica correctamente los modelos del tema sin omisiones ni errores conceptuales. | 2.5 | Satisfactorio | Aplica la estructura con uno o dos errores que no afectan la coherencia general. | 1.75 | En desarrollo | Estructura parcialmente aplicada; faltan elementos clave o se aplican incorrectamente. | 1 | Insuficiente | No aplica la estructura del tema; no hay un modelo reconocible. | 0 |
 | Claridad y especificidad del contenido | Cada elemento tiene un propósito específico y verificable; sin elementos vagos. | Excelente | Cada elemento tiene un propósito específico y verificable; nada es vago o genérico. | 2.5 | Satisfactorio | La mayoría de elementos son específicos pero uno o dos son genéricos o poco desarrollados. | 1.75 | En desarrollo | Varios elementos son vagos o intercambiables; no reflejan el proyecto concreto. | 1 | Insuficiente | Todos los elementos son genéricos; no reflejan ningún proyecto específico. | 0 |
-| Calidad de la redacción y presentación | Clara, breve y escaneable; el formato facilita la lectura y revisión. | Excelente | Redacción clara, breve y escaneable; formato facilita la lectura; sin errores ortográficos relevantes. | 2.5 | Satisfactorio | Comprensible con algunas redundancias o inconsistencias de formato. | 1.75 | En desarrollo | La redacción dificulta la comprensión o el formato impide identificar los elementos. | 1 | Insuficiente | Redacción confusa o entregable sin presentación legible. | 0 |
+| Respaldo bibliográfico institucional | Cita al menos una fuente de la biblioteca UNACH que sustente una decisión del entregable, en APA 7.ª o referencia verificable. | Excelente | Fuente institucional UNACH citada; sustenta una decisión concreta del entregable; conexión explícita con el contenido. | 2.5 | Satisfactorio | Fuente institucional UNACH citada pero la conexión con el entregable es débil o la referencia incompleta. | 1.75 | En desarrollo | Solo fuentes externas no institucionales; sin recurrir a biblioteca UNACH. | 1 | Insuficiente | Sin fuentes citadas o fuente no existente o no verificable. | 0 |

@@ -36,14 +36,14 @@
 | En desarrollo | El prototipo no sigue el mapa de secciones ni el copy del proyecto; parece un diseño diferente. | 1.0 |
 | Insuficiente | El prototipo no guarda relación con las entregas previas del proyecto integrador. | 0 |
 
-### Criterio 4 — Nota de validación con criterio propio (2.5 pts máx)
+### Criterio 4 — Respaldo bibliográfico institucional (2.5 pts máx)
 
 | Nivel | Descripción | Puntos |
 |---|---|---|
-| Excelente | La nota describe qué confirmó el prototipo sobre el recorrido del usuario, menciona al menos un ajuste realizado y muestra criterio propio (no solo describe lo que hizo). | 2.5 |
-| Satisfactorio | La nota está presente y menciona un ajuste, pero es descriptiva más que reflexiva. | 1.75 |
-| En desarrollo | La nota existe pero es muy superficial ("todo quedó bien") o no menciona ningún ajuste. | 1.0 |
-| Insuficiente | No hay nota de validación. | 0 |
+| Excelente | Cita al menos una fuente de la biblioteca UNACH (eLibro, VuFind, Digitalia u otra base institucional) que justifique una decisión de diseño, estructura o contenido del prototipo; la referencia está en APA 7.ª edición o es verificable, y la conexión con el proyecto es explícita. | 2.5 |
+| Satisfactorio | Cita una fuente institucional UNACH pero la conexión con las decisiones del prototipo es débil, o la referencia está incompleta aunque sea verificable. | 1.75 |
+| En desarrollo | Cita únicamente fuentes externas no institucionales sin recurrir a la biblioteca UNACH. | 1.0 |
+| Insuficiente | No cita ninguna fuente, o la fuente citada no existe o no es verificable. | 0 |
 
 ---
 
@@ -54,4 +54,4 @@
 | Completitud del prototipo | Incluye hero+CTA, beneficios, prueba social, segundo CTA y vistas móvil/escritorio. | Excelente | Hero con titular y CTA, beneficios, prueba social, segundo CTA y vistas móvil+escritorio presentes. | 2.5 | Satisfactorio | Mayoría de elementos pero falta uno menor (solo una vista o falta prueba social). | 1.75 | En desarrollo | Faltan dos o más elementos obligatorios; prototipo claramente incompleto. | 1 | Insuficiente | No incluye elementos mínimos evaluables o no hay entregable. | 0 |
 | Flujo navegable hero → CTA → destino | El CTA conecta con el destino mediante interacción básica sin confusión. | Excelente | CTA del hero conecta con formulario o contacto; recorrido funciona sin confusión. | 2.5 | Satisfactorio | Flujo existe con una interrupción menor; CTA presente pero no conectado o destino solo indicado. | 1.75 | En desarrollo | Flujo incompleto o confuso; el usuario no puede seguir el recorrido sin adivinar. | 1 | Insuficiente | Sin flujo navegable; solo imagen estática sin recorrido indicado. | 0 |
 | Coherencia con el proyecto integrador | Refleja fielmente el mapa de secciones (U2T2) y el copy (U2T3) del proyecto. | Excelente | Refleja fielmente el mapa de secciones y el copy de las entregas previas del proyecto. | 2.5 | Satisfactorio | Sigue el proyecto con desfases menores (sección reordenada o copy levemente diferente). | 1.75 | En desarrollo | No sigue el mapa de secciones ni el copy del proyecto; parece un diseño diferente. | 1 | Insuficiente | Sin relación con las entregas previas del proyecto integrador. | 0 |
-| Nota de validación con criterio propio | Describe qué confirmó el prototipo, un ajuste realizado y reflexión propia. | Excelente | Describe qué confirmó sobre el recorrido, menciona ajuste realizado y muestra criterio propio. | 2.5 | Satisfactorio | Nota presente con ajuste mencionado pero descriptiva más que reflexiva. | 1.75 | En desarrollo | Nota superficial o sin mencionar ajuste ("todo quedó bien"). | 1 | Insuficiente | No hay nota de validación. | 0 |
+| Respaldo bibliográfico institucional | Cita al menos una fuente de la biblioteca UNACH que justifique una decisión de diseño del prototipo, en APA 7.ª o referencia verificable. | Excelente | Fuente institucional UNACH citada; justifica una decisión de diseño o estructura del prototipo; conexión explícita. | 2.5 | Satisfactorio | Fuente institucional UNACH citada pero la conexión con las decisiones del prototipo es débil o la referencia incompleta. | 1.75 | En desarrollo | Solo fuentes externas no institucionales; sin recurrir a biblioteca UNACH. | 1 | Insuficiente | Sin fuentes citadas o fuente no existente o no verificable. | 0 |

@@ -165,13 +165,13 @@ function getCriterios(tipoRubrica) {
           { title: 'Insuficiente',  description: 'Todos los elementos son genericos; no reflejan ningun proyecto especifico.', points: 0 }
         ]
       },
-      { title: 'Calidad de la redaccion',
-        description: 'Clara, breve y escaneable; el formato facilita la lectura y revision del docente.',
+      { title: 'Respaldo bibliografico institucional',
+        description: 'Cita al menos una fuente de la biblioteca UNACH que sustente una decision concreta del entregable, en APA 7.a o referencia verificable.',
         levels: [
-          { title: 'Excelente',     description: 'Redaccion clara, breve y escaneable; formato facilita la lectura; sin errores ortograficos relevantes.', points: 2.5 },
-          { title: 'Satisfactorio', description: 'Comprensible con algunas redundancias o inconsistencias de formato.', points: 1.75 },
-          { title: 'En desarrollo', description: 'La redaccion dificulta la comprension o el formato impide identificar los elementos evaluados.', points: 1.0 },
-          { title: 'Insuficiente',  description: 'Redaccion confusa o entregable sin presentacion legible.', points: 0 }
+          { title: 'Excelente',     description: 'Fuente institucional UNACH citada; sustenta una decision concreta del entregable; conexion explicita con el contenido.', points: 2.5 },
+          { title: 'Satisfactorio', description: 'Fuente institucional UNACH citada pero la conexion con el entregable es debil o la referencia esta incompleta.', points: 1.75 },
+          { title: 'En desarrollo', description: 'Solo fuentes externas no institucionales; sin recurrir a biblioteca UNACH.', points: 1.0 },
+          { title: 'Insuficiente',  description: 'Sin fuentes citadas o fuente no existente o no verificable.', points: 0 }
         ]
       }
     ];
@@ -206,13 +206,13 @@ function getCriterios(tipoRubrica) {
           { title: 'Insuficiente',  description: 'Sin relacion con las entregas previas del proyecto integrador.', points: 0 }
         ]
       },
-      { title: 'Nota de validacion con criterio propio',
-        description: 'Describe que confirmo el prototipo, un ajuste realizado y reflexion propia.',
+      { title: 'Respaldo bibliografico institucional',
+        description: 'Cita al menos una fuente de la biblioteca UNACH que justifique una decision de diseno del prototipo, en APA 7.a o referencia verificable.',
         levels: [
-          { title: 'Excelente',     description: 'Describe que confirmo sobre el recorrido, menciona ajuste realizado y muestra criterio propio.', points: 2.5 },
-          { title: 'Satisfactorio', description: 'Nota presente con ajuste mencionado pero descriptiva mas que reflexiva.', points: 1.75 },
-          { title: 'En desarrollo', description: 'Nota superficial o sin mencionar ningun ajuste realizado.', points: 1.0 },
-          { title: 'Insuficiente',  description: 'No hay nota de validacion.', points: 0 }
+          { title: 'Excelente',     description: 'Fuente institucional UNACH citada; justifica una decision de diseno o estructura del prototipo; conexion explicita.', points: 2.5 },
+          { title: 'Satisfactorio', description: 'Fuente institucional UNACH citada pero la conexion con las decisiones del prototipo es debil o la referencia incompleta.', points: 1.75 },
+          { title: 'En desarrollo', description: 'Solo fuentes externas no institucionales; sin recurrir a biblioteca UNACH.', points: 1.0 },
+          { title: 'Insuficiente',  description: 'Sin fuentes citadas o fuente no existente o no verificable.', points: 0 }
         ]
       }
     ];
@@ -238,13 +238,13 @@ function getCriterios(tipoRubrica) {
           { title: 'Insuficiente',  description: 'Solo descripcion o transcripcion del contenido; sin analisis real.', points: 0 }
         ]
       },
-      { title: 'Argumentacion con criterios del tema',
-        description: 'La mejora o criterio detectado esta fundamentado con principios o conceptos del tema.',
+      { title: 'Respaldo bibliografico institucional',
+        description: 'Cita al menos una fuente de la biblioteca UNACH pertinente al tema, en APA 7.a o referencia verificable.',
         levels: [
-          { title: 'Excelente',     description: 'Mejora o criterio fundamentado con al menos un principio o concepto del tema.', points: 2.5 },
-          { title: 'Satisfactorio', description: 'Mejora o criterio existe pero sin argumentar con conceptos del tema.', points: 1.75 },
-          { title: 'En desarrollo', description: 'Mejora vaga o sin relacion con el analisis previo.', points: 1.0 },
-          { title: 'Insuficiente',  description: 'Sin propuesta de mejora ni criterio detectado.', points: 0 }
+          { title: 'Excelente',     description: 'Fuente institucional UNACH (eLibro, VuFind, Digitalia) citada correctamente; sustenta directamente el analisis o mejora propuesta.', points: 2.5 },
+          { title: 'Satisfactorio', description: 'Fuente institucional UNACH citada pero la conexion con el analisis es debil o la referencia esta incompleta.', points: 1.75 },
+          { title: 'En desarrollo', description: 'Cita fuente externa no institucional como unico respaldo; sin recurrir a biblioteca UNACH.', points: 1.0 },
+          { title: 'Insuficiente',  description: 'Sin fuentes citadas o fuente no existente o no verificable.', points: 0 }
         ]
       },
       { title: 'Entrega y formato',

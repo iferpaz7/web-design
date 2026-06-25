@@ -85,3 +85,13 @@ Los niveles de desempeño son:
 - **Insuficiente**: 0 pts
 
 Este esquema permite que una calificación de 7/10 refleje desempeño consistentemente satisfactorio, alineado con la escala ITSAE.
+
+## Criterio de respaldo bibliográfico institucional
+
+Las rúbricas **C, D y E** incluyen como criterio 4 (C y D) o criterio 3 (E) la evaluación del uso de fuentes de la biblioteca UNACH. Este criterio responde al enfoque institucional del curso: el trabajo autónomo e investigativo del estudiante debe estar sustentado en fuentes verificables, preferentemente del catálogo institucional (eLibro UNACH, VuFind, Digitalia).
+
+**Aplica en:** actividades asincrónicas (HAA), avances de proyecto y entregables de cierre de unidad — donde el estudiante trabaja fuera del aula y tiene tiempo para investigar.
+
+**No aplica en:** talleres en clase (rúbricas A y B), donde el tiempo y el contexto no permiten consulta bibliográfica formal sin distorsionar el objetivo del taller.
+
+**Fuentes aceptadas:** cualquier base de datos accesible desde `catalogobiblio.unach.cl` o `elibro.unach.elogim.com`, incluyendo eLibro, Digitalia, ProQuest, Ebsco y VirtualPro.
