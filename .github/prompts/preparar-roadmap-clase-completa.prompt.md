@@ -223,6 +223,13 @@ Instrucciones obligatorias para la generación:
 - El contenido de la presentación de clase va **exclusivamente** en el campo `presentationBlocks` de `src/data/syllabus.ts` para el tema indicado. No lo dupliques en `salidaDocs` ni en el roadmap Markdown. La presentación en la web del curso se construye desde ese campo y es la fuente única.
 - Genera además una salida compatible con el contenido web actual del curso. Si el usuario lo pide o si `modoWeb` lo indica, entrega bloques listos para escribir, actualizar o reemplazar el contenido actual en la web, priorizando el formato conceptual de [src/data/syllabus.ts](../../src/data/syllabus.ts) y reutilizando como base los topics que ya existan para ese tema.
 - Genera además una salida en Markdown para Google Classroom lista para guardarse en `docs/` y luego publicarse con el CLI `pnpm classroom sync-classes COURSE_ID` (equivalente a `python3 tools/google_classroom/classroom_cli.py sync-classes`). Para actualizar ítems existentes usa `pnpm classroom sync-classes COURSE_ID --update`.
+- El CLI asigna automáticamente cada material y tarea al tema de Google Classroom correspondiente:
+  - Materiales y tareas de `unidad1/` → tema **Unidad 1**
+  - Materiales y tareas de `unidad2/` → tema **Unidad 2**
+  - Materiales y tareas de `unidad3/` → tema **Unidad 3**
+  - Materiales y tareas de `unidad4/` → tema **Unidad 4**
+  - Materiales y tareas de `examenes/` o con "bimestre"/"examen" en el título → tema **Bimestre I**
+  - Esta lógica está en `ClassDoc.topic_name` del CLI. No es necesario declarar el tema en el Markdown: el CLI lo infiere del path del archivo.
 - Separa explícitamente la salida en tres niveles:
   1. `salidaWeb`: contenido estable, reutilizable y apto para estudiantes.
   2. `salidaDocs`: contenido operativo, contextual y fechado para uso docente.

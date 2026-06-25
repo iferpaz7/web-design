@@ -2,7 +2,30 @@
 
 Este proyecto incluye un CLI en Python para crear el curso de Google Classroom y publicar las clases de `docs/clases/**/classroom-*.md` como materiales y tareas. También publica los archivos de `docs/clases/**/actividad-*.md` como tareas separadas.
 
-## 1. Configurar Google Cloud
+## Estructura de temas en Google Classroom
+
+Los ítems del curso se organizan por tema en Classroom. El CLI infiere el tema automáticamente del path del archivo:
+
+| Path del archivo | Tema en Classroom |
+|---|---|
+| `docs/clases/unidad1/tema*/classroom-*.md` | Unidad 1 |
+| `docs/clases/unidad1/tema*/actividad-*.md` | Unidad 1 |
+| `docs/clases/unidad2/tema*/classroom-*.md` | Unidad 2 |
+| `docs/clases/unidad2/tema*/actividad-*.md` | Unidad 2 |
+| `docs/clases/unidad3/tema*/classroom-*.md` | Unidad 3 |
+| `docs/clases/unidad3/tema*/actividad-*.md` | Unidad 3 |
+| `docs/clases/unidad4/tema*/classroom-*.md` | Unidad 4 |
+| `docs/clases/examenes/classroom-*.md` | Bimestre I |
+| `docs/clases/examenes/actividad-*.md` | Bimestre I |
+
+No es necesario declarar el tema en el Markdown. La lógica está en `ClassDoc.topic_name` del CLI.
+
+Si un ítem ya publicado necesita moverse de tema, usa el script de corrección:
+
+```bash
+python3 tools/google_classroom/fix_topics.py --dry-run  # preview
+python3 tools/google_classroom/fix_topics.py            # aplicar
+```
 
 En Google Cloud Console:
 

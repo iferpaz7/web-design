@@ -73,7 +73,11 @@ class ClassDoc:
     @property
     def topic_name(self) -> str:
         if self.unit_number is None:
-            return "Clases"
+            # Detectar si es contenido de bimestre/examen por el título o ruta
+            title_lower = (self.title or "").casefold()
+            if "bimestre" in title_lower or "examen" in title_lower:
+                return "Bimestre I"
+            return "General"
         return f"Unidad {self.unit_number}"
 
     @property
@@ -872,9 +876,7 @@ def cmd_sync_classes(args: argparse.Namespace) -> None:
                 print(f"[dry-run] Usar/crear tema: {doc.topic_name}")
 
         if args.materials and is_material_file:
-            # Classroom currently rejects topicId on courseWorkMaterials creation
-            # for this tenant, so keep materials ungrouped and group assignments.
-            body = class_material_body(doc, state, None)
+            body = class_material_body(doc, state, topic_id)
             existing = find_by_title(existing_materials, body["title"])
             if existing and args.update:
                 update_mask = "title,description"
