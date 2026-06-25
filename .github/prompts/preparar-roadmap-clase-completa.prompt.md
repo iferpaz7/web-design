@@ -63,8 +63,109 @@ Prioridad de fuentes bibliográficas:
 
 1. Usa como primera fuente la bibliografía oficial de la asignatura listada en el sílabo (sección "Bibliografía"). Estas referencias ya están en APA 7.ª edición y son las que el estudiante debe conocer.
 2. Si `fuenteUnach` fue proporcionado, úsalo como segunda fuente.
-3. Si `fuenteUnach` no se proporciona, usa como tercera fuente esta búsqueda del catálogo de biblioteca UNACH y refina los términos según el tema:
-   `https://catalogobiblio.unach.cl/vufind/Search/Results?lookfor=dise%C3%B1o+web&type=AllFields&filter%5B%5D=language%3A%22Spanish%22&limit=20`
+3. Si `fuenteUnach` no se proporciona, o si el fetch directo del catálogo no devuelve resultados pertinentes al tema, ejecuta el proceso Playwright descrito abajo.
+   - Si `fuenteUnach` contiene una URL de eLibro UNACH (`elibro.unach.elogim.com`), inclúyela como segundo argumento del script para extraer sus metadatos y tabla de contenidos.
+   - Con la sesión autenticada, el script recorre automáticamente en secuencia: eLibro UNACH (búsqueda por término), el recurso específico si se pasó URL, el catálogo VuFind UNACH y Digitalia UNACH. Una sola apertura de navegador — el usuario se loguea una vez y el script hace el resto.
+   - Al terminar, identifica qué resultados y capítulos son pertinentes al tema de la clase, cítalos específicamente (autor, año, cap. N) en la bibliografía y en los recursos de `classroom` y `actividad`, y elimina los archivos temporales.
+   - Proceso: guardar como `.tmp_elibro_fetch.cjs` en la raíz del proyecto, ejecutar con `bash -c 'DISPLAY=:0 node .tmp_elibro_fetch.cjs "TERMINO" "URL_OPCIONAL"'`, leer `.tmp_elibro_result.json`, y luego eliminar ambos archivos.
+
+```js
+// .tmp_elibro_fetch.cjs
+// Uso: node .tmp_elibro_fetch.cjs "termino de búsqueda" "url_elibro_opcional"
+const { chromium } = require('playwright');
+const fs = require('fs');
+
+const searchTerm = process.argv[2] || 'diseño web';
+const elibroUrl  = process.argv[3] || null;
+
+const CATALOGS = [
+  {
+    name: 'eLibro UNACH — búsqueda',
+    url: `https://elibro.unach.elogim.com/es/lc/unach/buscar/?q=${encodeURIComponent(searchTerm)}&lang=es`,
+    extract: () => {
+      const items = [];
+      document.querySelectorAll('.titulo-resultado, .result-item, h2 a, .titulo a').forEach(el => {
+        const text = el.innerText?.trim();
+        if (text && text.length > 5) items.push({ title: text, href: el.href || null });
+      });
+      return { source: 'eLibro búsqueda', results: items.slice(0, 10), rawText: document.body.innerText.substring(0, 3000) };
+    }
+  },
+  ...(elibroUrl ? [{
+    name: 'eLibro UNACH — recurso específico',
+    url: elibroUrl,
+    extract: () => ({
+      source: 'eLibro recurso',
+      title: document.querySelector('h1')?.innerText?.trim() || null,
+      author: document.querySelector('.autor, .author, [itemprop="author"]')?.innerText?.trim() || null,
+      year: document.querySelector('.anio, .year, [itemprop="datePublished"]')?.innerText?.trim() || null,
+      publisher: document.querySelector('.editorial, .publisher, [itemprop="publisher"]')?.innerText?.trim() || null,
+      isbn: document.querySelector('.isbn, [itemprop="isbn"]')?.innerText?.trim() || null,
+      toc: document.body.innerText.substring(0, 4000)
+    })
+  }] : []),
+  {
+    name: 'Catálogo VuFind UNACH',
+    url: `https://catalogobiblio.unach.cl/vufind/Search/Results?lookfor=${encodeURIComponent(searchTerm)}&type=AllFields&filter[]=language:"Spanish"&limit=10`,
+    extract: () => {
+      const items = [];
+      document.querySelectorAll('.result h2 a, .result .title a, .result a[href*="Record"]').forEach(el => {
+        const text = el.innerText?.trim();
+        if (text && text.length > 5) items.push({ title: text, href: el.href || null });
+      });
+      return { source: 'VuFind UNACH', results: items.slice(0, 10), rawText: document.body.innerText.substring(0, 3000) };
+    }
+  },
+  {
+    name: 'Digitalia UNACH',
+    url: `https://www.digitaliapublishing.com/a/unach/search?q=${encodeURIComponent(searchTerm)}&lang=es`,
+    extract: () => {
+      const items = [];
+      document.querySelectorAll('.book-title, .titulo, h3 a, .result-title a').forEach(el => {
+        const text = el.innerText?.trim();
+        if (text && text.length > 5) items.push({ title: text, href: el.href || null });
+      });
+      return { source: 'Digitalia', results: items.slice(0, 10), rawText: document.body.innerText.substring(0, 2000) };
+    }
+  }
+];
+
+(async () => {
+  const browser = await chromium.launch({ headless: false });
+  const context = await browser.newContext();
+  const results = {};
+
+  // Login único en eLibro
+  const loginPage = await context.newPage();
+  await loginPage.goto('https://elibro.unach.elogim.com/es/lc/unach/', { waitUntil: 'domcontentloaded', timeout: 60000 });
+  console.log('\n>>> Inicia sesión con tu correo institucional UNACH.');
+  console.log('>>> Cuando estés dentro del catálogo, presiona ENTER aquí.\n');
+  await new Promise(r => { process.stdin.resume(); process.stdin.once('data', r); });
+  await loginPage.close();
+
+  // Recorrer catálogos en la misma sesión autenticada
+  for (const catalog of CATALOGS) {
+    console.log(`\nConsultando: ${catalog.name} ...`);
+    const page = await context.newPage();
+    try {
+      await page.goto(catalog.url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+      await page.waitForTimeout(2000);
+      results[catalog.name] = await page.evaluate(catalog.extract);
+      console.log(`  OK — ${JSON.stringify(results[catalog.name]).substring(0, 120)}...`);
+    } catch (e) {
+      results[catalog.name] = { source: catalog.name, error: e.message };
+      console.log(`  ERROR: ${e.message}`);
+    }
+    await page.close();
+  }
+
+  fs.writeFileSync('.tmp_elibro_result.json', JSON.stringify(results, null, 2));
+  console.log('\nResultados guardados en .tmp_elibro_result.json');
+  await browser.close();
+  process.exit(0);
+})();
+```
+
 4. Complementa con fuentes web especializadas, videos y recursos digitales solo cuando las anteriores no cubran el tema con suficiente profundidad.
 
 Instrucciones obligatorias para la generación:

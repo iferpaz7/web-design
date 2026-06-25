@@ -964,42 +964,118 @@ export const syllabusUnits: SyllabusUnit[] = [
         href: '/unidad3/tema1',
         disponible: true,
         panorama:
-          'La publicación de la página web no debe depender de barreras técnicas innecesarias. Este tema compara rutas viables como WordPress en la nube, constructores visuales y otras herramientas accesibles para asegurar ejecución realista.',
+          'La publicación de la página web no depende de la herramienta más compleja, sino de la más viable. Este tema trabaja la decisión de publicación como un acto estratégico: comparar WordPress con constructor visual, plataformas de baja fricción como Framer o Carrd, y CMS simplificados, para elegir la ruta que permita avanzar sin bloqueos técnicos innecesarios. Una página publicada con criterio supera siempre a un proyecto técnico sofisticado que nunca llega a publicarse.',
         objetivos: [
-          'Comparar rutas de publicación según complejidad y alcance.',
-          'Elegir una herramienta viable para el contexto del curso.',
-          'Justificar la selección de una ruta de implementación.'
+          'Comparar al menos tres rutas de publicación según complejidad técnica, tiempo de inicio y tipo de proyecto.',
+          'Seleccionar la herramienta más viable para el proyecto integrador con criterios documentados.',
+          'Redactar un plan de implementación con herramienta elegida, justificación, pasos iniciales y riesgo identificado.'
         ],
         ideasClave: [
-          'La herramienta debe servir al objetivo, no desplazarlo.',
-          'Una ruta viable reduce bloqueo y mejora continuidad del proyecto.',
-          'Publicar con criterio es más importante que publicar con complejidad.'
+          'La herramienta debe servir al objetivo del proyecto, no desplazarlo ni complicarlo innecesariamente.',
+          'Una ruta de publicación viable reduce el bloqueo técnico y garantiza la continuidad del proyecto.',
+          'Publicar con criterio es más valioso que publicar con complejidad: viabilidad sobre sofisticación.',
+          'La decisión de herramienta define el ritmo de toda la Unidad 3; elegir bien ahora evita retrabajo después.'
         ],
         actividad:
-          'Elige la ruta de publicación de tu proyecto y susténtala con criterios de viabilidad, tiempo y funcionalidad.',
-        evidencia: 'Plan breve de implementación y herramienta seleccionada.',
+          'Completa la ficha de decisión con la herramienta elegida para tu proyecto integrador, justificando la selección con tres criterios de la matriz de clase, identificando el riesgo principal y definiendo los dos primeros pasos concretos de configuración.',
+        evidencia:
+          'Ficha de decisión con herramienta seleccionada, justificación documentada en tres criterios, riesgo identificado y pasos iniciales definidos.',
         herramientas: [
-          'WordPress en nube',
+          'WordPress + Elementor',
+          'Framer',
           'Carrd',
-          'Canva',
           'Google Sites',
-          'Framer u otra opción validada'
+          'Canva Sites',
+          'Matriz de criterios de selección'
         ],
         presentationBlocks: [
           {
-            title: 'Criterios para elegir plataforma',
+            title: 'Objetivo de la sesión',
             items: [
-              'La plataforma debe responder a tiempo, complejidad y control requerido, no a moda tecnológica.',
-              'WordPress sigue siendo una ruta fuerte por flexibilidad y ecosistema, pero no siempre es la mejor si el objetivo es una landing simple.',
-              'Probar primero en un entorno seguro evita publicar errores en producción.'
+              'Comparar las rutas de publicación viables para el proyecto integrador.',
+              'Elegir la herramienta más adecuada según tiempo, complejidad y objetivo de campaña.',
+              'Redactar un plan de implementación con criterios documentados y pasos iniciales definidos.'
             ]
           },
           {
-            title: 'Decisión mínima viable',
+            title: 'Del prototipo a la URL real',
             items: [
-              'Más control implica más configuración.',
-              'Menos fricción implica menor personalización.',
-              'La mejor ruta es la que permite publicar bien dentro del contexto del curso.'
+              'Tienes el mapa de secciones, el copy y el prototipo validado. Ahora toca la pregunta más práctica del semestre: ¿con qué herramienta lo publicas?',
+              'Una ruta de publicación es la combinación de herramienta + configuración + alojamiento que hace que tu página esté disponible para el usuario real.',
+              'La decisión de hoy define el ritmo de toda la Unidad 3. Elegir bien ahora evita bloqueos después.'
+            ]
+          },
+          {
+            title: 'Ruta A — WordPress con constructor visual',
+            items: [
+              'Control total: diseño, plugins, SEO técnico, formularios avanzados y sitios multipágina.',
+              'Requiere: hosting, dominio, instalación de WordPress y configuración del tema.',
+              'Tiempo de inicio estimado: 2–4 horas para un usuario sin experiencia previa.',
+              'Mejor para: proyectos con múltiples páginas, blog, tienda o formularios complejos.',
+              'Riesgo principal: curva de aprendizaje técnico puede bloquear el avance si no se gestiona con tiempo.'
+            ]
+          },
+          {
+            title: 'Ruta B — Constructores de baja fricción (Framer, Carrd)',
+            items: [
+              'Sin instalación: el sitio vive en la plataforma. Inicio en 30–90 minutos.',
+              'Framer: diseño con libertad total, CMS integrado, SEO incluido, colaboración en tiempo real.',
+              'Carrd: la opción más rápida para una landing de una sola sección.',
+              'Mejor para: landing pages de campaña, portfolios, páginas de una sola entrega.',
+              'Riesgo principal: menor control sobre SEO técnico avanzado y migraciones futuras.'
+            ]
+          },
+          {
+            title: 'Ruta C — Google Sites / CMS simplificado',
+            items: [
+              'Cero fricción técnica. Útil para validar ideas rápido o presentar un borrador funcional a un cliente.',
+              'Mejor para: MVP de presencia digital, bocetos funcionales, escalón de inicio antes de migrar.',
+              'Limitación clara: no apto para proyectos de campaña con conversión real; no tiene formularios avanzados ni SEO técnico.'
+            ]
+          },
+          {
+            title: 'Matriz de decisión: elige con criterio',
+            items: [
+              'Tiempo de inicio: WordPress = Alto / Framer-Carrd = Bajo / Google Sites = Muy bajo.',
+              'Control de diseño: WordPress = Alto / Framer = Medio-alto / Google Sites = Bajo.',
+              'SEO técnico: WordPress = Avanzado / Framer = Intermedio / Google Sites = Mínimo.',
+              'Costo inicial: todos tienen versión gratuita o de bajo costo para comenzar.',
+              'Regla de oro: elige la herramienta que te permita publicar bien dentro del tiempo del semestre.'
+            ]
+          },
+          {
+            title: 'Publicar con criterio vale más que publicar con complejidad',
+            items: [
+              'Una landing publicada en Carrd que comunica bien su propuesta de valor supera a un WordPress abandonado a mitad de configuración.',
+              'El objetivo no es demostrar destreza técnica: es publicar una página que cumpla su objetivo de campaña.',
+              'La herramienta más viable es la que le permite al proyecto crecer, no la más sofisticada del mercado.'
+            ]
+          },
+          {
+            title: 'Pasos mínimos para iniciar',
+            items: [
+              'WordPress: hosting → instalación → tema ligero (Astra o Hello Elementor) → constructor → primera página en blanco.',
+              'Framer: cuenta gratuita → plantilla base o lienzo en blanco → hero section inicial.',
+              'Carrd: cuenta → nueva página → sección de inicio con titular y CTA.',
+              'En todos los casos: configura primero; diseña después. El orden importa.'
+            ]
+          },
+          {
+            title: 'Actividad: Plan de implementación',
+            items: [
+              'Abre tu prototipo de la Unidad 2 y evalúa: ¿cuántas páginas? ¿Hay formulario? ¿Landing o sitio?',
+              'Completa la ficha de decisión: herramienta elegida, tres criterios de justificación, riesgo principal y cómo lo mitigarás.',
+              'Escribe en el chat: herramienta elegida + una frase de justificación en menos de 20 palabras.',
+              'Componente de evaluación: talleres y ejercicios aplicados (30 %).'
+            ]
+          },
+          {
+            title: 'Ideas clave y proyección',
+            items: [
+              'La herramienta debe servir al objetivo del proyecto, no desplazarlo.',
+              'Una ruta viable reduce el bloqueo y mejora la continuidad del proyecto integrador.',
+              'Tarea asincrónica: crea tu cuenta y configura el entorno básico antes de la próxima sesión.',
+              'Próxima sesión — Unidad 3, Tema 2: Maquetación por secciones y adaptación responsive.'
             ]
           }
         ]
