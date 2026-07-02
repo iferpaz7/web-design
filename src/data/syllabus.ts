@@ -1089,40 +1089,113 @@ export const syllabusUnits: SyllabusUnit[] = [
         href: '/unidad3/tema2',
         disponible: true,
         panorama:
-          'Una vez definida la ruta de publicación, el siguiente paso es maquetar la página web por secciones y asegurar que su lectura funcione correctamente en distintos tamaños de pantalla. El foco está en ritmo visual, espaciado y adaptación responsive.',
+          'Una vez definida la ruta de publicación, el siguiente paso es maquetar la página web por secciones y asegurar que su lectura funcione correctamente en distintos tamaños de pantalla. Responsive no es encoger proporcionalmente: es tomar decisiones conscientes sobre cómo reorganizar el contenido para que siga siendo legible, navegable y funcional en cualquier dispositivo. El foco está en ritmo visual, espaciado, alineación y la lógica de reorganización del contenido al cambiar de pantalla.',
         objetivos: [
-          'Construir la página por bloques según el prototipo validado.',
-          'Ajustar espaciado, jerarquía y alineación en móvil y escritorio.',
-          'Mantener consistencia visual entre secciones.'
+          'Construir la página web por bloques funcionales según el prototipo validado en la Unidad 2.',
+          'Ajustar espaciado, jerarquía y alineación para que la lectura sea clara en móvil y escritorio.',
+          'Verificar que la adaptación responsive no rompe la jerarquía del contenido ni oculta elementos clave.',
+          'Documentar ajustes significativos realizados al pasar de escritorio a móvil.'
         ],
         ideasClave: [
-          'Responsive no es encoger; es reorganizar con intención.',
-          'La maquetación debe respetar la jerarquía definida en el prototipo.',
-          'La claridad visual depende de ritmo, alineación y contraste.'
+          'Responsive no es encoger; es reorganizar con intención: decidir qué se apila, qué cambia de tamaño y qué se mantiene como ancla visual.',
+          'La maquetación se organiza en tres niveles: sección (bloque funcional), columna (distribución interna) y elemento (pieza concreta).',
+          'El CTA principal debe ser visible y accesible en todas las vistas, con tamaño de toque mínimo de 44x44 px.',
+          'La claridad visual depende de ritmo, alineación, contraste y espaciado proporcional entre dispositivos.',
+          'No se diseña para tres tamaños rígidos: se verifica que la transición entre vistas no rompa la lectura.'
         ],
         actividad:
-          'Maqueta las secciones principales de tu página web y documenta ajustes clave para versión móvil.',
-        evidencia: 'Avance funcional de la página con adaptación responsive.',
+          'Maqueta las secciones principales de tu página web (hero + dos secciones adicionales) en la herramienta elegida, verifica en vista móvil y documenta al menos dos ajustes responsive con justificación.',
+        evidencia: 'Avance funcional de la página con al menos tres secciones maquetadas y adaptación responsive verificada. Dos ajustes documentados.',
         herramientas: [
           'Constructor visual o CMS elegido',
-          'Vista previa móvil',
-          'Guía de espaciado y jerarquía'
+          'Vista previa responsive (móvil, tablet, escritorio)',
+          'Prototipo validado de la Unidad 2',
+          'Sistema de espaciado de 8px',
+          'Checklist de verificación responsive'
         ],
         presentationBlocks: [
           {
-            title: 'Responsive con criterio',
+            title: 'Objetivo de la sesión',
             items: [
-              'Responsive no es encoger: es reorganizar para mantener lectura y acción principal.',
-              'La prioridad móvil suele justificarse porque gran parte del tráfico llega desde teléfonos.',
-              'Jerarquía, espaciado y alineación deben revisarse por vista, no asumirse automáticos.'
+              'Construir la página web por secciones según el prototipo validado.',
+              'Adaptar la maquetación para móvil, tablet y escritorio con criterio de reorganización.',
+              'Verificar que la jerarquía y el CTA se mantienen visibles en todas las vistas.',
+              'Documentar los ajustes responsive como decisiones de diseño justificadas.'
             ]
           },
           {
-            title: 'Modelo útil de maquetación',
+            title: 'Responsive no es encoger: es reorganizar',
             items: [
-              'Sección: bloque funcional del mensaje.',
-              'Columna: organiza relaciones visuales y jerarquía.',
-              'Elemento: pieza concreta que debe mantener claridad y consistencia.'
+              'Un diseño que solo se reduce proporcionalmente pierde legibilidad y funcionalidad.',
+              'Responsive significa decidir qué se apila, qué cambia de tamaño, qué se reposiciona y qué se mantiene como ancla.',
+              'Con más del 60% del tráfico web desde móviles, diseñar para pantallas pequeñas ya no es un extra: es el contexto principal.',
+              'Pregunta guía: ¿Qué debe ver el usuario primero si su pantalla solo muestra 375 px de ancho?'
+            ]
+          },
+          {
+            title: 'Modelo sección → columna → elemento',
+            items: [
+              'Sección: contenedor mayor, equivale a un bloque del mapa de secciones (hero, beneficios, prueba social, CTA, footer).',
+              'Columna: distribución interna de la sección. En escritorio puede tener 2-3 columnas; en móvil se apilan verticalmente.',
+              'Elemento: pieza concreta dentro de una columna (título, párrafo, imagen, botón, ícono).',
+              'Regla: maquetar de arriba hacia abajo (sección por sección) y de adentro hacia afuera (contenido antes que decoración).'
+            ]
+          },
+          {
+            title: 'Breakpoints principales',
+            items: [
+              'Móvil: 375 px — una columna, elementos apilados, tipografía reducida.',
+              'Tablet: 768 px — dos columnas posibles, espaciado intermedio.',
+              'Escritorio: 1280–1440 px — tres o cuatro columnas, máximo espacio visual.',
+              'En constructores visuales los breakpoints ya vienen configurados: el trabajo es revisar y ajustar lo que se rompe en cada vista.'
+            ]
+          },
+          {
+            title: 'Cinco principios de adaptación responsive',
+            items: [
+              'Apilamiento vertical en móvil: lo que va en columnas en escritorio se apila sin perder orden lógico.',
+              'Tipografía adaptada: un titular de 48px en escritorio necesita 28-32px en móvil para mantener legibilidad.',
+              'CTA siempre visible: el botón principal debe tener al menos 44x44 px de área de toque en móvil.',
+              'Imágenes que no dominan: en móvil, las imágenes decorativas se reducen o reposicionan para no empujar el contenido clave.',
+              'Espaciado proporcional: márgenes de 48px en escritorio se reducen a 24px en móvil. Referencia: sistema de 8px.'
+            ]
+          },
+          {
+            title: 'Flujo de trabajo en tu herramienta',
+            items: [
+              'Framer: diseña en Desktop → revisa Tablet → ajusta Mobile. Usa Auto-Layout y propiedades fill/hug.',
+              'Elementor: maqueta en escritorio → activa vista responsive (ícono de dispositivo) → ajusta en cada breakpoint.',
+              'Carrd: es mobile-first por defecto; verifica que el contenido se lee bien y ajusta para escritorio si es necesario.',
+              'En todos los casos: verifica sección por sección, no dejes la revisión móvil para el final.'
+            ]
+          },
+          {
+            title: 'Errores comunes que rompen la adaptación',
+            items: [
+              'No revisar móvil hasta el final: los problemas se acumulan y corregirlos juntos es más costoso.',
+              'Botones demasiado pequeños en móvil: el tamaño mínimo de toque es 44x44 px.',
+              'Imágenes que no se adaptan: usar ancho 100% con alto automático evita distorsión.',
+              'Romper la jerarquía al apilar: el titular debe seguir siendo lo primero visible, no quedar enterrado debajo de una imagen.',
+              'Olvidar el espaciado en móvil: la falta de padding entre secciones hace que todo se sienta apretado y confuso.'
+            ]
+          },
+          {
+            title: 'Actividad: Maqueta y adapta tu proyecto',
+            items: [
+              'Abre tu herramienta con el proyecto configurado y ten visible tu prototipo de la Unidad 2.',
+              'Maqueta: hero section + dos secciones adicionales de tu mapa. Usa contenido real de tu copy.',
+              'Verifica en móvil: ¿el titular se lee? ¿el CTA se ve? ¿las secciones se apilan con orden lógico?',
+              'Documenta dos ajustes responsive con captura o nota: qué cambiaste y por qué.',
+              'Comparte en el chat tu hero en versión móvil y describe un ajuste que realizaste.'
+            ]
+          },
+          {
+            title: 'Ideas clave y proyección',
+            items: [
+              'Responsive es reorganizar con intención, no simplemente reducir el tamaño de todo.',
+              'Cada vista necesita revisión individual: lo que funciona en escritorio puede fallar en móvil.',
+              'El CTA debe ser visible siempre. Si desaparece del fold en móvil, la adaptación no funcionó.',
+              'Próxima sesión — Unidad 3, Tema 3: Formularios, captura de contactos y rutas de conversión simples.'
             ]
           }
         ]
