@@ -1209,42 +1209,125 @@ export const syllabusUnits: SyllabusUnit[] = [
         href: '/unidad3/tema3',
         disponible: true,
         panorama:
-          'La página web debe facilitar una acción concreta. Este tema trabaja formularios, botones y rutas de conversión simples para que la página no solo informe, sino que también permita registrar una respuesta útil para marketing.',
+          'Una página web que no facilita una acción concreta es una página que solo informa sin generar resultados. Este tema trabaja la integración de formularios, botones y rutas de conversión simples como el punto donde la página deja de ser vitrina y se convierte en herramienta de marketing: permite registrar una respuesta útil, medible y vinculada al objetivo de campaña. El formulario bien diseñado reduce fricción, genera confianza y cierra la ruta que va del CTA visible al dato registrado.',
         objetivos: [
-          'Configurar un mecanismo funcional de conversión o contacto.',
-          'Diseñar llamados a la acción claros y visibles.',
-          'Verificar que la respuesta del usuario pueda registrarse correctamente.'
+          'Configurar un formulario de contacto o captura de leads funcional dentro de la herramienta de publicación elegida.',
+          'Diseñar la experiencia del formulario con criterios de fricción mínima, claridad de campos y confirmación posterior.',
+          'Verificar el funcionamiento completo del mecanismo de conversión: envío, recepción y confirmación al usuario.',
+          'Documentar la prueba funcional como evidencia de la ruta de conversión del proyecto integrador.'
         ],
         ideasClave: [
-          'La conversión necesita una acción visible y una fricción mínima.',
-          'No toda conversión es compra: también puede ser contacto, registro o consulta.',
-          'La prueba funcional es parte del diseño.'
+          'La conversión necesita una acción visible, una fricción mínima y una confirmación clara.',
+          'No toda conversión es compra: contacto, registro, descarga, WhatsApp o agendamiento también son acciones válidas y medibles.',
+          'Un formulario con 3-5 campos bien diseñados convierte más que uno con 10 campos innecesarios.',
+          'La prueba funcional de punta a punta es parte del diseño, no un paso opcional posterior.',
+          'El mensaje de confirmación cierra la experiencia del usuario y genera confianza en el proceso.'
         ],
         actividad:
-          'Integra un formulario o mecanismo de contacto y verifica su funcionamiento de extremo a extremo.',
+          'Integra un formulario o mecanismo de contacto en tu página web, configúralo con 3-5 campos, un botón de acción específico y un mensaje de confirmación. Realiza una prueba funcional completa y documenta el resultado.',
         evidencia:
-          'Prueba funcional de conversión con capturas o registro de verificación.',
+          'Capturas de pantalla que documenten formulario integrado, envío exitoso, recepción del dato y confirmación al usuario.',
         herramientas: [
-          'Formulario nativo o embebido',
-          'Botones de acción',
-          'Google Forms o Tally',
-          'Registro de pruebas'
+          'Formulario nativo del constructor o embebido',
+          'Tally, Google Forms o Typeform',
+          'Botones de acción con texto específico',
+          'Vista previa responsive para verificación móvil',
+          'Registro de pruebas funcionales'
         ],
         presentationBlocks: [
           {
-            title: 'Conversión simple, pero medible',
+            title: 'Objetivo de la sesión',
             items: [
-              'Los formularios con demasiados campos elevan abandono; en escenarios iniciales conviene priorizar entre 3 y 5 datos realmente útiles.',
-              'No toda conversión es compra: contacto, registro, descarga o WhatsApp también pueden ser objetivos válidos.',
-              'El CTA debe estar visible y el recorrido completo debe probarse de punta a punta.'
+              'Configurar un formulario de contacto o captura funcional en tu página web.',
+              'Diseñar la experiencia del formulario con fricción mínima y confirmación clara.',
+              'Verificar de punta a punta que la ruta de conversión funciona: envío → recepción → confirmación.',
+              'Documentar la prueba como evidencia del mecanismo de conversión del proyecto integrador.'
             ]
           },
           {
-            title: 'Heurísticas de captura',
+            title: '¿Qué es conversión y por qué importa?',
             items: [
-              'Los formatos más invasivos pueden captar más, pero deben justificarse por contexto.',
-              'Una acción principal visible suele rendir mejor que varias acciones compitiendo al mismo tiempo.',
-              'La confirmación posterior a la acción también forma parte de la experiencia.'
+              'Conversión = acción medible que cumple el objetivo de la página. Sin ella, la página solo informa.',
+              'No toda conversión es compra: contacto, registro, descarga, enlace a WhatsApp o agendamiento son igualmente válidos.',
+              'La tasa de conversión promedio de formularios web ronda el 1.7 %; las páginas optimizadas superan el 11 %.',
+              'Pregunta clave: ¿tu página tiene un camino claro desde el CTA hasta la confirmación del dato?'
+            ]
+          },
+          {
+            title: 'Anatomía de un formulario que convierte',
+            items: [
+              'Campos mínimos viables: 3 a 5 campos son suficientes para un primer contacto. Cada campo extra reduce completaciones.',
+              'Etiquetas claras y visibles fuera del campo (no solo placeholder): el usuario debe saber qué escribir sin adivinar.',
+              'Botón de envío con texto de acción específico: "Enviar mi consulta", "Quiero mi presupuesto" — no "Enviar" genérico.',
+              'Mensaje de confirmación: el usuario debe saber que su envío fue exitoso y qué esperar después.'
+            ]
+          },
+          {
+            title: 'Criterios de fricción mínima',
+            items: [
+              'Cada campo que no es esencial para el objetivo es un obstáculo para el usuario.',
+              'Los formularios de una sola columna se completan más rápido que los de múltiples columnas.',
+              'El botón de envío debe diferenciarse visualmente por contraste y tener área de toque mínima de 44x44 px en móvil.',
+              'La validación en tiempo real (antes del envío) reduce errores y frustración.',
+              'Un formulario que tarda más de 30 segundos en completarse tiene alta probabilidad de abandono.'
+            ]
+          },
+          {
+            title: 'Herramientas según tu constructor',
+            items: [
+              'WordPress/Elementor: formulario nativo de Elementor, WPForms o Contact Form 7 con notificación por correo.',
+              'Framer: formulario nativo integrado o embed de Tally/Typeform con estilo personalizable.',
+              'Carrd: formulario embebido nativo (plan Pro) o iframe de Google Forms/Tally en versión gratuita.',
+              'Google Sites: Google Forms embebido como única opción funcional de captura.',
+              'Criterio de selección: ¿necesitas notificación? ¿Almacenamiento? ¿Integración con hoja de cálculo?'
+            ]
+          },
+          {
+            title: 'Posicionamiento y diseño visual',
+            items: [
+              'El formulario va en la sección de contacto o CTA de cierre: el usuario ya leyó la propuesta y está listo para actuar.',
+              'Debe ser visible sin scroll excesivo desde el último CTA. Si hay que buscar el formulario, la arquitectura falló.',
+              'Contraste del botón: debe ser el elemento más diferenciado de la sección por color y peso visual.',
+              'En móvil: campos de ancho completo, teclado adecuado al tipo de dato (email → teclado con @), espaciado suficiente entre campos.'
+            ]
+          },
+          {
+            title: 'La ruta completa de conversión',
+            items: [
+              'Paso 1: el usuario ve el CTA y decide actuar.',
+              'Paso 2: completa el formulario sin fricción ni confusión.',
+              'Paso 3: presiona el botón de envío y recibe confirmación visible.',
+              'Paso 4: el dato llega al destino configurado (correo, hoja de cálculo, dashboard).',
+              'Si cualquier paso falla, la ruta de conversión está rota — la prueba funcional lo revela.'
+            ]
+          },
+          {
+            title: 'Errores comunes que rompen la conversión',
+            items: [
+              'Formulario con más de 7 campos para un primer contacto: el usuario abandona antes de terminar.',
+              'Botón genérico ("Enviar", "Submit"): no comunica qué sucederá después.',
+              'Sin confirmación: el usuario no sabe si el envío fue exitoso o si debe intentarlo de nuevo.',
+              'Formulario que funciona en escritorio pero no se adapta a móvil: campos cortados o botón invisible.',
+              'No probar después de publicar: el formulario puede funcionar en preview y fallar en la URL pública.'
+            ]
+          },
+          {
+            title: 'Actividad: Integra y prueba tu formulario',
+            items: [
+              'Elige tu herramienta de formulario y configúrala con 3-5 campos, etiquetas claras y botón de acción específico.',
+              'Intégralo en la sección de contacto o CTA de cierre de tu página. Verifica en vista móvil.',
+              'Realiza una prueba de envío completa: envía, confirma la recepción y verifica el mensaje de confirmación.',
+              'Captura pantalla de las cuatro etapas: formulario integrado, envío, recepción y confirmación.',
+              'Componente de evaluación: talleres y ejercicios aplicados (30 %) y participación activa (15 %).'
+            ]
+          },
+          {
+            title: 'Ideas clave y proyección',
+            items: [
+              'La conversión no es decoración: es la acción medible que justifica la existencia de la página.',
+              'Un formulario bien diseñado es breve, claro, visible y confirmado — nada más, nada menos.',
+              'La prueba de punta a punta es parte del diseño, no un paso posterior.',
+              'Próxima sesión — Unidad 3, Tema 4: Revisión de calidad antes de publicar. Trae tu página con el formulario funcionando.'
             ]
           }
         ]
