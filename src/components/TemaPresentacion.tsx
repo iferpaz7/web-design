@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react';
 import { ChevronLeft, ChevronRight, Maximize2, Minimize2 } from 'lucide-react';
+import React, { useEffect, useMemo, useState } from 'react';
 import type { SyllabusTema, SyllabusUnit } from '../data/syllabus';
 
 interface TemaPresentacionProps {
@@ -159,31 +159,6 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
         )
       },
       {
-        title: 'Objetivos de aprendizaje',
-        subtitle: 'Lo que debe quedar claro al finalizar la sesion',
-        content: (
-          <div className="space-y-4">
-            {tema.objetivos.map((objetivo, index) => (
-              <div
-                key={objetivo}
-                className={`${panelRadius} border p-4 sm:p-5 ${styles.panel}`}
-              >
-                <div className="flex items-start gap-4">
-                  <span
-                    className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold ${styles.badge}`}
-                  >
-                    {index + 1}
-                  </span>
-                  <p className="text-lg text-gray-800 dark:text-gray-200">
-                    {objetivo}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )
-      },
-      {
         title: 'Ideas clave',
         subtitle: 'Conceptos que deben dirigir la explicacion',
         content: (
@@ -318,7 +293,6 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
       tema.evidencia,
       tema.herramientas,
       tema.ideasClave,
-      tema.objetivos,
       tema.panorama,
       tema.numero,
       tema.titulo,
