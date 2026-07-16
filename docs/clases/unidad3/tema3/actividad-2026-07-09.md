@@ -73,6 +73,7 @@ En esta actividad integrarás un formulario o mecanismo de contacto funcional en
 Capturas de pantalla que documenten las cuatro etapas de la prueba funcional: formulario integrado en la página, envío desde la vista del usuario, recepción del dato en el destino configurado y mensaje de confirmación posterior al envío.
 
 **Criterios:**
+
 - El formulario tiene entre 3 y 5 campos con etiquetas claras y botón de acción específico.
 - El formulario está integrado visualmente en la sección de contacto o CTA de la página.
 - La prueba de envío es exitosa y el dato llega al destino configurado.

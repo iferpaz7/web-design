@@ -59,7 +59,7 @@ Tipo: Libro de texto oficial (disponible en eLibro UNACH, acceso multiusuario)
 Propósito: Capítulo 2 — Planificación de la web: construir el sitio, analizar la estructura, organizar archivos. Referencia directa para la actividad de selección de herramienta de esta sesión.
 Enlace: [https://elibro.unach.elogim.com/es/lc/unach/titulos/267661](https://elibro.unach.elogim.com/es/lc/unach/titulos/267661)
 
-Fernández Casado, P. E. (2024). *Iniciación a la creación de páginas web* (1.ª ed., cap. 2). RA-MA Editorial. ISBN: 9788410181816
+Fernández Casado, P. E. (2024). _Iniciación a la creación de páginas web_ (1.ª ed., cap. 2). RA-MA Editorial. ISBN: 9788410181816
 
 ---
 
@@ -85,6 +85,7 @@ Ahora que conoces las tres rutas de publicación revisadas en clase (WordPress c
 Ficha de decisión completada con herramienta seleccionada, justificación documentada con tres criterios, riesgo identificado y pasos iniciales de configuración definidos.
 
 **Criterios:**
+
 - La herramienta elegida es coherente con el tipo de proyecto y el tiempo disponible del semestre.
 - La justificación usa al menos tres criterios de la matriz de selección revisada en clase.
 - El riesgo principal está identificado con claridad y la respuesta propuesta es concreta y viable.

@@ -76,7 +76,7 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 
 const searchTerm = process.argv[2] || 'diseño web';
-const elibroUrl  = process.argv[3] || null;
+const elibroUrl = process.argv[3] || null;
 
 const CATALOGS = [
   {
@@ -84,36 +84,68 @@ const CATALOGS = [
     url: `https://elibro.unach.elogim.com/es/lc/unach/buscar/?q=${encodeURIComponent(searchTerm)}&lang=es`,
     extract: () => {
       const items = [];
-      document.querySelectorAll('.titulo-resultado, .result-item, h2 a, .titulo a').forEach(el => {
-        const text = el.innerText?.trim();
-        if (text && text.length > 5) items.push({ title: text, href: el.href || null });
-      });
-      return { source: 'eLibro búsqueda', results: items.slice(0, 10), rawText: document.body.innerText.substring(0, 3000) };
+      document
+        .querySelectorAll('.titulo-resultado, .result-item, h2 a, .titulo a')
+        .forEach((el) => {
+          const text = el.innerText?.trim();
+          if (text && text.length > 5)
+            items.push({ title: text, href: el.href || null });
+        });
+      return {
+        source: 'eLibro búsqueda',
+        results: items.slice(0, 10),
+        rawText: document.body.innerText.substring(0, 3000)
+      };
     }
   },
-  ...(elibroUrl ? [{
-    name: 'eLibro UNACH — recurso específico',
-    url: elibroUrl,
-    extract: () => ({
-      source: 'eLibro recurso',
-      title: document.querySelector('h1')?.innerText?.trim() || null,
-      author: document.querySelector('.autor, .author, [itemprop="author"]')?.innerText?.trim() || null,
-      year: document.querySelector('.anio, .year, [itemprop="datePublished"]')?.innerText?.trim() || null,
-      publisher: document.querySelector('.editorial, .publisher, [itemprop="publisher"]')?.innerText?.trim() || null,
-      isbn: document.querySelector('.isbn, [itemprop="isbn"]')?.innerText?.trim() || null,
-      toc: document.body.innerText.substring(0, 4000)
-    })
-  }] : []),
+  ...(elibroUrl
+    ? [
+        {
+          name: 'eLibro UNACH — recurso específico',
+          url: elibroUrl,
+          extract: () => ({
+            source: 'eLibro recurso',
+            title: document.querySelector('h1')?.innerText?.trim() || null,
+            author:
+              document
+                .querySelector('.autor, .author, [itemprop="author"]')
+                ?.innerText?.trim() || null,
+            year:
+              document
+                .querySelector('.anio, .year, [itemprop="datePublished"]')
+                ?.innerText?.trim() || null,
+            publisher:
+              document
+                .querySelector('.editorial, .publisher, [itemprop="publisher"]')
+                ?.innerText?.trim() || null,
+            isbn:
+              document
+                .querySelector('.isbn, [itemprop="isbn"]')
+                ?.innerText?.trim() || null,
+            toc: document.body.innerText.substring(0, 4000)
+          })
+        }
+      ]
+    : []),
   {
     name: 'Catálogo VuFind UNACH',
     url: `https://catalogobiblio.unach.cl/vufind/Search/Results?lookfor=${encodeURIComponent(searchTerm)}&type=AllFields&filter[]=language:"Spanish"&limit=10`,
     extract: () => {
       const items = [];
-      document.querySelectorAll('.result h2 a, .result .title a, .result a[href*="Record"]').forEach(el => {
-        const text = el.innerText?.trim();
-        if (text && text.length > 5) items.push({ title: text, href: el.href || null });
-      });
-      return { source: 'VuFind UNACH', results: items.slice(0, 10), rawText: document.body.innerText.substring(0, 3000) };
+      document
+        .querySelectorAll(
+          '.result h2 a, .result .title a, .result a[href*="Record"]'
+        )
+        .forEach((el) => {
+          const text = el.innerText?.trim();
+          if (text && text.length > 5)
+            items.push({ title: text, href: el.href || null });
+        });
+      return {
+        source: 'VuFind UNACH',
+        results: items.slice(0, 10),
+        rawText: document.body.innerText.substring(0, 3000)
+      };
     }
   },
   {
@@ -121,11 +153,18 @@ const CATALOGS = [
     url: `https://www.digitaliapublishing.com/a/unach/search?q=${encodeURIComponent(searchTerm)}&lang=es`,
     extract: () => {
       const items = [];
-      document.querySelectorAll('.book-title, .titulo, h3 a, .result-title a').forEach(el => {
-        const text = el.innerText?.trim();
-        if (text && text.length > 5) items.push({ title: text, href: el.href || null });
-      });
-      return { source: 'Digitalia', results: items.slice(0, 10), rawText: document.body.innerText.substring(0, 2000) };
+      document
+        .querySelectorAll('.book-title, .titulo, h3 a, .result-title a')
+        .forEach((el) => {
+          const text = el.innerText?.trim();
+          if (text && text.length > 5)
+            items.push({ title: text, href: el.href || null });
+        });
+      return {
+        source: 'Digitalia',
+        results: items.slice(0, 10),
+        rawText: document.body.innerText.substring(0, 2000)
+      };
     }
   }
 ];
@@ -137,10 +176,16 @@ const CATALOGS = [
 
   // Login único en eLibro
   const loginPage = await context.newPage();
-  await loginPage.goto('https://elibro.unach.elogim.com/es/lc/unach/', { waitUntil: 'domcontentloaded', timeout: 60000 });
+  await loginPage.goto('https://elibro.unach.elogim.com/es/lc/unach/', {
+    waitUntil: 'domcontentloaded',
+    timeout: 60000
+  });
   console.log('\n>>> Inicia sesión con tu correo institucional UNACH.');
   console.log('>>> Cuando estés dentro del catálogo, presiona ENTER aquí.\n');
-  await new Promise(r => { process.stdin.resume(); process.stdin.once('data', r); });
+  await new Promise((r) => {
+    process.stdin.resume();
+    process.stdin.once('data', r);
+  });
   await loginPage.close();
 
   // Recorrer catálogos en la misma sesión autenticada
@@ -148,10 +193,15 @@ const CATALOGS = [
     console.log(`\nConsultando: ${catalog.name} ...`);
     const page = await context.newPage();
     try {
-      await page.goto(catalog.url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+      await page.goto(catalog.url, {
+        waitUntil: 'domcontentloaded',
+        timeout: 30000
+      });
       await page.waitForTimeout(2000);
       results[catalog.name] = await page.evaluate(catalog.extract);
-      console.log(`  OK — ${JSON.stringify(results[catalog.name]).substring(0, 120)}...`);
+      console.log(
+        `  OK — ${JSON.stringify(results[catalog.name]).substring(0, 120)}...`
+      );
     } catch (e) {
       results[catalog.name] = { source: catalog.name, error: e.message };
       console.log(`  ERROR: ${e.message}`);

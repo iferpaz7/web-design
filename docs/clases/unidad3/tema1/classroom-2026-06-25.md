@@ -82,14 +82,14 @@ Tipo: Libro de texto oficial (disponible en eLibro UNACH, acceso multiusuario)
 Propósito: Capítulo 2 — Planificación de la web: diseño del contenido, propósito y audiencia, diseño de apariencia, construir el sitio, organizar archivos. Referencia directa para la decisión de publicación de esta sesión.
 Enlace: [https://elibro.unach.elogim.com/es/lc/unach/titulos/267661](https://elibro.unach.elogim.com/es/lc/unach/titulos/267661)
 
-Fernández Casado, P. E. (2024). *Iniciación a la creación de páginas web* (1.ª ed., cap. 2). RA-MA Editorial. ISBN: 9788410181816
+Fernández Casado, P. E. (2024). _Iniciación a la creación de páginas web_ (1.ª ed., cap. 2). RA-MA Editorial. ISBN: 9788410181816
 
 ### Bibliografía del sílabo — Diseño de páginas web: WordPress para todos los públicos
 
 Tipo: Libro de texto oficial
 Propósito: Base conceptual para la ruta WordPress revisada en esta sesión.
 
-Martínez Rolán, X. (2019). *Diseño de páginas web: WordPress para todos los públicos*. Altaria.
+Martínez Rolán, X. (2019). _Diseño de páginas web: WordPress para todos los públicos_. Altaria.
 
 ### Biblioteca UNACH — eLibro
 
@@ -97,7 +97,7 @@ Tipo: Recurso digital de biblioteca institucional (acceso multiusuario disponibl
 Propósito: Versión digital del libro oficial del sílabo, disponible para toda la comunidad UNACH. Cubre diseño de contenido, propósito y audiencia web, HTML, optimización y herramientas de diseño.
 Enlace: [https://elibro.unach.elogim.com/es/lc/unach/titulos/267661](https://elibro.unach.elogim.com/es/lc/unach/titulos/267661)
 
-Fernández Casado, P. E. (2024). *Iniciación a la creación de páginas web* (1.ª ed.). RA-MA Editorial. ISBN: 9788410181816
+Fernández Casado, P. E. (2024). _Iniciación a la creación de páginas web_ (1.ª ed.). RA-MA Editorial. ISBN: 9788410181816
 
 ---
 

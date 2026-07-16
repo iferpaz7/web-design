@@ -70,7 +70,7 @@ Enlace: [https://studio.uxpin.com/blog/best-practices-examples-of-excellent-resp
 Tipo: Libro de texto oficial (disponible en eLibro UNACH, acceso multiusuario)
 Propósito: Capítulo 3 — Desarrollo del sitio web: maquetación, estructura y hojas de estilo para adaptación responsive.
 
-Fernández Casado, P. E. (2024). *Iniciación a la creación de páginas web* (1.ª ed., cap. 3). RA-MA Editorial. ISBN: 9788410181816
+Fernández Casado, P. E. (2024). _Iniciación a la creación de páginas web_ (1.ª ed., cap. 3). RA-MA Editorial. ISBN: 9788410181816
 
 ### Elementor — Constructor visual con responsive integrado
 

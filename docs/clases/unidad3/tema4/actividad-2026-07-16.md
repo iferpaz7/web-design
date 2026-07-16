@@ -79,6 +79,7 @@ En esta actividad ejecutarás una auditoría completa de calidad sobre tu págin
 Lista de cotejo de calidad completada con los hallazgos detectados y las correcciones aplicadas, más la URL final de la página web publicada o compartible como cierre de la evidencia de la Unidad 3.
 
 **Criterios:**
+
 - Todos los enlaces de la página funcionan correctamente, sin errores 404.
 - La página no presenta errores críticos de accesibilidad según WAVE (contraste, texto alternativo, encabezados).
 - El puntaje de carga en PageSpeed Insights fue revisado y, si es bajo, se identificó al menos una causa.

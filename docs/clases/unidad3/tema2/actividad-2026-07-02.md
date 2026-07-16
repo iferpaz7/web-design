@@ -73,6 +73,7 @@ En la sesión anterior elegiste la herramienta y configuraste el entorno. Hoy es
 Avance funcional de la página web con al menos tres secciones maquetadas (hero + dos adicionales) y adaptación responsive verificada en vista móvil. Dos ajustes documentados con capturas de pantalla o notas descriptivas.
 
 **Criterios:**
+
 - La maquetación refleja la estructura del prototipo validado en la Unidad 2.
 - La adaptación responsive muestra reorganización intencional (no solo encogimiento proporcional).
 - El CTA principal es visible y accesible tanto en escritorio como en móvil.

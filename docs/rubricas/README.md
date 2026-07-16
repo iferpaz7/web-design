@@ -29,29 +29,29 @@ El script `tools/google_classroom/crear_rubricas.gs` crea automáticamente los 5
 
 ---
 
-| Actividad en Classroom | ID tarea | Rúbrica | Componente sílabo |
-|---|---|---|---|
-| Actividad: Brief inicial de campaña | 798150892743 | B — Taller práctico | Talleres 30 % |
-| Actividad: Ficha comparativa de UX/UI | 798151054081 | A — Taller analítico | Talleres 30 % |
-| Actividad: Rediseño guiado del hero | 798150872384 | B — Taller práctico | Talleres 30 % |
-| Actividad: Auditoría visual comparativa | 867538046698 | E — Actividad asincrónica | Asincrónico 15 % |
-| Actividad: Auditoría de accesibilidad y lectura móvil | 798150945255 | A — Taller analítico | Talleres 30 % |
-| Actividad: Ficha de usuario y mensaje central | 798150939940 | B — Taller práctico | Talleres 30 % |
-| Actividad: Análisis de páginas de referencia | 867756696168 | E — Actividad asincrónica | Asincrónico 15 % |
-| Actividad: Mapa de Secciones Guiado | 798150848759 | C — Proyecto avance | Proyecto 40 % |
-| Actividad: Copy persuasivo para tu proyecto | 867536502656 | C — Proyecto avance | Proyecto 40 % |
-| Actividad: Prototipo navegable de tu página de campaña | 867657302501 | D — Proyecto cierre | Proyecto 40 % |
-| Actividad: Examen Bimestral — Bimestre I | 867758388392 | Evaluación sumativa directa | — |
+| Actividad en Classroom                                 | ID tarea     | Rúbrica                     | Componente sílabo |
+| ------------------------------------------------------ | ------------ | --------------------------- | ----------------- |
+| Actividad: Brief inicial de campaña                    | 798150892743 | B — Taller práctico         | Talleres 30 %     |
+| Actividad: Ficha comparativa de UX/UI                  | 798151054081 | A — Taller analítico        | Talleres 30 %     |
+| Actividad: Rediseño guiado del hero                    | 798150872384 | B — Taller práctico         | Talleres 30 %     |
+| Actividad: Auditoría visual comparativa                | 867538046698 | E — Actividad asincrónica   | Asincrónico 15 %  |
+| Actividad: Auditoría de accesibilidad y lectura móvil  | 798150945255 | A — Taller analítico        | Talleres 30 %     |
+| Actividad: Ficha de usuario y mensaje central          | 798150939940 | B — Taller práctico         | Talleres 30 %     |
+| Actividad: Análisis de páginas de referencia           | 867756696168 | E — Actividad asincrónica   | Asincrónico 15 %  |
+| Actividad: Mapa de Secciones Guiado                    | 798150848759 | C — Proyecto avance         | Proyecto 40 %     |
+| Actividad: Copy persuasivo para tu proyecto            | 867536502656 | C — Proyecto avance         | Proyecto 40 %     |
+| Actividad: Prototipo navegable de tu página de campaña | 867657302501 | D — Proyecto cierre         | Proyecto 40 %     |
+| Actividad: Examen Bimestral — Bimestre I               | 867758388392 | Evaluación sumativa directa | —                 |
 
 ## Archivos de rúbricas
 
-| Archivo | Rúbrica | Aplica a |
-|---|---|---|
-| `rubrica-taller-analitico.md` | A — Taller analítico | Ficha comparativa UX/UI, Auditoría visual, Auditoría accesibilidad |
-| `rubrica-taller-practico.md` | B — Taller práctico | Brief, Rediseño hero, Ficha de usuario |
-| `rubrica-proyecto-avance.md` | C — Proyecto avance | Mapa de secciones, Copy persuasivo |
-| `rubrica-proyecto-cierre.md` | D — Proyecto cierre | Prototipo navegable |
-| `rubrica-actividad-asincronica.md` | E — Actividad asincrónica | Auditoría visual comparativa, Análisis de páginas |
+| Archivo                            | Rúbrica                   | Aplica a                                                           |
+| ---------------------------------- | ------------------------- | ------------------------------------------------------------------ |
+| `rubrica-taller-analitico.md`      | A — Taller analítico      | Ficha comparativa UX/UI, Auditoría visual, Auditoría accesibilidad |
+| `rubrica-taller-practico.md`       | B — Taller práctico       | Brief, Rediseño hero, Ficha de usuario                             |
+| `rubrica-proyecto-avance.md`       | C — Proyecto avance       | Mapa de secciones, Copy persuasivo                                 |
+| `rubrica-proyecto-cierre.md`       | D — Proyecto cierre       | Prototipo navegable                                                |
+| `rubrica-actividad-asincronica.md` | E — Actividad asincrónica | Auditoría visual comparativa, Análisis de páginas                  |
 
 ## Cómo importar en Google Classroom
 
@@ -79,6 +79,7 @@ Una vez creada la rúbrica en una tarea, Classroom la guarda y puedes reutilizar
 Todas las rúbricas tienen puntaje máximo **10 puntos** distribuido en 4 criterios de 2.5 pts cada uno. Classroom calculará el total automáticamente al calificar.
 
 Los niveles de desempeño son:
+
 - **Excelente**: 2.5 pts (100 %)
 - **Satisfactorio**: 1.75 pts (70 %)
 - **En desarrollo**: 1.0 pts (40 %)

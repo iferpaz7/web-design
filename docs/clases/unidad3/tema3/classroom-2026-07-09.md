@@ -68,8 +68,9 @@ Enlace: [https://popupsmart.com/blog/contact-form-examples](https://popupsmart.c
 ### Bibliografía del sílabo
 
 Tipo: Referencia académica  
-Propósito: Fundamento teórico sobre formularios y elementos interactivos en páginas web.  
-- Fernández Casado, P. E. (2024). *Iniciación a la creación de páginas web*. RA-MA Editorial.
+Propósito: Fundamento teórico sobre formularios y elementos interactivos en páginas web.
+
+- Fernández Casado, P. E. (2024). _Iniciación a la creación de páginas web_. RA-MA Editorial.
 
 ---
 

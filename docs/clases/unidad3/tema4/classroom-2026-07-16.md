@@ -69,9 +69,10 @@ Enlace: [https://pagespeed.web.dev](https://pagespeed.web.dev)
 
 Tipo: Referencia académica
 Propósito: Fundamento teórico sobre accesibilidad, publicación y verificación final de páginas web.
-- Krug, S. (2006). *No me hagas pensar: Una aproximación a la usabilidad en la web* (cap. "Accesibilidad y tú"). Pearson Educación.
-- Fernández Casado, P. E. (2021). *Accesibilidad web: Diseño de aplicaciones*. RA-MA Editorial.
-- Fernández Casado, P. E. (2024). *Iniciación a la creación de páginas web*. RA-MA Editorial.
+
+- Krug, S. (2006). _No me hagas pensar: Una aproximación a la usabilidad en la web_ (cap. "Accesibilidad y tú"). Pearson Educación.
+- Fernández Casado, P. E. (2021). _Accesibilidad web: Diseño de aplicaciones_. RA-MA Editorial.
+- Fernández Casado, P. E. (2024). _Iniciación a la creación de páginas web_. RA-MA Editorial.
 
 ---
 

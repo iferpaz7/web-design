@@ -1,4 +1,5 @@
 # Examen Bimestral — Bimestre I
+
 ## Diseño Web para Marketing Digital
 
 **Asignatura:** Diseño Web para Marketing Digital
@@ -26,11 +27,11 @@
 
 ## Puntaje total: 10 puntos
 
-| Sección      | Preguntas | Puntaje |
-|--------------|-----------|---------|
-| Teórica      | 1, 2, 3   | 6 pts   |
-| Práctica     | 4         | 4 pts   |
-| **Total**    |           | **10 pts** |
+| Sección   | Preguntas | Puntaje    |
+| --------- | --------- | ---------- |
+| Teórica   | 1, 2, 3   | 6 pts      |
+| Práctica  | 4         | 4 pts      |
+| **Total** |           | **10 pts** |
 
 ---
 
@@ -45,6 +46,7 @@
 Explica la diferencia entre una página web **informativa** y una página web **orientada a conversión**, utilizando los conceptos de embudo de conversión y propuesta de valor trabajados en clase.
 
 Tu respuesta debe:
+
 - Definir brevemente cada tipo de página (informativa vs. conversión).
 - Identificar en qué etapa del embudo actúa cada una.
 - Dar un ejemplo concreto de cada tipo, preferiblemente del contexto ecuatoriano o de tu proyecto personal del curso.
@@ -106,6 +108,7 @@ Desarrolla las siguientes etapas como si fueras el diseñador web responsable de
 **Parte A — Perfil de usuario y mensaje central (1 punto)**
 
 Completa la ficha de usuario para este proyecto:
+
 - Perfil del usuario (nombre ficticio, edad aproximada, contexto concreto)
 - Objetivo del usuario al entrar a la página
 - Necesidad principal
@@ -117,6 +120,7 @@ Con base en la ficha, redacta el **mensaje central** de la página en una sola f
 **Parte B — Mapa de secciones (1 punto)**
 
 Diseña un mapa de secciones con 5–6 bloques para esta página de campaña. Para cada sección indica:
+
 - Nombre del bloque
 - Propósito comunicativo (¿qué debe lograr en el usuario?)
 - Contenido principal propuesto en 1–2 frases
@@ -127,6 +131,7 @@ Justifica brevemente el orden elegido aplicando el patrón AIDA o PAS.
 **Parte C — Titular, beneficio clave y CTA (1 punto)**
 
 Redacta los siguientes elementos para la página:
+
 - Titular del hero section (fórmula: [beneficio] + [para quién] + [diferenciador])
 - Subtítulo de apoyo (amplía sin repetir)
 - Un beneficio clave en formato: [título breve] + [descripción de 1–2 frases] transformado de característica a beneficio
@@ -167,7 +172,6 @@ Este examen evalúa de forma integrada los contenidos del **Bimestre I**, distri
   - Prototipado de baja y media fidelidad, validación de wireframe (Tema 4)
 
 La pregunta práctica (Sección B) integra las competencias de ambas unidades en un caso situado, coherente con el perfil profesional de la carrera.
-
 
 <!-- google-form
 responder: https://docs.google.com/forms/d/e/1FAIpQLSdCAJ5VYWphrn0S4vbFSqp2nY1iZiNXP5feSuCViuWHq7CH1w/viewform

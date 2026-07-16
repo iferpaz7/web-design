@@ -1044,7 +1044,8 @@ export const syllabusUnits: SyllabusUnit[] = [
             ]
           },
           {
-            title: 'Publicar con criterio vale más que publicar con complejidad',
+            title:
+              'Publicar con criterio vale más que publicar con complejidad',
             items: [
               'Una landing publicada en Carrd que comunica bien su propuesta de valor supera a un WordPress abandonado a mitad de configuración.',
               'El objetivo no es demostrar destreza técnica: es publicar una página que cumpla su objetivo de campaña.',
@@ -1105,7 +1106,8 @@ export const syllabusUnits: SyllabusUnit[] = [
         ],
         actividad:
           'Maqueta las secciones principales de tu página web (hero + dos secciones adicionales) en la herramienta elegida, verifica en vista móvil y documenta al menos dos ajustes responsive con justificación.',
-        evidencia: 'Avance funcional de la página con al menos tres secciones maquetadas y adaptación responsive verificada. Dos ajustes documentados.',
+        evidencia:
+          'Avance funcional de la página con al menos tres secciones maquetadas y adaptación responsive verificada. Dos ajustes documentados.',
         herramientas: [
           'Constructor visual o CMS elegido',
           'Vista previa responsive (móvil, tablet, escritorio)',

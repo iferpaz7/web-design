@@ -28,6 +28,7 @@ El examen del Bimestre I tiene una duración de **60 minutos** y se desarrolla d
 **Modalidad:** Examen cerrado — no se permite consultar materiales, apuntes, sitios web ni comunicación con compañeros durante la evaluación.
 
 **Estructura:**
+
 - Sección A — Preguntas teóricas: 3 preguntas escritas que evalúan comprensión, análisis y aplicación de conceptos de las Unidades 1 y 2.
 - Sección B — Pregunta práctica: 1 caso situado que integra perfil de usuario, arquitectura de la información, contenido persuasivo y validación de prototipo.
 

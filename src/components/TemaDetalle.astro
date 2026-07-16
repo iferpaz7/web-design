@@ -360,8 +360,6 @@ const continuity = nextTema
 
   const initialTab =
     (new URLSearchParams(window.location.search).get('tab') as
-      | 'guide'
-      | 'presentation'
-      | 'activity') || 'guide';
+      'guide' | 'presentation' | 'activity') || 'guide';
   setActiveTab(initialTab);
 </script>
