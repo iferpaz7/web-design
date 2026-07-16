@@ -1341,24 +1341,28 @@ export const syllabusUnits: SyllabusUnit[] = [
         href: '/unidad3/tema4',
         disponible: true,
         panorama:
-          'Antes de presentar la página web, es necesario revisar enlaces, legibilidad, recursos visuales, tiempos de carga y coherencia general. Este tema consolida la etapa de control de calidad con criterios prácticos y verificables.',
+          'Antes de presentar la página web, es necesario revisar enlaces, legibilidad, accesibilidad básica, recursos visuales y tiempos de carga. Este tema consolida la etapa de control de calidad con criterios prácticos, verificables y apoyados en herramientas gratuitas de auditoría (WAVE y PageSpeed Insights).',
         objetivos: [
-          'Aplicar una revisión final de calidad visual y funcional.',
-          'Corregir errores de enlace, contraste, lectura o carga básica.',
-          'Preparar la página web para su entrega o socialización.'
+          'Aplicar una revisión final de calidad visual, funcional y de accesibilidad básica.',
+          'Interpretar resultados de herramientas de auditoría de enlaces, accesibilidad y velocidad de carga.',
+          'Corregir errores de enlace, contraste, lectura o carga básica antes de publicar.',
+          'Preparar la página web para su entrega, presentación o socialización.'
         ],
         ideasClave: [
-          'La calidad se verifica, no se asume.',
-          'Detalles pequeños pueden afectar confianza y conversión.',
-          'Una revisión final ordenada mejora la presentación profesional.'
+          'La calidad se verifica con herramientas, no se asume por apariencia.',
+          'Detalles pequeños (un enlace roto, una imagen sin texto alternativo) afectan confianza y conversión.',
+          'Una auditoría estructurada en cuatro dimensiones —enlaces, legibilidad, carga y recursos— evita revisiones incompletas.',
+          'Una revisión final ordenada mejora la presentación profesional del proyecto.'
         ],
         actividad:
-          'Ejecuta una revisión final con lista de cotejo y aplica correcciones antes de publicar o entregar.',
+          'Ejecuta una auditoría final con lista de cotejo, apoyada en WAVE y PageSpeed Insights, y aplica correcciones antes de publicar o entregar.',
         evidencia:
-          'Página web publicada o compartible con observaciones corregidas.',
+          'Página web publicada o compartible, con lista de cotejo de calidad completada y observaciones corregidas.',
         herramientas: [
           'Lista de verificación final',
-          'Prueba de enlaces',
+          'Prueba manual y automatizada de enlaces',
+          'WAVE (accesibilidad)',
+          'PageSpeed Insights (carga y rendimiento)',
           'Revisión en móvil y escritorio'
         ],
         presentationBlocks: [
@@ -1367,14 +1371,17 @@ export const syllabusUnits: SyllabusUnit[] = [
             items: [
               'Los enlaces deben funcionar y la lectura móvil debe validarse en condiciones reales.',
               'HTTPS, tiempos de carga razonables y coherencia visual elevan confianza antes incluso del contenido profundo.',
+              'La accesibilidad básica (contraste, texto alternativo, encabezados) no es opcional: afecta a usuarios reales.',
               'Una revisión final ordenada evita que errores pequeños arruinen la percepción profesional del proyecto.'
             ]
           },
           {
             title: 'Checklist útil de prepublicación',
             items: [
-              'Probar navegación y CTA principales.',
-              'Comprobar formularios, recursos visuales y textos visibles.',
+              'Probar navegación y CTA principales, uno por uno.',
+              'Ejecutar WAVE y revisar contraste, texto alternativo y jerarquía de encabezados.',
+              'Ejecutar PageSpeed Insights y anotar el puntaje móvil y de escritorio.',
+              'Comprobar formularios, recursos visuales y textos visibles en la versión publicada.',
               'Verificar versión móvil, escritorio y legibilidad general.'
             ]
           }

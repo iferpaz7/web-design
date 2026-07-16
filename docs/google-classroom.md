@@ -2,6 +2,31 @@
 
 Este proyecto incluye un CLI en Python para crear el curso de Google Classroom y publicar las clases de `docs/clases/**/classroom-*.md` como materiales y tareas. También publica los archivos de `docs/clases/**/actividad-*.md` como tareas separadas.
 
+## Índice de comandos del CLI
+
+| Comando | Qué hace |
+|---|---|
+| `print-scopes` | Imprime los scopes OAuth requeridos |
+| `auth` | Autoriza OAuth y genera `token.json` |
+| `list-courses` | Lista cursos |
+| `create-course` | Crea un curso |
+| `update-course` | Actualiza campos de un curso |
+| `archive-course` | Archiva un curso |
+| `delete-course` | Elimina un curso permanentemente |
+| `create-material` | Crea un material de clase (`courseWorkMaterial`) |
+| `list-materials` | Lista materiales existentes |
+| `delete-material` | Elimina un material |
+| `sync-material-titles` | Renombra materiales existentes según los `classroom-*.md` actuales |
+| `create-assignment` | Crea una tarea/asignación (`courseWork`) |
+| `list-assignments` | Lista tareas existentes |
+| `create-announcement` | Publica un anuncio |
+| `list-announcements` | Lista anuncios existentes |
+| `delete-announcement` | Elimina un anuncio |
+| `sync-classes` | Sincroniza materiales y tareas en lote desde `docs/clases/**` |
+| `create-form` | Crea un Google Form desde un examen y lo vincula a Classroom |
+
+Todos los comandos aceptan `python3 tools/google_classroom/classroom_cli.py COMANDO` o el alias `pnpm classroom COMANDO`.
+
 ## Estructura de temas en Google Classroom
 
 Los ítems del curso se organizan por tema en Classroom. El CLI infiere el tema automáticamente del path del archivo:
@@ -94,11 +119,48 @@ Se abrirá el navegador, aceptas los permisos y se generará `token.json`.
 
 Si cambias scopes después, elimina `token.json` y vuelve a ejecutar `auth`.
 
+Para ver en cualquier momento la lista de scopes que el CLI solicita:
+
+```bash
+pnpm classroom print-scopes
+```
+
+### Flags globales
+
+Estos flags aplican a cualquier subcomando y van **antes** del nombre del comando:
+
+| Flag | Descripción | Valor por defecto |
+|---|---|---|
+| `--config PATH` | Ruta a `classroom.config.json` | `classroom.config.json` en la raíz del repo |
+| `--credentials PATH` | Ruta a `credentials.json` | `credentials.json` en la raíz del repo |
+| `--token PATH` | Ruta a `token.json` | `token.json` en la raíz del repo |
+| `--no-browser` | No intenta abrir navegador; imprime el enlace OAuth para pegarlo manualmente | `false` |
+| `--browser NOMBRE` | Navegador a usar para el flujo OAuth, ej. `google-chrome` | navegador del sistema |
+| `--oauth-timeout SEGUNDOS` | Segundos a esperar el login OAuth antes de fallar | `300` |
+
+Ejemplo combinando flags globales con un comando:
+
+```bash
+pnpm classroom --no-browser --oauth-timeout 600 auth
+```
+
 ## 5. Crear el curso
 
 ```bash
 python3 tools/google_classroom/classroom_cli.py create-course
 ```
+
+Toma los valores por defecto de `default_course` en `classroom.config.json` si no pasas flags. Flags disponibles:
+
+| Flag | Descripción |
+|---|---|
+| `--name` | Nombre del curso (requerido si no está en `classroom.config.json`) |
+| `--section` | Sección, ej. "2026-I" |
+| `--description-heading` | Encabezado de la descripción |
+| `--description` | Descripción completa del curso |
+| `--room` | Aula o ubicación |
+| `--owner-id` | Propietario del curso. Acepta id numérico, email o `me` (default `me`) |
+| `--state` | Estado inicial: `ACTIVE`, `ARCHIVED`, `PROVISIONED`, `DECLINED` o `SUSPENDED` (default `ACTIVE`) |
 
 El comando imprime el JSON del curso creado. Copia el `id` para los siguientes comandos.
 
@@ -107,6 +169,13 @@ También puedes listar cursos:
 ```bash
 python3 tools/google_classroom/classroom_cli.py list-courses
 ```
+
+Flags de `list-courses`:
+
+| Flag | Descripción |
+|---|---|
+| `--course-state ESTADO` | Filtra por estado. Repetible para varios estados, ej. `--course-state ACTIVE --course-state ARCHIVED` |
+| `--json` | Imprime el resultado completo en JSON en lugar de la tabla resumida |
 
 ## 6. Subir clases, materiales y tareas
 
@@ -146,6 +215,36 @@ Agrega anuncios junto con materiales y tareas:
 python3 tools/google_classroom/classroom_cli.py sync-classes COURSE_ID --announcements
 ```
 
+Actualiza descripción y materiales de ítems que ya existen en lugar de omitirlos (por defecto, `sync-classes` no toca un ítem si detecta un título igual ya creado):
+
+```bash
+python3 tools/google_classroom/classroom_cli.py sync-classes COURSE_ID --update
+```
+
+Fuerza la creación aunque ya exista un ítem con el mismo título (crea un duplicado; usar con cuidado):
+
+```bash
+python3 tools/google_classroom/classroom_cli.py sync-classes COURSE_ID --force
+```
+
+Todos los flags disponibles de `sync-classes`:
+
+| Flag | Descripción |
+|---|---|
+| `--only TEXTO` | Filtra por texto en la ruta, ej. `unidad2/tema2` o `examenes` |
+| `--glob PATRÓN` | Patrón de archivos a sincronizar. Repetible. Default: `classroom-*.md` para materiales y `actividad-*.md` para tareas dentro de `docs/clases/**` |
+| `--state` | Fuerza el estado (`DRAFT` o `PUBLISHED`) para todos los ítems sincronizados en esta corrida |
+| `--points` | Sobrescribe el puntaje máximo de las tareas creadas (por defecto usa `sync.default_points` en `classroom.config.json`, o `10` si no está configurado) |
+| `--due-date YYYY-MM-DD` | Fecha límite a aplicar a las tareas sincronizadas |
+| `--due-time HH:MM` | Hora límite a aplicar (requiere `--due-date`) |
+| `--force` | Crea el ítem aunque ya exista uno con el mismo título |
+| `--update` | Actualiza descripción y materiales de ítems ya existentes en vez de omitirlos |
+| `--dry-run` | Muestra qué se crearía/actualizaría sin llamar a la API |
+| `--no-topics` | No crea ni asigna temas de Classroom por unidad |
+| `--no-materials` | Omite los archivos `classroom-*.md` (no crea materiales) |
+| `--no-assignments` | Omite los archivos `actividad-*.md` (no crea tareas) |
+| `--announcements` | Además de materiales y tareas, publica anuncios (si el `.md` los define) |
+
 Por defecto el CLI crea temas de Classroom por unidad: `Unidad 1`, `Unidad 2`, etc.
 
 Los nuevos roadmaps deben generar el archivo publicable como:
@@ -176,6 +275,16 @@ python3 tools/google_classroom/classroom_cli.py create-material COURSE_ID \
   --link https://web-design-itsae.netlify.app/unidad2/tema2
 ```
 
+Flags de `create-material`:
+
+| Flag | Descripción |
+|---|---|
+| `--title` | Título del material (requerido) |
+| `--description` | Descripción del material |
+| `--link URL` | Enlace a adjuntar. Repetible para varios enlaces |
+| `--topic-id ID` | Asigna el material a un tema existente por su `topicId` |
+| `--state` | `DRAFT` o `PUBLISHED` (default `DRAFT`) |
+
 Crear tarea manual:
 
 ```bash
@@ -188,11 +297,105 @@ python3 tools/google_classroom/classroom_cli.py create-assignment COURSE_ID \
   --due-time 23:59
 ```
 
+Flags de `create-assignment`:
+
+| Flag | Descripción |
+|---|---|
+| `--title` | Título de la tarea (requerido) |
+| `--description` | Descripción/instrucciones de la tarea |
+| `--link URL` | Enlace a adjuntar. Repetible para varios enlaces |
+| `--points` | Puntaje máximo (default `10`) |
+| `--due-date YYYY-MM-DD` | Fecha límite de entrega |
+| `--due-time HH:MM` | Hora límite de entrega (requiere `--due-date`) |
+| `--topic-id ID` | Asigna la tarea a un tema existente por su `topicId` |
+| `--state` | `DRAFT` o `PUBLISHED` (default `DRAFT`) |
+
+Publicar un anuncio:
+
+```bash
+python3 tools/google_classroom/classroom_cli.py create-announcement COURSE_ID \
+  --text "Recuerden entregar el prototipo antes del viernes." \
+  --link https://web-design-itsae.netlify.app/unidad2/tema4 \
+  --state PUBLISHED
+```
+
+Flags de `create-announcement`:
+
+| Flag | Descripción |
+|---|---|
+| `--text` | Contenido del anuncio (requerido) |
+| `--link URL` | Enlace a adjuntar. Repetible para varios enlaces |
+| `--state` | `DRAFT` o `PUBLISHED` (default `DRAFT`) |
+
+Listar anuncios:
+
+```bash
+python3 tools/google_classroom/classroom_cli.py list-announcements COURSE_ID
+```
+
+Acepta `--json` para ver el objeto completo en lugar de la tabla resumida (id, estado, primera línea del texto).
+
+Eliminar un anuncio (requiere `--yes` para confirmar, es una eliminación permanente):
+
+```bash
+python3 tools/google_classroom/classroom_cli.py delete-announcement COURSE_ID ANNOUNCEMENT_ID --yes
+```
+
+Listar materiales existentes:
+
+```bash
+python3 tools/google_classroom/classroom_cli.py list-materials COURSE_ID
+```
+
+Acepta `--json` para ver el objeto completo en lugar de la tabla resumida (id, estado, título).
+
+Eliminar un material (requiere `--yes` para confirmar, es una eliminación permanente):
+
+```bash
+python3 tools/google_classroom/classroom_cli.py delete-material COURSE_ID MATERIAL_ID --yes
+```
+
+Listar tareas existentes:
+
+```bash
+python3 tools/google_classroom/classroom_cli.py list-assignments COURSE_ID
+```
+
+Acepta `--json` para ver el objeto completo. Útil para obtener el `ASSIGNMENT_ID` que necesita `create-form --assignment-id`.
+
+Normalizar títulos de materiales ya publicados para que coincidan con el título que generaría `sync-classes` a partir de los archivos `classroom-*.md` actuales (útil después de renombrar un tema o corregir un `classroom-*.md`):
+
+```bash
+python3 tools/google_classroom/classroom_cli.py sync-material-titles COURSE_ID --dry-run
+python3 tools/google_classroom/classroom_cli.py sync-material-titles COURSE_ID
+```
+
+Flags de `sync-material-titles`:
+
+| Flag | Descripción |
+|---|---|
+| `--glob PATRÓN` | Patrón de archivos a considerar. Repetible. Default: `docs/clases/**/classroom-*.md` |
+| `--only TEXTO` | Filtra por texto en la ruta, ej. `unidad2/tema2` |
+| `--dry-run` | Muestra los cambios sin aplicarlos |
+
+El comando busca, para cada `classroom-*.md`, un material existente cuyos enlaces coincidan con los del archivo, y si el título difiere lo actualiza vía `patch`. No crea materiales nuevos.
+
 Actualizar curso:
 
 ```bash
 python3 tools/google_classroom/classroom_cli.py update-course COURSE_ID --section "Mayo 2026"
 ```
+
+Solo se envían los campos que pases; el resto queda sin cambios. Flags disponibles:
+
+| Flag | Descripción |
+|---|---|
+| `--name` | Nuevo nombre del curso |
+| `--section` | Nueva sección |
+| `--description-heading` | Nuevo encabezado de descripción |
+| `--description` | Nueva descripción |
+| `--room` | Nueva aula o ubicación |
+| `--state` | Nuevo estado: `ACTIVE`, `ARCHIVED`, `PROVISIONED`, `DECLINED` o `SUSPENDED` |
 
 Archivar curso:
 
