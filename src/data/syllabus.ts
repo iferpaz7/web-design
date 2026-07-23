@@ -1411,40 +1411,82 @@ export const syllabusUnits: SyllabusUnit[] = [
         href: '/unidad4/tema1',
         disponible: true,
         panorama:
-          'Optimizar no significa rehacer todo, sino identificar qué elementos generan más fricción o menor respuesta. Este tema revisa principios básicos de optimización orientada a la conversión para tomar decisiones de mejora con criterio.',
+          'Optimizar una página web no consiste en rehacerla por completo, sino en detectar qué elementos generan fricción, confusión o menor respuesta. Este tema parte de la página publicada y auditada en la unidad anterior para convertir la revisión de calidad en una mejora orientada a conversión: claridad del mensaje, llamado a la acción, confianza, lectura móvil y ruta de contacto.',
         objetivos: [
-          'Detectar puntos de fricción en una página ya construida.',
-          'Priorizar mejoras según impacto esperado.',
-          'Relacionar ajustes visuales y de contenido con conversión.'
+          'Identificar oportunidades de mejora en una página ya publicada o compartible a partir de fricción funcional, cognitiva y emocional.',
+          'Priorizar mejoras de alto impacto según claridad del mensaje, CTA, confianza, experiencia móvil y esfuerzo de implementación.',
+          'Formular una hipótesis de optimización que conecte cada ajuste con una acción esperada del usuario.'
         ],
         ideasClave: [
-          'Se mejora primero lo que más impacta en claridad y acción.',
-          'Optimizar implica observar, comparar y justificar cambios.',
-          'La conversión mejora cuando disminuye la fricción.'
+          'La optimización comienza cuando la página ya funciona y puede analizarse desde el objetivo real del usuario.',
+          'Una oportunidad de mejora debe explicar qué fricción existe, a qué acción afecta y por qué vale la pena intervenirla.',
+          'No todo se mejora a la vez: la matriz impacto-esfuerzo ayuda a elegir cambios viables con efecto visible.',
+          'Una hipótesis de mejora convierte una opinión visual en una decisión profesional verificable.'
         ],
         actividad:
-          'Realiza una auditoría breve de la página web y prioriza tres mejoras de alto impacto.',
-        evidencia: 'Lista priorizada de mejoras con justificación.',
+          'Realiza una clínica de optimización de conversión: revisa tu página publicada, detecta tres oportunidades de mejora, clasifícalas por tipo de fricción, priorízalas con matriz impacto-esfuerzo y formula una hipótesis validada con el docente.',
+        evidencia:
+          'Lista priorizada de oportunidades con clasificación de fricción, matriz impacto-esfuerzo e hipótesis de mejora vinculada al objetivo de conversión.',
         herramientas: [
           'Checklist CRO básico',
           'Matriz impacto-esfuerzo',
-          'Capturas antes y después'
+          'Capturas antes y después',
+          'WAVE (accesibilidad)',
+          'PageSpeed Insights (rendimiento)'
         ],
         presentationBlocks: [
           {
-            title: 'Marco básico de CRO',
+            title: 'De página funcional a página optimizada',
             items: [
-              'La tasa de conversión se calcula como conversiones divididas para visitas, multiplicado por 100.',
-              'Optimizar primero puede rendir más que atraer más tráfico si la página web ya pierde usuarios por fricción.',
-              'La matriz impacto-esfuerzo ayuda a decidir qué mejorar primero.'
+              'La Unidad 3 cerró con una página publicada o compartible y un mecanismo de contacto revisado.',
+              'La Unidad 4 pregunta si esa página guía con claridad hacia una acción valiosa.',
+              'Optimizar no significa rehacer todo: significa remover fricción y mejorar decisiones clave.',
+              'La evidencia de mejora debe mostrar antes, decisión, después y criterio usado.'
             ]
           },
           {
-            title: 'Señales de oportunidad',
+            title: 'Tres tipos de fricción',
             items: [
-              'CTA poco visible o ambiguo.',
-              'Demasiadas decisiones en una sola pantalla.',
-              'Mensaje principal débil o sin prueba social suficiente.'
+              'Funcional: algo no abre, no carga, no responde o exige pasos innecesarios.',
+              'Cognitiva: el usuario no entiende qué se ofrece, para quién es o qué debe hacer.',
+              'Emocional: falta confianza, respaldo, prueba social o seguridad para avanzar.',
+              'Una buena auditoría distingue el tipo de fricción antes de proponer cambios.'
+            ]
+          },
+          {
+            title: 'Auditoría CRO de una página',
+            items: [
+              'Define la conversión principal: contacto, registro, compra, reserva, descarga o solicitud.',
+              'Revisa el primer pantallazo: propuesta de valor, beneficio, audiencia y CTA.',
+              'Sigue la ruta completa del usuario hasta la acción esperada.',
+              'Busca dudas, distracciones, pasos innecesarios y puntos donde el usuario podría abandonar.'
+            ]
+          },
+          {
+            title: 'Priorización impacto-esfuerzo',
+            items: [
+              'Alto impacto y bajo esfuerzo: primera opción para implementar.',
+              'Alto impacto y alto esfuerzo: planificar si aporta al cierre del proyecto.',
+              'Bajo impacto y bajo esfuerzo: resolver si no distrae de lo importante.',
+              'Bajo impacto y alto esfuerzo: evitar salvo que sea requisito crítico.'
+            ]
+          },
+          {
+            title: 'Hipótesis de mejora',
+            items: [
+              'Estructura sugerida: "Si cambio..., entonces el usuario podrá..., porque...".',
+              'La hipótesis debe relacionarse con una acción del usuario, no solo con apariencia visual.',
+              'Ejemplo: "Si cambio el CTA de Enviar a Solicitar asesoría, el usuario entenderá mejor el siguiente paso porque el botón comunica la acción real".',
+              'Cada hipótesis debe poder compararse con evidencia antes/después.'
+            ]
+          },
+          {
+            title: 'Entrega de la clínica',
+            items: [
+              'URL de la página revisada y objetivo de conversión definido.',
+              'Tres oportunidades de mejora clasificadas por tipo de fricción.',
+              'Priorización con matriz impacto-esfuerzo.',
+              'Hipótesis principal validada con retroalimentación docente.'
             ]
           }
         ]
