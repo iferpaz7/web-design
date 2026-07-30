@@ -1500,40 +1500,131 @@ export const syllabusUnits: SyllabusUnit[] = [
         href: '/unidad4/tema2',
         disponible: true,
         panorama:
-          'La página web debe ser comprensible para usuarios y ordenada para buscadores. Este tema aborda títulos, estructura, legibilidad, textos alternativos y mejoras de rendimiento básico sin exigir configuraciones avanzadas.',
+          'La página web debe ser comprensible para usuarios y ordenada para buscadores. Este tema aborda SEO on-page en su forma más práctica: estructura semántica de encabezados, título de página, meta descripción, texto alternativo y diagnóstico de Core Web Vitals con PageSpeed Insights. No es un tema técnico separado del diseño: es la extensión natural de la optimización trabajada en U4T1. Una página que comunica bien al usuario pero falla en estructura, carga o visibilidad técnica pierde alcance, conversión y confianza. El SEO básico y el rendimiento son el duramen del diseño web: invisibles para el usuario casual pero determinantes para la calidad real del proyecto.',
         objetivos: [
-          'Aplicar criterios básicos de SEO on-page y estructura semántica.',
-          'Revisar elementos que impactan legibilidad y rendimiento.',
-          'Incorporar mejoras técnicas básicas sin aumentar la complejidad del proyecto.'
+          'Comprender qué elementos de SEO on-page impactan directamente la visibilidad y la comprensión de una página web de campaña.',
+          'Aplicar criterios de estructura semántica: jerarquía de encabezados, título de página, meta descripción y texto alternativo.',
+          'Interpretar los resultados de PageSpeed Insights y relacionar los indicadores de rendimiento (LCP, INP, CLS) con la experiencia del usuario.',
+          'Implementar al menos tres ajustes de SEO básico y rendimiento sobre la página web del proyecto integrador con evidencia registrada.'
         ],
         ideasClave: [
-          'La visibilidad comienza con una estructura clara y bien nombrada.',
-          'El rendimiento percibido afecta experiencia y permanencia.',
-          'SEO básico y calidad editorial trabajan juntos.'
+          'SEO on-page no es un truco de posicionamiento: es el resultado de construir bien contenido claro, estructura ordenada y experiencia rápida.',
+          'El título de la página (title tag) es lo primero que lee el buscador y lo que el usuario ve en Google antes de hacer clic.',
+          'Los encabezados (H1, H2, H3) organizan el contenido para lectores y buscadores. No se usan por estética: se usan por jerarquía.',
+          'Las imágenes sin texto alternativo son invisibles para buscadores y para lectores de pantalla.',
+          'Core Web Vitals (LCP, INP, CLS) traducen el rendimiento técnico en experiencia percibida: velocidad de carga, interactividad y estabilidad visual.'
         ],
         actividad:
-          'Ajusta títulos, descripciones, textos alternativos y recursos pesados de tu página web.',
-        evidencia: 'Registro de ajustes aplicados a SEO y rendimiento básico.',
+          'Ejecuta PageSpeed Insights sobre tu proyecto, revisa y ajusta el title tag, meta descripción, jerarquía de encabezados y texto alternativo de imágenes. Registra al menos tres ajustes con evidencia.',
+        evidencia:
+          'Registro del checklist SEO completado con URL revisada, puntajes de PageSpeed Insights y evidencia de ajustes aplicados (title, meta descripción, encabezados, alt).',
         herramientas: [
-          'Revisión de headings',
           'PageSpeed Insights',
-          'Checklist SEO on-page'
+          'Inspector del navegador (F12 → Elements)',
+          'Configuración de SEO del constructor (WordPress, Framer, Carrd)',
+          'Checklist SEO on-page',
+          'Google Search Central'
         ],
         presentationBlocks: [
           {
-            title: 'SEO técnico y rendimiento en lenguaje claro',
+            title: 'Objetivo de la sesión',
             items: [
-              'Rastreo, indexación y estructura son la base para que la página web sea encontrable.',
-              'Cada segundo extra de carga puede afectar permanencia y conversión.',
-              'Core Web Vitals como LCP, INP y CLS ayudan a traducir rendimiento técnico a experiencia percibida.'
+              'Comprender qué elementos de SEO on-page afectan visibilidad y comprensión de una página de campaña.',
+              'Aplicar criterios de estructura semántica: H1, H2, title tag, meta descripción, texto alternativo.',
+              'Interpretar PageSpeed Insights y relacionar LCP, INP y CLS con la experiencia del usuario.',
+              'Implementar al menos tres ajustes concretos de SEO básico y rendimiento en el proyecto integrador.'
             ]
           },
           {
-            title: 'Ajustes mínimos con más retorno',
+            title: 'SEO on-page: no es truco, es construcción correcta',
             items: [
-              'Headings claros y bien jerarquizados.',
-              'Imágenes optimizadas y textos alternativos útiles.',
-              'Revisión básica en PageSpeed antes de dar por terminada la página web.'
+              'SEO no es manipular: es hacer que la página sea clara para usuarios y comprensible para buscadores.',
+              'SEO on-page: lo que está dentro de la página y el creador puede controlar directamente.',
+              'Estructura, contenido y rendimiento son las tres columnas de la visibilidad básica.',
+              'Una página con excelente diseño visual pero sin estructura semántica es invisible para Google.'
+            ]
+          },
+          {
+            title: 'Title tag: lo primero que lee el buscador',
+            items: [
+              'El title tag es el texto que aparece en la pestaña del navegador y en los resultados de búsqueda.',
+              'Define el tema principal de la página para el buscador. Sin él, Google lo genera automáticamente, casi siempre mal.',
+              'Longitud ideal: 50-60 caracteres. Debe incluir la palabra clave principal y describir el contenido con claridad.',
+              'Ejemplo: ❌ "Home" o "Página 1" — ✅ "Catering en Riobamba para eventos empresariales — Sabor de Chimborazo"'
+            ]
+          },
+          {
+            title: 'Meta descripción: el texto que aparece bajo el título',
+            items: [
+              'La meta descripción no afecta directamente el ranking, pero sí el porcentaje de clics.',
+              'Es el resumen que aparece bajo el título en los resultados de Google. Si no la defines, Google la genera.',
+              'Longitud ideal: 120-155 caracteres. Resume el beneficio principal y orienta al clic con una acción indirecta.',
+              'Ejemplo: ✅ "Diseñamos tu página web en 7 días. Empieza a vender en línea sin conocimientos técnicos. Solicita tu cotización hoy."'
+            ]
+          },
+          {
+            title: 'Estructura semántica: encabezados H1, H2, H3',
+            items: [
+              'Los encabezados organizan el contenido para lectores y buscadores. No son tamaños: son jerarquía.',
+              'Cada página debe tener un solo H1 que describa el tema principal. Los H2 son secciones; los H3, subsecciones.',
+              'Error común: usar H2 o H3 solo porque "se ve mejor con ese tamaño". Eso rompe la estructura para el buscador.',
+              'Verifica en el inspector del navegador (F12 → Elements) que tu jerarquía sea coherente.'
+            ]
+          },
+          {
+            title: 'Texto alternativo: accesibilidad + SEO',
+            items: [
+              'El atributo alt describe una imagen para lectores de pantalla y para buscadores.',
+              'Si el alt está vacío o dice "imagen" o "foto", la imagen es invisible para Google y no accesible.',
+              'Alt útil: describe lo que se ve en la imagen con relevancia para el contenido.',
+              'Ejemplo: ❌ alt="img001.jpg" — ✅ alt="Torta de chocolate decorada para cumpleaños — Dulcería Esperanza, Riobamba"'
+            ]
+          },
+          {
+            title: 'Core Web Vitals: rendimiento en tres métricas',
+            items: [
+              'Core Web Vitals son tres indicadores de Google que miden experiencia percibida: carga, interactividad, estabilidad.',
+              'LCP (Largest Contentful Paint): tiempo que tarda en aparecer el elemento visual más grande. Umbral bueno: < 2.5 s.',
+              'INP (Interaction to Next Paint): velocidad de respuesta a una interacción. Umbral bueno: < 200 ms. Reemplazó a FID en 2024.',
+              'CLS (Cumulative Layout Shift): cuánto se mueve visualmente la página durante la carga. Umbral bueno: < 0.1.'
+            ]
+          },
+          {
+            title: 'PageSpeed Insights: el diagnóstico oficial',
+            items: [
+              'PageSpeed Insights mide rendimiento real y de laboratorio en móvil y escritorio.',
+              'Ingresa tu URL y obtendrás un puntaje de 0 a 100 más el estado de los tres Core Web Vitals.',
+              'Puntaje < 50: malo. 50-89: mejorable. 90+: bueno.',
+              'En constructores visuales, el mayor problema suele ser imágenes pesadas no optimizadas.'
+            ]
+          },
+          {
+            title: 'Errores comunes que destruyen la visibilidad',
+            items: [
+              'Title tag por defecto: "Home", "Inicio", "Untitled" — Google no sabe de qué trata la página.',
+              'Usar encabezados por tamaño visual: cuatro H1 en distintas secciones porque "se veían mejor".',
+              'Imágenes sin texto alternativo: invisibles para Google y para personas ciegas.',
+              'Cargar imágenes de 4 MB directamente del teléfono sin comprimir: LCP en rojo.'
+            ]
+          },
+          {
+            title: 'Actividad: Auditoría SEO práctica',
+            items: [
+              'Ejecuta PageSpeed Insights sobre tu URL y registra puntaje en móvil + estado de LCP/INP/CLS.',
+              'Revisa el title tag en la pestaña del navegador: ¿describe el negocio? Corrígelo si es necesario.',
+              'Configura o revisa la meta descripción de tu página: 120-155 caracteres, beneficio + acción.',
+              'Verifica jerarquía de encabezados: un solo H1 y H2 coherentes con el mapa de secciones.',
+              'Revisa texto alternativo de al menos tres imágenes de contenido: útil, descriptivo.',
+              'Registra tres ajustes con evidencia y comparte en el chat tu puntaje de PageSpeed + un ajuste.'
+            ]
+          },
+          {
+            title: 'Ideas clave y cierre',
+            items: [
+              'SEO on-page no es opcional ni separado: es parte de la construcción correcta de la página.',
+              'El duramen de una página (estructura, títulos, alt, rendimiento) sostiene lo que el usuario ve.',
+              'Una página que convence visualmente pero carga en 8 segundos pierde usuarios antes de leer la propuesta.',
+              'Próxima sesión: Medición básica del comportamiento, conversiones e interpretación de datos.'
             ]
           }
         ]
