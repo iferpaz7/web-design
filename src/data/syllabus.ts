@@ -1638,41 +1638,80 @@ export const syllabusUnits: SyllabusUnit[] = [
         href: '/unidad4/tema3',
         disponible: true,
         panorama:
-          'Medir permite decidir con evidencia. Este tema introduce una aproximación básica a indicadores de comportamiento, conversiones y observación de resultados para construir una mejora razonada de la página web.',
+          'Medir permite decidir con evidencia. A partir de la página ya optimizada en estructura, visibilidad y rendimiento, este tema enseña a leer señales básicas de comportamiento y conversión para formular una mejora priorizada, ética y verificable.',
         objetivos: [
           'Identificar indicadores simples de comportamiento y conversión.',
           'Relacionar métricas básicas con oportunidades de mejora.',
-          'Redactar observaciones claras a partir de datos y pruebas.'
+          'Redactar observaciones claras a partir de datos y pruebas.',
+          'Priorizar una mejora viable según el objetivo de la página.'
         ],
         ideasClave: [
           'No se necesita analítica avanzada para comenzar a mejorar.',
           'Los datos deben leerse en función del objetivo de la página web.',
-          'Medir sirve para decidir, no solo para registrar.'
+          'Medir sirve para decidir, no solo para registrar.',
+          'Una métrica sin contexto no demuestra una mejora; objetivo, evidencia y decisión deben mantenerse conectados.',
+          'Los datos se usan con responsabilidad: se recogen solo los necesarios y se interpretan sin manipular al usuario.'
         ],
         actividad:
-          'Elabora un reporte breve con observaciones sobre comportamiento, conversiones o pruebas realizadas.',
+          'Elabora, con acompañamiento docente, un diagnóstico mínimo de tu página: objetivo, indicadores disponibles, hallazgo, hipótesis y una mejora priorizada.',
         evidencia:
-          'Borrador de reporte ejecutivo de resultados y oportunidades.',
+          'Borrador de reporte ejecutivo con indicadores, interpretación, evidencia y una mejora priorizada.',
         herramientas: [
           'Registro de interacciones',
           'GA4 o analítica básica si aplica',
-          'Tabla simple de hallazgos'
+          'Google Search Console o estadísticas del constructor, si aplica',
+          'Tabla simple de hallazgos',
+          'Capturas o registros de pruebas'
         ],
         presentationBlocks: [
           {
-            title: 'Métricas que sí ayudan a decidir',
+            title: 'De optimizar a medir: el puente con la sesión anterior',
             items: [
-              'En analítica básica importa más entender comportamiento y respuesta que coleccionar números.',
-              'GA4 trabaja por eventos; esto facilita leer acciones como clics, formularios o conversiones.',
-              'Los embudos permiten ubicar dónde se pierde la mayor parte del recorrido del usuario.'
+              'La sesión anterior aseguró que la página sea más encontrable, accesible y rápida. Hoy observamos qué hacen las personas cuando llegan a ella.',
+              'No buscamos "muchos números"; buscamos una señal que ayude a mejorar una decisión de diseño, contenido o conversión.',
+              'Pregunta guía: ¿la acción que la página promete facilitar realmente está ocurriendo?'
             ]
           },
           {
-            title: 'Lectura mínima de datos',
+            title: 'El objetivo define qué vale la pena medir',
             items: [
-              'Relaciona cada dato con el objetivo de la página web.',
-              'Identifica una oportunidad, no diez a la vez.',
-              'Convierte la observación en una recomendación accionable.'
+              'Ejemplos de objetivo: recibir mensajes de WhatsApp, captar formularios, conseguir cotizaciones o llevar a una compra.',
+              'Indicadores iniciales: usuarios o sesiones, vistas de página, sesiones con interacción, clics en CTA, formularios enviados y tasa de conversión.',
+              'Una sesión con interacción en GA4 dura más de 10 segundos, registra un evento clave o incluye al menos dos vistas de página o pantalla.'
+            ]
+          },
+          {
+            title: 'Eventos, eventos clave y conversiones',
+            items: [
+              'Un evento registra una acción observable: page_view, scroll, clic en WhatsApp, submit_form o generate_lead.',
+              'Un evento clave representa una acción que importa al objetivo del negocio; no todo clic merece esa categoría.',
+              'Tasa de conversión = conversiones ÷ sesiones (o usuarios) × 100. Declara siempre qué denominador usaste.'
+            ]
+          },
+          {
+            title: 'Lectura mínima: dato → hallazgo → hipótesis → mejora',
+            items: [
+              'Dato: 120 sesiones, 6 clics en WhatsApp (5 %). Hallazgo: el CTA recibe poca respuesta frente al tráfico.',
+              'Hipótesis: el botón no es visible antes del primer desplazamiento o su mensaje es demasiado genérico.',
+              'Mejora priorizada: ubicar un CTA específico en el hero y medir de nuevo durante el mismo periodo.',
+              'No concluyas causalidad con una sola cifra: registra periodo, fuente de datos y límites de la evidencia.'
+            ]
+          },
+          {
+            title: 'Actividad guiada: diagnóstico mínimo con acompañamiento',
+            items: [
+              'Define una sola acción valiosa de tu página y el indicador que la representa.',
+              'Consulta GA4, Search Console, las estadísticas del constructor o un registro manual de prueba; toma una captura.',
+              'Completa la matriz: objetivo, dato, interpretación, hipótesis, mejora y cómo verificarás el resultado.',
+              'Comparte tu mejora priorizada; recibe y aplica retroalimentación breve del docente o de un compañero.'
+            ]
+          },
+          {
+            title: 'Cierre: medir con criterio y ética',
+            items: [
+              'Un tablero no mejora una página: una decisión informada y comprobable sí.',
+              'Recoge solo datos necesarios, respeta la privacidad y evita interpretar cifras pequeñas como verdades definitivas.',
+              'Próxima sesión: iteraremos la página y sustentaremos las mejoras finales con evidencia.'
             ]
           }
         ]
