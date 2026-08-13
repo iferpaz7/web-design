@@ -1725,40 +1725,96 @@ export const syllabusUnits: SyllabusUnit[] = [
         href: '/unidad4/tema4',
         disponible: true,
         panorama:
-          'El cierre del curso exige revisar, optimizar y presentar la página web como una solución justificada. Este tema prepara la entrega final y la argumentación de decisiones de diseño, contenido, publicación y mejora.',
+          'El cierre del curso exige revisar, optimizar y presentar la página web como una solución justificada. Este tema consolida en una sola narrativa defendible todo el trabajo de la Unidad 4: la auditoría de oportunidades de mejora, los ajustes de SEO y rendimiento, y la interpretación de datos de comportamiento. Sustentar un proyecto no es "mostrar pantallas": es traducir decisiones de diseño a lenguaje de objetivos, respaldar cada mejora con evidencia verificable y contar el proceso completo, no solo el resultado final.',
         objetivos: [
-          'Consolidar la versión final de la página web.',
-          'Sustentar decisiones de mejora con argumentos claros.',
-          'Presentar el proyecto con criterio profesional y académico.'
+          'Consolidar en una sola narrativa las decisiones de estrategia, UX, contenido, publicación y optimización tomadas durante el curso.',
+          'Sustentar cada mejora aplicada con evidencia (auditoría, dato o prueba), no con opinión.',
+          'Presentar el proyecto en lenguaje de objetivos y resultados, anticipando preguntas de un evaluador o cliente.',
+          'Identificar, con retroalimentación docente, el ajuste final prioritario antes del cierre de la Unidad 4.'
         ],
         ideasClave: [
-          'Presentar bien también es parte del diseño.',
-          'Una mejora vale más cuando se puede justificar.',
-          'El proyecto final debe evidenciar proceso, no solo resultado.'
+          'Presentar bien también es parte del diseño: a un evaluador o cliente no le interesa la jerga técnica, le interesa cómo el proyecto resuelve su problema.',
+          'Una mejora vale más cuando se puede justificar con evidencia verificable, no con una opinión o una impresión general.',
+          'El proyecto final debe evidenciar proceso, no solo resultado: contar de dónde se partió y qué cambió genera más confianza que mostrar solo la pantalla terminada.',
+          'Anticipar la pregunta incómoda ("¿por qué cambiaste esto?") es parte de estar preparado para sustentar, no un imprevisto.'
         ],
         actividad:
-          'Prepara la entrega final de la página web y una exposición breve que resuma decisiones, mejoras y resultados.',
+          'Ensaya la sustentación de tu proyecto integrador siguiendo la estructura de cinco partes: contexto y objetivo inicial, evidencia recogida, decisiones y mejoras aplicadas, resultado con evidencia de impacto, y aprendizaje con siguiente paso. Recibe retroalimentación estructurada del docente y ajusta tu guion en vivo.',
         evidencia: 'Página web optimizada y reporte ejecutivo final.',
         herramientas: [
-          'Guion de presentación',
+          'Guion de sustentación (estructura de cinco partes)',
           'Versión final publicada o compartible',
-          'Reporte ejecutivo de mejoras'
+          'Reporte ejecutivo de mejoras',
+          'Evidencia acumulada de U4T1 (auditoría), U4T2 (PageSpeed) y U4T3 (medición)'
         ],
         presentationBlocks: [
           {
-            title: 'Secuencia recomendada para cerrar el proyecto',
+            title: 'Objetivo de la sesión',
             items: [
-              'Prototipo validado antes de la publicación final.',
-              'Página web publicada o compartible con rutas de conversión funcionales.',
-              'Cierre con medición básica, mejoras justificadas y defensa clara del proceso.'
+              'Consolidar en una sola narrativa las decisiones tomadas durante el curso.',
+              'Sustentar cada mejora con evidencia verificable, no con opinión.',
+              'Presentar el proyecto en lenguaje de objetivos y resultados.',
+              'Ajustar el guion de sustentación con retroalimentación docente antes del cierre de la Unidad 4.'
             ]
           },
           {
-            title: 'Umbrales de calidad para la entrega',
+            title: 'A un evaluador no le interesa el diseño en sí',
             items: [
-              'Versión final consistente entre diseño, mensaje y objetivo.',
-              'Pruebas de funcionamiento, legibilidad y desempeño básicas completadas.',
-              'Presentación breve que explique decisiones, mejoras y resultados sin depender de material externo.'
+              'Le interesa cómo tu proyecto resuelve un problema real y qué evidencia lo sostiene.',
+              'Traduce cada decisión de diseño a su consecuencia para el usuario o el objetivo del proyecto.',
+              'Ejemplo: no digas "el hero tiene buena jerarquía visual"; di "el mensaje se entiende en 3 segundos, lo que reduce el abandono".'
+            ]
+          },
+          {
+            title: 'Estructura de cinco partes para sustentar',
+            items: [
+              '1. Contexto y objetivo inicial: qué problema y qué público atendía el proyecto.',
+              '2. Evidencia recogida: auditoría (U4T1), SEO y rendimiento (U4T2), medición (U4T3).',
+              '3. Decisiones y mejoras aplicadas: qué se cambió y por qué, no solo qué quedó.',
+              '4. Resultado con evidencia de impacto: captura, cifra o prueba que respalde la mejora.',
+              '5. Aprendizaje y siguiente paso: qué se aprendió y qué queda pendiente de iterar.'
+            ]
+          },
+          {
+            title: 'Contar el proceso, no solo el resultado',
+            items: [
+              'Mostrar solo la pantalla final "esconde" el trabajo detrás: auditoría, decisiones descartadas, iteración.',
+              'La secuencia problema → evidencia → decisión → resultado genera más confianza que un antes/después sin contexto.',
+              'Mencionar una decisión que se descartó (y por qué) demuestra criterio profesional, no debilidad.'
+            ]
+          },
+          {
+            title: 'Sustentar con evidencia, no con opinión',
+            items: [
+              'Cada mejora presentada debe apoyarse en algo verificable: captura de PageSpeed, cifra de conversión, observación registrada o lista de cotejo.',
+              'Error común: decir "mejoró mucho la conversión" sin cifra, fuente ni periodo declarado.',
+              'Si no hay dato disponible, declara la prueba manual realizada y su límite, tal como se trabajó en U4T3.'
+            ]
+          },
+          {
+            title: 'Errores que debilitan una sustentación',
+            items: [
+              'Presentar pantalla por pantalla sin explicar el problema que resuelve cada sección.',
+              'Usar jerga de diseño sin traducirla a una consecuencia para el usuario o el negocio.',
+              'Afirmar una mejora sin evidencia que la sostenga.',
+              'Improvisar sin ensayo previo: se pierde orden y se omiten puntos clave.'
+            ]
+          },
+          {
+            title: 'Actividad: ensayo de sustentación con retroalimentación',
+            items: [
+              'Organiza tu guion en las cinco partes y prepara la evidencia de respaldo para cada mejora.',
+              'Presenta tu avance en el turno asignado (máximo 4 minutos).',
+              'Recibe retroalimentación en tres columnas: qué mantener, qué mejorar, qué iterar.',
+              'Ajusta en vivo al menos un punto de tu guion según la retroalimentación recibida.'
+            ]
+          },
+          {
+            title: 'Cierre: un buen testimonio, no una vitrina',
+            items: [
+              'El mejor cierre no es la pantalla más bonita, sino la capacidad de explicar con honestidad por qué se tomó cada decisión.',
+              'Este ensayo es insumo directo para el reporte ejecutivo final y para el cierre de la Unidad 4.',
+              'Próximo hito del curso: Examen Bimestre II, que integra y sustenta los aprendizajes de todo el período académico.'
             ]
           }
         ]
