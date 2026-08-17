@@ -73,9 +73,13 @@ class ClassDoc:
     @property
     def topic_name(self) -> str:
         if self.unit_number is None:
-            # Detectar si es contenido de bimestre/examen por el título o ruta
+            # Detectar el bimestre indicado en el título del contenido o del examen.
             title_lower = (self.title or "").casefold()
-            if "bimestre" in title_lower or "examen" in title_lower:
+            match = re.search(r"\bbimestre\s+(i|ii|1|2)\b", title_lower)
+            if match:
+                value = match.group(1)
+                return "Bimestre II" if value in {"ii", "2"} else "Bimestre I"
+            if "examen" in title_lower:
                 return "Bimestre I"
             return "General"
         return f"Unidad {self.unit_number}"
@@ -346,7 +350,10 @@ def parse_class_doc(path: Path, site_url: str = DEFAULT_SITE_URL) -> ClassDoc:
         unit_number=unit_number,
         topic_number=topic_number,
         session_topic=session_topic,
-        objective=section_text(markdown, "Objetivo de la clase"),
+        objective=(
+            section_text(markdown, "Objetivo de la clase")
+            or section_text(markdown, "Objetivo de la evaluación")
+        ),
         resources=parse_resources(markdown),
         activity_title=activity_title or "Actividad de la clase",
         activity_body=activity_section,
