@@ -420,8 +420,9 @@ python3 tools/google_classroom/classroom_cli.py delete-course COURSE_ID --yes
 ## Crear un Google Form desde el examen
 
 El comando `create-form` lee un archivo `docs/examenes/examen-*.md` y genera automáticamente
-un Google Form con una pregunta de texto largo por cada pregunta del examen, organizado
-en secciones (Sección A / Sección B) y con un campo de nombre al inicio.
+un Google Form organizado en secciones (Sección A / Sección B) y con un campo de nombre al inicio.
+Las preguntas que incluyan opciones en líneas con formato `A)`, `B)`, etc. se crean como selección
+única; las demás se crean como preguntas de texto largo.
 
 ### Requisitos previos (una sola vez)
 

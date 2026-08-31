@@ -468,6 +468,7 @@ def class_assignment_body(
     due_date: str | None,
     due_time: str | None,
 ) -> dict[str, Any]:
+    urls = [resource["url"] for resource in doc.resources] or doc.site_links
     description = "\n\n".join(
         part
         for part in [
@@ -485,7 +486,7 @@ def class_assignment_body(
         "state": state,
         "workType": "ASSIGNMENT",
         "maxPoints": points,
-        "materials": material_items(doc.site_links),
+        "materials": material_items(urls),
     }
     due_date_value = due_date_body(due_date)
     due_time_value = due_time_body(due_time)
@@ -975,6 +976,7 @@ class ExamQuestion:
     context: str         # blockquote / situación hipotética, may be empty
     body: str            # full question text (sans title line)
     section: str         # "SECCIÓN A" or "SECCIÓN B"
+    options: list[str]   # empty for long-answer questions
 
 
 def _strip_md_formatting(text: str) -> str:
@@ -984,6 +986,21 @@ def _strip_md_formatting(text: str) -> str:
     text = re.sub(r"^[-*]\s+", "", text, flags=re.MULTILINE)
     text = re.sub(r"^\d+\.\s+", "", text, flags=re.MULTILINE)
     return text.strip()
+
+
+def _extract_choice_options(body_text: str) -> tuple[str, list[str]]:
+    """Separa las opciones A) ... D) del cuerpo de una pregunta Markdown."""
+    options: list[str] = []
+    body_lines: list[str] = []
+
+    for line in body_text.splitlines():
+        match = re.match(r"^\s*[A-Z]\)\s+(.+?)\s*$", line)
+        if match:
+            options.append(match.group(1))
+            continue
+        body_lines.append(line)
+
+    return "\n".join(body_lines).strip(), options
 
 
 def parse_exam_markdown(path: Path) -> tuple[str, str, list[ExamQuestion]]:
@@ -1034,7 +1051,8 @@ def parse_exam_markdown(path: Path) -> tuple[str, str, list[ExamQuestion]]:
                 else:
                     body_lines.append(line)
             context = "\n".join(context_lines).strip()
-            body = _strip_md_formatting("\n".join(body_lines).strip())
+            body_without_options, options = _extract_choice_options("\n".join(body_lines))
+            body = _strip_md_formatting(body_without_options)
 
             # Only add blocks that look like numbered questions
             if re.search(r"Pregunta\s+\d+", heading, re.IGNORECASE):
@@ -1047,6 +1065,7 @@ def parse_exam_markdown(path: Path) -> tuple[str, str, list[ExamQuestion]]:
                         context=context,
                         body=body,
                         section=current_section,
+                        options=options,
                     )
                 )
         else:
@@ -1096,7 +1115,8 @@ def _build_form_requests(questions: list[ExamQuestion]) -> list[dict[str, Any]]:
     """
     Build the batchUpdate requests list that populates the form with:
     - One section break per SECCIÓN change
-    - One paragraph (long-answer) text item per question
+    - Un ítem de selección única si la pregunta Markdown incluye opciones A) ...
+    - Un ítem de texto largo para todas las demás preguntas
     The Form API uses an index-based insert; we build them in reverse order
     so that inserting at index 0 each time preserves the final order.
     """
@@ -1131,18 +1151,22 @@ def _build_form_requests(questions: list[ExamQuestion]) -> list[dict[str, Any]]:
             parts.append(q.body)
         description = "\n\n".join(parts)
 
+        question: dict[str, Any] = {"required": True}
+        if q.options:
+            question["choiceQuestion"] = {
+                "type": "RADIO",
+                "options": [{"value": option} for option in q.options],
+            }
+        else:
+            question["textQuestion"] = {"paragraph": True}
+
         requests.append({
             "createItem": {
                 "item": {
                     "title": q.title,
                     "description": description,
                     "questionItem": {
-                        "question": {
-                            "required": True,
-                            "textQuestion": {
-                                "paragraph": True,   # long-answer text box
-                            },
-                        }
+                        "question": question,
                     },
                 },
                 "location": {"index": location_index},
@@ -1155,8 +1179,8 @@ def _build_form_requests(questions: list[ExamQuestion]) -> list[dict[str, Any]]:
 
 def cmd_create_form(args: argparse.Namespace) -> None:
     """
-    Parse an examen-*.md file, create a Google Form with one long-answer question
-    per exam question, then optionally link the form to a Classroom assignment.
+    Parse an examen-*.md file, create a Google Form from its questions, then
+    optionally link the form to a Classroom assignment.
     """
     exam_path = Path(args.exam_file).expanduser()
     if not exam_path.exists():
@@ -1170,7 +1194,8 @@ def cmd_create_form(args: argparse.Namespace) -> None:
         print(f"[dry-run] Título del form: {title}")
         print(f"[dry-run] Preguntas encontradas: {len(questions)}")
         for q in questions:
-            print(f"  [{q.section}] {q.title} ({q.points})")
+            tipo = "selección única" if q.options else "respuesta extensa"
+            print(f"  [{q.section}] {q.title} ({q.points}; {tipo})")
         return
 
     forms = _forms_service(args)
@@ -1225,6 +1250,23 @@ def cmd_create_form(args: argparse.Namespace) -> None:
     execute(forms.forms().batchUpdate(formId=form_id, body={"requests": update_requests}))
     print(f"  {len(questions)} preguntas agregadas al form.")
 
+    # Los formularios creados por API requieren publicación explícita desde julio de 2026.
+    execute(
+        forms.forms().setPublishSettings(
+            formId=form_id,
+            body={
+                "publishSettings": {
+                    "publishState": {
+                        "isPublished": True,
+                        "isAcceptingResponses": True,
+                    }
+                },
+                "updateMask": "publishState",
+            },
+        )
+    )
+    print("  Form publicado y habilitado para recibir respuestas.")
+
     # Step 3 — optionally attach the form link to an existing Classroom assignment
     if args.course_id and args.assignment_id:
         classroom = classroom_service(args)
@@ -1276,7 +1318,7 @@ def cmd_create_form(args: argparse.Namespace) -> None:
     # Step 4 — write the form URL back into the exam markdown as a footer comment
     _write_form_url_to_exam(exam_path, responder_url, edit_url)
 
-    print("\nListo. Activa las respuestas y cambia el estado a PUBLISHED cuando estés listo.")
+    print("\nListo. El form está publicado y acepta respuestas.")
 
 
 def _write_form_url_to_exam(exam_path: Path, responder_url: str, edit_url: str) -> None:
