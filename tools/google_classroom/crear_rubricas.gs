@@ -15,7 +15,7 @@
  * Si no eres elegible (Education Plus requerido para la API),
  * ejecuta "crearRubricaManual_A" etc. para ver las instrucciones paso a paso.
  *
- * IDs de las tareas (curso 798151026377):
+ * IDs de las tareas (curso 870178538596):
  *   798150892743  Brief inicial de campana           -> Rubrica B
  *   798151054081  Ficha comparativa de UX/UI         -> Rubrica A
  *   798150872384  Rediseno guiado del hero            -> Rubrica B
@@ -28,7 +28,7 @@
  *   867657302501  Prototipo navegable                 -> Rubrica D
  */
 
-var COURSE_ID = '798151026377';
+var COURSE_ID = '870178538596';
 
 // Mapeo tarea -> rubrica
 var ASIGNACIONES = [

@@ -81,7 +81,7 @@ class ClassDoc:
                 return "Bimestre II" if value in {"ii", "2"} else "Bimestre I"
             if "examen" in title_lower:
                 return "Bimestre I"
-            return "General"
+            return "Información General"
         return f"Unidad {self.unit_number}"
 
     @property

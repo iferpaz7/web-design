@@ -457,14 +457,14 @@ pnpm classroom create-form docs/examenes/examen-bimestre1-2026-06-17.md --dry-ru
 Necesitas el `COURSE_ID` y el `ASSIGNMENT_ID` de la tarea. Para obtener el assignment ID:
 
 ```bash
-pnpm classroom list-assignments 798151026377
+pnpm classroom list-assignments 870178538596
 ```
 
 Luego:
 
 ```bash
 pnpm classroom create-form docs/examenes/examen-bimestre1-2026-06-17.md \
-  --course-id 798151026377 \
+  --course-id 870178538596 \
   --assignment-id ASSIGNMENT_ID
 ```
 

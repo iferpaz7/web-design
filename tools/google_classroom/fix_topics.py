@@ -26,7 +26,7 @@ sys.path.insert(0, str(ROOT / ".python_deps"))
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 
-COURSE_ID = "798151026377"
+COURSE_ID = "870178538596"
 TOKEN = ROOT / "token.json"
 SCOPES = [
     "https://www.googleapis.com/auth/classroom.courses",

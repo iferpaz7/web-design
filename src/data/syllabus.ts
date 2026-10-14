@@ -1337,34 +1337,36 @@ export const syllabusUnits: SyllabusUnit[] = [
       {
         numero: 4,
         titulo:
-          'Revisión de calidad antes de publicar: enlaces, legibilidad, carga y recursos',
+          'Auditoría integral de calidad y conversión: cierre de producción y apertura de optimización',
         descripcion:
-          'Control final de la página web antes de entregarla o compartirla como producto funcional.',
+          'Control final de calidad técnica y primera hipótesis de mejora orientada a conversión en una sola sesión.',
         href: '/unidad3/tema4',
         disponible: true,
         panorama:
-          'Antes de presentar la página web, es necesario revisar enlaces, legibilidad, accesibilidad básica, recursos visuales y tiempos de carga. Este tema consolida la etapa de control de calidad con criterios prácticos, verificables y apoyados en herramientas gratuitas de auditoría (WAVE y PageSpeed Insights).',
+          'Antes de presentar la página web es necesario verificar enlaces, legibilidad, accesibilidad, recursos y carga; y una vez que funciona, preguntar si guía bien al usuario hacia la acción esperada. Esta sesión fusiona el cierre de producción de la Unidad 3 con la apertura de optimización de la Unidad 4: primero una auditoría de calidad con herramientas gratuitas (WAVE y PageSpeed Insights) y luego una clínica de conversión (fricción, matriz impacto-esfuerzo e hipótesis de mejora). La calidad se verifica con herramientas y la mejora se decide con evidencia.',
         objetivos: [
-          'Aplicar una revisión final de calidad visual, funcional y de accesibilidad básica.',
-          'Interpretar resultados de herramientas de auditoría de enlaces, accesibilidad y velocidad de carga.',
-          'Corregir errores de enlace, contraste, lectura o carga básica antes de publicar.',
-          'Preparar la página web para su entrega, presentación o socialización.'
+          'Aplicar una revisión final de calidad visual, funcional y de accesibilidad básica con WAVE y PageSpeed Insights.',
+          'Corregir errores críticos de enlace, contraste, lectura o carga antes de entregar la página.',
+          'Identificar fricciones de conversión y priorizarlas con matriz impacto-esfuerzo.',
+          'Formular una hipótesis de mejora vinculada a la acción esperada del usuario.'
         ],
         ideasClave: [
           'La calidad se verifica con herramientas, no se asume por apariencia.',
-          'Detalles pequeños (un enlace roto, una imagen sin texto alternativo) afectan confianza y conversión.',
-          'Una auditoría estructurada en cuatro dimensiones —enlaces, legibilidad, carga y recursos— evita revisiones incompletas.',
-          'Una revisión final ordenada mejora la presentación profesional del proyecto.'
+          'Detalles pequeños (enlace roto, imagen sin texto alternativo) afectan confianza y conversión.',
+          'No todo se mejora a la vez: impacto-esfuerzo elige cambios viables con efecto visible.',
+          'Una hipótesis de mejora convierte una opinión visual en una decisión profesional verificable.'
         ],
         actividad:
-          'Ejecuta una auditoría final con lista de cotejo, apoyada en WAVE y PageSpeed Insights, y aplica correcciones antes de publicar o entregar.',
+          'Ejecuta la auditoría integral: lista de cotejo de calidad con WAVE y PageSpeed (con al menos dos correcciones aplicadas) más clínica de conversión con tres oportunidades priorizadas e hipótesis validada con el docente.',
         evidencia:
-          'Página web publicada o compartible, con lista de cotejo de calidad completada y observaciones corregidas.',
+          'Página web publicada o compartible, lista de cotejo de calidad completada e hipótesis de mejora priorizada.',
         herramientas: [
           'Lista de verificación final',
-          'Prueba manual y automatizada de enlaces',
           'WAVE (accesibilidad)',
           'PageSpeed Insights (carga y rendimiento)',
+          'Checklist CRO básico',
+          'Matriz impacto-esfuerzo',
+          'Capturas antes y después',
           'Revisión en móvil y escritorio'
         ],
         presentationBlocks: [
@@ -1386,60 +1388,11 @@ export const syllabusUnits: SyllabusUnit[] = [
               'Comprobar formularios, recursos visuales y textos visibles en la versión publicada.',
               'Verificar versión móvil, escritorio y legibilidad general.'
             ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    numero: 4,
-    titulo: 'Optimización, medición y proyección profesional',
-    descripcion:
-      'Evalúa, mejora y sustenta la página web con criterios de conversión, visibilidad y medición básica.',
-    color: 'purple',
-    iconName: 'Zap',
-    capacidad:
-      'Evaluar el desempeño de la página web y proponer mejoras con base en objetivos, métricas y criterios de presentación profesional.',
-    evidencia:
-      'Versión optimizada de la página web y reporte ejecutivo de mejoras con medición básica.',
-    temas: [
-      {
-        numero: 1,
-        titulo: 'Principios de optimización orientada a la conversión',
-        descripcion:
-          'Criterios para detectar oportunidades de mejora en claridad, estructura y llamados a la acción.',
-        href: '/unidad4/tema1',
-        disponible: true,
-        panorama:
-          'Optimizar una página web no consiste en rehacerla por completo, sino en detectar qué elementos generan fricción, confusión o menor respuesta. Este tema parte de la página publicada y auditada en la unidad anterior para convertir la revisión de calidad en una mejora orientada a conversión: claridad del mensaje, llamado a la acción, confianza, lectura móvil y ruta de contacto.',
-        objetivos: [
-          'Identificar oportunidades de mejora en una página ya publicada o compartible a partir de fricción funcional, cognitiva y emocional.',
-          'Priorizar mejoras de alto impacto según claridad del mensaje, CTA, confianza, experiencia móvil y esfuerzo de implementación.',
-          'Formular una hipótesis de optimización que conecte cada ajuste con una acción esperada del usuario.'
-        ],
-        ideasClave: [
-          'La optimización comienza cuando la página ya funciona y puede analizarse desde el objetivo real del usuario.',
-          'Una oportunidad de mejora debe explicar qué fricción existe, a qué acción afecta y por qué vale la pena intervenirla.',
-          'No todo se mejora a la vez: la matriz impacto-esfuerzo ayuda a elegir cambios viables con efecto visible.',
-          'Una hipótesis de mejora convierte una opinión visual en una decisión profesional verificable.'
-        ],
-        actividad:
-          'Realiza una clínica de optimización de conversión: revisa tu página publicada, detecta tres oportunidades de mejora, clasifícalas por tipo de fricción, priorízalas con matriz impacto-esfuerzo y formula una hipótesis validada con el docente.',
-        evidencia:
-          'Lista priorizada de oportunidades con clasificación de fricción, matriz impacto-esfuerzo e hipótesis de mejora vinculada al objetivo de conversión.',
-        herramientas: [
-          'Checklist CRO básico',
-          'Matriz impacto-esfuerzo',
-          'Capturas antes y después',
-          'WAVE (accesibilidad)',
-          'PageSpeed Insights (rendimiento)'
-        ],
-        presentationBlocks: [
+          },
           {
             title: 'De página funcional a página optimizada',
             items: [
-              'La Unidad 3 cerró con una página publicada o compartible y un mecanismo de contacto revisado.',
-              'La Unidad 4 pregunta si esa página guía con claridad hacia una acción valiosa.',
+              'La auditoría confirmó que la página funciona. Ahora la pregunta cambia: ¿guía con claridad hacia una acción valiosa?',
               'Optimizar no significa rehacer todo: significa remover fricción y mejorar decisiones clave.',
               'La evidencia de mejora debe mostrar antes, decisión, después y criterio usado.'
             ]
@@ -1481,26 +1434,39 @@ export const syllabusUnits: SyllabusUnit[] = [
             ]
           },
           {
-            title: 'Entrega de la clínica',
+            title: 'Entrega y puente a la Unidad 4',
             items: [
-              'URL de la página revisada y objetivo de conversión definido.',
-              'Tres oportunidades de mejora clasificadas por tipo de fricción.',
-              'Priorización con matriz impacto-esfuerzo.',
-              'Hipótesis principal validada con retroalimentación docente.'
+              'Entrega: URL revisada + lista de cotejo de calidad + tres oportunidades priorizadas con matriz impacto-esfuerzo + hipótesis validada.',
+              'Aplica la mejora número uno antes de la próxima sesión y registra el antes/después.',
+              'Próxima sesión — Unidad 4, Tema 1: SEO básico y rendimiento. Trae la URL actualizada y tu puntaje PageSpeed.'
             ]
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    numero: 4,
+    titulo: 'Optimización, medición y proyección profesional',
+    descripcion:
+      'Evalúa, mejora y sustenta la página web con criterios de conversión, visibilidad y medición básica.',
+    color: 'purple',
+    iconName: 'Zap',
+    capacidad:
+      'Evaluar el desempeño de la página web y proponer mejoras con base en objetivos, métricas y criterios de presentación profesional.',
+    evidencia:
+      'Versión optimizada de la página web y reporte ejecutivo de mejoras con medición básica.',
+    temas: [
       {
-        numero: 2,
+        numero: 1,
         titulo:
           'Fundamentos de visibilidad, estructura SEO y rendimiento básico',
         descripcion:
           'Ajustes elementales para que la página web sea encontrable, legible y técnicamente más sólida.',
-        href: '/unidad4/tema2',
+        href: '/unidad4/tema1',
         disponible: true,
         panorama:
-          'La página web debe ser comprensible para usuarios y ordenada para buscadores. Este tema aborda SEO on-page en su forma más práctica: estructura semántica de encabezados, título de página, meta descripción, texto alternativo y diagnóstico de Core Web Vitals con PageSpeed Insights. No es un tema técnico separado del diseño: es la extensión natural de la optimización trabajada en U4T1. Una página que comunica bien al usuario pero falla en estructura, carga o visibilidad técnica pierde alcance, conversión y confianza. El SEO básico y el rendimiento son el duramen del diseño web: invisibles para el usuario casual pero determinantes para la calidad real del proyecto.',
+          'La página web debe ser comprensible para usuarios y ordenada para buscadores. Este tema aborda SEO on-page en su forma más práctica: estructura semántica de encabezados, título de página, meta descripción, texto alternativo y diagnóstico de Core Web Vitals con PageSpeed Insights. No es un tema técnico separado del diseño: es la extensión natural de la optimización trabajada en la auditoría integral (Unidad 3, Tema 4). Una página que comunica bien al usuario pero falla en estructura, carga o visibilidad técnica pierde alcance, conversión y confianza. El SEO básico y el rendimiento son el duramen del diseño web: invisibles para el usuario casual pero determinantes para la calidad real del proyecto.',
         objetivos: [
           'Comprender qué elementos de SEO on-page impactan directamente la visibilidad y la comprensión de una página web de campaña.',
           'Aplicar criterios de estructura semántica: jerarquía de encabezados, título de página, meta descripción y texto alternativo.',
@@ -1630,12 +1596,12 @@ export const syllabusUnits: SyllabusUnit[] = [
         ]
       },
       {
-        numero: 3,
+        numero: 2,
         titulo:
           'Medición básica del comportamiento, conversiones e interpretación de datos',
         descripcion:
           'Lectura inicial de señales de uso y respuesta para tomar decisiones de mejora.',
-        href: '/unidad4/tema3',
+        href: '/unidad4/tema2',
         disponible: true,
         panorama:
           'Medir permite decidir con evidencia. A partir de la página ya optimizada en estructura, visibilidad y rendimiento, este tema enseña a leer señales básicas de comportamiento y conversión para formular una mejora priorizada, ética y verificable.',
@@ -1717,12 +1683,12 @@ export const syllabusUnits: SyllabusUnit[] = [
         ]
       },
       {
-        numero: 4,
+        numero: 3,
         titulo:
           'Iteración de la página web, presentación final y argumentación de mejoras',
         descripcion:
           'Cierre del proyecto con ajustes finales, sustentación y enfoque profesional.',
-        href: '/unidad4/tema4',
+        href: '/unidad4/tema3',
         disponible: true,
         panorama:
           'El cierre del curso exige revisar, optimizar y presentar la página web como una solución justificada. Este tema consolida en una sola narrativa defendible todo el trabajo de la Unidad 4: la auditoría de oportunidades de mejora, los ajustes de SEO y rendimiento, y la interpretación de datos de comportamiento. Sustentar un proyecto no es "mostrar pantallas": es traducir decisiones de diseño a lenguaje de objetivos, respaldar cada mejora con evidencia verificable y contar el proceso completo, no solo el resultado final.',
@@ -1745,7 +1711,7 @@ export const syllabusUnits: SyllabusUnit[] = [
           'Guion de sustentación (estructura de cinco partes)',
           'Versión final publicada o compartible',
           'Reporte ejecutivo de mejoras',
-          'Evidencia acumulada de U4T1 (auditoría), U4T2 (PageSpeed) y U4T3 (medición)'
+          'Evidencia acumulada de la auditoría integral (U3T4), SEO (U4T1) y medición (U4T2)'
         ],
         presentationBlocks: [
           {
@@ -1769,7 +1735,7 @@ export const syllabusUnits: SyllabusUnit[] = [
             title: 'Estructura de cinco partes para sustentar',
             items: [
               '1. Contexto y objetivo inicial: qué problema y qué público atendía el proyecto.',
-              '2. Evidencia recogida: auditoría (U4T1), SEO y rendimiento (U4T2), medición (U4T3).',
+              '2. Evidencia recogida: auditoría integral (U3T4), SEO y rendimiento (U4T1), medición (U4T2).',
               '3. Decisiones y mejoras aplicadas: qué se cambió y por qué, no solo qué quedó.',
               '4. Resultado con evidencia de impacto: captura, cifra o prueba que respalde la mejora.',
               '5. Aprendizaje y siguiente paso: qué se aprendió y qué queda pendiente de iterar.'
