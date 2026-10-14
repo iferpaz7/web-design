@@ -81,14 +81,14 @@ La evaluación de la asignatura se orienta al desempeño mediante un proyecto in
 - Córcoles Tendero, J. E. (2014). _Diseño de interfaces web_. RA-MA Editorial.
 - Fernández Casado, P. E. (2021). _Accesibilidad web: Diseño de aplicaciones_. RA-MA Editorial.
 - Fernández Casado, P. E. (2024). _Iniciación a la creación de páginas web_. RA-MA Editorial.
-- Krug, S. (2006). _No me hagas pensar: Una aproximación a la usabilidad en la web_. Pearson Educación.
+- Krug, S. (2014). _No me hagas pensar: Una aproximación a la usabilidad en la web_ (3.ª ed.). Anaya Multimedia.
 - Martínez Rolán, X. (2019). _Diseño de páginas web: WordPress para todos los públicos_. Altaria.
 
 ## Enlaces de Internet
 
-- [Figma](https://figma.com)
-- [WordPress.org](https://wordpress.org)
-- [Elementor](https://elementor.com)
-- [Google Search Central](https://developers.google.com/search/docs)
-- [Google Analytics Help](https://support.google.com/analytics)
-- [PageSpeed Insights](https://pagespeed.web.dev)
+- Figma. (s.f.). _Guía de recursos_. https://www.figma.com/resource-library/
+- WordPress.org. (s.f.). _Blog tool, publishing platform, and CMS_. https://wordpress.org
+- Elementor. (s.f.). _Website builder_. https://elementor.com
+- Google Search Central. (s.f.). _SEO starter guide_. Google. https://developers.google.com/search/docs/fundamentals/seo-starter-guide
+- Google. (s.f.). _Ayuda de Google Analytics_. https://support.google.com/analytics/?hl=es
+- Google. (s.f.). _PageSpeed Insights_. https://pagespeed.web.dev
