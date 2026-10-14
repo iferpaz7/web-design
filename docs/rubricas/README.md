@@ -47,11 +47,13 @@ El script `tools/google_classroom/crear_rubricas.gs` crea automáticamente los 5
 
 | Archivo                            | Rúbrica                   | Aplica a                                                           |
 | ---------------------------------- | ------------------------- | ------------------------------------------------------------------ |
-| `rubrica-taller-analitico.md`      | A — Taller analítico      | Ficha comparativa UX/UI, Auditoría visual, Auditoría accesibilidad |
+| `rubrica-taller-analitico.md`      | A — Taller analítico      | Ficha comparativa UX/UI, Auditoría accesibilidad |
 | `rubrica-taller-practico.md`       | B — Taller práctico       | Brief, Rediseño hero, Ficha de usuario                             |
 | `rubrica-proyecto-avance.md`       | C — Proyecto avance       | Mapa de secciones, Copy persuasivo                                 |
 | `rubrica-proyecto-cierre.md`       | D — Proyecto cierre       | Prototipo navegable                                                |
 | `rubrica-actividad-asincronica.md` | E — Actividad asincrónica | Auditoría visual comparativa, Análisis de páginas                  |
+| `rubrica-f-unidad3.md`               | F — Producción U3         | Plan, maquetación, formularios, auditoría integral                 |
+| `rubrica-g-unidad4.md`               | G — Optimización U4       | SEO, medición, sustentación y reporte                              |
 
 ## Cómo importar en Google Classroom
 

@@ -1754,7 +1754,7 @@ export const syllabusUnits: SyllabusUnit[] = [
             items: [
               'Cada mejora presentada debe apoyarse en algo verificable: captura de PageSpeed, cifra de conversión, observación registrada o lista de cotejo.',
               'Error común: decir "mejoró mucho la conversión" sin cifra, fuente ni periodo declarado.',
-              'Si no hay dato disponible, declara la prueba manual realizada y su límite, tal como se trabajó en U4T3.'
+              'Si no hay dato disponible, declara la prueba manual realizada y su límite, tal como se trabajó en U4T2.'
             ]
           },
           {

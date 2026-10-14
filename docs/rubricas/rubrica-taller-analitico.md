@@ -3,7 +3,6 @@
 **Aplica a:**
 
 - Actividad: Ficha comparativa de UX/UI (U1T2)
-- Actividad: Auditoría visual comparativa (U1T3 — asincrónica)
 - Actividad: Auditoría de accesibilidad y lectura móvil (U1T4)
 
 **Puntaje máximo:** 10 puntos (4 criterios × máximo 10 por criterio, promediados sobre 10)
