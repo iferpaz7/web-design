@@ -1,10 +1,9 @@
 ---
-name: 'crear-silabo-sga-unach'
-description: 'Redacta un sílabo en formato SGA alineado al curso y con bibliografía priorizada desde fuentes de UNACH en APA 7. Úsalo cuando necesites crear o rehacer un sílabo institucional.'
+name: crear-silabo-sga-unach
+description: Redacta un sílabo en formato SGA alineado al curso y con bibliografía priorizada desde fuentes de UNACH en APA 7. Úsalo cuando necesites crear o rehacer un sílabo institucional.
+disable-model-invocation: true
 argument-hint: 'tema=... carrera=... nivel=... fuenteUnach=... ajustes=...'
-agent: 'agent'
 ---
-
 Genera un sílabo institucional en español, listo para SGA, tomando como base el estilo, la estructura y el tono de [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md).
 
 Sigue también la guía institucional en [itsae-filosofia-docencia](../instructions/itsae-filosofia-docencia.instructions.md).

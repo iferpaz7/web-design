@@ -1,8 +1,9 @@
 ---
-description: 'Prepara el roadmap maestro de una clase dinámica y memorable, alineada a la sesión exacta del sílabo SGA. Levanta los inputs del prompt, consulta la tabla de sesiones del sílabo para extraer capacidad, horas y evidencia, y separa la salida para la web, docs y Google Classroom. Úsalo para planificar una sesión magistral o mixta coherente con la asignatura de Diseño Web para Marketing Digital y la filosofía ITSAE.'
+name: preparar-roadmap-clase-completa
+description: Prepara el roadmap maestro de una clase dinámica y memorable, alineada a la sesión exacta del sílabo SGA. Levanta los inputs del prompt, consulta la tabla de sesiones del sílabo para extraer capacidad, horas y evidencia, y separa la salida para la web, docs y Google Classroom. Úsalo para planificar una sesión magistral o mixta coherente con la asignatura de Diseño Web para Marketing Digital y la filosofía ITSAE.
+disable-model-invocation: true
 argument-hint: 'Inputs obligatorios: unidad (1-4), tema (1-4 dentro de la unidad), fecha, tipoClase, profundidad, criterio, cantidad. Opcionales: fuenteUnach, ajustes.'
 ---
-
 Prepara el roadmap completo de una clase usando como fuente primaria el sílabo oficial de la asignatura en [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md) y, de manera complementaria cuando el tema ya exista en la web del curso, en [src/data/syllabus.ts](../../src/data/syllabus.ts).
 
 **Antes de generar cualquier contenido**, lee el sílabo completo y localiza la fila de la tabla "Actividades por sesión" que coincida con la **combinación de `unidad` y `tema`** indicadas en los inputs (el número de tema equivale al número de sesión dentro de la unidad, ya que ambos reinician en 1 en cada unidad). Extrae de esa fila:

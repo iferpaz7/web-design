@@ -1,10 +1,9 @@
 ---
-name: 'imprimir-tema-clase'
-description: 'Genera un tema listo para impresión o PDF con fecha y nombre del profesor. Úsalo para entregar o archivar material de clase.'
+name: imprimir-tema-clase
+description: Genera un tema listo para impresión o PDF con fecha y nombre del profesor. Úsalo para entregar o archivar material de clase.
+disable-model-invocation: true
 argument-hint: 'unidad=... tema=... fecha=... profesor=...'
-agent: 'agent'
 ---
-
 Genera una versión lista para impresión de un tema del curso, tomando como base [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md) y [src/data/syllabus.ts](../../src/data/syllabus.ts).
 
 Sigue también la guía institucional en [itsae-filosofia-docencia](../instructions/itsae-filosofia-docencia.instructions.md).
