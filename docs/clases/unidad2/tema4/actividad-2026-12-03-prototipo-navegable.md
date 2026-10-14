@@ -114,3 +114,7 @@ Con mi mapa [PEGAR-MAPA] y copy [PEGAR-COPY], genera wireframe de media fidelida
 Obligatorio a mano: conectar el Prototype hero→formulario, aplicar el checklist de 5 puntos y documentar 1 ajuste. Entrega: share link + nota de validación de 2-3 líneas.
 
 **Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.
+
+### Ejemplo diligenciado (proyecto ficticio: Café Altura, cafetería artesanal en Riobamba)
+
+Figma AI generó los frames en grises con hero, 3 beneficios, reseñas, segundo CTA y footer. El estudiante conectó a mano el Prototype hero→formulario, aplicó el checklist (detectó que el CTA quedaba bajo el pliegue en 375 px) y documentó el ajuste: subtítulo reducido de 20 a 16 px. Share link + nota de 3 líneas en la entrega.

@@ -98,3 +98,7 @@ Genera ilustración simple para la sección de beneficios de [MI-PROYECTO], esti
 Obligatorio a mano: ajustes breakpoint por breakpoint (tipografía, apilado, CTA) documentados. Entrega: URL + 2 ajustes documentados.
 
 **Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.
+
+### Ejemplo diligenciado (proyecto ficticio: Café Altura, cafetería artesanal en Riobamba)
+
+Framer AI generó el hero; el estudiante ajustó a mano: titular 48 px → 30 px en 375 px, apilado vertical de beneficios, CTA a 48 × 48 px. Canva solo aportó 1 ilustración plana del grano. Ajustes documentados: 1) tipografía, 2) botón persistente en móvil.

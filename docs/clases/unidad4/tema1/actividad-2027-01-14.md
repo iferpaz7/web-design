@@ -97,6 +97,10 @@ Mi página: [MI-URL]. Mi title actual: [TITLE]. Mis H1/H2: [PEGAR]. Mis alt: [PE
 Dame: 1) title de 50-60 caracteres con palabra clave, 2) meta de 120-155 con beneficio+acción, 3) corrección del H1 único, 4) 3 alt reescritos descriptivos, 5) causa probable del vital en rojo y fix viable en [MI-HERRAMIENTA]. No inventes puntajes.
 ```
 
-Obligatorio a mano: aplicar al menos 3 de los 5 ajustes en el constructor, con capturas antes/después.
+Obligatorio a mano: aplicar al menos 3 de los 5 ajustes en el constructor, con capturas antes/después (obligatorio: captura + URL + periodo; sin esto la evidencia no se califica).
 
 **Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.
+
+### Ejemplo diligenciado (proyecto ficticio: Café Altura, cafetería artesanal en Riobamba)
+
+Title: "Café de origen en Riobamba | Pide por WhatsApp — Café Altura" (58 caracteres). Meta: "Café tostado esta semana en Riobamba. Pide por WhatsApp y recógelo caliente en 5 min." (118). Alt: "Barista vertiendo café filtrado en taza blanca, local Café Altura Riobamba". Capturas antes/después + URL + periodo en la entrega.

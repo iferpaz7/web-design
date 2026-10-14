@@ -8,7 +8,7 @@
 
 ## Objetivo de la clase
 
-Redactar contenidos persuasivos para las secciones clave de la página web de campaña —titular, beneficios y llamados a la acción— aplicando los principios de comunicación orientada al usuario , en coherencia con la ficha de usuario y el mapa de secciones del proyecto integrador.
+Redactar contenidos persuasivos para las secciones clave de la página web de campaña —titular, beneficios y llamados a la acción— aplicando los principios de comunicación orientada al usuario, en coherencia con la ficha de usuario y el mapa de secciones del proyecto integrador.
 
 ---
 
@@ -118,3 +118,7 @@ Edita mi copy [PEGAR-BORRADOR] como corrector exigente: elimina clichés, verifi
 Entrega: borrador IA + tu versión final reescrita a mano. Pegar texto IA como entrega final invalida la actividad.
 
 **Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.
+
+### Ejemplo diligenciado (proyecto ficticio: Café Altura, cafetería artesanal en Riobamba)
+
+Gemini propuso 3 titulares; el favorito: "Café de origen listo en 5 minutos para oficinistas del centro". ChatGPT convirtió "grano de Loja" en "grano de Loja tostado esta semana: lo sientes en el primer sorbo". Claude marcó el cliché "la mejor calidad" y propuso CTAs "Pedir por WhatsApp" y "Ver menú de hoy". Versión final del estudiante, reescrita a mano, en la entrega.

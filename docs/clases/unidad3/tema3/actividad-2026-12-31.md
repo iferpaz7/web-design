@@ -91,3 +91,7 @@ Mi formulario captura para [MI-PROYECTO] con campos [NOMBRE, EMAIL, MENSAJE]. Re
 Obligatorio a mano: configuración, integración y prueba real de envío con capturas (integrado + envío + recepción + confirmación). Si el embed falla, ruta de contingencia: formulario externo + enlace (10 min).
 
 **Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.
+
+### Ejemplo diligenciado (proyecto ficticio: Café Altura, cafetería artesanal en Riobamba)
+
+Gemini propuso botón "Pedir mi café por WhatsApp" y confirmación "Recibido: te confirmamos en 5 min por este medio". El estudiante configuró el Tally embebido y probó el envío real; capturas de integrado, envío, recepción y confirmación en la entrega.

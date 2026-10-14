@@ -88,3 +88,7 @@ De estos 2 perfiles, elige el más verosímil para [MI-PROYECTO] en Riobamba/Ecu
 Entrega: ficha con nombre y contexto real + mensaje central propio (la IA propone, tú validas y reescribes).
 
 **Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.
+
+### Ejemplo diligenciado (proyecto ficticio: Café Altura, cafetería artesanal en Riobamba)
+
+ChatGPT devolvió 2 perfiles; Claude eligió a "Daniela, 29, contadora en el centro de Riobamba; necesita almorzar sin hacer fila; objeción: 'si pido en línea, ¿llegará caliente?'". Mensaje central propuesto: "Tu café de origen, listo cuando llegues". El estudiante lo validó con una entrevista real a una compañera y lo reescribió: "Pide por WhatsApp y tu café te espera caliente".

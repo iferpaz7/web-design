@@ -101,6 +101,10 @@ URL final de la página publicada o compartible, lista de cotejo de calidad comp
 Mis 3 fricciones: [PEGAR-3]. Mi conversión: [ACCIÓN-VALIOSA]. Clasifica cada una en funcional/cognitiva/emocional, ordénalas en matriz impacto-esfuerzo y redacta mi hipótesis top con formato "Si cambio [X], entonces el usuario podrá [Y], porque [Z]". La hipótesis debe hablar de acción del usuario, no de estética.
 ```
 
-Ejemplo: "Si cambio el CTA de Enviar a Solicitar asesoría, el usuario entenderá mejor el siguiente paso porque el botón comunica la acción real". Entrega: lista de cotejo (cierra U3) + hipótesis validada (abre U4).
+Ejemplo: "Si cambio el CTA de Enviar a Solicitar asesoría, el usuario entenderá mejor el siguiente paso porque el botón comunica la acción real". Entrega: lista de cotejo (cierra U3) + hipótesis validada (abre U4). Requisito de calificación: captura + URL + periodo de cada herramienta ejecutada; sin esto la evidencia no se califica.
 
 **Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.
+
+### Ejemplo diligenciado (proyecto ficticio: Café Altura, cafetería artesanal en Riobamba)
+
+Fricciones: 1) el menú en PDF no abre en móvil (funcional), 2) no se entiende si venden para llevar (cognitiva), 3) sin reseñas visibles (emocional). Hipótesis top: "Si cambio el enlace del menú por una sección web con precios, el usuario podrá decidir sin descargar nada, porque elimina el paso que más abandona en móvil". Captura + URL + periodo de WAVE y PageSpeed adjuntos.

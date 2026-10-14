@@ -104,3 +104,7 @@ Pule mi guion [PEGAR] a lenguaje de objetivos (nada de "jerarquía visual" sin t
 Entrega: guion de 4 min + ajuste en vivo registrado. Formato: 6-8 expositores en clase, resto video asincrónico de 4 min con la misma pauta.
 
 **Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.
+
+### Ejemplo diligenciado (proyecto ficticio: Café Altura, cafetería artesanal en Riobamba)
+
+ChatGPT-jurado preguntó: "¿por qué cambiaste Carrd si ya funcionaba?", "¿qué evidencia sostiene el segundo CTA?", "¿qué descartaste?". Claude cortó la frase "jerarquía visual optimizada" → "el titular ahora se lee en 3 segundos". Guion de 4 min + ajuste en vivo registrado en la entrega.

@@ -92,3 +92,7 @@ Devuelve cadena dato→hallazgo (sin causa)→hipótesis comprobable→mejora vi
 Entrega: matriz de 6 campos + captura de la fuente con periodo. El dato puede venir de prueba manual con periodo y límites declarados.
 
 **Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.
+
+### Ejemplo diligenciado (proyecto ficticio: Café Altura, cafetería artesanal en Riobamba)
+
+Fuente: registro manual, 12-19 ene 2027. Dato: 120 visitas, 6 clics a WhatsApp (5 %). Hallazgo: 5 % llega al contacto (sin afirmar causa). Hipótesis: "si el CTA se repite tras beneficios, los clics suben a 8 %". Mejora: segundo CTA + verificación con 1 semana más de registro.

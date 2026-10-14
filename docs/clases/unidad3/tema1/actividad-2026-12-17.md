@@ -113,3 +113,7 @@ Compara para mi proyecto [MI-PROYECTO, N.º páginas, ¿formulario?]: WordPress+
 Regla del periodo: **la herramienta la eliges tú según tu idea**; declara tu elección con 3 criterios de esta tabla y 1 riesgo asumido. La IA propone, tú decides.
 
 **Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.
+
+### Ejemplo diligenciado (proyecto ficticio: Café Altura, cafetería artesanal en Riobamba)
+
+`[TIEMPO-Y-NIVEL]` → "2 semanas, nivel inicial, sin presupuesto". Gemini devolvió la tabla + 3 preguntas incómodas ("¿quién actualizará el menú cada semana?"). Decisión del estudiante: Carrd (rapidez + formulario + costo cero), criterios: tiempo, costo, formularios; riesgo: SEO básico, mitigado con ficha de Google Business.

@@ -89,3 +89,7 @@ Critica: 1) ¿el primer CTA aparece antes del 3.er bloque? 2) ¿la prueba social
 Entrega: tu mapa + justificación del orden a mano. La IA no decide el orden final.
 
 **Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.
+
+### Ejemplo diligenciado (proyecto ficticio: Café Altura, cafetería artesanal en Riobamba)
+
+Mapa: 1) Hero (titular + CTA WhatsApp), 2) Beneficios (origen, rapidez, precio), 3) Prueba social (reseñas), 4) Menú breve, 5) Segundo CTA + ubicación. Claude observó que la prueba social iba antes de los beneficios y sugirió moverla al bloque 3 con patrón AIDA; el estudiante mantuvo el CTA en el bloque 1 y aceptó el reordenamiento con justificación de 3 líneas.

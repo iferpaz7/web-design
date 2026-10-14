@@ -84,3 +84,7 @@ Hero con titular "[MENSAJE-CENTRAL]", subtítulo breve, CTA principal "[TEXTO-CT
 Ejemplo: `[MI-PROYECTO]` → "pastelería artesanal en Riobamba". Entrega: tu boceto manual + captura de la variante IA + 3 decisiones justificadas a mano. La captura sola no vale.
 
 **Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.
+
+### Ejemplo diligenciado (proyecto ficticio: Café Altura, cafetería artesanal en Riobamba)
+
+`[MI-PROYECTO]` → "Café Altura, cafetería artesanal en Riobamba". `[PÚBLICO-U1T1]` → "jóvenes profesionales 25-35 que trabajan en el centro". `[MENSAJE-CENTRAL]` → "Café de origen ecuatoriano, listo en 5 minutos cerca de tu oficina". `[TEXTO-CTA]` → "Pedir por WhatsApp". La variante IA propuso un hero con foto de taza humeante, titular de 2 líneas y botón verde; el estudiante la reconstruyó en grises y justificó: 1) titular a 32 px sobre subtítulo a 18 px, 2) CTA de 48 px sobre el pliegue, 3) una sola imagen para no competir con el titular.
