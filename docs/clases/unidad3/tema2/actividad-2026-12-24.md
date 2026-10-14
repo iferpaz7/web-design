@@ -64,7 +64,7 @@ En la sesión anterior elegiste la herramienta y configuraste el entorno. Hoy es
 3. **Maqueta el hero section en escritorio:** Coloca titular, subtítulo, CTA principal e imagen o fondo. Aplica jerarquía visual y espaciado del sistema de 8px (16, 24, 32, 48 px entre elementos).
 4. **Maqueta al menos dos secciones adicionales:** Pueden ser beneficios, prueba social, detalle, segundo CTA u otra sección de tu mapa. Cada sección debe tener contenido real del copy de la Unidad 2.
 5. **Cambia a vista móvil y verifica:** Revisa cada sección en la vista de 375 px. El titular debe leerse, el CTA debe verse y los bloques deben apilarse sin perder orden lógico.
-6. **Documenta dos ajustes responsive:** Anota o captura dos cambios concretos que hiciste al pasar de escritorio a móvil (por ejemplo: reducir titular de 48px a 28px, apilar columnas de beneficios, mover imagen debajo del texto).
+6. **Documenta dos ajustes responsive:** Anota o captura dos cambios concretos que hiciste al pasar de escritorio a móvil (por ejemplo: reducir titular de 48 px a 28px, apilar columnas de beneficios, mover imagen debajo del texto).
 
 ---
 

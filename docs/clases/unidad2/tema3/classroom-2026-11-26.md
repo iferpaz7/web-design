@@ -8,7 +8,7 @@
 
 ## Objetivo de la clase
 
-Redactar contenidos persuasivos para las secciones clave de la página web de campaña —titular, beneficios y llamados a la acción— aplicando los principios de comunicación orientada al usuario y coherentes con la ficha de usuario y el mapa de secciones del proyecto integrador.
+Redactar contenidos persuasivos para las secciones clave de la página web de campaña —titular, beneficios y llamados a la acción— aplicando los principios de comunicación orientada al usuario , en coherencia con la ficha de usuario y el mapa de secciones del proyecto integrador.
 
 ---
 

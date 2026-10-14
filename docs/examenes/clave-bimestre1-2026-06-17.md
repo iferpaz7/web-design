@@ -178,4 +178,4 @@ Se aceptan respuestas consistentes con el mapa y el contenido propuestos en las 
 ---
 
 _Documento de uso exclusivo docente. No compartir con estudiantes._
-_Preparado para el Bimestre I — Junio 2026 — Ing. Ivan Paz_
+_Preparado para el Bimestre I — junio de 2026 — Ing. Ivan Paz_

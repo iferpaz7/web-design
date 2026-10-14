@@ -52,7 +52,7 @@ En `src/data/syllabus.ts`: `CTA y imagen` → `CTA e imagen`; `y aun así` → `
 
 - [ ] **Step 3: Normalizar P4+P5 con script revisado**
 
-Unidades SI con espacio (`375px`→`375 px`, `1440px`→`1440 px`, `44x44px`→`44 × 44 px`, `48px`→`48 px`); `min` solo en tablas/cronogramas, `minutos` en prosa y material estudiantil. Ejecutar por archivo y revisar diff.
+Unidades SI con espacio (`375px`→`375 px`, `1440px`→`1440 px`, `44 × 44 px`→`44 × 44 px`, `48px`→`48 px`); `min` solo en tablas/cronogramas, `minutos` en prosa y material estudiantil. Ejecutar por archivo y revisar diff.
 
 - [ ] **Step 4: Glosario P2+P6 (primera mención + resto)**
 

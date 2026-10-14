@@ -622,7 +622,7 @@ export const syllabusUnits: SyllabusUnit[] = [
           {
             title: 'Los seis bloques funcionales de una página de campaña',
             items: [
-              'Hero: comunica quién eres y qué ofreces en 3-5 segundos. Titular, subtítulo, CTA y imagen contextual.',
+              'Hero: comunica quién eres y qué ofreces en 3-5 segundos. Titular, subtítulo, CTA e imagen contextual.',
               'Beneficios: ¿por qué elegirte? Responde objeciones anticipadas en formato visual (3-4 puntos).',
               'Prueba social: testimonios, logos, números. Reduce el riesgo percibido del usuario.',
               'Detalle: explica en profundidad para los usuarios que siguen explorando después de ver lo esencial.',
@@ -736,7 +736,7 @@ export const syllabusUnits: SyllabusUnit[] = [
             items: [
               'Pregunta de enlace: ¿cuál es el propósito comunicativo del hero section en el mapa de secciones que construiste?',
               'El mapa define qué bloques existen; el copy define qué dice cada uno.',
-              'Sin arquitectura clara, el copy puede ser brillante y aun así perderse en el desorden.'
+              'Sin arquitectura clara, el copy puede ser brillante y aún así perderse en el desorden.'
             ]
           },
           {
@@ -896,7 +896,7 @@ export const syllabusUnits: SyllabusUnit[] = [
             title: 'Sistema de 8px y grilla móvil',
             items: [
               'El sistema de 8px establece que márgenes, rellenos y espaciados sean múltiplos de 8: 8, 16, 24, 32, 48.',
-              'Activa la grilla en Figma: 4 columnas para móvil (375px) y 12 columnas para escritorio (1440px).',
+              'Activa la grilla en Figma: 4 columnas para móvil (375 px) y 12 columnas para escritorio (1440 px).',
               'El espaciado inconsistente se percibe como desorden aunque el contenido sea bueno.',
               'Usar grilla no es rigidez: es el equivalente visual de escribir con buena ortografía.'
             ]
@@ -924,7 +924,7 @@ export const syllabusUnits: SyllabusUnit[] = [
             title: 'Actividad: Prototipo navegable de tu campaña',
             items: [
               'Abre tu mapa de secciones (Tema 2) y el copy redactado (Tema 3).',
-              'Crea frame móvil 375px y escritorio 1440px. Construye en escala de grises; sin colores de marca aún.',
+              'Crea frame móvil 375 px y escritorio 1440 px. Construye en escala de grises; sin colores de marca aún.',
               'Conecta el CTA principal del hero con el frame de formulario o contacto.',
               'Aplica el checklist. Ajusta al menos un elemento al ver el prototipo completo.',
               'Entrega: share link público de Figma o imágenes exportadas de ambas vistas + nota de validación de 2–3 líneas.'
@@ -1064,7 +1064,7 @@ export const syllabusUnits: SyllabusUnit[] = [
           {
             title: 'Actividad: Plan de implementación',
             items: [
-              'Abre tu prototipo de la Unidad 2 y evalúa: ¿cuántas páginas? ¿Hay formulario? ¿Landing o sitio?',
+              'Abre tu prototipo de la Unidad 2 y evalúa: ¿cuántas páginas? ¿Hay formulario? ¿Página de campaña o sitio?',
               'Completa la ficha de decisión: herramienta elegida, tres criterios de justificación, riesgo principal y cómo lo mitigarás.',
               'Escribe en el chat: herramienta elegida + una frase de justificación en menos de 20 palabras.',
               'Componente de evaluación: talleres y ejercicios aplicados (30 %).'
@@ -1100,7 +1100,7 @@ export const syllabusUnits: SyllabusUnit[] = [
         ideasClave: [
           'Responsive no es encoger; es reorganizar con intención: decidir qué se apila, qué cambia de tamaño y qué se mantiene como ancla visual.',
           'La maquetación se organiza en tres niveles: sección (bloque funcional), columna (distribución interna) y elemento (pieza concreta).',
-          'El CTA principal debe ser visible y accesible en todas las vistas, con tamaño de toque mínimo de 44x44 px.',
+          'El CTA principal debe ser visible y accesible en todas las vistas, con tamaño de toque mínimo de 44 × 44 px.',
           'La claridad visual depende de ritmo, alineación, contraste y espaciado proporcional entre dispositivos.',
           'No se diseña para tres tamaños rígidos: se verifica que la transición entre vistas no rompa la lectura.'
         ],
@@ -1156,10 +1156,10 @@ export const syllabusUnits: SyllabusUnit[] = [
             title: 'Cinco principios de adaptación responsive',
             items: [
               'Apilamiento vertical en móvil: lo que va en columnas en escritorio se apila sin perder orden lógico.',
-              'Tipografía adaptada: un titular de 48px en escritorio necesita 28-32px en móvil para mantener legibilidad.',
-              'CTA siempre visible: el botón principal debe tener al menos 44x44 px de área de toque en móvil.',
+              'Tipografía adaptada: un titular de 48 px en escritorio necesita 28-32 px en móvil para mantener legibilidad.',
+              'CTA siempre visible: el botón principal debe tener al menos 44 × 44 px de área de toque en móvil.',
               'Imágenes que no dominan: en móvil, las imágenes decorativas se reducen o reposicionan para no empujar el contenido clave.',
-              'Espaciado proporcional: márgenes de 48px en escritorio se reducen a 24px en móvil. Referencia: sistema de 8px.'
+              'Espaciado proporcional: márgenes de 48 px en escritorio se reducen a 24 px en móvil. Referencia: sistema de 8px.'
             ]
           },
           {
@@ -1167,7 +1167,7 @@ export const syllabusUnits: SyllabusUnit[] = [
             items: [
               'Framer: diseña en Desktop → revisa Tablet → ajusta Mobile. Usa Auto-Layout y propiedades fill/hug.',
               'Elementor: maqueta en escritorio → activa vista responsive (ícono de dispositivo) → ajusta en cada breakpoint.',
-              'Carrd: es mobile-first por defecto; verifica que el contenido se lee bien y ajusta para escritorio si es necesario.',
+              'Carrd: es Mobile-First por defecto; verifica que el contenido se lee bien y ajusta para escritorio si es necesario.',
               'En todos los casos: verifica sección por sección, no dejes la revisión móvil para el final.'
             ]
           },
@@ -1175,7 +1175,7 @@ export const syllabusUnits: SyllabusUnit[] = [
             title: 'Errores comunes que rompen la adaptación',
             items: [
               'No revisar móvil hasta el final: los problemas se acumulan y corregirlos juntos es más costoso.',
-              'Botones demasiado pequeños en móvil: el tamaño mínimo de toque es 44x44 px.',
+              'Botones demasiado pequeños en móvil: el tamaño mínimo de toque es 44 × 44 px.',
               'Imágenes que no se adaptan: usar ancho 100% con alto automático evita distorsión.',
               'Romper la jerarquía al apilar: el titular debe seguir siendo lo primero visible, no quedar enterrado debajo de una imagen.',
               'Olvidar el espaciado en móvil: la falta de padding entre secciones hace que todo se sienta apretado y confuso.'
@@ -1269,7 +1269,7 @@ export const syllabusUnits: SyllabusUnit[] = [
             items: [
               'Cada campo que no es esencial para el objetivo es un obstáculo para el usuario.',
               'Los formularios de una sola columna se completan más rápido que los de múltiples columnas.',
-              'El botón de envío debe diferenciarse visualmente por contraste y tener área de toque mínima de 44x44 px en móvil.',
+              'El botón de envío debe diferenciarse visualmente por contraste y tener área de toque mínima de 44 × 44 px en móvil.',
               'La validación en tiempo real (antes del envío) reduce errores y frustración.',
               'Un formulario que tarda más de 30 segundos en completarse tiene alta probabilidad de abandono.'
             ]
