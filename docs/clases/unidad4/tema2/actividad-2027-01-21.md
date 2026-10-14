@@ -79,3 +79,16 @@ Una matriz o reporte breve con objetivo de página, fuente y periodo, dato o pat
 - Interpretación que diferencia dato, hallazgo e hipótesis.
 - Mejora viable, priorizada y con modo de verificación definido.
 - Uso responsable de los datos y participación en la retroalimentación.
+
+## Uso de IA en esta actividad
+
+**Modelo sugerido:** Claude (prudente con cifras pequeñas; no afirma causalidad falsa).
+
+```
+Mi objetivo: [OBJETIVO]. Fuente y periodo: [GA4/CONSTRUCTOR/MANUAL, FECHAS]. Dato: [CIFRA, p. ej. 120 sesiones, 6 clics WhatsApp 5 %].
+Devuelve cadena dato→hallazgo (sin causa)→hipótesis comprobable→mejora viable→cómo verificaré. Advierte los límites de mi evidencia. Prohibido afirmar causalidad con pocos datos o inventar cifras.
+```
+
+Entrega: matriz de 6 campos + captura de la fuente con periodo. El dato puede venir de prueba manual con periodo y límites declarados.
+
+**Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.

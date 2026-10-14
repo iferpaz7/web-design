@@ -92,3 +92,29 @@ Este documento es el insumo directo de la actividad de prototipado (Unidad 2, Te
 - Los CTAs tienen verbo de acción, beneficio concreto y dirección explícita, no son genéricos.
 - El contenido es coherente con la ficha de usuario y el mapa de secciones del proyecto.
 - La redacción es clara, breve y escaneable: sin párrafos innecesarios ni jerga técnica.
+
+## Uso de IA en esta actividad
+
+**Pipeline triple (esta sesión enseña a combinar modelos):** Gemini genera → ChatGPT transforma → Claude edita.
+
+Gemini (titulares):
+
+```
+Mi proyecto: [MI-PROYECTO], usuario: [FICHA], beneficio: [BENEFICIO]. Dame 3 titulares con fórmula [beneficio]+[para quién]+[diferenciador], máx. 2 líneas, tono Ecuador, sin humo ("líderes", "calidad"). Marca tu favorito.
+```
+
+ChatGPT (beneficios):
+
+```
+Convierte estas 3 características [PEGAR-CARACTERÍSTICAS] en beneficios con fórmula "[característica] te permite [beneficio concreto]". Formato título breve + 1-2 frases. Máx. 4 beneficios.
+```
+
+Claude (editor final):
+
+```
+Edita mi copy [PEGAR-BORRADOR] como corrector exigente: elimina clichés, verifica la prueba de 5 segundos, marca dónde sueno como empresa y no como beneficio. Devuelve versión marcada + 2 CTAs con verbo+beneficio (no "enviar" ni "clic aquí").
+```
+
+Entrega: borrador IA + tu versión final reescrita a mano. Pegar texto IA como entrega final invalida la actividad.
+
+**Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.

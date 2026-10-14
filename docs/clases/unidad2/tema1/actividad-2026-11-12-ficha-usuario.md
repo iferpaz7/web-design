@@ -68,3 +68,23 @@ Con base en esa ficha, redacta el **mensaje central** de tu página en una sola 
 Ficha de usuario completa con los cinco puntos respondidos y el mensaje central redactado. Puede entregarse como texto en la tarea o en un documento adjunto.
 
 **Criterios:** precisión del perfil, claridad de la necesidad, identificación realista de la objeción y calidad del mensaje central.
+
+## Uso de IA en esta actividad
+
+**Combinación sugerida:** ChatGPT genera → Claude itera.
+
+Paso 1 (ChatGPT):
+
+```
+Mi proyecto: [MI-PROYECTO]. Objetivo: [OBJETIVO-BRIEF]. Dame 2 perfiles de buyer persona con nombre ficticio, edad, contexto en Ecuador, objetivo, necesidad, objeción principal y momento de entrada (explora vs. listo para decidir). Formato tabla.
+```
+
+Paso 2 (Claude, pegando la salida anterior):
+
+```
+De estos 2 perfiles, elige el más verosímil para [MI-PROYECTO] en Riobamba/Ecuador, señala qué es genérico y reescríbelo en 5 líneas con una objeción que el usuario diría con sus palabras. Termina proponiendo el mensaje central en 1 frase de máximo 20 palabras.
+```
+
+Entrega: ficha con nombre y contexto real + mensaje central propio (la IA propone, tú validas y reescribes).
+
+**Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.

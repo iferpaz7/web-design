@@ -75,3 +75,20 @@ Para cada página, identifica al menos un problema UX concreto y propón una mej
 Ficha comparativa completada con observaciones pertinentes para las dos páginas y al menos una mejora argumentada por página.
 
 **Criterios:** detección de problemas UX, calidad de la comparación, pertinencia de la mejora propuesta y coherencia con los principios de usabilidad revisados en la sesión.
+
+## Uso de IA en esta actividad
+
+**Modelo sugerido:** Claude como crítico (puedes usar ChatGPT o Gemini si ya trabajas con ellos; declara cuál).
+
+Pega este prompt *después* de escribir tu ficha:
+
+```
+Actúa como evaluador UX con las heurísticas de Nielsen y Krug ("No me hagas pensar").
+Mi análisis: [PEGAR-TU-FICHA].
+Las 2 páginas: [URL-1], [URL-2].
+Devuelve: 1) ¿mi problema detectado es real o es gusto personal? 2) ¿mi mejora reduce fricción o solo decora? 3) Una fricción que pasé por alto por página. No rediseñes nada, solo critica.
+```
+
+Ejemplo diligenciado: `[PEGAR-TU-FICHA]` → "La página A tarda en mostrar el CTA; propongo subirlo al hero". Entrega: tu ficha original + respuesta de la IA + 2 líneas con lo que aceptaste y lo que rechazaste.
+
+**Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.

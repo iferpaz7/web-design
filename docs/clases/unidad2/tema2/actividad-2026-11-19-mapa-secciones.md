@@ -75,3 +75,17 @@ Incluye al menos 5 secciones y escribe una justificación breve del orden en rel
 Mapa de secciones con 5 a 6 bloques definidos, propósito comunicativo de cada bloque, contenido principal indicado y orden justificado. Puede entregarse como documento de texto, tabla o imagen del trabajo en Figma.
 
 **Criterios:** coherencia del recorrido, claridad de los bloques, justificación del orden y alineación con el perfil del usuario.
+
+## Uso de IA en esta actividad
+
+**Modelo sugerido:** Claude como crítico de arquitectura.
+
+```
+Mi mapa de secciones: [PEGAR-MAPA con propósito por bloque].
+Mi usuario: [FICHA-U2T1]. Mi CTA: [TEXTO-CTA].
+Critica: 1) ¿el primer CTA aparece antes del 3.er bloque? 2) ¿la prueba social va antes de la propuesta de valor? 3) ¿qué bloque sobra o no tiene función? Sugiere UN reordenamiento con patrón AIDA o PAS y justifícalo en 3 líneas. No reescribas todo el mapa.
+```
+
+Entrega: tu mapa + justificación del orden a mano. La IA no decide el orden final.
+
+**Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.

@@ -79,3 +79,15 @@ Capturas de pantalla que documenten las cuatro etapas de la prueba funcional: fo
 - La prueba de envío es exitosa y el dato llega al destino configurado.
 - El usuario recibe confirmación visible tras el envío.
 - El formulario es legible y completable en vista móvil.
+
+## Uso de IA en esta actividad
+
+**Modelo sugerido:** Gemini para microcopy (no configura nada por ti).
+
+```
+Mi formulario captura para [MI-PROYECTO] con campos [NOMBRE, EMAIL, MENSAJE]. Redacta: etiquetas claras (no solo placeholder), placeholder orientador por campo, texto de botón específico (no "Enviar") y mensaje de confirmación que diga qué pasa después. Tono cercano Ecuador, máx. 15 palabras por texto.
+```
+
+Obligatorio a mano: configuración, integración y prueba real de envío con capturas (integrado + envío + recepción + confirmación). Si el embed falla, ruta de contingencia: formulario externo + enlace (10 min).
+
+**Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.

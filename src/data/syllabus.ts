@@ -718,7 +718,8 @@ export const syllabusUnits: SyllabusUnit[] = [
           'Ficha de usuario (insumo U2T1)',
           'Mapa de secciones (insumo U2T2)',
           'Plantilla de copy por secciones',
-          'Google Docs o herramienta de edición de texto'
+          'Google Docs o herramienta de edición de texto',
+          'IA combinada: Gemini + ChatGPT + Claude (pipeline del roadmap)'
         ],
         presentationBlocks: [
           {
@@ -851,7 +852,7 @@ export const syllabusUnits: SyllabusUnit[] = [
         evidencia:
           'Share link público del prototipo o imagen exportada de las vistas móvil y escritorio, más una nota de validación de 2 a 3 líneas respondiendo qué confirmó el prototipo y qué cambiarías antes de publicar.',
         herramientas: [
-          'Figma o herramienta equivalente',
+          'Figma AI o herramienta equivalente (eliges según tu idea)',
           'Guía de marca básica',
           'Checklist de revisión visual'
         ],
@@ -986,7 +987,8 @@ export const syllabusUnits: SyllabusUnit[] = [
           'Carrd',
           'Google Sites',
           'Canva Sites',
-          'Matriz de criterios de selección'
+          'Matriz de decisión (eliges tu herramienta según tu idea)',
+          'IA: Gemini / ChatGPT / Claude (cuestionan, no eligen)'
         ],
         presentationBlocks: [
           {
@@ -1113,7 +1115,8 @@ export const syllabusUnits: SyllabusUnit[] = [
           'Vista previa responsive (móvil, tablet, escritorio)',
           'Prototipo validado de la Unidad 2',
           'Sistema de espaciado de 8px',
-          'Checklist de verificación responsive'
+          'Checklist de verificación responsive',
+          'IA: Framer AI + Canva (solo assets; eliges según tu idea)'
         ],
         presentationBlocks: [
           {
@@ -1234,7 +1237,8 @@ export const syllabusUnits: SyllabusUnit[] = [
           'Tally, Google Forms o Typeform',
           'Botones de acción con texto específico',
           'Vista previa responsive para verificación móvil',
-          'Registro de pruebas funcionales'
+          'Registro de pruebas funcionales',
+          'IA: Gemini para microcopy (configuración a mano)'
         ],
         presentationBlocks: [
           {
@@ -1367,7 +1371,8 @@ export const syllabusUnits: SyllabusUnit[] = [
           'Checklist CRO básico',
           'Matriz impacto-esfuerzo',
           'Capturas antes y después',
-          'Revisión en móvil y escritorio'
+          'Revisión en móvil y escritorio',
+          'IA: Claude para hipótesis (puntajes siempre manuales)'
         ],
         presentationBlocks: [
           {
@@ -1489,7 +1494,8 @@ export const syllabusUnits: SyllabusUnit[] = [
           'Inspector del navegador (F12 → Elements)',
           'Configuración de SEO del constructor (WordPress, Framer, Carrd)',
           'Checklist SEO on-page',
-          'Google Search Central'
+          'Google Search Central',
+          'IA: Gemini para iterar (cambios a mano con antes/después)'
         ],
         presentationBlocks: [
           {
@@ -1627,7 +1633,8 @@ export const syllabusUnits: SyllabusUnit[] = [
           'GA4 o analítica básica si aplica',
           'Google Search Console o estadísticas del constructor, si aplica',
           'Tabla simple de hallazgos',
-          'Capturas o registros de pruebas'
+          'Capturas o registros de pruebas',
+          'IA: Claude para interpretar sin inventar cifras'
         ],
         presentationBlocks: [
           {
@@ -1711,7 +1718,8 @@ export const syllabusUnits: SyllabusUnit[] = [
           'Guion de sustentación (estructura de cinco partes)',
           'Versión final publicada o compartible',
           'Reporte ejecutivo de mejoras',
-          'Evidencia acumulada de la auditoría integral (U3T4), SEO (U4T1) y medición (U4T2)'
+          'Evidencia acumulada de la auditoría integral (U3T4), SEO (U4T1) y medición (U4T2)',
+          'IA: ChatGPT (jurado) + Claude (pulidor); presentas tú'
         ],
         presentationBlocks: [
           {

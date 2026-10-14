@@ -92,3 +92,15 @@ URL final de la página publicada o compartible, lista de cotejo de calidad comp
 - El puntaje de carga en PageSpeed Insights fue revisado y se identificó al menos una causa si es bajo.
 - Las oportunidades están conectadas con claridad, CTA, confianza, accesibilidad, rendimiento o experiencia móvil.
 - La priorización usa una lógica impacto-esfuerzo y la hipótesis relaciona un cambio concreto con una acción del usuario.
+
+## Uso de IA en esta actividad
+
+**Modelo sugerido:** Claude para priorizar y formular la hipótesis. WAVE, PageSpeed y la revisión de enlaces se ejecutan a mano; prohibido inventar puntajes.
+
+```
+Mis 3 fricciones: [PEGAR-3]. Mi conversión: [ACCIÓN-VALIOSA]. Clasifica cada una en funcional/cognitiva/emocional, ordénalas en matriz impacto-esfuerzo y redacta mi hipótesis top con formato "Si cambio [X], entonces el usuario podrá [Y], porque [Z]". La hipótesis debe hablar de acción del usuario, no de estética.
+```
+
+Ejemplo: "Si cambio el CTA de Enviar a Solicitar asesoría, el usuario entenderá mejor el siguiente paso porque el botón comunica la acción real". Entrega: lista de cotejo (cierra U3) + hipótesis validada (abre U4).
+
+**Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.

@@ -71,3 +71,7 @@ Piensa en un negocio o proyecto que conozcas o en el que quieras trabajar durant
 Brief inicial escrito con los cuatro elementos anteriores, claro y coherente. Puede entregarse como texto en la tarea de Google Classroom o en un documento adjunto.
 
 **Criterios:** claridad del negocio o proyecto, precisión del objetivo, definición del público y coherencia de la acción esperada.
+
+## Uso de IA en esta actividad
+
+Sesión anti-IA: el brief se escribe 100 % a mano. Solo *después* de entregarlo puedes pedir a ChatGPT un brief genérico del mismo rubro y anotar en 3 líneas por qué el tuyo es más específico. Esa comparación es opcional y no sustituye tu brief.

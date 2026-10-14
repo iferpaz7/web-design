@@ -69,3 +69,18 @@ A partir de ese ejemplo:
 Boceto, esquema escrito o captura anotada del hero section rediseñado, con al menos tres decisiones de composición justificadas.
 
 **Criterios:** claridad de la jerarquía propuesta, uso argumentado de tipografía y color, y coherencia con el objetivo de campaña del brief personal.
+
+## Uso de IA en esta actividad
+
+**Herramienta sugerida:** Figma AI — First Draft / Make designs. Si tu idea pide Framer o Canva, úsala y justifica con la matriz de U3T1.
+
+Prompt para el panel de generación:
+
+```
+Landing de campaña para [MI-PROYECTO], público [PÚBLICO-U1T1].
+Hero con titular "[MENSAJE-CENTRAL]", subtítulo breve, CTA principal "[TEXTO-CTA]" de alto contraste, imagen contextual. Estilo limpio, mucho espacio en blanco, paleta de 3 colores. Genera 2 variantes escritorio y 1 móvil de 375 px.
+```
+
+Ejemplo: `[MI-PROYECTO]` → "pastelería artesanal en Riobamba". Entrega: tu boceto manual + captura de la variante IA + 3 decisiones justificadas a mano. La captura sola no vale.
+
+**Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.

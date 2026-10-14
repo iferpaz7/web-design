@@ -90,3 +90,26 @@ Ficha de decisión completada con herramienta seleccionada, justificación docum
 - La justificación usa al menos tres criterios de la matriz de selección revisada en clase.
 - El riesgo principal está identificado con claridad y la respuesta propuesta es concreta y viable.
 - Los pasos iniciales son accionables y pueden ejecutarse antes de la siguiente sesión.
+
+## Uso de IA en esta actividad
+
+**Modelo sugerido:** Gemini como cuestionador (no decide por ti).
+
+```
+Compara para mi proyecto [MI-PROYECTO, N.º páginas, ¿formulario?]: WordPress+Elementor vs. Framer vs. Carrd vs. Google Sites, según tiempo, control de diseño, formularios, SEO, costo y curva de aprendizaje. Mi restricción: [TIEMPO-Y-NIVEL]. Dame tabla + 3 preguntas incómodas que debo responder antes de elegir. No elijas por mí.
+```
+
+### Matriz de decisión de herramienta (rige tu elección todo el periodo)
+
+| Criterio | Figma (+ constructor) | Framer | Canva (+ publicación) | WordPress / Carrd |
+|---|---|---|---|---|
+| Tiempo disponible | Medio-alto | Medio | Bajo | Bajo-medio |
+| Control de diseño | Total | Alto | Medio | Medio |
+| Formulario / conversión | Vía embed | Nativo + embed | Limitado | Nativo / embed |
+| SEO y rendimiento | Según constructor | Bueno | Básico | Bueno / básico |
+| Costo | Gratis base | Gratis base | Gratis base | Variable |
+| Curva de aprendizaje | Media | Media | Baja | Media / baja |
+
+Regla del periodo: **la herramienta la eliges tú según tu idea**; declara tu elección con 3 criterios de esta tabla y 1 riesgo asumido. La IA propone, tú decides.
+
+**Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.

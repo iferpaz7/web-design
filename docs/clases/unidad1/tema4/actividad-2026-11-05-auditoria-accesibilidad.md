@@ -92,3 +92,7 @@ Aplica el checklist de 10 puntos: marca con ✅ los criterios que se cumplen y c
 Documento de revisión con el checklist aplicado: marca de ✅ o ❌ por punto, observación breve por cada falla detectada y propuesta de mejora concreta.
 
 **Criterios:** cumplimiento del checklist, observaciones pertinentes, identificación de fricciones reales y propuestas de mejora viables.
+
+## Uso de IA en esta actividad
+
+Sesión anti-IA: el checklist se marca con tu celular real en mano, sin simuladores. Solo *después* puedes pedir a Gemini que te explique en lenguaje simple un error que encontraste (p. ej. "¿qué significa este aviso de contraste de WAVE?"). La IA explica; no marca tu checklist.

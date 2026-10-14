@@ -84,3 +84,23 @@ Un guion de sustentación ajustado, con la estructura de cinco partes completa, 
 - El lenguaje usado se orienta a objetivos y resultados, no a jerga de diseño.
 - La retroalimentación recibida quedó registrada y al menos un punto fue ajustado en vivo.
 - Participación activa y respetuosa durante la ronda de retroalimentación de compañeros.
+
+## Uso de IA en esta actividad
+
+**Combinación sugerida:** ChatGPT como jurado + Claude como pulidor. La presentación en vivo la haces tú.
+
+ChatGPT (cliente exigente):
+
+```
+Actúa como cliente exigente de [MI-PROYECTO]. Mi guion de 5 partes: [PEGAR-GUION]. Hazme las 3 preguntas más incómodas ("¿por qué cambiaste esto?", "¿qué evidencia lo sostiene?", "¿qué descartaste?"). Sé breve y directo.
+```
+
+Claude (pulidor):
+
+```
+Pule mi guion [PEGAR] a lenguaje de objetivos (nada de "jerarquía visual" sin traducir a consecuencia). Estructura de 5 partes, máx. 4 min hablados. Marca 1 frase a cortar y 1 evidencia a agregar por mejora.
+```
+
+Entrega: guion de 4 min + ajuste en vivo registrado. Formato: 6-8 expositores en clase, resto video asincrónico de 4 min con la misma pauta.
+
+**Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.

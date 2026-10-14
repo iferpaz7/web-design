@@ -87,3 +87,16 @@ Registro del checklist SEO completado con la URL de tu página, los puntajes de 
 - Jerarquía de encabezados verificada: un solo H1 y H2 coherentes con las secciones.
 - Texto alternativo revisado en al menos tres imágenes de contenido.
 - Al menos tres ajustes documentados con evidencia antes/después.
+
+## Uso de IA en esta actividad
+
+**Modelo sugerido:** Gemini (ecosistema Google).
+
+```
+Mi página: [MI-URL]. Mi title actual: [TITLE]. Mis H1/H2: [PEGAR]. Mis alt: [PEGAR-3]. Mi PageSpeed móvil: [PUNTAJE, LCP/INP/CLS].
+Dame: 1) title de 50-60 caracteres con palabra clave, 2) meta de 120-155 con beneficio+acción, 3) corrección del H1 único, 4) 3 alt reescritos descriptivos, 5) causa probable del vital en rojo y fix viable en [MI-HERRAMIENTA]. No inventes puntajes.
+```
+
+Obligatorio a mano: aplicar al menos 3 de los 5 ajustes en el constructor, con capturas antes/después.
+
+**Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.

@@ -102,3 +102,15 @@ Entrega en esta tarea:
 - Las vistas móvil y escritorio están presentes.
 - La nota de validación refleja criterio propio y menciona al menos un ajuste realizado.
 - El share link es accesible o las imágenes tienen resolución suficiente para revisión.
+
+## Uso de IA en esta actividad
+
+**Herramienta sugerida:** Figma AI (borrador en grises). Si tu idea pide otra herramienta de prototipado, justifícalo con la matriz de U3T1.
+
+```
+Con mi mapa [PEGAR-MAPA] y copy [PEGAR-COPY], genera wireframe de media fidelidad en escala de grises: frame móvil de 375 px y escritorio de 1440 px, grilla de 8 px, hero + beneficios (3) + prueba social + segundo CTA + footer. Sin colores de marca. CTA del hero visible antes del 3.er bloque.
+```
+
+Obligatorio a mano: conectar el Prototype hero→formulario, aplicar el checklist de 5 puntos y documentar 1 ajuste. Entrega: share link + nota de validación de 2-3 líneas.
+
+**Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.

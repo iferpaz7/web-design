@@ -78,3 +78,23 @@ Avance funcional de la página web con al menos tres secciones maquetadas (hero 
 - La adaptación responsive muestra reorganización intencional (no solo encogimiento proporcional).
 - El CTA principal es visible y accesible tanto en escritorio como en móvil.
 - Se documentan al menos dos ajustes responsive con justificación breve.
+
+## Uso de IA en esta actividad
+
+**Herramienta sugerida:** Framer AI para la sección responsive; Canva solo para assets puntuales (ilustración sin texto). Si tu idea pide otra herramienta, justifícalo con la matriz de U3T1.
+
+Framer:
+
+```
+En Framer, genera hero section responsive para [MI-PROYECTO] con titular "[TITULAR]", subtítulo, CTA "[TEXTO-CTA]" de mínimo 44 × 44 px, imagen de fondo optimizada. Usa Auto-Layout, apilado vertical en móvil de 375 px, titular de 28-32 px en móvil. Luego dime qué ajustaste entre breakpoints.
+```
+
+Canva (solo si falta un asset):
+
+```
+Genera ilustración simple para la sección de beneficios de [MI-PROYECTO], estilo plano, paleta [3-COLORES], sin texto dentro de la imagen.
+```
+
+Obligatorio a mano: ajustes breakpoint por breakpoint (tipografía, apilado, CTA) documentados. Entrega: URL + 2 ajustes documentados.
+
+**Declaración obligatoria en tu entrega:** `Borrador IA: [modelo usado] / Versión final propia: [qué cambiaste a mano]`.
