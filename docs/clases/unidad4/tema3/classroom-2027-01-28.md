@@ -75,7 +75,7 @@ Enlace: [https://pagespeed.web.dev](https://pagespeed.web.dev)
 Tipo: Bibliografía académica
 Propósito: Sostener la argumentación desde la perspectiva del usuario y los criterios de revisión final.
 
-- Krug, S. (2006). _No me hagas pensar: Una aproximación a la usabilidad en la web_. Pearson Educación.
+- Krug, S. (2014). _No me hagas pensar: Una aproximación a la usabilidad en la web_ (3.ª ed.). Anaya Multimedia.
 - Fernández Casado, P. E. (2024). _Iniciación a la creación de páginas web_. RA-MA Editorial.
 
 ---

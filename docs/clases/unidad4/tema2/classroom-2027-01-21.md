@@ -70,7 +70,7 @@ Tipo: Bibliografía académica
 Propósito: Profundizar en usabilidad y revisión de páginas web.
 
 - Fernández Casado, P. E. (2024). _Iniciación a la creación de páginas web_. RA-MA Editorial.
-- Krug, S. (2006). _No me hagas pensar: Una aproximación a la usabilidad en la web_. Pearson Educación.
+- Krug, S. (2014). _No me hagas pensar: Una aproximación a la usabilidad en la web_ (3.ª ed.). Anaya Multimedia.
 
 ---
 

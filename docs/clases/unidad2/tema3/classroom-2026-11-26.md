@@ -58,7 +58,7 @@ Tipo: Artículo web especializado
 Propósito: Referencia académica aplicada sobre legibilidad, escaneo y redacción para interfaces digitales.
 Enlace: [https://www.nngroup.com/topic/writing-web/](https://www.nngroup.com/topic/writing-web/)
 
-### Krug, S. (2006). No me hagas pensar. Pearson Educación.
+### Krug, S. (2014). No me hagas pensar (3.ª ed.). Anaya Multimedia.
 
 Tipo: Bibliografía académica del sílabo
 Propósito: Base conceptual sobre claridad del mensaje, escaneo de contenidos y reducción de carga cognitiva.

@@ -54,7 +54,7 @@ Tipo: Artículo de referencia en español
 Propósito: Guía práctica sobre cómo construir perfiles de usuario para orientar el contenido de una página.
 Enlace: [https://blog.hubspot.es/marketing/buyer-persona](https://blog.hubspot.es/marketing/buyer-persona)
 
-### Krug, S. (2006). No me hagas pensar. Pearson Educación.
+### Krug, S. (2014). No me hagas pensar (3.ª ed.). Anaya Multimedia.
 
 Tipo: Bibliografía académica del sílabo
 Propósito: Capítulos 2 y 3 — cómo escanea el usuario una página y qué hace que un mensaje sea reconocido de inmediato.

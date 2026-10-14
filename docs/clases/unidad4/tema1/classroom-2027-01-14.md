@@ -84,7 +84,7 @@ Propósito: Referencias académicas oficiales de la asignatura relacionadas con 
 
 - Fernández Casado, P. E. (2024). *Iniciación a la creación de páginas web*. RA-MA Editorial.
 - Fernández Casado, P. E. (2021). *Accesibilidad web: Diseño de aplicaciones*. RA-MA Editorial.
-- Krug, S. (2006). *No me hagas pensar: Una aproximación a la usabilidad en la web*. Pearson Educación.
+- Krug, S. (2014). _No me hagas pensar: Una aproximación a la usabilidad en la web_ (3.ª ed.). Anaya Multimedia.
 
 ---
 

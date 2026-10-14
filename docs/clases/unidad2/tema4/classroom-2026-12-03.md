@@ -70,7 +70,7 @@ Tipo: Herramienta de baja fidelidad
 Propósito: Alternativa a Figma para prototipado en escala de grises sin distracciones visuales.
 Enlace: [https://balsamiq.com](https://balsamiq.com)
 
-### Krug, S. (2006). No me hagas pensar. Pearson Educación.
+### Krug, S. (2014). No me hagas pensar (3.ª ed.). Anaya Multimedia.
 
 Tipo: Bibliografía académica del sílabo
 Propósito: Principio de evidencia mínima y validación temprana directamente aplicables al prototipado.

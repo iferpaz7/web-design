@@ -54,7 +54,7 @@ Tipo: Canal de video formativo
 Propósito: Videos cortos de 3 a 5 minutos sobre UX y UI. Busca "UX vs UI explained" o "10 Usability Heuristics".
 Enlace: [https://www.youtube.com/@NNgroup](https://www.youtube.com/@NNgroup)
 
-### Krug, S. (2006). No me hagas pensar. Pearson Educación.
+### Krug, S. (2014). No me hagas pensar (3.ª ed.). Anaya Multimedia.
 
 Tipo: Bibliografía académica del sílabo
 Propósito: Referencia principal sobre usabilidad web en español; lectura recomendada para profundizar.

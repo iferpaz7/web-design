@@ -42,7 +42,7 @@ Enlace: [https://web-design-itsae.netlify.app/imprimir/roadmap/unidad1/tema4/roa
 
 ## Recursos de apoyo
 
-### Krug, S. (2006). No me hagas pensar. Pearson Educación.
+### Krug, S. (2014). No me hagas pensar (3.ª ed.). Anaya Multimedia.
 
 Tipo: Bibliografía académica del sílabo
 Propósito: Referencia principal sobre usabilidad web en español; base conceptual del tema.

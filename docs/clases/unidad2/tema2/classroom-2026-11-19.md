@@ -58,7 +58,7 @@ Tipo: Artículo web especializado
 Propósito: Referencia de consulta sobre organización del contenido y navegación en interfaces digitales.
 Enlace: [https://www.nngroup.com/articles/information-architecture/](https://www.nngroup.com/articles/information-architecture/)
 
-### Krug, S. (2006). No me hagas pensar. Pearson Educación.
+### Krug, S. (2014). No me hagas pensar (3.ª ed.). Anaya Multimedia.
 
 Tipo: Bibliografía académica del sílabo
 Propósito: Referencia principal sobre navegación, estructura de páginas y el principio de no hacer pensar al usuario.
