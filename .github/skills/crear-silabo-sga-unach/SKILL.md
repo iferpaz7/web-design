@@ -4,6 +4,7 @@ description: Redacta un sílabo en formato SGA alineado al curso y con bibliogra
 disable-model-invocation: true
 argument-hint: 'tema=... carrera=... nivel=... fuenteUnach=... ajustes=...'
 ---
+
 Genera un sílabo institucional en español, listo para SGA, tomando como base el estilo, la estructura y el tono de [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md).
 
 Sigue también la guía institucional en [itsae-filosofia-docencia](../instructions/itsae-filosofia-docencia.instructions.md).

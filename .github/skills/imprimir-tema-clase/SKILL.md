@@ -4,6 +4,7 @@ description: Genera un tema listo para impresión o PDF con fecha y nombre del p
 disable-model-invocation: true
 argument-hint: 'unidad=... tema=... fecha=... profesor=...'
 ---
+
 Genera una versión lista para impresión de un tema del curso, tomando como base [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md) y [src/data/syllabus.ts](../../src/data/syllabus.ts).
 
 Sigue también la guía institucional en [itsae-filosofia-docencia](../instructions/itsae-filosofia-docencia.instructions.md).

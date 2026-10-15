@@ -59,29 +59,17 @@ const reasons = [
 ---
 
 <Layout title="Diseño Web para Marketing Digital - ITSAE">
-  <main
-    class="min-h-screen bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-gray-950 dark:text-slate-100"
-  >
-    <header
-      class="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-gray-900"
-    >
-      <div
-        class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:px-8"
-      >
+  <main class="min-h-screen bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-gray-950 dark:text-slate-100">
+    <header class="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-gray-900">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.04fr_0.96fr] lg:items-center lg:px-8">
         <div>
-          <p
-            class="border-primary-200 bg-primary-50 text-primary-800 dark:border-primary-800 dark:bg-primary-900/30 dark:text-primary-200 mb-4 inline-flex rounded-full border px-3 py-1 text-sm font-semibold"
-          >
+          <p class="border-primary-200 bg-primary-50 text-primary-800 dark:border-primary-800 dark:bg-primary-900/30 dark:text-primary-200 mb-4 inline-flex rounded-full border px-3 py-1 text-sm font-semibold">
             Curso completo · online · práctico
           </p>
-          <h1
-            class="max-w-3xl text-3xl leading-tight font-bold break-words text-slate-950 min-[380px]:text-4xl sm:text-5xl lg:text-6xl dark:text-white"
-          >
+          <h1 class="max-w-3xl text-3xl leading-tight font-bold break-words text-slate-950 min-[380px]:text-4xl sm:text-5xl lg:text-6xl dark:text-white">
             Diseño Web para Marketing Digital
           </h1>
-          <p
-            class="mt-5 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl dark:text-slate-300"
-          >
+          <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl dark:text-slate-300">
             Aprende a convertir estrategia, UX/UI, prototipado y publicación
             viable en activos web claros, medibles y defendibles.
           </p>
@@ -102,18 +90,16 @@ const reasons = [
           </div>
 
           <dl class="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {
-              stats.map((stat) => (
-                <div class="rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-gray-950">
-                  <dt class="text-primary-800 dark:text-primary-300 text-3xl font-bold">
-                    {stat.value}
-                  </dt>
-                  <dd class="mt-1 text-xs font-medium tracking-wide text-slate-500 uppercase dark:text-slate-400">
-                    {stat.label}
-                  </dd>
-                </div>
-              ))
-            }
+            {stats.map((stat) => (
+              <div class="rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-gray-950">
+                <dt class="text-primary-800 dark:text-primary-300 text-3xl font-bold">
+                  {stat.value}
+                </dt>
+                <dd class="mt-1 text-xs font-medium tracking-wide text-slate-500 uppercase dark:text-slate-400">
+                  {stat.label}
+                </dd>
+              </div>
+            ))}
           </dl>
         </div>
 
@@ -122,69 +108,37 @@ const reasons = [
           aria-label="Vista previa visual de una página de campaña"
         >
           <div class="rounded-md bg-white dark:bg-gray-900">
-            <div
-              class="flex items-center gap-2 border-b border-slate-200 px-4 py-3 dark:border-slate-800"
-            >
+            <div class="flex items-center gap-2 border-b border-slate-200 px-4 py-3 dark:border-slate-800">
               <span class="h-3 w-3 rounded-full bg-red-400"></span>
               <span class="h-3 w-3 rounded-full bg-amber-400"></span>
               <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
-              <span
-                class="ml-3 h-5 flex-1 rounded bg-slate-100 dark:bg-slate-800"
-              ></span>
+              <span class="ml-3 h-5 flex-1 rounded bg-slate-100 dark:bg-slate-800"></span>
             </div>
             <div class="grid gap-5 p-5 sm:grid-cols-[1fr_0.78fr]">
               <div class="space-y-4">
                 <div class="bg-accent-300 h-4 w-24 rounded"></div>
                 <div class="space-y-2">
-                  <div
-                    class="h-8 w-full rounded bg-slate-900 dark:bg-slate-100"
-                  >
-                  </div>
-                  <div class="h-8 w-4/5 rounded bg-slate-800 dark:bg-slate-200">
-                  </div>
+                  <div class="h-8 w-full rounded bg-slate-900 dark:bg-slate-100"></div>
+                  <div class="h-8 w-4/5 rounded bg-slate-800 dark:bg-slate-200"></div>
                 </div>
                 <div class="space-y-2">
-                  <div
-                    class="h-3 w-full rounded bg-slate-200 dark:bg-slate-700"
-                  >
-                  </div>
-                  <div
-                    class="h-3 w-11/12 rounded bg-slate-200 dark:bg-slate-700"
-                  >
-                  </div>
-                  <div class="h-3 w-3/4 rounded bg-slate-200 dark:bg-slate-700">
-                  </div>
+                  <div class="h-3 w-full rounded bg-slate-200 dark:bg-slate-700"></div>
+                  <div class="h-3 w-11/12 rounded bg-slate-200 dark:bg-slate-700"></div>
+                  <div class="h-3 w-3/4 rounded bg-slate-200 dark:bg-slate-700"></div>
                 </div>
                 <div class="flex gap-3 pt-2">
                   <div class="bg-primary-700 h-10 w-32 rounded"></div>
-                  <div
-                    class="h-10 w-24 rounded border border-slate-300 dark:border-slate-700"
-                  >
-                  </div>
+                  <div class="h-10 w-24 rounded border border-slate-300 dark:border-slate-700"></div>
                 </div>
               </div>
               <div class="grid gap-3">
-                <div
-                  class="rounded-lg border border-slate-200 p-4 dark:border-slate-700"
-                >
-                  <div
-                    class="mb-3 h-3 w-20 rounded bg-slate-200 dark:bg-slate-700"
-                  >
-                  </div>
-                  <div
-                    class="bg-primary-100 dark:bg-primary-900/40 h-20 rounded"
-                  >
-                  </div>
+                <div class="rounded-lg border border-slate-200 p-4 dark:border-slate-700">
+                  <div class="mb-3 h-3 w-20 rounded bg-slate-200 dark:bg-slate-700"></div>
+                  <div class="bg-primary-100 dark:bg-primary-900/40 h-20 rounded"></div>
                 </div>
                 <div class="grid grid-cols-2 gap-3">
-                  <div
-                    class="h-24 rounded-lg bg-emerald-100 dark:bg-emerald-900/30"
-                  >
-                  </div>
-                  <div
-                    class="h-24 rounded-lg bg-amber-100 dark:bg-amber-900/30"
-                  >
-                  </div>
+                  <div class="h-24 rounded-lg bg-emerald-100 dark:bg-emerald-900/30"></div>
+                  <div class="h-24 rounded-lg bg-amber-100 dark:bg-amber-900/30"></div>
                 </div>
               </div>
             </div>
@@ -197,13 +151,9 @@ const reasons = [
       id="perfil"
       class="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-gray-900"
     >
-      <div
-        class="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[0.72fr_1fr] lg:px-8"
-      >
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[0.72fr_1fr] lg:px-8">
         <div>
-          <p
-            class="text-primary-700 dark:text-primary-300 text-sm font-semibold tracking-wide uppercase"
-          >
+          <p class="text-primary-700 dark:text-primary-300 text-sm font-semibold tracking-wide uppercase">
             Perfil del estudiante
           </p>
           <h2 class="mt-3 text-3xl font-bold text-slate-950 dark:text-white">
@@ -222,9 +172,7 @@ const reasons = [
 
     <section id="logros" class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
       <div class="mb-8 max-w-2xl">
-        <p
-          class="text-primary-700 dark:text-primary-300 text-sm font-semibold tracking-wide uppercase"
-        >
+        <p class="text-primary-700 dark:text-primary-300 text-sm font-semibold tracking-wide uppercase">
           Resultados concretos
         </p>
         <h2 class="mt-3 text-3xl font-bold text-slate-950 dark:text-white">
@@ -233,21 +181,19 @@ const reasons = [
       </div>
 
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {
-          outcomes.map((outcome) => (
-            <article class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-gray-900">
-              <p class="text-accent-600 dark:text-accent-400 text-sm font-bold">
-                {outcome.number}
-              </p>
-              <h3 class="mt-3 text-lg font-bold text-slate-900 dark:text-white">
-                {outcome.title}
-              </h3>
-              <p class="mt-2 leading-7 text-slate-600 dark:text-slate-300">
-                {outcome.description}
-              </p>
-            </article>
-          ))
-        }
+        {outcomes.map((outcome) => (
+          <article class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-gray-900">
+            <p class="text-accent-600 dark:text-accent-400 text-sm font-bold">
+              {outcome.number}
+            </p>
+            <h3 class="mt-3 text-lg font-bold text-slate-900 dark:text-white">
+              {outcome.title}
+            </h3>
+            <p class="mt-2 leading-7 text-slate-600 dark:text-slate-300">
+              {outcome.description}
+            </p>
+          </article>
+        ))}
       </div>
     </section>
 
@@ -256,49 +202,37 @@ const reasons = [
       class="border-y border-slate-200 bg-white py-14 dark:border-slate-800 dark:bg-gray-900"
     >
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div
-          class="mb-10 flex flex-col justify-between gap-5 lg:flex-row lg:items-end"
-        >
+        <div class="mb-10 flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
           <div class="max-w-3xl">
-            <p
-              class="text-primary-700 dark:text-primary-300 text-sm font-semibold tracking-wide uppercase"
-            >
+            <p class="text-primary-700 dark:text-primary-300 text-sm font-semibold tracking-wide uppercase">
               Pénsum del curso
             </p>
-            <h2
-              class="mt-3 text-3xl font-bold text-slate-950 sm:text-4xl dark:text-white"
-            >
+            <h2 class="mt-3 text-3xl font-bold text-slate-950 sm:text-4xl dark:text-white">
               Contenido organizado por unidades
             </h2>
-            <p
-              class="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300"
-            >
+            <p class="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">
               Cada ruta temática puede usarse en dos formatos: lectura guiada
               para el estudiante y presentación interactiva para exposición
               docente.
             </p>
           </div>
-          <p
-            class="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-600 dark:border-slate-700 dark:bg-gray-950 dark:text-slate-300"
-          >
+          <p class="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-600 dark:border-slate-700 dark:bg-gray-950 dark:text-slate-300">
             4 unidades · 17 semanas · proyecto integrador
           </p>
         </div>
 
         <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {
-            unidades.map((unidad) => (
-              <UnidadCard
-                numero={unidad.numero}
-                titulo={unidad.titulo}
-                descripcion={unidad.descripcion}
-                color={unidad.color}
-                iconName={unidad.iconName}
-                temas={unidad.temas}
-                client:load
-              />
-            ))
-          }
+          {unidades.map((unidad) => (
+            <UnidadCard
+              numero={unidad.numero}
+              titulo={unidad.titulo}
+              descripcion={unidad.descripcion}
+              color={unidad.color}
+              iconName={unidad.iconName}
+              temas={unidad.temas}
+              client:load
+            />
+          ))}
         </div>
       </div>
     </section>
@@ -306,9 +240,7 @@ const reasons = [
     <section id="por-que" class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
       <div class="grid gap-8 lg:grid-cols-[0.6fr_1fr]">
         <div>
-          <p
-            class="text-primary-700 dark:text-primary-300 text-sm font-semibold tracking-wide uppercase"
-          >
+          <p class="text-primary-700 dark:text-primary-300 text-sm font-semibold tracking-wide uppercase">
             Enfoque del curso
           </p>
           <h2 class="mt-3 text-3xl font-bold text-slate-950 dark:text-white">
@@ -316,18 +248,16 @@ const reasons = [
           </h2>
         </div>
         <div class="grid gap-4 sm:grid-cols-3">
-          {
-            reasons.map((reason) => (
-              <article class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-gray-900">
-                <h3 class="font-bold text-slate-900 dark:text-white">
-                  {reason.title}
-                </h3>
-                <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                  {reason.description}
-                </p>
-              </article>
-            ))
-          }
+          {reasons.map((reason) => (
+            <article class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-gray-900">
+              <h3 class="font-bold text-slate-900 dark:text-white">
+                {reason.title}
+              </h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                {reason.description}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -336,9 +266,7 @@ const reasons = [
       id="cta"
       class="bg-primary-900 border-t border-slate-200 text-white dark:border-slate-800"
     >
-      <div
-        class="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-12 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8"
-      >
+      <div class="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-12 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <div class="max-w-2xl">
           <h2 class="text-3xl font-bold">Tu próximo proyecto empieza aquí</h2>
           <p class="text-primary-100 mt-3 leading-7">

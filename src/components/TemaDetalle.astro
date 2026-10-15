@@ -70,12 +70,10 @@ const continuity = nextTema
 <main class="min-h-screen bg-slate-50 dark:bg-gray-950">
   <div class={`bg-linear-to-r ${styles.hero} py-5 text-white`}>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <nav
-        class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
-      >
-        <a href="/" class={`transition-colors hover:text-white ${styles.soft}`}
-          >Volver al inicio</a
-        >
+      <nav class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <a href="/" class={`transition-colors hover:text-white ${styles.soft}`}>
+          Volver al inicio
+        </a>
         <div class="sm:text-center">
           <h1 class="text-xl font-bold">
             Unidad {unit.numero} · Tema {tema.numero}
@@ -90,16 +88,10 @@ const continuity = nextTema
   </div>
 
   <div class="mx-auto max-w-6xl space-y-8 px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
-    <section
-      class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm sm:p-6 dark:border-slate-800 dark:bg-gray-900"
-    >
-      <div
-        class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"
-      >
+    <section class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm sm:p-6 dark:border-slate-800 dark:bg-gray-900">
+      <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div>
-          <p
-            class="text-sm font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400"
-          >
+          <p class="text-sm font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400">
             Formato de clase
           </p>
           <h2 class="mt-2 text-2xl font-bold text-gray-800 dark:text-gray-100">
@@ -120,18 +112,16 @@ const continuity = nextTema
             >
               Imprimir o guardar PDF
             </a>
-            {
-              roadmapHref && (
-                <a
-                  href={roadmapHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="hover:border-primary-300 hover:bg-primary-50 rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition dark:border-slate-700 dark:text-slate-200 dark:hover:bg-gray-800"
-                >
-                  Roadmap de clase
-                </a>
-              )
-            }
+            {roadmapHref && (
+              <a
+                href={roadmapHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:border-primary-300 hover:bg-primary-50 rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition dark:border-slate-700 dark:text-slate-200 dark:hover:bg-gray-800"
+              >
+                Roadmap de clase
+              </a>
+            )}
           </div>
 
           <div
@@ -167,22 +157,19 @@ const continuity = nextTema
     </section>
 
     <div data-topic-view="guide" class="space-y-8">
-      <section
-        class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900"
-      >
+      <section class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900">
         <div class="mb-5 flex flex-wrap items-center gap-3">
           <span
             class={`text-sm font-semibold px-3 py-1 rounded-full ${styles.badge}`}
-            >Tema actualizado</span
           >
-          <span
-            class="rounded-full bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 dark:bg-gray-700 dark:text-gray-200"
-            >Unidad {unit.numero}</span
-          >
-          <span
-            class="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-700 dark:bg-slate-700 dark:text-slate-100"
-            >Diseño Web</span
-          >
+            Tema actualizado
+          </span>
+          <span class="rounded-full bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 dark:bg-gray-700 dark:text-gray-200">
+            Unidad {unit.numero}
+          </span>
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-700 dark:bg-slate-700 dark:text-slate-100">
+            Diseño Web
+          </span>
         </div>
 
         <h2 class="mb-4 text-3xl font-bold text-gray-800 dark:text-gray-100">
@@ -200,33 +187,29 @@ const continuity = nextTema
         <div
           class={`rounded-lg border-l-4 p-6 ${styles.panel} ${styles.border}`}
         >
-          <h3
-            class="mb-3 text-xl font-semibold text-gray-800 dark:text-gray-100"
-          >
+          <h3 class="mb-3 text-xl font-semibold text-gray-800 dark:text-gray-100">
             Objetivos de aprendizaje
           </h3>
           <ul class="list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300">
-            {tema.objetivos.map((objetivo) => <li>{objetivo}</li>)}
+            {tema.objetivos.map((objetivo) => (
+              <li>{objetivo}</li>
+            ))}
           </ul>
         </div>
 
-        <div
-          class="rounded-lg border-l-4 border-slate-400 bg-slate-50 p-6 dark:bg-slate-900"
-        >
-          <h3
-            class="mb-3 text-xl font-semibold text-gray-800 dark:text-gray-100"
-          >
+        <div class="rounded-lg border-l-4 border-slate-400 bg-slate-50 p-6 dark:bg-slate-900">
+          <h3 class="mb-3 text-xl font-semibold text-gray-800 dark:text-gray-100">
             Ideas clave del tema
           </h3>
           <ul class="list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300">
-            {tema.ideasClave.map((idea) => <li>{idea}</li>)}
+            {tema.ideasClave.map((idea) => (
+              <li>{idea}</li>
+            ))}
           </ul>
         </div>
       </section>
 
-      <section
-        class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900"
-      >
+      <section class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900">
         <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
           Relación con la unidad
         </h2>
@@ -258,9 +241,7 @@ const continuity = nextTema
     </div>
 
     <div data-topic-view="activity" class="hidden space-y-8">
-      <section
-        class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900"
-      >
+      <section class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900">
         <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
           Actividad sugerida
         </h2>
@@ -269,9 +250,7 @@ const continuity = nextTema
         </p>
       </section>
 
-      <section
-        class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900"
-      >
+      <section class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900">
         <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
           Criterio de evidencia
         </h2>
@@ -280,20 +259,16 @@ const continuity = nextTema
         </p>
       </section>
 
-      <section
-        class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900"
-      >
+      <section class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900">
         <h2 class="mb-6 text-2xl font-bold text-gray-800 dark:text-gray-100">
           Herramientas y recursos de trabajo
         </h2>
         <div class="grid gap-4 md:grid-cols-2">
-          {
-            tema.herramientas.map((herramienta) => (
-              <div class="rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-gray-800">
-                <p class="text-gray-700 dark:text-gray-200">{herramienta}</p>
-              </div>
-            ))
-          }
+          {tema.herramientas.map((herramienta) => (
+            <div class="rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-gray-800">
+              <p class="text-gray-700 dark:text-gray-200">{herramienta}</p>
+            </div>
+          ))}
         </div>
       </section>
     </div>

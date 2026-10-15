@@ -1,6 +1,6 @@
 # Guía de Extracción de Bibliografía UNACH (Playwright)
 
-Esta herramienta automatiza la búsqueda y extracción de referencias bibliográficas en formato **APA 7.ª edición** desde la Biblioteca Virtual UNACH (**eLibro** y **VuFind**) para los 15 temas de la asignatura *Diseño Web para Marketing Digital*.
+Esta herramienta automatiza la búsqueda y extracción de referencias bibliográficas en formato **APA 7.ª edición** desde la Biblioteca Virtual UNACH (**eLibro** y **VuFind**) para los 15 temas de la asignatura _Diseño Web para Marketing Digital_.
 
 ---
 

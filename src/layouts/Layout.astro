@@ -27,9 +27,7 @@ const currentPath = Astro.url.pathname;
     <title>{title}</title>
     <script is:inline src="/theme-init.js"></script>
   </head>
-  <body
-    class="bg-white font-sans text-gray-900 antialiased transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100"
-  >
+  <body class="bg-white font-sans text-gray-900 antialiased transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100">
     <!-- Navbar Component -->
     {!hideChrome && <Navbar currentPath={currentPath} client:load />}
 

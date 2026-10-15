@@ -4,6 +4,7 @@ description: Genera un examen por bimestre con fecha, cantidad de preguntas y ba
 disable-model-invocation: true
 argument-hint: 'bimestre=... fecha=... cantidadPreguntas=... tipo=...'
 ---
+
 Genera un examen bimestral alineado a [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md).
 
 Sigue también la guía institucional en [itsae-filosofia-docencia](../instructions/itsae-filosofia-docencia.instructions.md).

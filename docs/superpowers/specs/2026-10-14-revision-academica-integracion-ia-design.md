@@ -29,12 +29,14 @@ Alcance: integral académico (ortografía + bibliografía + metodología + IA)
 ## 4. Diseño por capas
 
 ### Capa A — Ortografía y estilo
+
 - Corregir 5 críticos + P1 (2 líneas) + P3 (2 líneas).
 - Normalización regex por archivo con revisión: P4 unidades SI (`375 px`, `44 × 44 px`), P5 min solo tablas / minutos en prosa y material estudiantil.
 - Glosario: primera mención con equivalente + cursiva; sustituciones: brief→*brief* (documento de encargo), checklist→lista de cotejo, copy→texto, landing→página de campaña, responsive→adaptable, footer→pie de página, wireframe→boceto estructural, share link→enlace para compartir, fold→primer pantallazo.
 - Decisión editorial: `llamado a la acción` (masculino, uso ecuatoriano, coincide con sílabo).
 
 ### Capa B — Bibliografía APA 7
+
 - Reglas: `(s.f.)`, cursiva `_título_`, sin `Recuperado de`, sin ISBN, sin notas dentro de la entrada, orden alfabético, sufijos -a/-b para mismo autor-año, autor/editor sin espanglish (`Developers Google→Google`).
 - Unificar Krug a `Krug, S. (2014). _No me hagas pensar_ (3.ª ed.). Anaya Multimedia.`
 - Crear sección APA en U1T4 (WCAG 2.2 + Fernández 2021 + Krug 2014), U4T2 (Google Analytics s.f.-a/b/c + Clifton), U4T3 (mover PageSpeed a Herramientas + Busquets/Gibbons/NN/g video).
@@ -43,6 +45,7 @@ Alcance: integral académico (ortografía + bibliografía + metodología + IA)
 - Añadir guía APA 1 pág. para estudiantes (las rúbricas la exigen).
 
 ### Capa C — Metodología, calendario, evaluación
+
 - Corregir 4 refs U4T3/U4T4. Verificar con grep `unidad4/tema4|U4T1|U4T4|2027-01-22`.
 - Reequilibrio 120 min: U1T1 Momento 7 a 30 min + Momento 4 diagnóstico 25 min; U2T1 +25 min modelado; U2T2 +20 min revisión pares; U2T4 mínimo 1 vista móvil + escritorio a HAA; U3T2 hero+1 sección (resto HAA); U3T3 ruta contingencia Forms 10 min + E2E a HAA si no completa; U3T4 Fase 1 enlaces+1 herramienta por parejas, evidencia dividida (lista→U3, hipótesis→U4); U4T1 3/5 ajustes a elección + obj.1 a "Evaluar"; U4T3 6-8 expositores + resto video 4 min + plantilla reporte.
 - Rúbricas: resolver doble asignación U1T3 (B sincrónica / E asincrónica, quitar línea 6 de A); crear rúbrica F (U3 decisión/maquetación/formularios/auditoría) y G (U4 SEO/medición/sustentación); mover criterio UNACH según `README.md:96` (no en talleres en clase).
@@ -50,6 +53,7 @@ Alcance: integral académico (ortografía + bibliografía + metodología + IA)
 - HAA explícita en U3T3, U3T4, U4T2, U4T3.
 
 ### Capa D — Integración IA (15 sesiones)
+
 - Patrón por sesión: `Bloque IA (10-15 min): prompt en pantalla → ejecución en vivo → 1 voluntario comparte → docente marca qué se acepta y qué se reescribe a mano`. S1/S4: `Bloque anti-IA` (evidencia manual, IA solo explica después).
 - Distribución: S3/S8 Figma AI plena; S10 Framer AI plena + Canva asset opcional; S5 combinada ChatGPT→Claude; S7 pipeline triple (enseña a combinar); S2/S6/S9/S11/S14 parcial-crítica; S12/S13/S15 plena con resguardo; S1/S4 sin generación.
 - Cada actividad lleva: herramienta + prompt listo (variables `[MI-PROYECTO]`, `[MI-URL]`, `[FICHA]`) + producto esperado + declaración `Borrador IA: [modelo] / Versión final propia: [qué cambié]` + prohibición de inventar métricas (captura + URL + periodo obligatorios).
@@ -57,23 +61,23 @@ Alcance: integral académico (ortografía + bibliografía + metodología + IA)
 
 ## 5. Mapa IA por sesión (resumen; prompts completos en informe del subagente)
 
-| Sesión | IA principal | Entrega |
-|---|---|---|
-| S1 U1T1 Brief | anti-IA (ChatGPT comparador posterior) | Brief manual |
-| S2 U1T2 | Claude critica ficha | Ficha + mejora |
-| S3 U1T3 | Figma AI variantes hero | Boceto + captura anotada |
-| S4 U1T4 | anti-IA (Gemini explica después) | Checklist en celular |
-| S5 U2T1 | ChatGPT genera → Claude itera | Ficha + mensaje ≤20 palabras |
-| S6 U2T2 | Claude critica orden | Mapa 5-6 bloques |
-| S7 U2T3 | Gemini→ChatGPT→Claude | Titular + beneficios + CTAs |
-| S8 U2T4 | Figma AI gris | Share link + nota |
-| S9 U3T1 | Gemini cuestiona (no elige) | Ficha decisión |
-| S10 U3T2 | Framer AI + Canva asset | 3 secciones + 2 ajustes |
-| S11 U3T3 | Gemini microcopy | Form + capturas E2E |
-| S12 U3T4 | Claude hipótesis | Lista + hipótesis |
-| S13 U4T1 | Gemini SEO | Checklist + antes/después |
-| S14 U4T2 | Claude medición honesta | Matriz 6 campos |
-| S15 U4T3 | ChatGPT jurado + Claude pulidor | Guion 4 min |
+| Sesión        | IA principal                           | Entrega                      |
+| ------------- | -------------------------------------- | ---------------------------- |
+| S1 U1T1 Brief | anti-IA (ChatGPT comparador posterior) | Brief manual                 |
+| S2 U1T2       | Claude critica ficha                   | Ficha + mejora               |
+| S3 U1T3       | Figma AI variantes hero                | Boceto + captura anotada     |
+| S4 U1T4       | anti-IA (Gemini explica después)       | Checklist en celular         |
+| S5 U2T1       | ChatGPT genera → Claude itera          | Ficha + mensaje ≤20 palabras |
+| S6 U2T2       | Claude critica orden                   | Mapa 5-6 bloques             |
+| S7 U2T3       | Gemini→ChatGPT→Claude                  | Titular + beneficios + CTAs  |
+| S8 U2T4       | Figma AI gris                          | Share link + nota            |
+| S9 U3T1       | Gemini cuestiona (no elige)            | Ficha decisión               |
+| S10 U3T2      | Framer AI + Canva asset                | 3 secciones + 2 ajustes      |
+| S11 U3T3      | Gemini microcopy                       | Form + capturas E2E          |
+| S12 U3T4      | Claude hipótesis                       | Lista + hipótesis            |
+| S13 U4T1      | Gemini SEO                             | Checklist + antes/después    |
+| S14 U4T2      | Claude medición honesta                | Matriz 6 campos              |
+| S15 U4T3      | ChatGPT jurado + Claude pulidor        | Guion 4 min                  |
 
 ## 6. Archivos tocados
 

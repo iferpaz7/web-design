@@ -4,6 +4,7 @@ description: Prepara el roadmap maestro de una clase dinámica y memorable, alin
 disable-model-invocation: true
 argument-hint: 'Inputs obligatorios: unidad (1-4), tema (1-4 dentro de la unidad), fecha, tipoClase, profundidad, criterio, cantidad. Opcionales: fuenteUnach, ajustes.'
 ---
+
 Prepara el roadmap completo de una clase usando como fuente primaria el sílabo oficial de la asignatura en [docs/silabo-final-formato-sga.md](../../docs/silabo-final-formato-sga.md) y, de manera complementaria cuando el tema ya exista en la web del curso, en [src/data/syllabus.ts](../../src/data/syllabus.ts).
 
 **Antes de generar cualquier contenido**, lee el sílabo completo y localiza la fila de la tabla "Actividades por sesión" que coincida con la **combinación de `unidad` y `tema`** indicadas en los inputs (el número de tema equivale al número de sesión dentro de la unidad, ya que ambos reinician en 1 en cada unidad). Extrae de esa fila:
@@ -253,8 +254,10 @@ Instrucciones obligatorias para la generación:
   7. Conclusión o cierre conceptual.
   8. Oración final.
   9. Despedida.
-- La meditación debe ser breve, pertinente, respetuosa, conectada con el tema y coherente con la filosofía del ITSAE. No la fuerces ni la vuelvas genérica.
-- Antes de redactar la meditación, busca en línea la devoción de Nuestro Pan Diario correspondiente a la fecha de la clase en esta URL: `https://nuestropandiario.org/{año}/{mes}/{dia}/{slug}` — usa la fecha del input `fecha` para construir la URL base `https://nuestropandiario.org/{año}/{mes}/{dia}/` y localiza el artículo del día. Si el tema de esa devoción guarda relación con el tema de la clase (por concepto, valor, metáfora o aplicación práctica), extiende la meditación citando o parafraseando ese contenido con su referencia bíblica, e indica al docente la conexión. Si el tema de la devoción no guarda relación directa con la clase, igual incorpora al final de la meditación un versículo bíblico pertinente al tema, breve y aplicable, junto con una oración de una sola frase que lo conecte con el aprendizaje del día.
+- La meditación debe ser breve, pertinente, respetuosa, conectada directamente con el tema técnico de la sesión y plenamente coherente con la filosofía educativa del ITSAE. Basa la reflexión en:
+  1. Pasajes bíblicos específicos (RVR1960 / NVI) pertinentes al principio de diseño, comunicación o mayordomía de la sesión.
+  2. Recursos y escritos educativos o filosóficos adventistas (principalmente Elena G. de White: _La Educación_, _El Ministerio de Curación_, _Palabras de Vida del Gran Maestro_, _Mensajes para los Jóvenes_, _Consejos sobre Mayordomía Cristiana_, _Obreros Evangélicos_) y el enfoque de servicio cristiano del ITSAE.
+  3. Una conexión pedagógica clara entre el principio espiritual y la práctica técnica del día (ética digital, excelencia, empatía con el usuario, veracidad en la comunicación, mayordomía del tiempo y recursos), cerrando con una oración inicial breve y contextualizada.
 - Desglosa el tema en subtemas, conceptos clave, ejemplos, analogías, aplicaciones prácticas y alertas sobre errores comunes.
 - Usa búsqueda online para localizar y verificar fuentes académicas, institucionales, artículos, videos, revistas y recursos que fortalezcan la clase magistral.
 - Si no se entrega una fuente UNACH específica, comienza la búsqueda bibliográfica desde el catálogo UNACH por defecto, adapta los términos de búsqueda al tema o asignatura y selecciona solo referencias realmente pertinentes para sustentar la clase.

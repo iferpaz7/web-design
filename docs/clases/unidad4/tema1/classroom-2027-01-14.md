@@ -82,8 +82,8 @@ Enlace: [https://ahrefs.com/blog/core-web-vitals/](https://ahrefs.com/blog/core-
 Tipo: Bibliografía oficial
 Propósito: Referencias académicas oficiales de la asignatura relacionadas con estructura y accesibilidad web.
 
-- Fernández Casado, P. E. (2024). *Iniciación a la creación de páginas web*. RA-MA Editorial.
-- Fernández Casado, P. E. (2021). *Accesibilidad web: Diseño de aplicaciones*. RA-MA Editorial.
+- Fernández Casado, P. E. (2024). _Iniciación a la creación de páginas web_. RA-MA Editorial.
+- Fernández Casado, P. E. (2021). _Accesibilidad web: Diseño de aplicaciones_. RA-MA Editorial.
 - Krug, S. (2014). _No me hagas pensar: Una aproximación a la usabilidad en la web_ (3.ª ed.). Anaya Multimedia.
 
 ---

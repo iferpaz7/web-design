@@ -95,4 +95,4 @@ Documento de revisión con el checklist aplicado: marca de ✅ o ❌ por punto, 
 
 ## Uso de IA en esta actividad
 
-Sesión anti-IA: el checklist se marca con tu celular real en mano, sin simuladores. Solo *después* puedes pedir a Gemini que te explique en lenguaje simple un error que encontraste (p. ej. "¿qué significa este aviso de contraste de WAVE?"). La IA explica; no marca tu checklist.
+Sesión anti-IA: el checklist se marca con tu celular real en mano, sin simuladores. Solo _después_ puedes pedir a Gemini que te explique en lenguaje simple un error que encontraste (p. ej. "¿qué significa este aviso de contraste de WAVE?"). La IA explica; no marca tu checklist.

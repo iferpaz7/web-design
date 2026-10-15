@@ -34,11 +34,13 @@
 ### Task 1: Capa A — Ortografía y estilo
 
 **Files:**
+
 - Modify: `src/data/syllabus.ts`
 - Modify: `docs/clases/**/roadmap-*.md`, `docs/clases/**/classroom-*.md`, `docs/clases/**/actividad-*.md`
 - Modify: `docs/examenes/clave-bimestre1-2026-06-17.md`
 
 **Interfaces:**
+
 - Consumes: nada previo.
 - Produces: corpus normalizado (llamado, Mobile-First, unidades SI, min/minutos) para las capas siguientes.
 
@@ -56,7 +58,7 @@ Unidades SI con espacio (`375px`→`375 px`, `1440px`→`1440 px`, `44 × 44 px`
 
 - [ ] **Step 4: Glosario P2+P6 (primera mención + resto)**
 
-Definir 1 vez por documento y aplicar: *brief* (documento de encargo), lista de cotejo, texto (por copy), página de campaña (por landing), adaptable, pie de página, boceto estructural, enlace para compartir, primer pantallazo. `¿Landing o sitio?` → `¿Página de campaña o sitio?` (`src/data/syllabus.ts:1067`). `Internet` → `internet` salvo inicio de frase.
+Definir 1 vez por documento y aplicar: _brief_ (documento de encargo), lista de cotejo, texto (por copy), página de campaña (por landing), adaptable, pie de página, boceto estructural, enlace para compartir, primer pantallazo. `¿Landing o sitio?` → `¿Página de campaña o sitio?` (`src/data/syllabus.ts:1067`). `Internet` → `internet` salvo inicio de frase.
 
 - [ ] **Step 5: Verificar capa A**
 
@@ -73,11 +75,13 @@ git add -A && git commit -m "fix(contenido): ortografía y estilo académico 202
 ### Task 2: Capa B — Bibliografía APA 7 + guía estudiante
 
 **Files:**
+
 - Modify: `docs/clases/**/roadmap-*.md` (listas APA)
 - Modify: `docs/silabo-final-formato-sga.md:81-94` (solo si el docente confirma; es documento oficial)
 - Create: `docs/guia-apa-estudiante.md`
 
 **Interfaces:**
+
 - Consumes: corpus normalizado de Task 1.
 - Produces: listas APA válidas y guía de 1 pág. exigida por rúbricas.
 
@@ -111,12 +115,14 @@ git add -A && git commit -m "fix(biblio): normalizar APA 7 y guía estudiante"
 ### Task 3: Capa C — Metodología, calendario y rúbricas
 
 **Files:**
+
 - Modify: `docs/clases/**/roadmap-*.md` (tiempos, objetivos, HAA, refs)
 - Modify: `src/data/syllabus.ts` (`syllabus.ts:1757` U4T3→U4T2)
 - Modify: `docs/rubricas/rubrica-taller-analitico.md`, `docs/rubricas/rubrica-actividad-asincronica.md`
 - Create: `docs/rubricas/rubrica-f-unidad3.md`, `docs/rubricas/rubrica-g-unidad4.md`
 
 **Interfaces:**
+
 - Consumes: Tasks 1-2.
 - Produces: sesiones en 120 min reales, evaluación completa U3/U4, calendario viable.
 
@@ -151,11 +157,13 @@ git add -A && git commit -m "fix(metodologia): reequilibrio 120min, rúbricas U3
 ### Task 4: Capa D — Bloque IA con elección del estudiante
 
 **Files:**
+
 - Modify: `docs/clases/**/roadmap-*.md` (bloque IA 10-15 min o anti-IA)
 - Modify: `docs/clases/**/actividad-*.md` (prompt listo + declaración + criterio)
 - Modify: `src/data/syllabus.ts` (`herramientas[]` + mención IA donde aplique; no tocar `presentationBlocks` salvo orto)
 
 **Interfaces:**
+
 - Consumes: Tasks 1-3 (textos y tiempos finales).
 - Produces: IA integrada sin imponer herramienta.
 

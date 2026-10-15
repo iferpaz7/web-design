@@ -75,6 +75,7 @@ Para cada página, identifica al menos un problema UX concreto y propón una mej
 Ficha comparativa completada con observaciones analíticas pertinentes para las dos páginas y al menos una propuesta de mejora fundamentada por página.
 
 **Criterios:**
+
 - Identificación precisa de problemas concretos de UX/UI en ambas interfaces.
 - Rigor y calidad de la comparación argumentada bajo heurísticas de usabilidad.
 - Pertinencia y viabilidad de las mejoras propuestas para reducir fricción.
@@ -85,7 +86,7 @@ Ficha comparativa completada con observaciones analíticas pertinentes para las 
 
 **Modelo sugerido:** Claude como crítico (puedes usar ChatGPT o Gemini si ya trabajas con ellos; declara cuál).
 
-Pega este prompt *después* de escribir tu ficha:
+Pega este prompt _después_ de escribir tu ficha:
 
 ```
 Actúa como evaluador UX con las heurísticas de Nielsen y Krug ("No me hagas pensar").

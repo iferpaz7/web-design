@@ -25,9 +25,7 @@ const { unit, tema } = Astro.props;
   title={`Presentación · Unidad ${unit.numero} · Tema ${tema.numero} - ITSAE`}
   hideChrome={true}
 >
-  <div
-    class="min-h-dvh w-full overflow-x-hidden bg-gray-950 sm:h-dvh sm:w-screen sm:overflow-hidden"
-  >
+  <div class="min-h-dvh w-full overflow-x-hidden bg-gray-950 sm:h-dvh sm:w-screen sm:overflow-hidden">
     <TemaPresentacion unit={unit} tema={tema} mode="standalone" client:load />
   </div>
 </Layout>

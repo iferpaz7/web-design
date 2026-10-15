@@ -101,14 +101,14 @@ Compara para mi proyecto [MI-PROYECTO, N.º páginas, ¿formulario?]: WordPress+
 
 ### Matriz de decisión de herramienta (rige tu elección todo el periodo)
 
-| Criterio | Figma (+ constructor) | Framer | Canva (+ publicación) | WordPress / Carrd |
-|---|---|---|---|---|
-| Tiempo disponible | Medio-alto | Medio | Bajo | Bajo-medio |
-| Control de diseño | Total | Alto | Medio | Medio |
-| Formulario / conversión | Vía embed | Nativo + embed | Limitado | Nativo / embed |
-| SEO y rendimiento | Según constructor | Bueno | Básico | Bueno / básico |
-| Costo | Gratis base | Gratis base | Gratis base | Variable |
-| Curva de aprendizaje | Media | Media | Baja | Media / baja |
+| Criterio                | Figma (+ constructor) | Framer         | Canva (+ publicación) | WordPress / Carrd |
+| ----------------------- | --------------------- | -------------- | --------------------- | ----------------- |
+| Tiempo disponible       | Medio-alto            | Medio          | Bajo                  | Bajo-medio        |
+| Control de diseño       | Total                 | Alto           | Medio                 | Medio             |
+| Formulario / conversión | Vía embed             | Nativo + embed | Limitado              | Nativo / embed    |
+| SEO y rendimiento       | Según constructor     | Bueno          | Básico                | Bueno / básico    |
+| Costo                   | Gratis base           | Gratis base    | Gratis base           | Variable          |
+| Curva de aprendizaje    | Media                 | Media          | Baja                  | Media / baja      |
 
 Regla del periodo: **la herramienta la eliges tú según tu idea**; declara tu elección con 3 criterios de esta tabla y 1 riesgo asumido. La IA propone, tú decides.
 

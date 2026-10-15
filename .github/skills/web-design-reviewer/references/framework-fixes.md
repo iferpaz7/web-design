@@ -89,43 +89,49 @@ This document explains specific fix techniques for each framework and styling me
 ### Layout Fixes
 
 ```jsx
-{/* Before: Overflow */}
+{
+  /* Before: Overflow */
+}
 <div className="w-full">
   <img src="..." />
-</div>
+</div>;
 
-{/* After: Overflow control */}
+{
+  /* After: Overflow control */
+}
 <div className="w-full max-w-full overflow-hidden">
-  <img src="..." className="w-full h-auto object-contain" />
-</div>
+  <img src="..." className="h-auto w-full object-contain" />
+</div>;
 ```
 
 ### Text Clipping Prevention
 
 ```jsx
-{/* Single line truncation */}
-<p className="truncate">Long text...</p>
+{
+  /* Single line truncation */
+}
+<p className="truncate">Long text...</p>;
 
-{/* Multi-line truncation */}
-<p className="line-clamp-3">Long text...</p>
+{
+  /* Multi-line truncation */
+}
+<p className="line-clamp-3">Long text...</p>;
 
-{/* Allow wrapping */}
-<p className="break-words">Long text...</p>
+{
+  /* Allow wrapping */
+}
+<p className="break-words">Long text...</p>;
 ```
 
 ### Responsive Support
 
 ```jsx
-{/* Mobile-first responsive */}
-<div className="
-  flex flex-col gap-4
-  md:flex-row md:gap-6
-  lg:gap-8
-">
-  <div className="w-full md:w-1/2 lg:w-1/3">
-    Content
-  </div>
-</div>
+{
+  /* Mobile-first responsive */
+}
+<div className="flex flex-col gap-4 md:flex-row md:gap-6 lg:gap-8">
+  <div className="w-full md:w-1/2 lg:w-1/3">Content</div>
+</div>;
 ```
 
 ### Spacing Unification (Tailwind Config)
@@ -136,30 +142,32 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        '18': '4.5rem',
-        '22': '5.5rem',
-      },
-    },
-  },
-}
+        18: '4.5rem',
+        22: '5.5rem'
+      }
+    }
+  }
+};
 ```
 
 ### Accessibility Improvements
 
 ```jsx
-{/* Add focus state */}
-<button className="
-  bg-blue-500 text-white
-  hover:bg-blue-600
-  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
-">
+{
+  /* Add focus state */
+}
+<button className="bg-blue-500 text-white hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none">
   Button
-</button>
+</button>;
 
-{/* Improve contrast */}
-<p className="text-gray-700 bg-white"> {/* Changed from text-gray-500 */}
+{
+  /* Improve contrast */
+}
+<p className="bg-white text-gray-700">
+  {' '}
+  {/* Changed from text-gray-500 */}
   Readable text
-</p>
+</p>;
 ```
 
 ---
@@ -215,7 +223,7 @@ const Container = styled.div`
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  
+
   @media (max-width: 768px) {
     padding: 1rem;
   }
@@ -229,11 +237,11 @@ const Card = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  
+
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   @media (max-width: 640px) {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -249,13 +257,13 @@ export const theme = {
   colors: {
     primary: '#2563eb',
     text: '#1f2937',
-    textLight: '#4b5563', // Improved contrast
+    textLight: '#4b5563' // Improved contrast
   },
   spacing: {
     sm: '0.5rem',
     md: '1rem',
-    lg: '1.5rem',
-  },
+    lg: '1.5rem'
+  }
 };
 
 // Usage
@@ -324,7 +332,8 @@ const Text = styled.p`
 }
 
 /* Prevent layout overflow */
-html, body {
+html,
+body {
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -343,16 +352,10 @@ img {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col">
-        <header className="sticky top-0 z-50">
-          {/* Header */}
-        </header>
-        <main className="flex-1 container mx-auto px-4 py-8">
-          {children}
-        </main>
-        <footer>
-          {/* Footer */}
-        </footer>
+      <body className="flex min-h-screen flex-col">
+        <header className="sticky top-0 z-50">{/* Header */}</header>
+        <main className="container mx-auto flex-1 px-4 py-8">{children}</main>
+        <footer>{/* Footer */}</footer>
       </body>
     </html>
   );
@@ -456,7 +459,7 @@ textarea:focus-visible {
 
 ```javascript
 // Run in console to detect overflow elements
-document.querySelectorAll('*').forEach(el => {
+document.querySelectorAll('*').forEach((el) => {
   if (el.scrollWidth > el.clientWidth) {
     console.log('Horizontal overflow:', el);
   }

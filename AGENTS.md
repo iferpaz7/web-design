@@ -61,9 +61,9 @@ tools/google_classroom/       ← Python CLI source (classroom_cli.py + helpers)
 
 ```typescript
 interface SyllabusTema {
-  numero: number;           // 1–4
+  numero: number; // 1–4
   titulo: string;
-  href: string;             // '/unidadN/temaN'
+  href: string; // '/unidadN/temaN'
   disponible: boolean;
   panorama: string;
   objetivos: string[];
@@ -71,12 +71,12 @@ interface SyllabusTema {
   actividad: string;
   evidencia: string;
   herramientas: string[];
-  presentationBlocks?: SyllabusPresentationBlock[];  // slide source
+  presentationBlocks?: SyllabusPresentationBlock[]; // slide source
 }
 
 interface SyllabusUnit {
-  numero: number;           // 1–4
-  color: 'amber' | 'blue' | 'emerald' | 'purple';  // unit 1–4 in order
+  numero: number; // 1–4
+  color: 'amber' | 'blue' | 'emerald' | 'purple'; // unit 1–4 in order
   iconName: 'BookOpen' | 'Monitor' | 'Palette' | 'Zap';
   temas: SyllabusTema[];
 }
@@ -104,13 +104,13 @@ content there — never in the Astro page files.
 
 When creating or editing class documents, follow these exact patterns:
 
-| File | Path | Purpose |
-|---|---|---|
-| Roadmap | `docs/clases/unidad{N}/tema{N}/roadmap-YYYY-MM-DD.md` | Full session plan for the teacher |
-| Classroom material | `docs/clases/unidad{N}/tema{N}/classroom-YYYY-MM-DD.md` | Published as Classroom material via CLI |
-| Assignment | `docs/clases/unidad{N}/tema{N}/actividad-YYYY-MM-DD.md` | Published as Classroom coursework via CLI |
-| Exam | `docs/examenes/examen-YYYY-MM-DD.md` | Parsed by `create-form`; uses `### Pregunta N` headings |
-| Answer key | `docs/examenes/clave-YYYY-MM-DD.md` | Teacher reference only, never synced |
+| File               | Path                                                    | Purpose                                                 |
+| ------------------ | ------------------------------------------------------- | ------------------------------------------------------- |
+| Roadmap            | `docs/clases/unidad{N}/tema{N}/roadmap-YYYY-MM-DD.md`   | Full session plan for the teacher                       |
+| Classroom material | `docs/clases/unidad{N}/tema{N}/classroom-YYYY-MM-DD.md` | Published as Classroom material via CLI                 |
+| Assignment         | `docs/clases/unidad{N}/tema{N}/actividad-YYYY-MM-DD.md` | Published as Classroom coursework via CLI               |
+| Exam               | `docs/examenes/examen-YYYY-MM-DD.md`                    | Parsed by `create-form`; uses `### Pregunta N` headings |
+| Answer key         | `docs/examenes/clave-YYYY-MM-DD.md`                     | Teacher reference only, never synced                    |
 
 The CLI globs `docs/clases/**/classroom-*.md` and `docs/clases/**/actividad-*.md`.
 It infers the Classroom topic from the path (`unidad{N}` → `Unidad N`).
@@ -133,11 +133,11 @@ so the `create-form` parser can extract questions correctly.
 
 ## Boundaries
 
-| Allowed without asking | Ask first | Never touch |
-|---|---|---|
-| `src/`, `docs/`, `tools/`, `.github/prompts/` | `docs/silabo-final-formato-sga.md` (official syllabus — changes affect all prompts) | `credentials.json`, `token.json`, `classroom.config.json` |
-| New `docs/clases/**/` files following the naming convention | `tools/google_classroom/classroom_cli.py` (core CLI — test with `--dry-run` first) | `dist/` (generated, never edit directly) |
-| `src/data/syllabus.ts` content updates | `.python_deps/` (vendored, don't modify) | `.netlify/` (Netlify internal) |
+| Allowed without asking                                      | Ask first                                                                           | Never touch                                               |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| `src/`, `docs/`, `tools/`, `.github/prompts/`               | `docs/silabo-final-formato-sga.md` (official syllabus — changes affect all prompts) | `credentials.json`, `token.json`, `classroom.config.json` |
+| New `docs/clases/**/` files following the naming convention | `tools/google_classroom/classroom_cli.py` (core CLI — test with `--dry-run` first)  | `dist/` (generated, never edit directly)                  |
+| `src/data/syllabus.ts` content updates                      | `.python_deps/` (vendored, don't modify)                                            | `.netlify/` (Netlify internal)                            |
 
 ---
 

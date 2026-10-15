@@ -57,10 +57,10 @@ Diseñar, prototipar, publicar y optimizar una página web orientada a campaña 
 | 1    | Unidad 3    | Seleccionar una herramienta viable para la publicación de la página web.                          | Publicación en nube, constructores visuales y CMS accesibles. | 1   | 1   | 1   |
 | 2    | Unidad 3    | Construir la página por secciones y adaptarla a distintos dispositivos.                           | Maquetación y adaptación responsiva.                          | 1   | 1   | 1   |
 | 3    | Unidad 3    | Integrar un mecanismo funcional de conversión o contacto.                                         | Formularios, captura de contactos y rutas de conversión.      | 1   | 1   | 1   |
-| 4    | Unidad 3    | Verificar la calidad final y formular una primera hipótesis de mejora orientada a conversión.                                | Auditoría integral de calidad y conversión.                    | 1   | 1   | 1   |
-| 1    | Unidad 4    | Aplicar criterios básicos de visibilidad y rendimiento.                                                                      | SEO básico y rendimiento.                                      | 1   | 1   | 1   |
-| 2    | Unidad 4    | Interpretar indicadores y evidencias de desempeño.                                                                           | Medición básica del comportamiento y conversiones.             | 1   | 1   | 1   |
-| 3    | Unidad 4    | Sustentar mejoras y preparar el cierre del proyecto final.                                                                   | Presentación final e iteración de la página web.               | 1   | 1   | 1   |
+| 4    | Unidad 3    | Verificar la calidad final y formular una primera hipótesis de mejora orientada a conversión.     | Auditoría integral de calidad y conversión.                   | 1   | 1   | 1   |
+| 1    | Unidad 4    | Aplicar criterios básicos de visibilidad y rendimiento.                                           | SEO básico y rendimiento.                                     | 1   | 1   | 1   |
+| 2    | Unidad 4    | Interpretar indicadores y evidencias de desempeño.                                                | Medición básica del comportamiento y conversiones.            | 1   | 1   | 1   |
+| 3    | Unidad 4    | Sustentar mejoras y preparar el cierre del proyecto final.                                        | Presentación final e iteración de la página web.              | 1   | 1   | 1   |
 | —    | Bimestre II | Integrar y sustentar los aprendizajes logrados durante todo el período académico.                 | Examen Bimestre II.                                           | 1   | 1   | 1   |
 
 ## Estrategias metodológicas básicas

@@ -15,7 +15,7 @@ Reconocer principios fundamentales de experiencia de usuario (UX) e interfaz de 
 ## Contenidos de la sesión
 
 1. Diferenciación y complementariedad entre experiencia de usuario (UX) e interfaz de usuario (UI).
-2. Principios de usabilidad web y reducción de carga cognitiva según Steve Krug (*No me hagas pensar*).
+2. Principios de usabilidad web y reducción de carga cognitiva según Steve Krug (_No me hagas pensar_).
 3. Las 10 heurísticas de usabilidad de Nielsen aplicadas a páginas de campaña y comercio electrónico.
 4. Tipologías de fricción en la interfaz: cognitiva, visual, táctil y de proceso.
 

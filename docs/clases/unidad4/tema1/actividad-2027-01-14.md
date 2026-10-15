@@ -80,6 +80,7 @@ En la sesión anterior identificaste oportunidades de mejora en tu página desde
 Registro del checklist SEO completado con la URL de tu página, los puntajes de PageSpeed Insights (móvil y escritorio, con estado de LCP/INP/CLS), y evidencia de al menos tres ajustes aplicados: title tag, meta descripción, encabezados y/o texto alternativo de imágenes.
 
 **Criterios:**
+
 - URL de la página revisada incluida en el registro.
 - Puntaje de PageSpeed en móvil y en escritorio registrado con estado de los tres Core Web Vitals.
 - Title tag corregido o validado con longitud y palabra clave adecuada.

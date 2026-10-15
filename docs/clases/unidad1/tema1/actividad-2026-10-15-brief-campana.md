@@ -77,6 +77,7 @@ Piensa en un negocio, emprendimiento real o proyecto en el que quieras trabajar 
 Documento escrito de brief inicial con los cuatro puntos desarrollados de forma clara, contextualizada y coherente.
 
 **Criterios:**
+
 - Claridad y contextualización del negocio o proyecto.
 - Precisión del objetivo estratégico (diferenciado de objetivos de redes sociales).
 - Delimitación del público objetivo y su intención de visita.

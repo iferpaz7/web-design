@@ -19,35 +19,42 @@ const path = require('path');
 const readline = require('readline');
 
 const AUTH_FILE = path.resolve(process.cwd(), '.auth_unach.json');
-const OUTPUT_FILE = path.resolve(process.cwd(), 'docs/bibliografia/catalogo-unach-temas.json');
+const OUTPUT_FILE = path.resolve(
+  process.cwd(),
+  'docs/bibliografia/catalogo-unach-temas.json'
+);
 
 // Mapeo temático de los 15 temas de la asignatura con términos optimizados para eLibro UNACH
 const TEMAS_CONFIG = {
   u1t1: {
     unidad: 1,
     tema: 1,
-    titulo: 'Rol de la página web en la estrategia de marketing digital y en el embudo de conversión',
+    titulo:
+      'Rol de la página web en la estrategia de marketing digital y en el embudo de conversión',
     query: 'marketing__digital',
     href: '/unidad1/tema1'
   },
   u1t2: {
     unidad: 1,
     tema: 2,
-    titulo: 'Principios de UX/UI aplicados a páginas de campaña y experiencias digitales',
+    titulo:
+      'Principios de UX/UI aplicados a páginas de campaña y experiencias digitales',
     query: 'diseno__interfaces',
     href: '/unidad1/tema2'
   },
   u1t3: {
     unidad: 1,
     tema: 3,
-    titulo: 'Jerarquía visual, tipografía, color y composición para comunicar y persuadir',
+    titulo:
+      'Jerarquía visual, tipografía, color y composición para comunicar y persuadir',
     query: 'tipografia',
     href: '/unidad1/tema3'
   },
   u1t4: {
     unidad: 1,
     tema: 4,
-    titulo: 'Usabilidad, accesibilidad y lectura móvil como criterios de calidad',
+    titulo:
+      'Usabilidad, accesibilidad y lectura móvil como criterios de calidad',
     query: 'usabilidad__web',
     href: '/unidad1/tema4',
     prioritario: true
@@ -55,7 +62,8 @@ const TEMAS_CONFIG = {
   u2t1: {
     unidad: 2,
     tema: 1,
-    titulo: 'Arquitectura de la información, wireframing y flujo del usuario en la página',
+    titulo:
+      'Arquitectura de la información, wireframing y flujo del usuario en la página',
     query: 'arquitectura__informacion',
     href: '/unidad2/tema1',
     prioritario: true
@@ -63,21 +71,24 @@ const TEMAS_CONFIG = {
   u2t2: {
     unidad: 2,
     tema: 2,
-    titulo: 'Organización de contenidos por bloques, secciones y recorrido del usuario',
+    titulo:
+      'Organización de contenidos por bloques, secciones y recorrido del usuario',
     query: 'diseno__interaccion',
     href: '/unidad2/tema2'
   },
   u2t3: {
     unidad: 2,
     tema: 3,
-    titulo: 'Redacción de titulares, beneficios, prueba social y llamados a la acción',
+    titulo:
+      'Redacción de titulares, beneficios, prueba social y llamados a la acción',
     query: 'comunicacion__digital',
     href: '/unidad2/tema3'
   },
   u2t4: {
     unidad: 2,
     tema: 4,
-    titulo: 'Prototipado de baja y media fidelidad con herramientas visuales y criterios de marca',
+    titulo:
+      'Prototipado de baja y media fidelidad con herramientas visuales y criterios de marca',
     query: 'diseno__interfaces',
     href: '/unidad2/tema4',
     prioritario: true
@@ -92,7 +103,8 @@ const TEMAS_CONFIG = {
   u3t2: {
     unidad: 3,
     tema: 2,
-    titulo: 'Maquetación por secciones y adaptación a dispositivos: móvil, tablet y escritorio',
+    titulo:
+      'Maquetación por secciones y adaptación a dispositivos: móvil, tablet y escritorio',
     query: 'desarrollo__web',
     href: '/unidad3/tema2'
   },
@@ -106,21 +118,24 @@ const TEMAS_CONFIG = {
   u3t4: {
     unidad: 3,
     tema: 4,
-    titulo: 'Auditoría integral de calidad y conversión: cierre de producción y apertura de optimización',
+    titulo:
+      'Auditoría integral de calidad y conversión: cierre de producción y apertura de optimización',
     query: 'usabilidad__web',
     href: '/unidad3/tema4'
   },
   u4t1: {
     unidad: 4,
     tema: 1,
-    titulo: 'Publicación, dominio y fundamentos de visibilidad en buscadores (SEO)',
+    titulo:
+      'Publicación, dominio y fundamentos de visibilidad en buscadores (SEO)',
     query: 'posicionamiento__web',
     href: '/unidad4/tema1'
   },
   u4t2: {
     unidad: 4,
     tema: 2,
-    titulo: 'Medición básica del comportamiento, conversiones e interpretación de datos',
+    titulo:
+      'Medición básica del comportamiento, conversiones e interpretación de datos',
     query: 'analitica__web',
     href: '/unidad4/tema2',
     prioritario: true
@@ -128,7 +143,8 @@ const TEMAS_CONFIG = {
   u4t3: {
     unidad: 4,
     tema: 3,
-    titulo: 'Iteración de la página web, presentación final y argumentación de mejoras',
+    titulo:
+      'Iteración de la página web, presentación final y argumentación de mejoras',
     query: 'marketing__digital',
     href: '/unidad4/tema3',
     prioritario: true
@@ -185,11 +201,15 @@ async function loginFlow() {
     console.warn('Nota de navegación:', err.message);
   }
 
-  await promptEnter('👉 Presiona [ENTER] aquí después de iniciar sesión y ver el catálogo...');
+  await promptEnter(
+    '👉 Presiona [ENTER] aquí después de iniciar sesión y ver el catálogo...'
+  );
 
   await context.storageState({ path: AUTH_FILE });
   console.log(`\n✅ Sesión guardada exitosamente en: ${AUTH_FILE}`);
-  console.log('Ahora puedes ejecutar consultas automáticas sin necesidad de volver a iniciar sesión.\n');
+  console.log(
+    'Ahora puedes ejecutar consultas automáticas sin necesidad de volver a iniciar sesión.\n'
+  );
 
   await browser.close();
 }
@@ -205,7 +225,9 @@ async function getBrowserContext(headless = true) {
     console.log(`ℹ️  Cargando credenciales de sesión desde: ${AUTH_FILE}`);
     context = await browser.newContext({ storageState: AUTH_FILE });
   } else {
-    console.warn('⚠️  No se encontró .auth_unach.json. Si el catálogo requiere SSO, ejecuta primero:');
+    console.warn(
+      '⚠️  No se encontró .auth_unach.json. Si el catálogo requiere SSO, ejecuta primero:'
+    );
     console.warn('    node tools/biblioteca/buscar_unach.cjs --login\n');
     context = await browser.newContext();
   }
@@ -230,19 +252,27 @@ async function searchElibro(page, rawQuery) {
 
     const items = await page.evaluate(() => {
       const results = [];
-      const links = Array.from(document.querySelectorAll('a[href*="/titulos/"]'));
+      const links = Array.from(
+        document.querySelectorAll('a[href*="/titulos/"]')
+      );
 
       for (const link of links) {
-        const rawTitle = link.innerText ? link.innerText.trim().replace(/\s+/g, ' ') : '';
+        const rawTitle = link.innerText
+          ? link.innerText.trim().replace(/\s+/g, ' ')
+          : '';
         if (!rawTitle || rawTitle.length < 5) continue;
 
         // Limpiar parámetros de rastreo en el enlace
         const cleanHref = link.href.split('?')[0];
-        if (results.some((r) => r.url === cleanHref || r.title === rawTitle)) continue;
+        if (results.some((r) => r.url === cleanHref || r.title === rawTitle))
+          continue;
 
         // Extraer texto del contenedor padre para metadatos
-        const container = link.closest('div.row, div.col, li, tr') || link.parentElement;
-        const containerText = container ? container.innerText.trim().replace(/\n+/g, ' | ') : '';
+        const container =
+          link.closest('div.row, div.col, li, tr') || link.parentElement;
+        const containerText = container
+          ? container.innerText.trim().replace(/\n+/g, ' | ')
+          : '';
 
         const authorMatch = containerText.match(/Autores:\s*([^|]+)/i);
         const publisherMatch = containerText.match(/Editorial:\s*([^|]+)/i);
@@ -304,7 +334,9 @@ async function executeSearch(query, headless = true) {
   console.log(`\n🔍 Búsqueda para: "${query}"`);
   const elibroResults = await searchElibro(page, query);
 
-  console.log(`\n📋 Encontrados ${elibroResults.length} títulos en eLibro UNACH:`);
+  console.log(
+    `\n📋 Encontrados ${elibroResults.length} títulos en eLibro UNACH:`
+  );
   elibroResults.forEach((item, idx) => {
     console.log(`\n[${idx + 1}] ${item.title}`);
     console.log(`    Autor:     ${item.author || 'N/A'}`);
@@ -330,10 +362,15 @@ async function executeTemas(targets = 'prioritarios', headless = true) {
   const keys = Object.keys(TEMAS_CONFIG).filter((key) => {
     if (targets === 'all') return true;
     if (targets === 'prioritarios') return TEMAS_CONFIG[key].prioritario;
-    return targets.split(',').map((s) => s.trim().toLowerCase()).includes(key);
+    return targets
+      .split(',')
+      .map((s) => s.trim().toLowerCase())
+      .includes(key);
   });
 
-  console.log(`\n🚀 Ejecutando búsqueda para ${keys.length} temas seleccionados:`);
+  console.log(
+    `\n🚀 Ejecutando búsqueda para ${keys.length} temas seleccionados:`
+  );
 
   for (const key of keys) {
     const config = TEMAS_CONFIG[key];
@@ -367,7 +404,9 @@ async function executeTemas(targets = 'prioritarios', headless = true) {
   // Guardar archivo JSON estructurado
   fs.mkdirSync(path.dirname(OUTPUT_FILE), { recursive: true });
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(resultsByTema, null, 2), 'utf8');
-  console.log(`\n💾 Resultados consolidados guardados en:\n   ${OUTPUT_FILE}\n`);
+  console.log(
+    `\n💾 Resultados consolidados guardados en:\n   ${OUTPUT_FILE}\n`
+  );
 
   await browser.close();
 }
@@ -415,9 +454,10 @@ Uso de buscar_unach.cjs:
 
   const temasIdx = args.indexOf('--temas');
   if (temasIdx !== -1) {
-    const val = args[temasIdx + 1] && !args[temasIdx + 1].startsWith('--')
-      ? args[temasIdx + 1]
-      : 'prioritarios';
+    const val =
+      args[temasIdx + 1] && !args[temasIdx + 1].startsWith('--')
+        ? args[temasIdx + 1]
+        : 'prioritarios';
     await executeTemas(val, headless);
     return;
   }
@@ -435,7 +475,9 @@ Uso de buscar_unach.cjs:
     return;
   }
 
-  console.log('Comando no reconocido. Ejecuta con --help para ver las opciones.');
+  console.log(
+    'Comando no reconocido. Ejecuta con --help para ver las opciones.'
+  );
 }
 
 main().catch((err) => {

@@ -21,13 +21,9 @@ const continuity = nextTema
     data-print-toolbar
     class="sticky top-0 z-10 border-b border-gray-200 bg-white/95 backdrop-blur print:hidden"
   >
-    <div
-      class="mx-auto flex max-w-5xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-center sm:justify-between"
-    >
+    <div class="mx-auto flex max-w-5xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
       <div>
-        <p
-          class="text-xs font-semibold tracking-[0.24em] text-gray-500 uppercase"
-        >
+        <p class="text-xs font-semibold tracking-[0.24em] text-gray-500 uppercase">
           Modo imprimible
         </p>
         <h1 class="mt-1 text-lg font-bold text-gray-900">
@@ -58,15 +54,9 @@ const continuity = nextTema
     </div>
   </section>
 
-  <article
-    class="mx-auto max-w-5xl px-6 py-8 sm:py-12 print:max-w-none print:px-0 print:py-0"
-  >
-    <header
-      class="rounded-3xl border border-gray-200 bg-gray-50 p-8 print:rounded-none print:border-0 print:bg-white print:p-0"
-    >
-      <p
-        class="text-sm font-semibold tracking-[0.24em] text-gray-500 uppercase"
-      >
+  <article class="mx-auto max-w-5xl px-6 py-8 sm:py-12 print:max-w-none print:px-0 print:py-0">
+    <header class="rounded-3xl border border-gray-200 bg-gray-50 p-8 print:rounded-none print:border-0 print:bg-white print:p-0">
+      <p class="text-sm font-semibold tracking-[0.24em] text-gray-500 uppercase">
         Diseño Web · ITSAE
       </p>
       <h1 class="mt-3 text-3xl font-bold text-gray-900 sm:text-4xl">
@@ -80,20 +70,14 @@ const continuity = nextTema
       </p>
     </header>
 
-    <section
-      class="mt-8 grid gap-6 md:grid-cols-2 print:mt-6 print:grid-cols-2"
-    >
-      <div
-        class="rounded-2xl border border-gray-200 p-6 print:break-inside-avoid"
-      >
+    <section class="mt-8 grid gap-6 md:grid-cols-2 print:mt-6 print:grid-cols-2">
+      <div class="rounded-2xl border border-gray-200 p-6 print:break-inside-avoid">
         <h2 class="text-lg font-bold text-gray-900">Descripción del tema</h2>
         <p class="mt-3 text-sm leading-relaxed text-gray-700">
           {tema.descripcion}
         </p>
       </div>
-      <div
-        class="rounded-2xl border border-gray-200 p-6 print:break-inside-avoid"
-      >
+      <div class="rounded-2xl border border-gray-200 p-6 print:break-inside-avoid">
         <h2 class="text-lg font-bold text-gray-900">Relación con la unidad</h2>
         <p class="mt-3 text-sm leading-relaxed text-gray-700">
           <strong>Capacidad:</strong>
@@ -106,56 +90,50 @@ const continuity = nextTema
       </div>
     </section>
 
-    <section
-      class="mt-8 rounded-2xl border border-gray-200 p-6 print:break-inside-avoid"
-    >
+    <section class="mt-8 rounded-2xl border border-gray-200 p-6 print:break-inside-avoid">
       <h2 class="text-lg font-bold text-gray-900">Objetivos de aprendizaje</h2>
       <ul class="mt-4 space-y-2 text-sm leading-relaxed text-gray-700">
-        {tema.objetivos.map((objetivo) => <li>• {objetivo}</li>)}
+        {tema.objetivos.map((objetivo) => (
+          <li>• {objetivo}</li>
+        ))}
       </ul>
     </section>
 
-    <section
-      class="mt-8 rounded-2xl border border-gray-200 p-6 print:break-inside-avoid"
-    >
+    <section class="mt-8 rounded-2xl border border-gray-200 p-6 print:break-inside-avoid">
       <h2 class="text-lg font-bold text-gray-900">Ideas clave</h2>
       <ul class="mt-4 space-y-2 text-sm leading-relaxed text-gray-700">
-        {tema.ideasClave.map((idea) => <li>• {idea}</li>)}
+        {tema.ideasClave.map((idea) => (
+          <li>• {idea}</li>
+        ))}
       </ul>
     </section>
 
-    {
-      tema.presentationBlocks && tema.presentationBlocks.length > 0 && (
-        <section class="mt-8 space-y-4">
-          <h2 class="text-lg font-bold text-gray-900">
-            Bloques didácticos para clase
-          </h2>
-          {tema.presentationBlocks.map((block) => (
-            <div class="rounded-2xl border border-gray-200 p-6 print:break-inside-avoid">
-              <h3 class="text-base font-bold text-gray-900">{block.title}</h3>
-              <ul class="mt-3 space-y-2 text-sm leading-relaxed text-gray-700">
-                {block.items.map((item) => (
-                  <li>• {item}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </section>
-      )
-    }
+    {tema.presentationBlocks && tema.presentationBlocks.length > 0 && (
+      <section class="mt-8 space-y-4">
+        <h2 class="text-lg font-bold text-gray-900">
+          Bloques didácticos para clase
+        </h2>
+        {tema.presentationBlocks.map((block) => (
+          <div class="rounded-2xl border border-gray-200 p-6 print:break-inside-avoid">
+            <h3 class="text-base font-bold text-gray-900">{block.title}</h3>
+            <ul class="mt-3 space-y-2 text-sm leading-relaxed text-gray-700">
+              {block.items.map((item) => (
+                <li>• {item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
+    )}
 
     <section class="mt-8 grid gap-6 md:grid-cols-2 print:grid-cols-2">
-      <div
-        class="rounded-2xl border border-gray-200 p-6 print:break-inside-avoid"
-      >
+      <div class="rounded-2xl border border-gray-200 p-6 print:break-inside-avoid">
         <h2 class="text-lg font-bold text-gray-900">Actividad sugerida</h2>
         <p class="mt-3 text-sm leading-relaxed text-gray-700">
           {tema.actividad}
         </p>
       </div>
-      <div
-        class="rounded-2xl border border-gray-200 p-6 print:break-inside-avoid"
-      >
+      <div class="rounded-2xl border border-gray-200 p-6 print:break-inside-avoid">
         <h2 class="text-lg font-bold text-gray-900">Criterio de evidencia</h2>
         <p class="mt-3 text-sm leading-relaxed text-gray-700">
           {tema.evidencia}
@@ -163,20 +141,16 @@ const continuity = nextTema
       </div>
     </section>
 
-    <section
-      class="mt-8 rounded-2xl border border-gray-200 p-6 print:break-inside-avoid"
-    >
+    <section class="mt-8 rounded-2xl border border-gray-200 p-6 print:break-inside-avoid">
       <h2 class="text-lg font-bold text-gray-900">Herramientas y recursos</h2>
-      <ul
-        class="mt-4 grid gap-2 text-sm leading-relaxed text-gray-700 md:grid-cols-2 print:grid-cols-2"
-      >
-        {tema.herramientas.map((herramienta) => <li>• {herramienta}</li>)}
+      <ul class="mt-4 grid gap-2 text-sm leading-relaxed text-gray-700 md:grid-cols-2 print:grid-cols-2">
+        {tema.herramientas.map((herramienta) => (
+          <li>• {herramienta}</li>
+        ))}
       </ul>
     </section>
 
-    <section
-      class="mt-8 rounded-2xl border border-gray-200 p-6 print:break-inside-avoid"
-    >
+    <section class="mt-8 rounded-2xl border border-gray-200 p-6 print:break-inside-avoid">
       <h2 class="text-lg font-bold text-gray-900">Continuidad del curso</h2>
       <p class="mt-3 text-sm leading-relaxed text-gray-700">
         Este contenido está alineado con el sílabo actualizado del curso y con
