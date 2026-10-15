@@ -11,35 +11,36 @@ const { unit, tema } = Astro.props;
 
 const colorStyles = {
   amber: {
-    hero: 'from-amber-600 via-amber-700 to-orange-700',
-    soft: 'text-amber-100',
-    badge:
-      'bg-amber-100 text-amber-900 dark:bg-amber-950/80 dark:text-amber-300',
-    panel: 'bg-amber-50/70 dark:bg-amber-950/20',
-    border: 'border-amber-500'
+    accentText: 'text-amber-500 dark:text-amber-400',
+    badge: 'bg-amber-500/15 text-amber-300 ring-amber-500/30',
+    panel: 'bg-amber-50/60 dark:bg-amber-950/20',
+    border: 'border-amber-500',
+    accentLine: 'bg-amber-500',
+    glow: 'bg-amber-500'
   },
   blue: {
-    hero: 'from-sky-700 via-blue-800 to-indigo-900',
-    soft: 'text-blue-100',
-    badge: 'bg-blue-100 text-blue-900 dark:bg-blue-950/80 dark:text-blue-300',
-    panel: 'bg-blue-50/70 dark:bg-blue-950/20',
-    border: 'border-blue-500'
+    accentText: 'text-sky-500 dark:text-sky-400',
+    badge: 'bg-sky-500/15 text-sky-300 ring-sky-500/30',
+    panel: 'bg-blue-50/60 dark:bg-blue-950/20',
+    border: 'border-sky-500',
+    accentLine: 'bg-sky-500',
+    glow: 'bg-sky-500'
   },
   emerald: {
-    hero: 'from-emerald-600 via-teal-700 to-emerald-800',
-    soft: 'text-emerald-100',
-    badge:
-      'bg-emerald-100 text-emerald-900 dark:bg-emerald-950/80 dark:text-emerald-300',
-    panel: 'bg-emerald-50/70 dark:bg-emerald-950/20',
-    border: 'border-emerald-500'
+    accentText: 'text-emerald-500 dark:text-emerald-400',
+    badge: 'bg-emerald-500/15 text-emerald-300 ring-emerald-500/30',
+    panel: 'bg-emerald-50/60 dark:bg-emerald-950/20',
+    border: 'border-emerald-500',
+    accentLine: 'bg-emerald-500',
+    glow: 'bg-emerald-500'
   },
   purple: {
-    hero: 'from-purple-700 via-indigo-800 to-violet-900',
-    soft: 'text-purple-100',
-    badge:
-      'bg-purple-100 text-purple-900 dark:bg-purple-950/80 dark:text-purple-300',
-    panel: 'bg-purple-50/70 dark:bg-purple-950/20',
-    border: 'border-purple-500'
+    accentText: 'text-purple-500 dark:text-purple-400',
+    badge: 'bg-purple-500/15 text-purple-300 ring-purple-500/30',
+    panel: 'bg-purple-50/60 dark:bg-purple-950/20',
+    border: 'border-purple-500',
+    accentLine: 'bg-purple-500',
+    glow: 'bg-purple-500'
   }
 } as const;
 
@@ -72,34 +73,46 @@ const continuity = nextTema
 ---
 
 <main class="min-h-screen pb-14 text-slate-900 transition-colors duration-300 dark:text-slate-100">
-  <!-- Topic Header Banner -->
-  <div class={`bg-linear-to-r ${styles.hero} py-7 text-white shadow-md`}>
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <!-- Topic Header Banner - ITSAE Elegant Navy/Slate with Unit Accent Line -->
+  <div class="relative overflow-hidden border-b border-slate-800 bg-slate-900 py-7 text-white shadow-md dark:border-slate-800/90 dark:bg-slate-950">
+    <!-- Subtle ambient glow in unit color (soft & elegant) -->
+    <div
+      class={`pointer-events-none absolute -top-24 left-1/3 h-56 w-96 rounded-full ${styles.glow} blur-3xl opacity-15`}
+    ></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <nav class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <a
           href="/"
-          class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white/80 transition-colors hover:text-white"
+          class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-400 transition-colors hover:text-white"
         >
           <span>←</span>
           <span>Volver al inicio</span>
         </a>
 
         <div class="sm:text-center">
-          <div class="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-0.5 text-xs font-bold text-white backdrop-blur-xs ring-1 ring-white/20">
+          <div
+            class={`inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-xs font-bold backdrop-blur-xs ring-1 ${styles.badge}`}
+          >
             <span>Unidad {unit.numero}</span>
             <span>·</span>
             <span>Tema {tema.numero}</span>
           </div>
-          <h1 class="mt-1.5 text-2xl font-black tracking-tight sm:text-3xl text-white">
+          <h1 class="mt-2 text-2xl font-black tracking-tight sm:text-3xl text-white">
             {tema.titulo}
           </h1>
         </div>
 
-        <div class="text-xs font-bold text-white/80 sm:text-right">
+        <div class="text-xs font-bold text-slate-400 sm:text-right">
           <span>ITSAE Ecuador</span>
         </div>
       </nav>
     </div>
+
+    <!-- Delicate accent line at bottom in unit color -->
+    <div
+      class={`absolute bottom-0 left-0 right-0 h-0.5 ${styles.accentLine}`}
+    ></div>
   </div>
 
   <div class="mx-auto max-w-6xl space-y-8 px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
@@ -188,9 +201,7 @@ const continuity = nextTema
       <!-- Panorama Section -->
       <section class="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-xs sm:p-8 dark:border-slate-800 dark:bg-slate-900/90">
         <div class="mb-5 flex flex-wrap items-center gap-2.5">
-          <span
-            class={`text-xs font-bold px-3 py-1 rounded-full ${styles.badge}`}
-          >
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700 dark:bg-slate-800 dark:text-slate-300">
             Tema actualizado
           </span>
           <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700 dark:bg-slate-800 dark:text-slate-300">

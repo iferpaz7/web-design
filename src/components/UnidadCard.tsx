@@ -59,7 +59,7 @@ const UnidadCard: React.FC<UnidadCardProps> = ({
     }
   > = {
     amber: {
-      gradient: 'from-amber-600 via-amber-700 to-orange-700',
+      gradient: 'from-amber-700 via-stone-800 to-slate-900',
       accentBg: 'bg-amber-500',
       badgeText: 'text-amber-700 dark:text-amber-300',
       iconRing: 'bg-amber-600 dark:bg-amber-500'

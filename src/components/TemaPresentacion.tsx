@@ -16,35 +16,42 @@ interface Slide {
 
 const themeByColor = {
   amber: {
-    shell: 'from-amber-50 to-orange-50 dark:from-gray-900 dark:to-gray-800',
-    hero: 'from-amber-600 to-orange-500 dark:from-amber-700 dark:to-orange-600',
-    panel: 'bg-amber-50 dark:bg-amber-950/20 border-amber-400',
-    accentText: 'text-amber-700 dark:text-amber-300',
+    shell: 'from-slate-50 to-amber-50/15 dark:from-slate-950 dark:to-slate-900',
+    hero: 'from-slate-900 via-slate-900 to-slate-950',
+    accentBorder: 'border-b-2 border-amber-500/80',
+    panel: 'bg-amber-50/50 dark:bg-amber-950/20 border-amber-400/50',
+    accentText: 'text-amber-600 dark:text-amber-400',
     badge:
-      'bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-200'
+      'bg-amber-500/15 text-amber-800 dark:text-amber-300 ring-1 ring-amber-500/30'
   },
   blue: {
-    shell: 'from-blue-50 to-cyan-50 dark:from-gray-900 dark:to-gray-800',
-    hero: 'from-blue-700 to-cyan-600 dark:from-blue-800 dark:to-cyan-700',
-    panel: 'bg-blue-50 dark:bg-blue-950/20 border-blue-400',
-    accentText: 'text-blue-700 dark:text-blue-300',
-    badge: 'bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-200'
+    shell: 'from-slate-50 to-blue-50/15 dark:from-slate-950 dark:to-slate-900',
+    hero: 'from-slate-900 via-slate-900 to-slate-950',
+    accentBorder: 'border-b-2 border-blue-500/80',
+    panel: 'bg-blue-50/50 dark:bg-blue-950/20 border-blue-400/50',
+    accentText: 'text-blue-600 dark:text-blue-400',
+    badge:
+      'bg-blue-500/15 text-blue-800 dark:text-blue-300 ring-1 ring-blue-500/30'
   },
   emerald: {
-    shell: 'from-emerald-50 to-teal-50 dark:from-gray-900 dark:to-gray-800',
-    hero: 'from-emerald-700 to-teal-600 dark:from-emerald-800 dark:to-teal-700',
-    panel: 'bg-emerald-50 dark:bg-emerald-950/20 border-emerald-400',
-    accentText: 'text-emerald-700 dark:text-emerald-300',
+    shell:
+      'from-slate-50 to-emerald-50/15 dark:from-slate-950 dark:to-slate-900',
+    hero: 'from-slate-900 via-slate-900 to-slate-950',
+    accentBorder: 'border-b-2 border-emerald-500/80',
+    panel: 'bg-emerald-50/50 dark:bg-emerald-950/20 border-emerald-400/50',
+    accentText: 'text-emerald-600 dark:text-emerald-400',
     badge:
-      'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-200'
+      'bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 ring-1 ring-emerald-500/30'
   },
   purple: {
-    shell: 'from-purple-50 to-fuchsia-50 dark:from-gray-900 dark:to-gray-800',
-    hero: 'from-purple-700 to-fuchsia-600 dark:from-purple-800 dark:to-fuchsia-700',
-    panel: 'bg-purple-50 dark:bg-purple-950/20 border-purple-400',
-    accentText: 'text-purple-700 dark:text-purple-300',
+    shell:
+      'from-slate-50 to-purple-50/15 dark:from-slate-950 dark:to-slate-900',
+    hero: 'from-slate-900 via-slate-900 to-slate-950',
+    accentBorder: 'border-b-2 border-purple-500/80',
+    panel: 'bg-purple-50/50 dark:bg-purple-950/20 border-purple-400/50',
+    accentText: 'text-purple-600 dark:text-purple-400',
     badge:
-      'bg-purple-100 dark:bg-purple-900/40 text-purple-800 dark:text-purple-200'
+      'bg-purple-500/15 text-purple-800 dark:text-purple-300 ring-1 ring-purple-500/30'
   }
 } as const;
 
@@ -358,18 +365,20 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
       className={`${isStandalone ? 'min-h-dvh w-full overflow-x-hidden rounded-none sm:h-dvh sm:w-screen sm:overflow-hidden' : 'min-h-195 rounded-[28px]'} bg-linear-to-br ${styles.shell} transition-colors duration-300 ${isStandalone ? '' : 'shadow-2xl'}`}
     >
       <div
-        className={`bg-linear-to-r ${styles.hero} ${isStandalone ? '' : 'rounded-t-[28px]'} px-4 py-4 text-white sm:px-8 sm:py-5`}
+        className={`bg-linear-to-r ${styles.hero} ${styles.accentBorder} ${isStandalone ? '' : 'rounded-t-[28px]'} px-4 py-4 text-white sm:px-8 sm:py-5`}
       >
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="min-w-0">
-            <p className="text-xs font-semibold tracking-[0.2em] text-white/70 uppercase sm:tracking-[0.24em]">
+            <span
+              className={`inline-block rounded-md px-2.5 py-0.5 text-xs font-bold tracking-wider uppercase ${styles.badge}`}
+            >
               Unidad {unit.numero} · Tema {tema.numero}
-            </p>
-            <h2 className="mt-2 text-2xl leading-tight font-bold sm:text-3xl">
+            </span>
+            <h2 className="mt-2 text-2xl leading-tight font-black text-white sm:text-3xl">
               {current.title}
             </h2>
             {current.subtitle && (
-              <p className="mt-2 text-sm text-white/80 sm:text-base">
+              <p className="mt-1.5 text-sm text-slate-300 sm:text-base">
                 {current.subtitle}
               </p>
             )}
@@ -377,7 +386,7 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
           <button
             type="button"
             onClick={toggleFullscreen}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/20 sm:w-auto sm:rounded-xl"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-800/90 px-4 py-2.5 text-xs font-bold text-white shadow-2xs transition hover:bg-slate-700 sm:w-auto"
           >
             {isFullscreen ? (
               <Minimize2 className="h-4 w-4" />
