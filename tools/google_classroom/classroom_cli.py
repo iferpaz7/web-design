@@ -432,7 +432,22 @@ def class_doc_paths(patterns: list[str]) -> list[Path]:
             if path not in seen:
                 candidates.append(path)
                 seen.add(path)
-    return candidates
+
+    def sort_key(p: Path) -> tuple[tuple[int, int], int, str]:
+        s = str(p)
+        unit_m = re.search(r"unidad(\d+)/tema(\d+)", s)
+        if "general" in s:
+            group = (0, 0)
+        elif unit_m:
+            group = (int(unit_m.group(1)), int(unit_m.group(2)))
+        elif "examenes" in s:
+            group = (99, 0)
+        else:
+            group = (50, 0)
+        is_assignment = 1 if p.name.startswith("actividad-") else 0
+        return (group, is_assignment, p.name)
+
+    return sorted(candidates, key=sort_key)
 
 
 def topic_id_for_name(service, course_id: str, name: str, create: bool, dry_run: bool) -> str | None:
@@ -718,6 +733,11 @@ def cmd_delete_announcement(args: argparse.Namespace) -> None:
 
 
 def cmd_list_materials(args: argparse.Namespace) -> None:
+    config = load_config(args.config)
+    course_id = args.course_id or config.get("course_id")
+    if not course_id:
+        fail("Debes proporcionar course_id o definir 'course_id' en classroom.config.json")
+    args.course_id = str(course_id)
     service = classroom_service(args)
     materials = list_all(
         lambda token: service.courses()
@@ -759,8 +779,12 @@ def material_urls_from_body(body: dict[str, Any]) -> set[str]:
 
 
 def cmd_sync_material_titles(args: argparse.Namespace) -> None:
-    service = None if args.dry_run else classroom_service(args)
     config = load_config(args.config)
+    course_id = args.course_id or config.get("course_id")
+    if not course_id and not args.dry_run:
+        fail("Debes proporcionar course_id o definir 'course_id' en classroom.config.json")
+    args.course_id = str(course_id) if course_id else None
+    service = None if args.dry_run else classroom_service(args)
     docs = class_doc_paths(args.glob or ["docs/clases/**/classroom-*.md"])
     if args.only:
         docs = [path for path in docs if args.only in str(path)]
@@ -816,6 +840,11 @@ def cmd_sync_material_titles(args: argparse.Namespace) -> None:
 
 
 def cmd_list_assignments(args: argparse.Namespace) -> None:
+    config = load_config(args.config)
+    course_id = args.course_id or config.get("course_id")
+    if not course_id:
+        fail("Debes proporcionar course_id o definir 'course_id' en classroom.config.json")
+    args.course_id = str(course_id)
     service = classroom_service(args)
     assignments = list_all(
         lambda token: service.courses()
@@ -836,8 +865,13 @@ def cmd_list_assignments(args: argparse.Namespace) -> None:
 
 
 def cmd_sync_classes(args: argparse.Namespace) -> None:
-    service = None if args.dry_run else classroom_service(args)
     config = load_config(args.config)
+    course_id = args.course_id or config.get("course_id")
+    if not course_id and not args.dry_run:
+        fail("Debes proporcionar course_id o definir 'course_id' en classroom.config.json")
+    args.course_id = str(course_id) if course_id else None
+
+    service = None if args.dry_run else classroom_service(args)
     sync_config = config.get("sync", {})
     state = args.state or sync_config.get("default_state", "DRAFT")
     points = args.points if args.points is not None else sync_config.get("default_points", 10)
@@ -1474,7 +1508,12 @@ def build_parser() -> argparse.ArgumentParser:
     delete_announcement.set_defaults(func=cmd_delete_announcement)
 
     list_materials = subparsers.add_parser("list-materials", help="Lista materiales")
-    list_materials.add_argument("course_id")
+    list_materials.add_argument(
+        "course_id",
+        nargs="?",
+        default=None,
+        help="ID del curso (opcional si está en classroom.config.json)",
+    )
     list_materials.add_argument("--json", action="store_true")
     list_materials.set_defaults(func=cmd_list_materials)
 
@@ -1488,14 +1527,24 @@ def build_parser() -> argparse.ArgumentParser:
         "sync-material-titles",
         help="Normaliza títulos de materiales existentes desde classroom-*.md",
     )
-    sync_material_titles.add_argument("course_id")
+    sync_material_titles.add_argument(
+        "course_id",
+        nargs="?",
+        default=None,
+        help="ID del curso (opcional si está en classroom.config.json)",
+    )
     sync_material_titles.add_argument("--glob", action="append")
     sync_material_titles.add_argument("--only")
     sync_material_titles.add_argument("--dry-run", action="store_true")
     sync_material_titles.set_defaults(func=cmd_sync_material_titles)
 
     list_assignments = subparsers.add_parser("list-assignments", help="Lista tareas")
-    list_assignments.add_argument("course_id")
+    list_assignments.add_argument(
+        "course_id",
+        nargs="?",
+        default=None,
+        help="ID del curso (opcional si está en classroom.config.json)",
+    )
     list_assignments.add_argument("--json", action="store_true")
     list_assignments.set_defaults(func=cmd_list_assignments)
 
@@ -1503,7 +1552,12 @@ def build_parser() -> argparse.ArgumentParser:
         "sync-classes",
         help="Sincroniza materiales desde classroom-*.md y tareas desde actividad-*.md en docs/clases/",
     )
-    sync.add_argument("course_id")
+    sync.add_argument(
+        "course_id",
+        nargs="?",
+        default=None,
+        help="ID del curso (opcional si está en classroom.config.json)",
+    )
     sync.add_argument(
         "--glob",
         action="append",
