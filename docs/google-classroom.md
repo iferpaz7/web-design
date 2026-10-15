@@ -294,7 +294,7 @@ python3 tools/google_classroom/classroom_cli.py create-assignment COURSE_ID \
   --description "Entrega el mapa de secciones de tu página de campaña." \
   --link https://web-design-itsae.netlify.app/unidad2/tema2 \
   --points 10 \
-  --due-date 2026-06-05 \
+  --due-date 2026-11-19 \
   --due-time 23:59
 ```
 
@@ -440,7 +440,7 @@ Las preguntas que incluyan opciones en líneas con formato `A)`, `B)`, etc. se c
 ### Uso básico — solo crear el form
 
 ```bash
-pnpm classroom create-form docs/examenes/examen-bimestre1-2026-06-17.md
+pnpm classroom create-form docs/examenes/examen-bimestre1-2026-12-10.md
 ```
 
 Imprime los URLs del form (para editar y para estudiantes) y los guarda en el mismo
@@ -449,7 +449,7 @@ archivo `.md` como comentario al final.
 ### Dry-run — ver preguntas sin crear nada
 
 ```bash
-pnpm classroom create-form docs/examenes/examen-bimestre1-2026-06-17.md --dry-run
+pnpm classroom create-form docs/examenes/examen-bimestre1-2026-12-10.md --dry-run
 ```
 
 ### Crear y vincular automáticamente a la tarea en Classroom
@@ -463,7 +463,7 @@ pnpm classroom list-assignments 870178538596
 Luego:
 
 ```bash
-pnpm classroom create-form docs/examenes/examen-bimestre1-2026-06-17.md \
+pnpm classroom create-form docs/examenes/examen-bimestre1-2026-12-10.md \
   --course-id 870178538596 \
   --assignment-id ASSIGNMENT_ID
 ```
