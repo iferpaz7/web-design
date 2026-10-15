@@ -1,7 +1,7 @@
 # Actividad de la clase: Integración y prueba funcional del mecanismo de conversión
 
 **Asignatura:** Diseño Web para Marketing Digital  
-**Fecha:** 031 de diciembre de 2026  
+**Fecha:** 31 de diciembre de 2026  
 **Docente:** Ing. Ivan Paz
 
 ---

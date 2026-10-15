@@ -1,7 +1,7 @@
 # Actividad de la clase: Maquetación responsive del proyecto integrador
 
 **Asignatura:** Diseño Web para Marketing Digital
-**Fecha:** 024 de diciembre de 2026
+**Fecha:** 24 de diciembre de 2026
 **Docente:** Ing. Ivan Paz
 
 ---

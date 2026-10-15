@@ -1,7 +1,7 @@
 # Unidad 3, Tema 3 — Formularios, captura de contactos y rutas de conversión simples
 
 **Asignatura:** Diseño Web para Marketing Digital  
-**Fecha:** 031 de diciembre de 2026  
+**Fecha:** 31 de diciembre de 2026  
 **Docente:** Ing. Ivan Paz
 
 ---

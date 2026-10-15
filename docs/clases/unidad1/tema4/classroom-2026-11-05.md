@@ -55,4 +55,21 @@ Enlace: [https://pagespeed.web.dev](https://pagespeed.web.dev)
 
 ---
 
+## Ideas clave del tema
+
+- La usabilidad asegura que el usuario complete su objetivo sin frustración ni pérdidas de tiempo.
+- Más del 70 % del tráfico comercial llega por móvil: el diseño debe priorizar la pantalla pequeña (Mobile-First).
+- La accesibilidad web no es opcional: garantiza contraste, legibilidad y navegación universal.
+- Reducir la fricción técnica y visual impacta directamente en las conversiones.
+
+---
+
+## Próxima sesión
+
+Unidad 2, Tema 1 — Segmentación, intención del usuario y enfoque del mensaje.
+
+Iniciaremos la Unidad 2 definiendo arquetipos de usuario, intención de visita y el mensaje central estratégico de tu proyecto integrador.
+
+---
+
 _Todos los enlaces apuntan al sitio publicado del curso en https://web-design-itsae.netlify.app/. Si algún enlace no carga, consulta directamente al docente._

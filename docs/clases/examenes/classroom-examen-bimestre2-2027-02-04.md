@@ -44,4 +44,12 @@ Enlace: [https://support.google.com/analytics](https://support.google.com/analyt
 
 ---
 
+## Cierre de ciclo y recuperación
+
+Evaluación de Recuperación — Supletorio (16 de febrero de 2027).
+
+Instancia de recuperación para estudiantes que requieran validar los aprendizajes y competencias de las Unidades 3 y 4.
+
+---
+
 _Todos los enlaces apuntan al sitio publicado del curso en https://web-design-itsae.netlify.app/. Si algún enlace no carga, consulta directamente al docente._

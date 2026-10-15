@@ -77,4 +77,12 @@ Propósito: Principio de evidencia mínima y validación temprana directamente a
 
 ---
 
+## Próxima sesión
+
+Examen Bimestral — Bimestre I (10 de diciembre de 2026).
+
+Evaluación integradora de las Unidades 1 y 2 que consolida estrategia digital, UX/UI, arquitectura de la información y prototipado del proyecto integrador.
+
+---
+
 _Todos los enlaces apuntan al sitio publicado del curso en https://web-design-itsae.netlify.app/. Si algún enlace no carga, consulta directamente al docente._

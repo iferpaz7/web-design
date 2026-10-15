@@ -78,4 +78,12 @@ Enlace: [https://web-design-itsae.netlify.app/unidad2/tema4](https://web-design-
 
 ---
 
+## Próxima sesión
+
+Unidad 3, Tema 1 — Publicación de páginas en entornos de baja fricción: nube, constructores visuales y CMS accesibles (17 de diciembre de 2026).
+
+Iniciaremos el Bimestre II seleccionando la plataforma tecnológica para llevar los prototipos validados a un entorno publicado y funcional.
+
+---
+
 _Todos los enlaces apuntan al sitio publicado del curso en https://web-design-itsae.netlify.app/. Si algún enlace no carga, consulta directamente al docente._

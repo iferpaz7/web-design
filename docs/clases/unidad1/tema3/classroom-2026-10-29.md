@@ -77,4 +77,12 @@ Enlace: [https://fonts.google.com/knowledge](https://fonts.google.com/knowledge)
 
 ---
 
+## Próxima sesión
+
+Unidad 1, Tema 4 — Usabilidad, accesibilidad y lectura móvil como criterios de calidad.
+
+Analizaremos la usabilidad en dispositivos móviles, la reducción de fricción y las pautas de accesibilidad básicas para asegurar una experiencia web inclusiva y efectiva.
+
+---
+
 _Todos los enlaces apuntan al sitio publicado del curso en https://web-design-itsae.netlify.app/. Si algún enlace no carga, consulta directamente al docente._

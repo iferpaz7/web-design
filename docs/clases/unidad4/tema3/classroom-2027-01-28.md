@@ -80,4 +80,12 @@ Propósito: Sostener la argumentación desde la perspectiva del usuario y los cr
 
 ---
 
+## Próxima sesión
+
+Examen Bimestral — Bimestre II (04 de febrero de 2027).
+
+Entrega y evaluación final del proyecto web publicado, documentación de optimizaciones aplicadas y evidencias de medición con GA4.
+
+---
+
 _Todos los enlaces apuntan al sitio publicado del curso en https://web-design-itsae.netlify.app/. Si algún enlace no carga, consulta directamente al docente._

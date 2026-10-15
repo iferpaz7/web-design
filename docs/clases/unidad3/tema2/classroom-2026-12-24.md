@@ -1,7 +1,7 @@
 # Unidad 3, Tema 2 — Maquetación por secciones y adaptación responsiva
 
 **Asignatura:** Diseño Web para Marketing Digital
-**Fecha:** 024 de diciembre de 2026
+**Fecha:** 24 de diciembre de 2026
 **Docente:** Ing. Ivan Paz
 
 ---

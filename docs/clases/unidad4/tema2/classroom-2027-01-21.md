@@ -1,7 +1,7 @@
 # Unidad 4, Tema 2 — Medición básica del comportamiento, conversiones e interpretación de datos
 
 **Asignatura:** Diseño Web para Marketing Digital
-**Fecha:** 021 de enero de 2027
+**Fecha:** 21 de enero de 2027
 **Docente:** Ing. Ivan Paz
 
 ---

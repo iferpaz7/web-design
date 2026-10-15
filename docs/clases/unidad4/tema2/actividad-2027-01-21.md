@@ -1,7 +1,7 @@
 # Actividad de la clase: Diagnóstico mínimo de desempeño y mejora priorizada
 
 **Asignatura:** Diseño Web para Marketing Digital
-**Fecha:** 021 de enero de 2027
+**Fecha:** 21 de enero de 2027
 **Docente:** Ing. Ivan Paz
 
 ---
