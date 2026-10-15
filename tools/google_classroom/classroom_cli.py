@@ -186,7 +186,9 @@ def first_heading(markdown: str, level: int = 1) -> str:
 def first_subtitle(markdown: str) -> str:
     ignored = {
         "objetivo de la clase",
+        "objetivo de la actividad",
         "objetivo de la evaluación",
+        "publicación sugerida en google classroom",
         "tema de la sesión",
         "recursos de la sesión",
         "recursos de la clase",
@@ -352,6 +354,7 @@ def parse_class_doc(path: Path, site_url: str = DEFAULT_SITE_URL) -> ClassDoc:
         session_topic=session_topic,
         objective=(
             section_text(markdown, "Objetivo de la clase")
+            or section_text(markdown, "Objetivo de la actividad")
             or section_text(markdown, "Objetivo de la evaluación")
         ),
         resources=parse_resources(markdown),
