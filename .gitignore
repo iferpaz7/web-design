@@ -38,3 +38,7 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+.tmp_*
+
+# UNACH Library local auth
+.auth_unach.json

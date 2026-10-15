@@ -11,7 +11,8 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "classroom": "PYTHONPATH=.python_deps python3 tools/google_classroom/classroom_cli.py"
+    "classroom": "PYTHONPATH=.python_deps python3 tools/google_classroom/classroom_cli.py",
+    "biblio": "node tools/biblioteca/buscar_unach.cjs"
   },
   "dependencies": {
     "@astrojs/react": "^7.0.1",

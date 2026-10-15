@@ -76,19 +76,32 @@ La evaluación de la asignatura se orienta al desempeño mediante un proyecto in
 - Actividades asincrónicas y retroalimentación: 15%
 - Participación y colaboración: 15%
 
-## Bibliografía
+## Bibliografía básica
 
 - Córcoles Tendero, J. E. (2014). _Diseño de interfaces web_. RA-MA Editorial.
-- Fernández Casado, P. E. (2021). _Accesibilidad web: Diseño de aplicaciones_. RA-MA Editorial.
 - Fernández Casado, P. E. (2024). _Iniciación a la creación de páginas web_. RA-MA Editorial.
 - Krug, S. (2014). _No me hagas pensar: Una aproximación a la usabilidad en la web_ (3.ª ed.). Anaya Multimedia.
 - Martínez Rolán, X. (2019). _Diseño de páginas web: WordPress para todos los públicos_. Altaria.
+- Moreno Company, R. (2024). _Curso de marketing digital: cómo elaborar y ejecutar un plan de marketing digital_. RA-MA Editorial.
+
+## Bibliografía complementaria
+
+- Fernández Casado, P. E. (2021). _Accesibilidad web: Diseño de aplicaciones_. RA-MA Editorial.
+- Frutiger, A. (2007). _El libro de la tipografía_. Editorial GG.
+- Giráldez, G. (2020). _Marketing digital para los que no saben de marketing digital: descubre cómo el marketing y la comunicación digital ayudan a las marcas a diferenciarse_. LID Editorial España.
+- Muñoz, G., & Elósegui, T. (2012). _Analítica web en una semana_. Gestión 2000.
+- Pérez-Montoro Gutiérrez, M. (2010). _Arquitectura de la información en entornos web_. Ediciones Trea.
+- Rosenfeld, L., Morville, P., & Arango, J. (2015). _Information architecture: For the web and beyond_ (4.ª ed.). O'Reilly Media.
+- Shum Xie, Y. M. (2023). _Marketing digital: herramientas, técnicas y estrategias_. Ediciones de la U.
 
 ## Enlaces de Internet
 
-- Figma. (s.f.). _Guía de recursos_. https://www.figma.com/resource-library/
-- WordPress.org. (s.f.). _Blog tool, publishing platform, and CMS_. https://wordpress.org
-- Elementor. (s.f.). _Website builder_. https://elementor.com
-- Google Search Central. (s.f.). _SEO starter guide_. Google. https://developers.google.com/search/docs/fundamentals/seo-starter-guide
-- Google. (s.f.). _Ayuda de Google Analytics_. https://support.google.com/analytics/?hl=es
-- Google. (s.f.). _PageSpeed Insights_. https://pagespeed.web.dev
+- Elementor. (s. f.). _Website builder_. https://elementor.com
+- Figma. (s. f.). _Guía de recursos_. https://www.figma.com/resource-library/
+- Google. (s. f.-a). _Ayuda de Google Analytics_. https://support.google.com/analytics/?hl=es
+- Google. (s. f.-b). _PageSpeed Insights_. https://pagespeed.web.dev
+- Google Search Central. (s. f.). _SEO starter guide_. Google. https://developers.google.com/search/docs/fundamentals/seo-starter-guide
+- HubSpot Academy. (s. f.). _Certificación de marketing digital_. https://academy.hubspot.com/es/courses/digital-marketing
+- Nielsen Norman Group. (s. f.). _Research-based user experience (UX) articles_. https://www.nngroup.com
+- WordPress.org. (s. f.). _Blog tool, publishing platform, and CMS_. https://wordpress.org
+- World Wide Web Consortium. (2023). _Web content accessibility guidelines (WCAG) 2.2_. https://www.w3.org/TR/WCAG22/
