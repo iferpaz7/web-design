@@ -50,7 +50,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPath = '/' }) => {
 
   return (
     <nav className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 shadow-xs backdrop-blur-md transition-colors duration-300 dark:border-slate-800/80 dark:bg-slate-950/90">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-12 2xl:max-w-(--breakpoint-2xl)">
+      <div className="mx-auto w-full max-w-[1920px] px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="flex h-16 items-center justify-between">
           {/* Logo / Brand */}
           <div className="flex shrink-0 items-center">

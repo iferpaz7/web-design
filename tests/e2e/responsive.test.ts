@@ -43,4 +43,25 @@ describe('Mobile & Responsive E2E Tests', () => {
       .last();
     expect(await drawerUnitBtn.isVisible()).toBe(true);
   });
+
+  it('expands fluidly on widescreen (1920px) without 1280px caps', async () => {
+    const wideSession = await createSession({
+      viewport: { width: 1920, height: 1080 }
+    });
+    try {
+      await wideSession.page.goto(`${BASE_URL}/unidad1/tema1`, {
+        waitUntil: 'networkidle'
+      });
+
+      const containerWidth = await wideSession.page.evaluate(() => {
+        const container = document.querySelector('main > div');
+        return container ? container.getBoundingClientRect().width : 0;
+      });
+
+      // Verify that on 1920px screen it expands well beyond the old 1280px max-w-7xl limit
+      expect(containerWidth).toBeGreaterThan(1600);
+    } finally {
+      await wideSession.close();
+    }
+  });
 });

@@ -38,7 +38,7 @@ const Footer: React.FC<FooterProps> = ({
     <footer className="mt-16 w-full border-t border-slate-200/90 bg-slate-950 text-slate-300 transition-colors duration-300 dark:border-slate-800">
       {/* Pre-footer Banner: Pilares Institucionales y Pedagógicos */}
       <div className="border-b border-slate-800/80 bg-slate-900/60">
-        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 xl:px-12 2xl:max-w-(--breakpoint-2xl)">
+        <div className="mx-auto w-full max-w-[1920px] px-4 py-8 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <div className="flex items-start gap-3.5">
               <div className="bg-primary-900/80 text-primary-300 ring-primary-700/50 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ring-1">
@@ -104,7 +104,7 @@ const Footer: React.FC<FooterProps> = ({
       </div>
 
       {/* Main Full-Width Footer Content Grid */}
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 xl:px-12 2xl:max-w-(--breakpoint-2xl)">
+      <div className="mx-auto w-full max-w-[1920px] px-4 py-12 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5 xl:gap-12">
           {/* Columna 1: Identidad Institucional ITSAE */}
           <div className="xl:col-span-1.5 space-y-4 lg:col-span-1">
