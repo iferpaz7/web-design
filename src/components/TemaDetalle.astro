@@ -11,37 +11,41 @@ const { unit, tema } = Astro.props;
 
 const colorStyles = {
   amber: {
-    hero: 'from-amber-500 to-orange-500',
+    hero: 'from-amber-600 via-amber-700 to-orange-700',
     soft: 'text-amber-100',
-    badge: 'bg-amber-100 text-amber-800',
-    panel: 'bg-amber-50 dark:bg-amber-950/20',
+    badge:
+      'bg-amber-100 text-amber-900 dark:bg-amber-950/80 dark:text-amber-300',
+    panel: 'bg-amber-50/70 dark:bg-amber-950/20',
     border: 'border-amber-500'
   },
   blue: {
-    hero: 'from-blue-600 to-cyan-600',
+    hero: 'from-sky-700 via-blue-800 to-indigo-900',
     soft: 'text-blue-100',
-    badge: 'bg-blue-100 text-blue-800',
-    panel: 'bg-blue-50 dark:bg-blue-950/20',
+    badge: 'bg-blue-100 text-blue-900 dark:bg-blue-950/80 dark:text-blue-300',
+    panel: 'bg-blue-50/70 dark:bg-blue-950/20',
     border: 'border-blue-500'
   },
   emerald: {
-    hero: 'from-emerald-600 to-teal-600',
+    hero: 'from-emerald-600 via-teal-700 to-emerald-800',
     soft: 'text-emerald-100',
-    badge: 'bg-emerald-100 text-emerald-800',
-    panel: 'bg-emerald-50 dark:bg-emerald-950/20',
+    badge:
+      'bg-emerald-100 text-emerald-900 dark:bg-emerald-950/80 dark:text-emerald-300',
+    panel: 'bg-emerald-50/70 dark:bg-emerald-950/20',
     border: 'border-emerald-500'
   },
   purple: {
-    hero: 'from-purple-600 to-fuchsia-600',
+    hero: 'from-purple-700 via-indigo-800 to-violet-900',
     soft: 'text-purple-100',
-    badge: 'bg-purple-100 text-purple-800',
-    panel: 'bg-purple-50 dark:bg-purple-950/20',
+    badge:
+      'bg-purple-100 text-purple-900 dark:bg-purple-950/80 dark:text-purple-300',
+    panel: 'bg-purple-50/70 dark:bg-purple-950/20',
     border: 'border-purple-500'
   }
 } as const;
 
 const styles = colorStyles[unit.color];
 const printHref = `/imprimir${tema.href}`;
+const presentationHref = `/presentacion/unidad${unit.numero}/tema${tema.numero}`;
 
 // Detect latest roadmap for this tema (if any)
 const allRoadmaps = import.meta.glob('../../docs/clases/**/roadmap-*.md');
@@ -67,212 +71,269 @@ const continuity = nextTema
     : 'Este tema cierra la última unidad y prepara la presentación final y el examen bimestral.';
 ---
 
-<main class="min-h-screen bg-slate-50 dark:bg-gray-950">
-  <div class={`bg-linear-to-r ${styles.hero} py-5 text-white`}>
+<main class="min-h-screen pb-14 text-slate-900 transition-colors duration-300 dark:text-slate-100">
+  <!-- Topic Header Banner -->
+  <div class={`bg-linear-to-r ${styles.hero} py-7 text-white shadow-md`}>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <nav class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <a href="/" class={`transition-colors hover:text-white ${styles.soft}`}>
-          Volver al inicio
+      <nav class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <a
+          href="/"
+          class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white/80 transition-colors hover:text-white"
+        >
+          <span>←</span>
+          <span>Volver al inicio</span>
         </a>
+
         <div class="sm:text-center">
-          <h1 class="text-xl font-bold">
-            Unidad {unit.numero} · Tema {tema.numero}
+          <div class="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-0.5 text-xs font-bold text-white backdrop-blur-xs ring-1 ring-white/20">
+            <span>Unidad {unit.numero}</span>
+            <span>·</span>
+            <span>Tema {tema.numero}</span>
+          </div>
+          <h1 class="mt-1.5 text-2xl font-black tracking-tight sm:text-3xl text-white">
+            {tema.titulo}
           </h1>
-          <p class={`text-sm ${styles.soft}`}>{tema.titulo}</p>
         </div>
-        <div class={`text-sm ${styles.soft} sm:text-right`}>
-          <p>ITSAE</p>
+
+        <div class="text-xs font-bold text-white/80 sm:text-right">
+          <span>ITSAE Ecuador</span>
         </div>
       </nav>
     </div>
   </div>
 
-  <div class="mx-auto max-w-6xl space-y-8 px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
-    <section class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm sm:p-6 dark:border-slate-800 dark:bg-gray-900">
-      <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-        <div>
-          <p class="text-sm font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400">
-            Formato de clase
-          </p>
-          <h2 class="mt-2 text-2xl font-bold text-gray-800 dark:text-gray-100">
+  <div class="mx-auto max-w-6xl space-y-8 px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+    <!-- Format Selector & Action Hub Card -->
+    <section class="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-xs sm:p-6 dark:border-slate-800 dark:bg-slate-900/90">
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+        <div class="max-w-xl">
+          <span class="text-xs font-bold tracking-wider text-primary-700 uppercase dark:text-primary-300">
+            Modalidad de estudio interactiva
+          </span>
+          <h2 class="mt-1 text-xl font-extrabold text-slate-900 sm:text-2xl dark:text-white">
             Estudia o dicta la clase desde la misma web
           </h2>
-          <p class="mt-2 text-gray-600 dark:text-gray-300">
-            Usa la guía para profundizar y cambia a modo presentación cuando
-            quieras exponer sin depender de PowerPoint.
+          <p class="mt-1.5 text-sm text-slate-600 dark:text-slate-300">
+            Usa la guía paso a paso para profundizar, o cambia a modo
+            presentación para exponer directamente en el aula virtual.
           </p>
         </div>
-        <div class="space-y-4">
-          <div class="flex flex-wrap gap-3">
+
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <!-- Standalone Fullscreen Presentation Link -->
+          <a
+            href={presentationHref}
+            class="inline-flex items-center justify-center gap-2 rounded-xl bg-primary-700 px-4 py-2.5 text-xs font-bold text-white shadow-2xs transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-800 dark:bg-primary-600 dark:hover:bg-primary-500"
+          >
+            <span>▶</span>
+            <span>Presentación completa</span>
+          </a>
+
+          {roadmapHref && (
             <a
-              href={printHref}
+              href={roadmapHref}
               target="_blank"
               rel="noopener noreferrer"
-              class="hover:border-primary-300 hover:bg-primary-50 rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition dark:border-slate-700 dark:text-slate-200 dark:hover:bg-gray-800"
+              class="inline-flex items-center justify-center gap-1.5 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-xs font-bold text-slate-700 shadow-2xs transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-300 hover:bg-primary-50/50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
             >
-              Imprimir o guardar PDF
+              <span>📋</span>
+              <span>Roadmap docente</span>
             </a>
-            {roadmapHref && (
-              <a
-                href={roadmapHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hover:border-primary-300 hover:bg-primary-50 rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition dark:border-slate-700 dark:text-slate-200 dark:hover:bg-gray-800"
-              >
-                Roadmap de clase
-              </a>
-            )}
-          </div>
+          )}
 
-          <div
-            role="tablist"
-            aria-label="Formatos disponibles del tema"
-            class="grid grid-cols-3 gap-1 rounded-lg border border-slate-200 bg-slate-100 p-1 dark:border-slate-700 dark:bg-slate-950"
+          <a
+            href={printHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-1.5 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-xs font-bold text-slate-700 shadow-2xs transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-300 hover:bg-primary-50/50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
           >
-            <button
-              type="button"
-              data-tab="guide"
-              class="tab-button min-w-0 rounded-md px-1.5 py-3 text-[11px] leading-tight font-semibold transition sm:px-4 sm:text-sm"
-            >
-              <span class="sm:hidden">Guía</span>
-              <span class="hidden sm:inline">Guía de clase</span>
-            </button>
-            <button
-              type="button"
-              data-tab="presentation"
-              class="tab-button min-w-0 rounded-md px-1.5 py-3 text-[11px] leading-tight font-semibold transition sm:px-4 sm:text-sm"
-            >
-              Presentación
-            </button>
-            <button
-              type="button"
-              data-tab="activity"
-              class="tab-button min-w-0 rounded-md px-1.5 py-3 text-[11px] leading-tight font-semibold transition sm:px-4 sm:text-sm"
-            >
-              Actividad
-            </button>
-          </div>
+            <span>🖨️</span>
+            <span>Imprimir PDF</span>
+          </a>
         </div>
+      </div>
+
+      <!-- Segmented View Tabs -->
+      <div
+        role="tablist"
+        aria-label="Formatos disponibles del tema"
+        class="mt-6 grid grid-cols-3 gap-1 rounded-xl border border-slate-200 bg-slate-100 p-1 dark:border-slate-800 dark:bg-slate-950"
+      >
+        <button
+          type="button"
+          data-tab="guide"
+          class="tab-button min-w-0 rounded-lg px-2 py-2.5 text-xs font-bold transition sm:px-4 sm:text-sm"
+        >
+          <span>📖 Guía de clase</span>
+        </button>
+        <button
+          type="button"
+          data-tab="presentation"
+          class="tab-button min-w-0 rounded-lg px-2 py-2.5 text-xs font-bold transition sm:px-4 sm:text-sm"
+        >
+          <span>🖥️ Presentación web</span>
+        </button>
+        <button
+          type="button"
+          data-tab="activity"
+          class="tab-button min-w-0 rounded-lg px-2 py-2.5 text-xs font-bold transition sm:px-4 sm:text-sm"
+        >
+          <span>✍️ Actividad práctica</span>
+        </button>
       </div>
     </section>
 
+    <!-- Guide View -->
     <div data-topic-view="guide" class="space-y-8">
-      <section class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900">
-        <div class="mb-5 flex flex-wrap items-center gap-3">
+      <!-- Panorama Section -->
+      <section class="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-xs sm:p-8 dark:border-slate-800 dark:bg-slate-900/90">
+        <div class="mb-5 flex flex-wrap items-center gap-2.5">
           <span
-            class={`text-sm font-semibold px-3 py-1 rounded-full ${styles.badge}`}
+            class={`text-xs font-bold px-3 py-1 rounded-full ${styles.badge}`}
           >
             Tema actualizado
           </span>
-          <span class="rounded-full bg-gray-100 px-3 py-1 text-sm font-semibold text-gray-700 dark:bg-gray-700 dark:text-gray-200">
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700 dark:bg-slate-800 dark:text-slate-300">
             Unidad {unit.numero}
           </span>
-          <span class="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-700 dark:bg-slate-700 dark:text-slate-100">
+          <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700 dark:bg-slate-800 dark:text-slate-300">
             Diseño Web
           </span>
         </div>
 
-        <h2 class="mb-4 text-3xl font-bold text-gray-800 dark:text-gray-100">
+        <h2 class="mb-4 text-2xl font-extrabold text-slate-900 sm:text-3xl dark:text-white">
           Panorama general
         </h2>
-        <p class="mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
+        <p class="mb-4 text-base leading-relaxed text-slate-700 dark:text-slate-300">
           {tema.panorama}
         </p>
-        <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+        <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
           {tema.descripcion}
         </p>
       </section>
 
+      <!-- Learning Objectives & Key Ideas Grid -->
       <section class="grid gap-6 md:grid-cols-2">
-        <div
-          class={`rounded-lg border-l-4 p-6 ${styles.panel} ${styles.border}`}
-        >
-          <h3 class="mb-3 text-xl font-semibold text-gray-800 dark:text-gray-100">
-            Objetivos de aprendizaje
-          </h3>
-          <ul class="list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300">
+        <!-- Objectives -->
+        <div class="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-xs sm:p-7 dark:border-slate-800 dark:bg-slate-900/90">
+          <div class="mb-4 flex items-center gap-2.5">
+            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-100 text-emerald-800 font-bold dark:bg-emerald-950 dark:text-emerald-300">
+              ✓
+            </span>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+              Objetivos de aprendizaje
+            </h3>
+          </div>
+          <ul class="space-y-3">
             {tema.objetivos.map((objetivo) => (
-              <li>{objetivo}</li>
+              <li class="flex items-start gap-2.5 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500"></span>
+                <span>{objetivo}</span>
+              </li>
             ))}
           </ul>
         </div>
 
-        <div class="rounded-lg border-l-4 border-slate-400 bg-slate-50 p-6 dark:bg-slate-900">
-          <h3 class="mb-3 text-xl font-semibold text-gray-800 dark:text-gray-100">
-            Ideas clave del tema
-          </h3>
-          <ul class="list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300">
+        <!-- Key Ideas -->
+        <div class="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-xs sm:p-7 dark:border-slate-800 dark:bg-slate-900/90">
+          <div class="mb-4 flex items-center gap-2.5">
+            <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-100 text-accent-800 font-bold dark:bg-accent-950 dark:text-accent-300">
+              💡
+            </span>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+              Ideas clave del tema
+            </h3>
+          </div>
+          <ul class="space-y-3">
             {tema.ideasClave.map((idea) => (
-              <li>{idea}</li>
+              <li class="flex items-start gap-2.5 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-500"></span>
+                <span>{idea}</span>
+              </li>
             ))}
           </ul>
         </div>
       </section>
 
-      <section class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900">
-        <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
-          Relación con la unidad
+      <!-- Unit Relationship -->
+      <section class="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-xs sm:p-8 dark:border-slate-800 dark:bg-slate-900/90">
+        <h2 class="mb-4 text-xl font-bold text-slate-900 sm:text-2xl dark:text-white">
+          Alineación curricular con la Unidad {unit.numero}
         </h2>
-        <p class="mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
-          <strong>Capacidad de la unidad:</strong>
-          {unit.capacidad}
-        </p>
-        <p class="leading-relaxed text-gray-700 dark:text-gray-300">
-          <strong>Evidencia esperada:</strong>
-          {unit.evidencia}
-        </p>
+        <div class="space-y-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+          <p>
+            <strong class="font-bold text-slate-900 dark:text-white">
+              Capacidad esperada:
+            </strong>{' '}
+            {unit.capacidad}
+          </p>
+          <p>
+            <strong class="font-bold text-slate-900 dark:text-white">
+              Evidencia institucional:
+            </strong>{' '}
+            {unit.evidencia}
+          </p>
+        </div>
       </section>
 
+      <!-- Continuity -->
       <section
-        class={`rounded-lg border border-slate-200 p-6 sm:p-8 dark:border-slate-800 ${styles.panel}`}
+        class={`rounded-2xl border border-slate-200/80 p-6 sm:p-8 dark:border-slate-800 ${styles.panel}`}
       >
-        <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
-          Continuidad del curso
+        <h2 class="mb-3 text-xl font-bold text-slate-900 sm:text-2xl dark:text-white">
+          Continuidad pedagógica
         </h2>
-        <p class="mb-3 leading-relaxed text-gray-700 dark:text-gray-300">
+        <p class="mb-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
           Este contenido está alineado con el sílabo actualizado del curso y con
           una secuencia de trabajo que prioriza estrategia, prototipado,
           publicación viable y mejora continua.
         </p>
-        <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+        <p class="text-sm font-semibold text-primary-800 dark:text-primary-300">
           {continuity}
         </p>
       </section>
     </div>
 
+    <!-- Activity View -->
     <div data-topic-view="activity" class="hidden space-y-8">
-      <section class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900">
-        <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
-          Actividad sugerida
+      <section class="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-xs sm:p-8 dark:border-slate-800 dark:bg-slate-900/90">
+        <div class="mb-3 inline-block rounded-md bg-primary-100 px-2.5 py-1 text-xs font-bold text-primary-800 dark:bg-primary-950 dark:text-primary-300">
+          Taller de Aplicación
+        </div>
+        <h2 class="mb-4 text-2xl font-extrabold text-slate-900 sm:text-3xl dark:text-white">
+          Actividad práctica sugerida
         </h2>
-        <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+        <p class="text-base leading-relaxed text-slate-700 dark:text-slate-300">
           {tema.actividad}
         </p>
       </section>
 
-      <section class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900">
-        <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-gray-100">
-          Criterio de evidencia
+      <section class="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-xs sm:p-8 dark:border-slate-800 dark:bg-slate-900/90">
+        <h2 class="mb-4 text-xl font-bold text-slate-900 sm:text-2xl dark:text-white">
+          Criterio de evidencia y entrega
         </h2>
-        <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+        <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300">
           {tema.evidencia}
         </p>
       </section>
 
-      <section class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-gray-900">
-        <h2 class="mb-6 text-2xl font-bold text-gray-800 dark:text-gray-100">
-          Herramientas y recursos de trabajo
+      <section class="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-xs sm:p-8 dark:border-slate-800 dark:bg-slate-900/90">
+        <h2 class="mb-5 text-xl font-bold text-slate-900 sm:text-2xl dark:text-white">
+          Herramientas y recursos recomendados
         </h2>
-        <div class="grid gap-4 md:grid-cols-2">
+        <div class="grid gap-3 sm:grid-cols-2">
           {tema.herramientas.map((herramienta) => (
-            <div class="rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-gray-800">
-              <p class="text-gray-700 dark:text-gray-200">{herramienta}</p>
+            <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/60">
+              <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">
+                {herramienta}
+              </p>
             </div>
           ))}
         </div>
       </section>
     </div>
 
+    <!-- Presentation View -->
     <div data-topic-view="presentation" class="hidden">
       <TemaPresentacion unit={unit} tema={tema} client:load />
     </div>
@@ -301,7 +362,7 @@ const continuity = nextTema
     tabButtons.forEach((button) => {
       const isActive = button.dataset.tab === tab;
       button.classList.toggle('bg-white', isActive);
-      button.classList.toggle('dark:bg-gray-800', isActive);
+      button.classList.toggle('dark:bg-slate-900', isActive);
       button.classList.toggle('text-slate-900', isActive);
       button.classList.toggle('dark:text-white', isActive);
       button.classList.toggle('shadow-sm', isActive);
@@ -310,7 +371,7 @@ const continuity = nextTema
       button.classList.toggle('dark:border-slate-700', isActive);
       button.classList.toggle('bg-transparent', !isActive);
       button.classList.toggle('text-slate-600', !isActive);
-      button.classList.toggle('dark:text-slate-300', !isActive);
+      button.classList.toggle('dark:text-slate-400', !isActive);
     });
 
     const params = new URLSearchParams(window.location.search);
@@ -318,7 +379,6 @@ const continuity = nextTema
     const query = params.toString();
     const nextUrl = `${window.location.pathname}${query ? `?${query}` : ''}`;
     window.history.replaceState({}, '', nextUrl);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   tabButtons.forEach((button) => {

@@ -8,8 +8,10 @@ export interface Props {
   hideChrome?: boolean;
 }
 
-const { title = 'Diseño Web para Marketing - ITSAE', hideChrome = false } =
-  Astro.props;
+const {
+  title = 'Diseño Web para Marketing Digital - ITSAE',
+  hideChrome = false
+} = Astro.props;
 const currentPath = Astro.url.pathname;
 ---
 
@@ -22,17 +24,19 @@ const currentPath = Astro.url.pathname;
     <meta name="generator" content={Astro.generator} />
     <meta
       name="description"
-      content="Presentaciones del curso de Diseño Web para Marketing Digital - ITSAE Ecuador"
+      content="Curso de Diseño Web para Marketing Digital en el Instituto Tecnológico Superior Adventista del Ecuador (ITSAE). Clases, presentaciones interactivas y recursos."
     />
     <title>{title}</title>
     <script is:inline src="/theme-init.js"></script>
   </head>
-  <body class="bg-white font-sans text-gray-900 antialiased transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100">
+  <body class="flex min-h-screen flex-col bg-slate-50 font-sans text-slate-900 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
     <!-- Navbar Component -->
     {!hideChrome && <Navbar currentPath={currentPath} client:load />}
 
     <!-- Main Content -->
-    <slot />
+    <div class="flex-1">
+      <slot />
+    </div>
 
     <!-- Footer Component -->
     {!hideChrome && <Footer client:load />}

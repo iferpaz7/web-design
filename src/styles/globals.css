@@ -4,41 +4,42 @@
   /* Enable dark mode with class strategy */
   --color-scheme: light dark;
 
-  /* ITSAE - Educación Adventista Color Palette */
-  /* Colores principales inspirados en la identidad adventista */
-  --color-itsae-primary: #003366; /* Azul institucional adventista */
-  --color-itsae-primary-light: #004d99; /* Azul más claro */
-  --color-itsae-primary-dark: #002244; /* Azul oscuro */
-  --color-itsae-secondary: #0066cc; /* Azul secundario */
-  --color-itsae-accent: #ffb81c; /* Dorado/Amarillo adventista */
+  /* ITSAE - Identidad Institucional y Educación Adventista */
+  --color-itsae-primary: #002b49; /* Azul institucional profundo ITSAE */
+  --color-itsae-primary-light: #004d99; /* Azul medio */
+  --color-itsae-primary-dark: #001a2e; /* Azul noche */
+  --color-itsae-secondary: #0066cc; /* Azul interactivo */
+  --color-itsae-accent: #f59e0b; /* Dorado / Ámbar adventista */
+  --color-itsae-accent-light: #fbbf24;
   --color-itsae-success: #10b981; /* Verde esperanza */
   --color-itsae-warning: #f59e0b; /* Naranja advertencia */
   --color-itsae-error: #ef4444; /* Rojo error */
 
-  /* Primary color palette - Azul Adventista */
-  --color-primary-50: #e6f0f7;
-  --color-primary-100: #cce0ef;
-  --color-primary-200: #99c2df;
-  --color-primary-300: #66a3cf;
-  --color-primary-400: #3385bf;
-  --color-primary-500: #0066cc; /* Azul principal */
-  --color-primary-600: #0052a3;
-  --color-primary-700: #004080; /* Azul medio */
-  --color-primary-800: #003366; /* Azul institucional */
+  /* Primary color palette - Azul ITSAE */
+  --color-primary-50: #f0f7ff;
+  --color-primary-100: #e0effe;
+  --color-primary-200: #b9ddfe;
+  --color-primary-300: #7cc1fd;
+  --color-primary-400: #36a1fa;
+  --color-primary-500: #0c83eb;
+  --color-primary-600: #0066cc;
+  --color-primary-700: #004d99;
+  --color-primary-800: #003366; /* Azul base ITSAE */
   --color-primary-900: #002244;
-  --color-primary-950: #001122;
+  --color-primary-950: #001226;
 
-  /* Accent color palette - Dorado Adventista */
-  --color-accent-50: #fffbf0;
-  --color-accent-100: #fff6db;
-  --color-accent-200: #ffedba;
-  --color-accent-300: #ffe399;
-  --color-accent-400: #ffd45c;
-  --color-accent-500: #ffb81c; /* Dorado adventista */
-  --color-accent-600: #e09a00;
-  --color-accent-700: #c28600;
-  --color-accent-800: #a37200;
-  --color-accent-900: #855e00;
+  /* Accent color palette - Dorado / Ámbar ITSAE */
+  --color-accent-50: #fffbeb;
+  --color-accent-100: #fef3c7;
+  --color-accent-200: #fde68a;
+  --color-accent-300: #fcd34d;
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b; /* Dorado institucional */
+  --color-accent-600: #d97706;
+  --color-accent-700: #b45309;
+  --color-accent-800: #92400e;
+  --color-accent-900: #78350f;
+  --color-accent-950: #451a03;
 
   /* Success color palette - Verde */
   --color-success-50: #ecfdf5;
@@ -53,8 +54,10 @@
   --color-success-900: #064e3b;
 
   /* Font family */
-  --font-family-sans: 'Inter', 'Open Sans', system-ui, sans-serif;
-  --font-family-heading: 'Montserrat', 'Inter', sans-serif;
+  --font-family-sans:
+    'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    sans-serif;
+  --font-family-heading: 'Montserrat', 'Inter', system-ui, sans-serif;
 }
 
 @variant dark (&:where(.dark, .dark *));
@@ -74,13 +77,50 @@
     color: var(--color-primary-950);
   }
 
+  .dark ::selection {
+    background: var(--color-accent-700);
+    color: #ffffff;
+  }
+
   a,
   button {
     -webkit-tap-highlight-color: transparent;
   }
 
   :focus-visible {
-    outline: 3px solid var(--color-accent-500);
-    outline-offset: 3px;
+    outline: 2px solid var(--color-accent-500);
+    outline-offset: 2px;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: #0b1329;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 5px;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
   }
 }

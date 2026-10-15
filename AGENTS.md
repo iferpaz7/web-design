@@ -17,6 +17,10 @@ pnpm dev              # Astro dev server at localhost:4321
 pnpm build            # Production build → dist/
 pnpm preview          # Preview production build locally
 
+# Testing (Vitest + Playwright)
+pnpm test             # Run all E2E & component tests via Vitest
+pnpm test:e2e         # Run end-to-end tests suite
+
 # Code quality
 pnpm lint             # ESLint (flat config)
 pnpm lint:fix         # ESLint with auto-fix
@@ -33,7 +37,7 @@ pnpm classroom create-form docs/examenes/examen-YYYY-MM-DD.md  # Generate Google
 
 **Never run `pnpm classroom delete-course` or `pnpm classroom archive-course`** without explicit confirmation — these are destructive and irreversible.
 
-After any change to `src/data/syllabus.ts`, Astro source files, or Markdown documentation, run `pnpm format:check` and `pnpm build` to verify the build succeeds before finishing.
+After any change to `src/data/syllabus.ts`, Astro source files, or Markdown documentation, run `pnpm format:check`, `pnpm test`, and `pnpm build` to verify the build succeeds before finishing.
 
 ---
 
@@ -110,6 +114,8 @@ docs/examenes/                ← official exam files (examen-*.md, clave-*.md)
 docs/rubricas/                ← grading rubrics for coursework and projects
 docs/bibliografia/            ← UNACH library references and bibliography extraction tools
 tools/google_classroom/       ← Python CLI source (classroom_cli.py + helpers)
+tests/e2e/                    ← Vitest + Playwright E2E test suites
+vitest.config.ts              ← Vitest configuration with preview server globalSetup
 .github/skills/               ← AI skills for roadmap, syllabus, and exam workflows
 .github/instructions/         ← AI instruction files (itsae-filosofia-docencia)
 ```
