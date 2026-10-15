@@ -56,4 +56,15 @@ describe('Presentation Viewer E2E Tests', () => {
     const counterSlide1 = session.page.locator('text=Diapositiva 1 de 14');
     expect(await counterSlide1.isVisible()).toBe(true);
   });
+
+  it('exits standalone presentation back to topic page on Escape', async () => {
+    await session.page.goto(`${BASE_URL}/presentacion/unidad1/tema1`, {
+      waitUntil: 'networkidle'
+    });
+
+    await session.page.keyboard.press('Escape');
+    await session.page.waitForTimeout(500);
+
+    expect(session.page.url()).toContain('/unidad1/tema1');
+  });
 });

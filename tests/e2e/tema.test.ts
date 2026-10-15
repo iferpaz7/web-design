@@ -59,14 +59,21 @@ describe('Topic Detail Page E2E Tests', () => {
       waitUntil: 'networkidle'
     });
 
-    const presentationLink = session.page
-      .locator('a[href="/presentacion/unidad1/tema1"]')
-      .first();
-    expect(await presentationLink.isVisible()).toBe(true);
-
     const printLink = session.page
       .locator('a[href="/imprimir/unidad1/tema1"]')
       .first();
     expect(await printLink.isVisible()).toBe(true);
+
+    // Switch to presentation view where the fullscreen presentation button is located
+    const presentationTabBtn = session.page.locator(
+      'button[data-tab="presentation"]'
+    );
+    await presentationTabBtn.click();
+    await session.page.waitForTimeout(200);
+
+    const presentationLink = session.page
+      .locator('a[href="/presentacion/unidad1/tema1"]')
+      .first();
+    expect(await presentationLink.isVisible()).toBe(true);
   });
 });

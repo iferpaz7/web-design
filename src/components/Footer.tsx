@@ -282,6 +282,17 @@ const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
+                  href="https://sga.itsae.edu.ec/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-slate-400 transition-colors hover:text-white"
+                >
+                  <span>Sistema de Gestión Académica (SGA)</span>
+                  <ExternalLink className="h-3 w-3 text-slate-500" />
+                </a>
+              </li>
+              <li>
+                <a
                   href="https://itsae.edu.ec"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -323,7 +334,15 @@ const Footer: React.FC<FooterProps> = ({
             </h3>
             <div className="mt-4 space-y-2.5 text-xs text-slate-400">
               <div>
-                <span className="font-semibold text-white">Ing. Ivan Paz</span>
+                <a
+                  href="https://www.linkedin.com/in/iferpaz7/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group hover:text-accent-400 inline-flex items-center gap-1.5 font-semibold text-white transition-colors"
+                >
+                  <span>Ing. Ivan Paz</span>
+                  <ExternalLink className="group-hover:text-accent-400 h-3 w-3 text-slate-400 transition-colors" />
+                </a>
                 <p className="text-[11px] text-slate-400">
                   Docente titular de cátedra
                 </p>

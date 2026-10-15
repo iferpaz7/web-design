@@ -70,6 +70,7 @@ class ClassDoc:
     evidence: str
     site_links: list[str]
     points: float | None = None
+    raw_content: str = ""
 
     @property
     def topic_name(self) -> str:
@@ -375,6 +376,7 @@ def parse_class_doc(path: Path, site_url: str = DEFAULT_SITE_URL) -> ClassDoc:
         evidence=evidence,
         site_links=[link for link in links if site_url in link],
         points=points,
+        raw_content=markdown,
     )
 
 
@@ -475,11 +477,25 @@ def topic_id_for_name(service, course_id: str, name: str, create: bool, dry_run:
     return created.get("topicId")
 
 
+def clean_material_description(markdown: str) -> str:
+    if not markdown:
+        return ""
+    # Remove H1 heading line
+    text = re.sub(r"^#\s+[^\n]+\n*", "", markdown.strip())
+    # Remove the footer disclaimer line
+    text = re.sub(r"---\s*\n+_[^_\n]+sitio publicado[^_\n]+_\s*$", "", text, flags=re.MULTILINE)
+    # Remove trailing ---
+    text = re.sub(r"\n+---\s*$", "", text)
+    # Normalize multiple horizontal rules or excessive blank lines
+    text = re.sub(r"(\n\s*---\s*\n)+", "\n\n", text)
+    return text.strip()
+
+
 def class_material_body(doc: ClassDoc, state: str, topic_id: str | None) -> dict[str, Any]:
     urls = [resource["url"] for resource in doc.resources] or doc.site_links
-    body: dict[str, Any] = {
-        "title": class_material_title(doc),
-        "description": "\n\n".join(
+    description = clean_material_description(doc.raw_content)
+    if not description:
+        description = "\n\n".join(
             part
             for part in [
                 f"Fecha: {doc.date}" if doc.date else "",
@@ -487,7 +503,10 @@ def class_material_body(doc: ClassDoc, state: str, topic_id: str | None) -> dict
                 "Recursos disponibles para revisar la clase.",
             ]
             if part
-        ),
+        )
+    body: dict[str, Any] = {
+        "title": class_material_title(doc),
+        "description": description,
         "state": state,
         "materials": material_items(urls),
     }

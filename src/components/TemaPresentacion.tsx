@@ -328,6 +328,14 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
         void toggleFullscreen();
       }
 
+      if (event.key === 'Escape') {
+        if (document.fullscreenElement) {
+          void document.exitFullscreen();
+        } else if (isStandalone) {
+          window.location.href = `/unidad${unit.numero}/tema${tema.numero}?tab=presentation`;
+        }
+      }
+
       if (event.key === 'Home') {
         setCurrentSlide(0);
       }
@@ -339,7 +347,7 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [slides.length]);
+  }, [slides.length, isStandalone, unit.numero, tema.numero]);
 
   useEffect(() => {
     const syncFullscreen = () =>
@@ -383,18 +391,23 @@ const TemaPresentacion: React.FC<TemaPresentacionProps> = ({
               </p>
             )}
           </div>
-          <button
-            type="button"
-            onClick={toggleFullscreen}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-800/90 px-4 py-2.5 text-xs font-bold text-white shadow-2xs transition hover:bg-slate-700 sm:w-auto"
-          >
-            {isFullscreen ? (
+          {isStandalone ? (
+            <a
+              href={`/unidad${unit.numero}/tema${tema.numero}?tab=presentation`}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-800/90 px-4 py-2.5 text-xs font-bold text-white shadow-2xs transition hover:bg-slate-700 sm:w-auto"
+            >
               <Minimize2 className="h-4 w-4" />
-            ) : (
+              Salir de pantalla completa (Esc)
+            </a>
+          ) : (
+            <a
+              href={`/presentacion/unidad${unit.numero}/tema${tema.numero}`}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-800/90 px-4 py-2.5 text-xs font-bold text-white shadow-2xs transition hover:bg-slate-700 sm:w-auto"
+            >
               <Maximize2 className="h-4 w-4" />
-            )}
-            {isFullscreen ? 'Salir de pantalla completa' : 'Pantalla completa'}
-          </button>
+              Pantalla completa
+            </a>
+          )}
         </div>
       </div>
 
