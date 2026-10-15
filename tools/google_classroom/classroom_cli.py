@@ -69,6 +69,7 @@ class ClassDoc:
     activity_body: str
     evidence: str
     site_links: list[str]
+    points: float | None = None
 
     @property
     def topic_name(self) -> str:
@@ -344,6 +345,17 @@ def parse_class_doc(path: Path, site_url: str = DEFAULT_SITE_URL) -> ClassDoc:
     evidence = section_text(markdown, "Evidencia esperada")
     session_topic = first_content_line(section_text(markdown, "Tema de la sesión"))
     links = find_links(markdown)
+    points: float | None = None
+    points_match = re.search(r"Puntaje sugerido:\*\*?\s*([^\n]+)", markdown, re.IGNORECASE)
+    if points_match:
+        raw_points = points_match.group(1).casefold()
+        if "sin calificaci" in raw_points or "no calificad" in raw_points:
+            points = 0.0
+        else:
+            num_match = re.search(r"(\d+(?:\.\d+)?)", raw_points)
+            if num_match:
+                points = float(num_match.group(1))
+
     return ClassDoc(
         path=path,
         title=first_heading(markdown, 1) or path.stem,
@@ -362,6 +374,7 @@ def parse_class_doc(path: Path, site_url: str = DEFAULT_SITE_URL) -> ClassDoc:
         activity_body=activity_section,
         evidence=evidence,
         site_links=[link for link in links if site_url in link],
+        points=points,
     )
 
 
@@ -483,12 +496,13 @@ def class_assignment_body(
     clean_activity_title = doc.activity_title.replace("Actividad de la clase:", "").strip()
     if not clean_activity_title or clean_activity_title.casefold() == "actividad de la clase":
         clean_activity_title = doc.display_title
+    effective_points = doc.points if doc.points is not None else points
     body: dict[str, Any] = {
         "title": f"Actividad: {clean_activity_title}",
         "description": description or f"Actividad asociada a {doc.display_title}.",
         "state": state,
         "workType": "ASSIGNMENT",
-        "maxPoints": points,
+        "maxPoints": effective_points,
         "materials": material_items(urls),
     }
     due_date_value = due_date_body(due_date)
