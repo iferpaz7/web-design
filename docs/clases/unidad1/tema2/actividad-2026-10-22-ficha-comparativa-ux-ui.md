@@ -72,9 +72,14 @@ Para cada página, identifica al menos un problema UX concreto y propón una mej
 
 ## Evidencia esperada
 
-Ficha comparativa completada con observaciones pertinentes para las dos páginas y al menos una mejora argumentada por página.
+Ficha comparativa completada con observaciones analíticas pertinentes para las dos páginas y al menos una propuesta de mejora fundamentada por página.
 
-**Criterios:** detección de problemas UX, calidad de la comparación, pertinencia de la mejora propuesta y coherencia con los principios de usabilidad revisados en la sesión.
+**Criterios:**
+- Identificación precisa de problemas concretos de UX/UI en ambas interfaces.
+- Rigor y calidad de la comparación argumentada bajo heurísticas de usabilidad.
+- Pertinencia y viabilidad de las mejoras propuestas para reducir fricción.
+- Coherencia con los principios de Steve Krug y las 10 heurísticas de Nielsen.
+- Rúbrica aplicable: A — Taller analítico (`docs/rubricas/rubrica-taller-analitico.md`).
 
 ## Uso de IA en esta actividad
 

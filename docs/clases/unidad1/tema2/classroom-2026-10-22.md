@@ -1,4 +1,4 @@
-# Unidad 1, Tema 2 — Principios de UX/UI aplicados a páginas de campaña
+# Unidad 1, Tema 2 — Principios de UX/UI aplicados a páginas de campaña y experiencias digitales
 
 **Asignatura:** Diseño Web para Marketing Digital
 **Fecha:** 22 de octubre de 2026
@@ -9,6 +9,15 @@
 ## Objetivo de la clase
 
 Reconocer principios fundamentales de experiencia de usuario (UX) e interfaz de usuario (UI) aplicables a páginas de campaña, y detectar problemas concretos de interfaz que generan fricción y reducen la conversión.
+
+---
+
+## Contenidos de la sesión
+
+1. Diferenciación y complementariedad entre experiencia de usuario (UX) e interfaz de usuario (UI).
+2. Principios de usabilidad web y reducción de carga cognitiva según Steve Krug (*No me hagas pensar*).
+3. Las 10 heurísticas de usabilidad de Nielsen aplicadas a páginas de campaña y comercio electrónico.
+4. Tipologías de fricción en la interfaz: cognitiva, visual, táctil y de proceso.
 
 ---
 
@@ -58,6 +67,24 @@ Enlace: [https://www.youtube.com/@NNgroup](https://www.youtube.com/@NNgroup)
 
 Tipo: Bibliografía académica del sílabo
 Propósito: Referencia principal sobre usabilidad web en español; lectura recomendada para profundizar.
+
+---
+
+## Conceptos clave de la sesión
+
+- **Experiencia de usuario (UX):** percepción y respuesta integral del usuario al interactuar con un producto o servicio digital.
+- **Interfaz de usuario (UI):** capa visible y funcional (botones, tipografía, disposición, controles) mediante la cual el usuario interactúa.
+- **Fricción:** cualquier barrera o sobreesfuerzo que retrasa, confunde o detiene el flujo del usuario hacia la conversión.
+- **Carga cognitiva:** cantidad de esfuerzo mental requerido para procesar y comprender los elementos de una página.
+- **Convenciones de diseño:** patrones visuales familiares que el usuario ya conoce y que eliminan la necesidad de aprender a usar la interfaz.
+
+---
+
+## Próxima sesión
+
+Unidad 1, Tema 3 — Jerarquía visual, tipografía, color y composición para comunicar y persuadir.
+
+Aprenderemos a estructurar visualmente la interfaz y rediseñaremos un hero section con jerarquía clara y contraste optimizado.
 
 ---
 
