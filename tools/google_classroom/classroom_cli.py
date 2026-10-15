@@ -433,19 +433,24 @@ def class_doc_paths(patterns: list[str]) -> list[Path]:
                 candidates.append(path)
                 seen.add(path)
 
-    def sort_key(p: Path) -> tuple[tuple[int, int], int, str]:
-        s = str(p)
-        unit_m = re.search(r"unidad(\d+)/tema(\d+)", s)
-        if "general" in s:
-            group = (0, 0)
-        elif unit_m:
-            group = (int(unit_m.group(1)), int(unit_m.group(2)))
-        elif "examenes" in s:
-            group = (99, 0)
-        else:
-            group = (50, 0)
+    def extract_file_date(p: Path) -> str:
+        name_match = re.search(r"(\d{4}-\d{2}-\d{2})", p.name)
+        if name_match:
+            return name_match.group(1)
+        try:
+            content = p.read_text(encoding="utf-8")
+            content_match = re.search(r"Fecha:\*\*?\s*(\d{4}-\d{2}-\d{2})", content)
+            if content_match:
+                return content_match.group(1)
+        except Exception:
+            pass
+        return "9999-99-99"
+
+    def sort_key(p: Path) -> tuple[str, int, str]:
+        date_str = extract_file_date(p)
+        # Material de clase (0) antes de las actividades (1) de la misma fecha
         is_assignment = 1 if p.name.startswith("actividad-") else 0
-        return (group, is_assignment, p.name)
+        return (date_str, is_assignment, p.name)
 
     return sorted(candidates, key=sort_key)
 
