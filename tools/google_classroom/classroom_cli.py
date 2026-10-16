@@ -7,6 +7,7 @@ import argparse
 import json
 import re
 import sys
+import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -167,12 +168,17 @@ def classroom_service(args: argparse.Namespace):
     return build("classroom", "v1", credentials=credentials, cache_discovery=False)
 
 
-def execute(request):
-    try:
-        return request.execute()
-    except HttpError as error:
-        details = getattr(error, "content", b"").decode("utf-8", errors="ignore")
-        fail(f"Google Classroom API respondió {error}. {details}")
+def execute(request, max_retries: int = 4):
+    for attempt in range(max_retries):
+        try:
+            return request.execute()
+        except HttpError as error:
+            status = getattr(error.resp, "status", None)
+            if status in {500, 502, 503, 504, 429} and attempt < max_retries - 1:
+                time.sleep(1.5 * (2 ** attempt))
+                continue
+            details = getattr(error, "content", b"").decode("utf-8", errors="ignore")
+            fail(f"Google Classroom API respondió {error}. {details}")
 
 
 def print_json(data: Any) -> None:
@@ -477,18 +483,83 @@ def topic_id_for_name(service, course_id: str, name: str, create: bool, dry_run:
     return created.get("topicId")
 
 
-def clean_material_description(markdown: str) -> str:
+def markdown_to_plain_text(markdown: str) -> str:
     if not markdown:
         return ""
-    # Remove H1 heading line
+    # Eliminar encabezado H1
     text = re.sub(r"^#\s+[^\n]+\n*", "", markdown.strip())
-    # Remove the footer disclaimer line
+    # Eliminar avisos de pie de página
     text = re.sub(r"---\s*\n+_[^_\n]+sitio publicado[^_\n]+_\s*$", "", text, flags=re.MULTILINE)
-    # Remove trailing ---
-    text = re.sub(r"\n+---\s*$", "", text)
-    # Normalize multiple horizontal rules or excessive blank lines
-    text = re.sub(r"(\n\s*---\s*\n)+", "\n\n", text)
+    text = re.sub(r"---\s*\n+_[^_\n]+consulta directamente[^_\n]+_\s*$", "", text, flags=re.MULTILINE)
+    text = re.sub(r"---\s*\n+_[^_\n]+_\s*$", "", text, flags=re.MULTILINE)
+    # Eliminar reglas horizontales
+    text = re.sub(r"^\s*---\s*$", "", text, flags=re.MULTILINE)
+
+    # Convertir tablas Markdown a formato de texto legible
+    lines = text.splitlines()
+    result: list[str] = []
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if line.strip().startswith("|") and line.strip().endswith("|"):
+            table_lines: list[str] = []
+            while i < len(lines) and lines[i].strip().startswith("|") and lines[i].strip().endswith("|"):
+                table_lines.append(lines[i].strip())
+                i += 1
+            if len(table_lines) >= 3 and re.match(r"^\|[\s\-:|]+\|$", table_lines[1]):
+                headers = [c.strip() for c in table_lines[0].strip("|").split("|")]
+                for row_line in table_lines[2:]:
+                    cells = [c.strip() for c in row_line.strip("|").split("|")]
+                    if len(cells) < len(headers):
+                        cells.extend([""] * (len(headers) - len(cells)))
+                    if len(headers) == 2:
+                        result.append(f"• {cells[0]}: {cells[1]}")
+                    else:
+                        details = " | ".join(f"{h}: {c}" for h, c in zip(headers[1:], cells[1:]) if c)
+                        if cells[0].lower() == "total":
+                            result.append(f"• TOTAL: {details}")
+                        else:
+                            result.append(f"• {cells[0]} ({details})")
+                continue
+            else:
+                result.extend(table_lines)
+                continue
+        result.append(line)
+        i += 1
+    text = "\n".join(result)
+
+    # Convertir encabezados Markdown: ## Título -> Título:
+    def format_heading(m: re.Match) -> str:
+        h = m.group(1).strip()
+        return f"\n{h}:" if not h.endswith(":") else f"\n{h}"
+
+    text = re.sub(r"^(?:#{2,6})\s+(.+?)$", format_heading, text, flags=re.MULTILINE)
+
+    # Eliminar negritas, cursivas y formato inline
+    text = re.sub(r"\*\*(.+?)\*\*", r"\1", text)
+    text = re.sub(r"\*(.+?)\*", r"\1", text)
+    text = re.sub(r"`(.+?)`", r"\1", text)
+    text = re.sub(r"_(.+?)_", r"\1", text)
+
+    # Convertir enlaces Markdown [Texto](URL)
+    def clean_link(m: re.Match) -> str:
+        label, url = m.group(1).strip(), m.group(2).strip()
+        if label == url:
+            return url
+        return f"{label} ({url})"
+
+    text = re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)", clean_link, text)
+
+    # Normalizar viñetas
+    text = re.sub(r"^\s*[-*]\s+", "• ", text, flags=re.MULTILINE)
+
+    # Normalizar saltos de línea excesivos
+    text = re.sub(r"\n{3,}", "\n\n", text)
     return text.strip()
+
+
+def clean_material_description(markdown: str) -> str:
+    return markdown_to_plain_text(markdown)
 
 
 def class_material_body(doc: ClassDoc, state: str, topic_id: str | None) -> dict[str, Any]:
@@ -532,6 +603,7 @@ def class_assignment_body(
         ]
         if part
     )
+    description = markdown_to_plain_text(description)
     clean_activity_title = doc.activity_title.replace("Actividad de la clase:", "").strip()
     if not clean_activity_title or clean_activity_title.casefold() == "actividad de la clase":
         clean_activity_title = doc.display_title
@@ -962,6 +1034,42 @@ def cmd_sync_classes(args: argparse.Namespace) -> None:
             body = class_material_body(doc, state, topic_id)
             existing = find_by_title(existing_materials, body["title"])
             if existing and args.update:
+                existing_urls = material_urls_from_body(existing)
+                desired_urls = material_urls_from_body(body)
+                if existing_urls != desired_urls:
+                    if args.dry_run:
+                        print_json({"recreate_material": {"id": existing.get("id"), "body": body}})
+                    else:
+                        execute(
+                            service.courses()
+                            .courseWorkMaterials()
+                            .delete(courseId=args.course_id, id=existing["id"])
+                        )
+                        created = execute(
+                            service.courses()
+                            .courseWorkMaterials()
+                            .create(courseId=args.course_id, body=body)
+                        )
+                        print(f"Material recreado con enlaces actualizados: {created.get('title')} ({created.get('id')})")
+                    continue
+
+                if body.get("state") == "DRAFT" and existing.get("state") == "PUBLISHED":
+                    if args.dry_run:
+                        print_json({"recreate_material_as_draft": {"id": existing.get("id"), "body": body}})
+                    else:
+                        execute(
+                            service.courses()
+                            .courseWorkMaterials()
+                            .delete(courseId=args.course_id, id=existing["id"])
+                        )
+                        created = execute(
+                            service.courses()
+                            .courseWorkMaterials()
+                            .create(courseId=args.course_id, body=body)
+                        )
+                        print(f"Material restablecido a borrador (DRAFT): {created.get('title')} ({created.get('id')})")
+                    continue
+
                 update_fields = ["title", "description"]
                 if existing.get("state") == "DRAFT" and body.get("state") == "PUBLISHED":
                     update_fields.append("state")
@@ -1003,6 +1111,21 @@ def cmd_sync_classes(args: argparse.Namespace) -> None:
             )
             existing = find_by_title(existing_work, body["title"])
             if existing and args.update:
+                if body.get("state") == "DRAFT" and existing.get("state") == "PUBLISHED":
+                    if args.dry_run:
+                        print_json({"recreate_assignment_as_draft": {"id": existing.get("id"), "body": body}})
+                    else:
+                        execute(
+                            service.courses()
+                            .courseWork()
+                            .delete(courseId=args.course_id, id=existing["id"])
+                        )
+                        created = execute(
+                            service.courses().courseWork().create(courseId=args.course_id, body=body)
+                        )
+                        print(f"Tarea restablecida a borrador (DRAFT): {created.get('title')} ({created.get('id')})")
+                    continue
+
                 update_fields = ["title", "description", "maxPoints"]
                 if existing.get("state") == "DRAFT" and body.get("state") == "PUBLISHED":
                     update_fields.append("state")

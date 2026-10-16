@@ -23,7 +23,13 @@ export async function setup() {
 
   if (!up) {
     console.log('[global-setup] Starting Astro preview server...');
-    execSync(`pnpm preview --background --port ${PORT}`, { stdio: 'ignore' });
+    try {
+      execSync(`pnpm preview --background --port ${PORT}`, { stdio: 'ignore' });
+    } catch {
+      execSync(`npx astro preview --background --port ${PORT}`, {
+        stdio: 'ignore'
+      });
+    }
     startedByUs = true;
 
     for (let i = 0; i < 40; i++) {
@@ -41,7 +47,11 @@ export async function setup() {
       try {
         execSync('pnpm preview stop', { stdio: 'ignore' });
       } catch {
-        // ignore
+        try {
+          execSync('npx astro preview stop', { stdio: 'ignore' });
+        } catch {
+          // ignore
+        }
       }
     }
   };
