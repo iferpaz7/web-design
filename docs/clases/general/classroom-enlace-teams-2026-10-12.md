@@ -18,7 +18,7 @@ Centralizar el enlace de videollamadas y el canal oficial de comunicación del c
 
 Tipo: Videollamada en línea
 Propósito: Unirse a las sesiones sincrónicas de los jueves de 20:00 a 22:00 y a las tutorías del curso.
-Enlace: [https://teams.microsoft.com/REEMPLAZAR-POR-ENLACE-REAL](https://teams.microsoft.com/REEMPLAZAR-POR-ENLACE-REAL)
+Enlace: [https://teams.microsoft.com/v2/](https://teams.microsoft.com/v2/)
 
 ---
 

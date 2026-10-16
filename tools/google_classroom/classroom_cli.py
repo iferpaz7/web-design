@@ -962,9 +962,12 @@ def cmd_sync_classes(args: argparse.Namespace) -> None:
             body = class_material_body(doc, state, topic_id)
             existing = find_by_title(existing_materials, body["title"])
             if existing and args.update:
-                update_mask = "title,description"
+                update_fields = ["title", "description"]
+                if existing.get("state") == "DRAFT" and body.get("state") == "PUBLISHED":
+                    update_fields.append("state")
+                update_mask = ",".join(update_fields)
                 if args.dry_run:
-                    print_json({"update_material": {"id": existing.get("id"), "body": body}})
+                    print_json({"update_material": {"id": existing.get("id"), "update_mask": update_mask, "body": body}})
                 else:
                     updated = execute(
                         service.courses()
@@ -1000,7 +1003,10 @@ def cmd_sync_classes(args: argparse.Namespace) -> None:
             )
             existing = find_by_title(existing_work, body["title"])
             if existing and args.update:
-                update_mask = "title,description,maxPoints"
+                update_fields = ["title", "description", "maxPoints"]
+                if existing.get("state") == "DRAFT" and body.get("state") == "PUBLISHED":
+                    update_fields.append("state")
+                update_mask = ",".join(update_fields)
                 if args.dry_run:
                     print_json({"update_assignment": {"id": existing.get("id"), "body": body}})
                 else:
